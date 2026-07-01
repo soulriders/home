@@ -26,7 +26,9 @@
     .topbar-inner, .container { width: min(1040px, calc(100% - 44px)); margin: 0 auto; }
     .topbar-inner { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand { font: 800 14px var(--display); text-transform: uppercase; text-decoration: none; }
-    .nav { display: flex; align-items: center; gap: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+    .nav-stack { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; min-width: 0; }
+    .language-switch { font-size: 11px; font-weight: 800; line-height: 1; }
+    .language-switch a { color: var(--blue); text-decoration: none; }    .nav { display: flex; align-items: center; gap: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
     .nav::-webkit-scrollbar { display: none; }
     .nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
     .nav a + a::before { content: "|"; color: var(--line); margin: 0 10px; }
@@ -65,6 +67,8 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="en.html">Receivepower</a>
+            <div class="nav-stack">
+        <div class="language-switch"><a href="index.html">KR</a></div>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#company">Company</a>
         <a href="#ir">IR</a>
@@ -73,8 +77,8 @@
         <a href="#product">Product</a>
         <a href="#market">Market</a>
         <a href="#business">Business</a>
-        <a href="index.html">KR</a>
       </nav>
+      </div>
     </div>
   </header>
 

@@ -444,6 +444,26 @@ h1 {
   color: var(--text-main);
 }
 
+
+
+.nav-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  min-width: 0;
+}
+
+.language-switch {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.language-switch a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
 .global-nav {
   display: flex;
   align-items: center;
@@ -515,7 +535,8 @@ h1 {
 .content-group { border-bottom: 1px solid var(--border-main); }
 
 @media (max-width: 640px) {
-  .global-nav {
+  
+.global-nav {
     flex: 1 1 auto;
     justify-content: flex-end;
     min-width: 0;
@@ -1167,6 +1188,7 @@ h1 {
 }
 
 /* Global menu spacing fix */
+
 .global-nav {
   display: flex;
   align-items: center;
@@ -1197,7 +1219,8 @@ h1 {
 }
 
 @media (max-width: 640px) {
-  .global-nav {
+  
+.global-nav {
     gap: 10px;
     row-gap: 4px;
   }
@@ -1283,6 +1306,7 @@ body::after {
   padding: 8px 10px;
   white-space: nowrap;
 }
+
 
 .global-nav {
   display: flex;
@@ -1704,7 +1728,8 @@ footer {
     font-size: 18px;
   }
 
-  .global-nav {
+  
+.global-nav {
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -2053,6 +2078,8 @@ footer {
   <header class="topbar">
     <div class="topbar-inner">
       <button type="button" class="brand" data-target-page="home">Receivepower</button>
+            <div class="nav-stack">
+        <div class="language-switch"><a href="en.html">EN</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
           <button type="button" class="nav-link" data-target-page="company">Company</button>
@@ -2066,8 +2093,8 @@ footer {
           </div>
         </div>
         <button type="button" class="nav-link" data-target-page="business">비즈니스</button>
-        <a class="nav-link" href="en.html">EN</a>
       </nav>
+      </div>
     </div>
   </header>
 
