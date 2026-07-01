@@ -1,0 +1,3763 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>리시브파워</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-app: #ffffff;
+  --bg-panel: #f5f5f7;
+  --border-main: #d2d2d7;
+  --text-main: #1d1d1f;
+  --text-muted: #6e6e73;
+  --text-accent: #0066cc;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid var(--border-main);
+  backdrop-filter: blur(18px);
+}
+
+.topbar-inner,
+.container {
+  width: min(920px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.topbar-inner {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand,
+.nav-link {
+  text-decoration: none;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.nav-link:hover {
+  color: #1d1d1f;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link + .nav-link::before {
+  content: "|";
+  color: var(--border-main);
+  margin: 0 10px;
+}
+
+.site-nav .nav-link.active {
+  color: #1d1d1f;
+}
+
+.hero {
+  padding: 116px 0 64px;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.eyebrow {
+  display: block;
+  color: var(--text-accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.lead {
+  color: var(--text-muted);
+  font-size: 21px;
+  max-width: 820px;
+}
+
+.message-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.message-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.message {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  padding: 26px;
+}
+
+.message h2,
+.message h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.message p {
+  color: var(--text-muted);
+}
+
+.message .back-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--text-accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.message .back-link:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: inline-flex;
+  color: var(--text-accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.message-list.compact {
+  gap: 14px;
+}
+
+.message.kpi {
+  display: grid;
+  gap: 10px;
+}
+
+.message .label {
+  display: block;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.metric {
+  display: block;
+  color: #1d1d1f;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.data-list {
+  list-style: none;
+  margin-top: 18px;
+  border-top: 1px solid #d2d2d7;
+}
+
+.data-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 0;
+  border-bottom: 1px solid #d2d2d7;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.data-list strong {
+  color: #1d1d1f;
+  text-align: right;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.link-card {
+  display: block;
+  padding: 18px;
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.link-card span {
+  display: block;
+  color: var(--text-accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.link-card strong {
+  display: block;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.link-card p {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.subnav-section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.subnav-grid,
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.subnav-card,
+.cta-grid a {
+  display: block;
+  padding: 20px;
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.subnav-card:hover,
+.cta-grid a:hover {
+  background: var(--bg-panel);
+}
+
+.subnav-card strong,
+.cta-grid strong {
+  display: block;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.subnav-card span,
+.cta-grid span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.source-note {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 26px;
+}
+
+.source-note a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+
+.cta-band {
+  padding: 64px 0 96px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.button.primary {
+  background: #1d1d1f;
+  color: #ffffff;
+}
+
+.button.secondary {
+  border: 1px solid var(--border-main);
+  color: #1d1d1f;
+}
+
+@media (max-width: 640px) {
+  .topbar-inner {
+    align-items: flex-start;
+    flex-direction: row;
+    min-height: 44px;
+    gap: 8px;
+    width: calc(100% - 20px);
+    padding: 8px 0;
+  }
+
+  .site-nav {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    min-width: 0;
+    flex-wrap: wrap;
+    row-gap: 3px;
+    line-height: 1.35;
+    overflow-x: visible;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    font-size: 11px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .nav-link + .nav-link::before {
+    margin: 0 4px;
+  }
+
+  .data-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .data-list strong {
+    text-align: left;
+  }
+
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subnav-grid,
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 76px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+}
+
+
+
+.brand {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.global-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-item + .nav-item::before {
+  content: "|";
+  color: var(--border-main);
+  margin: 0 10px;
+}
+
+.global-nav .nav-link,
+.submenu-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  padding: 0;
+}
+
+.global-nav .nav-link.is-active,
+.global-nav .nav-link:hover,
+.submenu-link:hover {
+  color: var(--text-main);
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  min-width: 128px;
+  padding: 10px;
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transform: translateX(-50%);
+  display: none;
+  z-index: 30;
+}
+
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu {
+  display: grid;
+  gap: 8px;
+}
+
+.submenu-link {
+  text-align: left;
+  width: 100%;
+  padding: 4px 6px;
+}
+
+.page-view { display: none; }
+.page-view.is-active { display: block; }
+.content-group { border-bottom: 1px solid var(--border-main); }
+
+@media (max-width: 640px) {
+  .global-nav {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    min-width: 0;
+    flex-wrap: wrap;
+    row-gap: 3px;
+    line-height: 1.35;
+  }
+  .global-nav .nav-link, .submenu-link { font-size: 11px; }
+  .nav-item + .nav-item::before { margin: 0 4px; }
+  .submenu {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* Legacy home content from latest ZIP */
+
+    :root {
+      --bg-app: #ffffff;
+      --bg-card: #f5f5f7;
+      --bg-card-hover: #eeeeef;
+      --border-main: #d2d2d7;
+      --text-main: #1d1d1f;
+      --text-muted: #6e6e73;
+      --text-accent: #0066cc;
+      --text-cyan: #0071e3;
+      --text-warning: #b05a00;
+      --text-error: #ef4444;
+      --font-display: 'Outfit', -apple-system, sans-serif;
+      --font-sans: 'SF Pro Display', 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    
+
+    
+
+    /* Ambient atmospheric glows */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1400px;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .glow-1 {
+      position: absolute;
+      top: -200px;
+      left: 10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 102, 204, 0.05) 0%, transparent 70%);
+      filter: blur(85px);
+    }
+    .glow-2 {
+      position: absolute;
+      bottom: -100px;
+      right: 10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.035) 0%, transparent 70%);
+      filter: blur(85px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* Section Styles */
+    .page-view[data-page="home"] section {
+      padding: 120px 0 80px;
+      border-bottom: 1px solid var(--border-main);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 40px;
+      margin-bottom: 50px;
+      text-align: center;
+      letter-spacing: 0;
+    }
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-accent);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    /* Hero Area */
+    .hero-sec {
+      padding-top: 180px;
+      padding-bottom: 120px;
+      text-align: center;
+    }
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-weight: 850;
+      font-size: 76px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #1d1d1f 20%, #6e6e73 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-p {
+      font-size: 26px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-weight: 400;
+      letter-spacing: 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .market-viewpoints {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin: 56px auto 0;
+      max-width: 860px;
+      text-align: left;
+    }
+    .viewpoint-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .viewpoint-card span {
+      display: block;
+      color: var(--text-accent);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .viewpoint-card h3 {
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+    .viewpoint-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .viewpoint-card li {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.65;
+      padding-left: 18px;
+      position: relative;
+    }
+    .viewpoint-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--text-main);
+    }
+
+    /* Relational Capital */
+    .visitor-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .visitor-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 12px;
+      padding: 22px 24px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+    .visitor-card:hover, .visitor-card.active {
+      background: var(--bg-card-hover);
+      border-color: #1d1d1f;
+    }
+    .visitor-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .visitor-card span {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+    .visitor-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.65;
+      margin-top: 12px;
+      max-width: 760px;
+    }
+    .visitor-card strong {
+      flex: 0 0 auto;
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-size: 14px;
+    }
+    /* Lambda Specs (Lambda / Aerial Robot) */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 18px;
+      padding: 40px;
+    }
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .spec-name {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .spec-type {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .spec-cost {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 30px;
+    }
+    .spec-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid #d2d2d7;
+    }
+    .spec-list li span:first-child {
+      color: var(--text-muted);
+    }
+    .spec-list li span:last-child {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .spec-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* 기술 Cards */
+    .tech-effect-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .tech-effect-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 14px;
+      padding: 30px;
+    }
+    .tech-effect-card h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .tech-effect-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .metric-list {
+      list-style: none;
+      margin: 18px 0;
+      border-top: 1px solid #d2d2d7;
+    }
+    .metric-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 0;
+      border-bottom: 1px solid #d2d2d7;
+      font-size: 14px;
+    }
+    .metric-list span {
+      color: var(--text-muted);
+    }
+    .metric-list strong {
+      color: var(--text-main);
+      text-align: right;
+      font-weight: 700;
+    }
+    .effect-line {
+      color: var(--text-accent);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+    .source-note {
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 28px;
+    }
+    .source-note a {
+      color: var(--text-accent);
+      text-decoration: none;
+    }
+
+    /* 단위 경제성 */
+    .econ-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .econ-bars-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 18px;
+      padding: 40px;
+    }
+    .bar-row {
+      margin-bottom: 28px;
+    }
+    .bar-track {
+      height: 6px;
+      background: #e8e8ed;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: #1d1d1f;
+    }
+    .bar-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* First Route (첫 전장) */
+    .route-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .route-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 18px;
+      height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+    .route-svg {
+      width: 100%;
+      height: 100%;
+    }
+    .map-label {
+      position: absolute;
+      font-size: 12px;
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+    .label-busan { top: 30%; left: 15%; color: var(--text-accent); }
+    .label-japan { bottom: 30%; right: 15%; color: var(--text-main); }
+    .label-tsushima { top: 55%; left: 45%; color: var(--text-muted); font-size: 10px; }
+
+    /* Patents / Certification */
+    .patents-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .patent-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 14px;
+      padding: 30px;
+    }
+    .patent-card h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .patent-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .cert-list {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .cert-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .cert-item h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .cert-item span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .cert-item p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Intelligent Robotics */
+    .subpage-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .subpage-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 14px;
+      padding: 28px;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .subpage-card:hover {
+      background: var(--bg-card-hover);
+      border-color: #1d1d1f;
+    }
+    .subpage-card h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .subpage-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 760px;
+    }
+    .subpage-card strong {
+      flex: 0 0 auto;
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-size: 14px;
+    }
+
+    /* Contact Form */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 18px;
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #1d1d1f;
+      background: #ffffff;
+    }
+    .submit-btn {
+      width: 100%;
+      background: #1d1d1f;
+      color: #ffffff;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      background: #f5f5f7;
+      border-top: 1px solid var(--border-main);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-h1 { font-size: 48px; }
+      .hero-p { font-size: 20px; }
+      .specs-grid, .econ-layout, .route-grid, .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .patents-grid, .visitor-grid {
+        grid-template-columns: 1fr;
+      }
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+      .visitor-card,
+      .subpage-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  
+
+
+/* Required page-view navigation */
+.page-view {
+  display: none;
+}
+
+.page-view.is-active {
+  display: block;
+}
+
+.nav-link {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-link.is-active {
+  font-weight: 700;
+}
+
+/* Global menu spacing fix */
+.global-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+.global-nav > .nav-link,
+.global-nav > .nav-item > .nav-link {
+  padding: 6px 2px;
+}
+
+.global-nav > .nav-link + .nav-link::before,
+.global-nav > .nav-item + .nav-link::before,
+.global-nav > .nav-link + .nav-item::before,
+.global-nav > .nav-item + .nav-item::before {
+  content: none;
+}
+
+.submenu {
+  min-width: 156px;
+}
+
+.submenu-link + .submenu-link {
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .global-nav {
+    gap: 10px;
+    row-gap: 4px;
+  }
+}
+  
+/* Aerostructure style override start */
+:root {
+  --brand-primary: #0066cc;
+  --brand-primary-dark: #004e9f;
+  --brand-accent: #0088ff;
+  --bg-main: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-soft: #f5f5f7;
+  --text-main: #1d1d1f;
+  --text-muted: #6e6e73;
+  --text-accent: #0066cc;
+  --border-main: #e5e5e7;
+  --font-display: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", "Consolas", monospace;
+}
+
+html {
+  background: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before,
+body::after {
+  content: none !important;
+}
+
+.topbar {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  background: transparent;
+  border: 0;
+  pointer-events: none;
+}
+
+.topbar-inner {
+  width: min(1280px, 100%);
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid #f0f0f2;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.045);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: auto;
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.global-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 28px;
+  white-space: nowrap;
+  color: #414753;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.global-nav > .nav-link,
+.global-nav > .nav-item > .nav-link,
+.submenu-link {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: 0;
+  padding: 9px 0;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.global-nav > .nav-link::before,
+.global-nav > .nav-item::before,
+.global-nav > .nav-link + .nav-link::before,
+.global-nav > .nav-item + .nav-link::before,
+.global-nav > .nav-link + .nav-item::before,
+.global-nav > .nav-item + .nav-item::before {
+  content: none !important;
+}
+
+.global-nav .nav-link:hover,
+.global-nav .nav-link.is-active,
+.submenu-link:hover,
+.submenu-link.is-active {
+  color: var(--brand-primary);
+}
+
+.global-nav .nav-link.is-active {
+  font-weight: 800;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 210px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #f0f0f2;
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.submenu-link {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 999px;
+  color: #414753;
+}
+
+.submenu-link:hover,
+.submenu-link.is-active {
+  background: rgba(0, 102, 204, 0.07);
+}
+
+.page-view {
+  display: none;
+  padding-top: 128px;
+  animation: aeroFade 0.36s ease-out both;
+}
+
+.page-view.is-active {
+  display: block;
+}
+
+@keyframes aeroFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+section,
+.hero,
+.hero-sec,
+.message-section,
+.subnav-section,
+.cta-band {
+  background: transparent !important;
+  border: 0;
+}
+
+.page-view > section,
+.hero-sec,
+.hero,
+.message-section,
+.subnav-section,
+.cta-band {
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+
+.hero-sec,
+.hero {
+  text-align: center;
+  padding-top: 58px;
+  padding-bottom: 82px;
+}
+
+.hero-h1,
+.hero h1,
+h1 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1.04;
+}
+
+.hero-h1,
+.hero h1 {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(46px, 7vw, 82px);
+}
+
+.hero-p,
+.hero .lead,
+.lead {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #414753;
+  font-size: clamp(18px, 2.1vw, 24px);
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+.section-title,
+.contact-info h3,
+h2 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-weight: 820;
+  letter-spacing: 0;
+  line-height: 1.13;
+}
+
+.section-title {
+  max-width: 860px;
+  margin-bottom: 34px;
+  font-size: clamp(34px, 4.8vw, 60px);
+}
+
+.section-title span {
+  color: var(--brand-primary);
+}
+
+.eyebrow,
+.label,
+.spec-type,
+.patent-card span,
+.cert-item span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(0, 102, 204, 0.07);
+  color: var(--brand-primary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  padding: 7px 12px;
+  margin-bottom: 14px;
+}
+
+.market-viewpoints,
+.visitor-grid,
+.tech-effect-list,
+.specs-grid,
+.patents-grid,
+.cert-list,
+.message-list,
+.subnav-grid,
+.link-grid,
+.subpage-list,
+.econ-layout,
+.route-grid {
+  gap: 24px;
+}
+
+.viewpoint-card,
+.visitor-card,
+.tech-effect-card,
+.spec-card,
+.patent-card,
+.cert-item,
+.message,
+.subnav-card,
+.link-card,
+.subpage-card,
+.contact-form-card,
+.route-visual,
+.econ-copy,
+.econ-bars-wrap {
+  background: #ffffff !important;
+  border: 1px solid #f0f0f2 !important;
+  border-radius: 32px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.045) !important;
+  color: var(--text-main);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+}
+
+.viewpoint-card:hover,
+.visitor-card:hover,
+.tech-effect-card:hover,
+.spec-card:hover,
+.patent-card:hover,
+.cert-item:hover,
+.message:hover,
+.subnav-card:hover,
+.link-card:hover,
+.subpage-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 102, 204, 0.22) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.viewpoint-card,
+.visitor-card,
+.tech-effect-card,
+.spec-card,
+.patent-card,
+.cert-item,
+.message,
+.subnav-card,
+.link-card,
+.subpage-card {
+  padding: 30px;
+  text-decoration: none;
+}
+
+.viewpoint-card h3,
+.visitor-card h3,
+.tech-effect-card h3,
+.spec-name,
+.message h2,
+.message h3,
+.subnav-card h3,
+.link-card h3,
+.subpage-card h3,
+.patent-card strong,
+.cert-item strong {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.viewpoint-card p,
+.visitor-card p,
+.tech-effect-card p,
+.spec-desc,
+.message p,
+.subnav-card p,
+.link-card p,
+.subpage-card p,
+.patent-card p,
+.cert-item p,
+.effect-line,
+.metric-list,
+.spec-list,
+.route-copy,
+.econ-copy p {
+  color: #414753;
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.metric,
+.spec-cost,
+.bar-info strong {
+  color: var(--brand-primary);
+  font-family: var(--font-display);
+  font-weight: 850;
+}
+
+.button,
+.choices-cta,
+.submit-btn,
+button.primary,
+a.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px !important;
+  border: 1px solid var(--brand-primary) !important;
+  background: var(--brand-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.16);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.choices-cta:hover,
+.submit-btn:hover,
+button.primary:hover,
+a.primary:hover {
+  background: var(--brand-primary-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.18);
+}
+
+.button.secondary,
+a.secondary {
+  background: #ffffff !important;
+  color: var(--brand-primary) !important;
+  border-color: rgba(0, 102, 204, 0.22) !important;
+  box-shadow: none;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid #e5e5e7;
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.09);
+}
+
+.bar-track {
+  background: #f0f0f2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent)) !important;
+  border-radius: 999px;
+}
+
+.route-svg path,
+.route-svg line {
+  stroke: var(--brand-primary) !important;
+}
+
+footer {
+  background: #f5f5f7 !important;
+  border-top: 1px solid #e5e5e7 !important;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .topbar-inner {
+    min-height: 0;
+    padding: 11px 13px;
+    border-radius: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px 14px;
+  }
+
+  .brand {
+    width: 100%;
+    padding: 4px 2px 2px;
+    font-size: 18px;
+  }
+
+  .global-nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 7px 16px;
+    white-space: normal;
+  }
+
+  .global-nav > .nav-link,
+  .global-nav > .nav-item > .nav-link {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .submenu {
+    left: 0;
+    transform: translateY(6px);
+    min-width: 180px;
+    border-radius: 20px;
+  }
+
+  .nav-item:hover .submenu,
+  .nav-item:focus-within .submenu {
+    transform: translateY(0);
+  }
+
+  .page-view {
+    padding-top: 120px;
+  }
+
+  .container {
+    width: min(100% - 28px, 1280px);
+  }
+
+  .hero-sec,
+  .hero {
+    padding-top: 38px;
+    padding-bottom: 54px;
+  }
+
+  .page-view > section,
+  .message-section,
+  .subnav-section,
+  .cta-band {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .hero-h1,
+  .hero h1 {
+    font-size: clamp(38px, 12vw, 54px);
+  }
+
+  .hero-p,
+  .hero .lead,
+  .lead {
+    font-size: 17px;
+  }
+
+  .viewpoint-card,
+  .visitor-card,
+  .tech-effect-card,
+  .spec-card,
+  .patent-card,
+  .cert-item,
+  .message,
+  .subnav-card,
+  .link-card,
+  .subpage-card,
+  .contact-form-card {
+    border-radius: 24px !important;
+    padding: 24px;
+  }
+}
+
+/* SDA image box section start */
+.sda-image-section {
+  padding-top: 28px !important;
+}
+
+.sda-image-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.sda-image-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #f0f0f2;
+  border-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.045);
+  min-height: 100%;
+}
+
+.sda-image-card.hero-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.sda-image-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: #eef1f5;
+}
+
+.sda-image-card.hero-image img {
+  aspect-ratio: 16 / 9;
+}
+
+.sda-image-card.small img {
+  aspect-ratio: 4 / 3;
+}
+
+.sda-image-caption {
+  padding: 20px 22px 22px;
+}
+
+.sda-image-caption span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--brand-primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sda-image-caption h3 {
+  margin: 0 0 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.sda-image-caption p {
+  margin: 0;
+  color: #414753;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.sda-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sda-image-card.small .sda-image-caption {
+  padding: 16px 18px 18px;
+}
+
+.sda-image-card.small .sda-image-caption h3 {
+  font-size: 17px;
+}
+
+.sda-image-card.small .sda-image-caption p {
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .sda-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sda-mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sda-image-card,
+  .sda-image-card.hero-image {
+    border-radius: 24px;
+  }
+}
+
+/* Photo-forward website pass start */
+.hero-media-card {
+  width: min(1120px, 100%);
+  margin: 44px auto 32px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #f0f0f2;
+  border-radius: 36px;
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.09);
+}
+
+.hero-media-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8.4;
+  object-fit: cover;
+  background: #eef1f5;
+}
+
+.hero-media-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 24px 22px;
+  color: #414753;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero-media-caption strong {
+  color: var(--brand-primary);
+  font-size: 13px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.sda-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.sda-photo-strip .sda-image-card img {
+  aspect-ratio: 16 / 9;
+}
+
+.sda-photo-strip .sda-image-caption h3 {
+  font-size: 18px;
+}
+
+@media (max-width: 760px) {
+  .hero-media-card {
+    margin-top: 32px;
+    border-radius: 24px;
+  }
+
+  .hero-media-card img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-media-caption {
+    display: block;
+    padding: 16px 18px 18px;
+  }
+
+  .hero-media-caption strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .sda-photo-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Business architecture lead start */
+.business-architecture-lead .message:first-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%) !important;
+}
+
+.business-architecture-lead .message:first-child h2 {
+  font-size: clamp(32px, 4vw, 54px);
+  max-width: 820px;
+}
+
+.business-architecture-lead .message:first-child p {
+  max-width: 920px;
+  font-size: 18px;
+}
+/* Business architecture lead end */
+/* Photo-forward website pass end */
+/* SDA image box section end */
+
+/* Thin section hero headlines start */
+.hero-h1,
+.page-view > .hero h1,
+.page-view section.hero h1 {
+  font-weight: 520 !important;
+  letter-spacing: 0 !important;
+}
+/* Thin section hero headlines end */
+
+/* Sticky hover submenu start */
+.nav-item.is-open .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 760px) {
+  .nav-item.is-open .submenu {
+    transform: translateY(0);
+  }
+}
+/* Sticky hover submenu end */
+
+/* Robotics technology taxonomy start */
+.robotics-technology-taxonomy .message-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tech-taxonomy-card h2 {
+  margin-bottom: 18px;
+}
+
+.tech-keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-keyword-list li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #f5f5f7;
+  color: #414753;
+  font-size: 13px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .robotics-technology-taxonomy .message-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-keyword-list li {
+    white-space: normal;
+  }
+}
+/* Robotics technology taxonomy end */
+/* Aerostructure style override end */
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button type="button" class="brand" data-target-page="home">Receivepower</button>
+      <nav class="global-nav" aria-label="Primary navigation">
+        <div class="nav-item">
+          <button type="button" class="nav-link" data-target-page="company">Company</button>
+          <div class="submenu" aria-label="Company submenu">
+            <button type="button" class="submenu-link" data-target-page="company">Company</button>
+            <button type="button" class="submenu-link" data-target-page="ir">IR</button>
+            <button type="button" class="submenu-link" data-target-page="technology">기술</button>
+            <button type="button" class="submenu-link" data-target-page="ip">IP</button>
+            <button type="button" class="submenu-link" data-target-page="product">제품</button>
+            <button type="button" class="submenu-link" data-target-page="market">시장</button>
+          </div>
+        </div>
+        <button type="button" class="nav-link" data-target-page="business">비즈니스</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-view is-active" data-page="home">
+
+<!-- S01_HERO -->
+<section class="hero-sec" id="S01_HERO">
+    <div class="container">
+      <h1 class="hero-h1">우리는 원하는 비행기를 가질 때가 되었습니다.</h1>
+      <p class="hero-p">SDA는 고정익처럼 멀리 날고, 드론처럼 정밀하게 제어되며, 글라이더처럼 활강하는 소프트웨어 정의 항공기입니다.</p>
+      
+            <figure class="hero-media-card">
+        <img src="assets/images/sda/sda-perspective-render.png" alt="SDA 분산추진 항공기 렌더링">
+        <figcaption class="hero-media-caption">
+          <strong>SDA Platform</strong>
+          <span>고정익 항속거리와 분산추진 제어를 결합한 Software Defined Aircraft 이미지입니다.</span>
+        </figcaption>
+      </figure>
+      <div class="market-viewpoints">
+        <article class="viewpoint-card">
+          <span>Lambda</span>
+          <h3>멀티콥터가 못 가는 거리를, 드론 수준의 접근성으로.</h3>
+          <ul>
+            <li>비동기 틸트로터 — 활주로 없이 뜨고, 고정익으로 멀리 납니다.</li>
+            <li>고정익 순항 — 멀티콥터 에너지 한계 없이 200~1,000km를 커버합니다.</li>
+            <li>이산 매트릭스 Flight OS — 노선별 반복 운항과 감항 데이터를 동시에 쌓습니다.</li>
+          </ul>
+        </article>
+
+        <article class="viewpoint-card">
+          <span>경제성</span>
+          <h3>기체를 단순하게 만들수록 협력 범위가 넓어집니다.</h3>
+          <ul>
+            <li>무조종면 구조 — 액추에이터, 힌지, 링크가 없어 제조·정비 협력이 쉽습니다.</li>
+            <li>고정피치 로터 — 가변피치 없이 반복 운항하는 저정비 추진 구조입니다.</li>
+            <li>IP 라이선스·부품 생태계 — 기체, Flight OS, 운항 회랑 단위로 협력을 열 수 있습니다.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- S01B_SDA_IMAGE_BOXES -->
+  <section class="sda-image-section" id="S01B_SDA_IMAGE_BOXES">
+    <div class="container">
+      <span class="eyebrow">SDA Visual</span>
+      <h2 class="section-title">비동기틸트로터기의 <span>비행 예시</span></h2>
+            <div class="sda-photo-strip">
+        <article class="sda-image-card">
+          <img src="assets/images/sda/sda-async-render.png" alt="SDA 비동기 틸팅 항공기 렌더링">
+          <div class="sda-image-caption">
+            <span>PLATFORM</span>
+            <h3>분산추진 항공 로봇</h3>
+            <p>8개 추진기를 하나의 비행체 구조 안에서 소프트웨어로 제어합니다.</p>
+          </div>
+        </article>
+        <article class="sda-image-card">
+          <img src="assets/images/sda/sda-top-view-labeled.png" alt="SDA 상면 추진기 배치 이미지">
+          <div class="sda-image-caption">
+            <span>LAYOUT</span>
+            <h3>Stagger 기반의 가상조종면</h3>
+            <p>조종면이 없으므로 기체의 제작비는 1/10으로 경감 됩니다.</p>
+          </div>
+        </article>
+        <article class="sda-image-card">
+          <img src="assets/images/sda/sda-side-motor-labels.png" alt="SDA 측면 추진기 라벨 이미지">
+          <div class="sda-image-caption">
+            <span>CONTROL</span>
+            <h3>차동추력기반제어</h3>
+            <p>기체의 단차와 이산매트릭스를 바탕으로 가상조종면을 제어하여 비행합니다.</p>
+          </div>
+        </article>
+      </div>
+      <div class="sda-image-grid">
+        <article class="sda-image-card hero-image">
+          <img src="assets/images/sda/sda-control-interface.png" alt="비동기 틸팅 분산추진 SDA 제어 화면">
+          <div class="sda-image-caption">
+            <span>CONTROL LOGIC</span>
+            <h3>8개 추진기는 각각 다르게 움직입니다.</h3>
+            <p>내측과 외측 추진기를 나누어 단계적으로 틸팅하고, 비행 모드마다 제어권을 이전하는 SDA 전환 구조입니다.</p>
+          </div>
+        </article>
+        <div class="sda-mode-grid">
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-vertical-takeoff.png" alt="SDA 수직 이륙 모드">
+            <div class="sda-image-caption">
+              <span>01</span>
+              <h3>수직 이륙</h3>
+              <p>8개 추진기가 수직 추력으로 이륙합니다.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-first-tilt.png" alt="SDA 첫 번째 틸팅 단계">
+            <div class="sda-image-caption">
+              <span>02</span>
+              <h3>첫 번째 틸팅</h3>
+              <p>일부 추진기가 먼저 전환을 시작합니다.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-control-transfer.png" alt="SDA 첫 틸팅 완료와 수평 제어권 이전">
+            <div class="sda-image-caption">
+              <span>03</span>
+              <h3>제어권 이전</h3>
+              <p>수직 추력과 수평 제어를 동시에 다룹니다.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-second-tilt.png" alt="SDA 두 번째 틸팅 중">
+            <div class="sda-image-caption">
+              <span>04</span>
+              <h3>두 번째 틸팅</h3>
+              <p>남은 추진기가 순항 방향으로 넘어갑니다.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-full-horizontal-control.png" alt="SDA 수평 제어권 전체 부여">
+            <div class="sda-image-caption">
+              <span>05</span>
+              <h3>수평 제어권</h3>
+              <p>전환 완료 후 전체 수평 제어권을 확보합니다.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-horizontal-cruise.png" alt="SDA 수평 순항 비행">
+            <div class="sda-image-caption">
+              <span>06</span>
+              <h3>수평 순항</h3>
+              <p>고정익 순항으로 거리와 경제성을 확보합니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- S02_VISITOR_ROUTING -->
+  <section id="S02_VISITOR_ROUTING">
+    <div class="container">
+      <span class="eyebrow">시작점</span>
+      <h2 class="section-title">어떤 협력을 <span>찾고 있습니까?</span></h2>
+
+      <div class="visitor-grid">
+        <a class="visitor-card" href="#" data-route="ir">
+          <div>
+            <h3>투자자</h3>
+            <span>투자자</span>
+            <p>기체 1억원, 생애 매출 50억원, 목표 마진 50%. 플릿·운항권·Flight OS·MRO로 확장되는 반복수익 구조입니다.</p>
+          </div>
+          <strong>비용 구조 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="business">
+          <div>
+            <h3>파트너</h3>
+            <span>파트너</span>
+            <p>UAM 천이비행 안전 케이스가 필요하다면, SDA의 검증 가능한 비동기 틸팅 시나리오가 협력 출발점입니다.</p>
+          </div>
+          <strong>협력 논의</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="technology">
+          <div>
+            <h3>인재</h3>
+            <span>인재</span>
+            <p>임무를 먼저 정하고 기계를 거꾸로 만드는 팀입니다. 제어·시뮬레이션·하드웨어·Physical AI를 한 자리에서 다룹니다.</p>
+          </div>
+          <strong>역할 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="ip">
+          <div>
+            <h3>기술</h3>
+            <span>아키텍처</span>
+            <p>등록 1건, 출원 4건. 비동기 틸팅·가상 조종면·이산 제어·무동력 고양력·가상피토관.</p>
+          </div>
+          <strong>IP 구조 보기</strong>
+        </a>
+      <!-- BRAND_CONTENT_SPREAD_20260627_HOME_VISITORS -->
+
+        <a class="visitor-card" href="#" data-route="ir">
+          <div>
+            <h3>VC / 자본</h3>
+            <span>자본 회수</span>
+            <p>핵심은 항공기 스펙이 아니라 회랑별 반복 운항에서 나오는 플릿 경제성입니다. 기체 단가, 정비비, 운항률, 감항유지 데이터가 맞는 순간 1억원급 운항자산은 생애 매출을 만드는 물류 인프라가 됩니다.</p>
+          </div>
+          <strong>투자자 경로 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="business">
+          <div>
+            <h3>일본 지역</h3>
+            <span>지방자치단체</span>
+            <p>물류 회랑 하나에 조립 공장·MRO 거점·운항 인력이 함께 남습니다. 부산항 ↔ 일본 본토가 첫 번째 후보입니다.</p>
+          </div>
+          <strong>일본 경로 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="business">
+          <div>
+            <h3>한국 지역</h3>
+            <span>지방자치단체</span>
+            <p>드론 실증 이벤트가 아닙니다. 도서·산단·의료 구간에 반복 운항 가능한 공공 물류 노선을 설계합니다.</p>
+          </div>
+          <strong>한국 경로 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="technology">
+          <div>
+            <h3>드론 기업</h3>
+            <span>페이로드 체급 확장</span>
+            <p>기체 구조, Flight OS, 시뮬레이션, 운항 회랑 — 모듈 단위로 협력합니다. 멀티콥터 다음 체급을 함께 만드실 수 있습니다.</p>
+          </div>
+          <strong>드론 기업 경로 보기</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="ir">
+          <div>
+            <h3>개인 투자자</h3>
+            <span>초기 스토리</span>
+            <p>에어택시보다 먼저 돈이 되는 하늘길은 화물입니다. 멀티콥터가 못 가는 거리, 항공기가 비싼 구간이 시장입니다.</p>
+          </div>
+          <strong>개인 투자자 경로 보기</strong>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BRAND_CONTENT_SPREAD_20260627_HOME_TRANSLATION -->
+  <section id="S02B_TRANSLATION">
+    <div class="container">
+      <span class="eyebrow">브랜드 해석</span>
+      <h2 class="section-title">기술 선택 하나가 <span>협력 범위를 결정합니다</span></h2>
+      <div class="tech-effect-list">
+        <article class="tech-effect-card">
+          <h3>고정피치 로터</h3>
+          <p>고정피치 로터는 최고속도보다 생산성, 정비성, 반복 운항률을 우선하는 선택입니다. 가변피치 메커니즘을 줄이면 기체 가격과 정비 항목이 낮아지고, 플릿 단위 배치가 쉬워집니다.</p>
+          <div class="effect-line">가변피치가 없으면 제조·정비 협력 진입 비용이 낮아집니다.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>무조종면 아키텍처</h3>
+          <p>무조종면 아키텍처는 자세 제어를 기계식 플랩과 링크 구조에서 분산추진, 위상 제어, 기체 배치로 옮깁니다. 그 결과 점검 항목, 액추에이터, 힌지, 백래시, 정비 부담이 줄어듭니다.</p>
+          <div class="effect-line">움직이는 면이 없으면 점검 항목이 줄고, 협력사 정비 교육도 단순해집니다.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>무동력 활강 안전성</h3>
+          <p>무동력 활강 안전성은 활강, 풍차회전, 자동회전, 차동항력 모드로 비상 제어 여유를 확보하는 구조입니다. 이는 화물 운항의 기체 손실 리스크와 장기적인 유인 확장 안전 케이스를 함께 낮춥니다.</p>
+          <div class="effect-line">화물이 먼저 안전 케이스를 쌓습니다. 그 데이터가 UAM 인증 경로를 단축합니다.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S03_LAMBDA_PRODUCT -->
+  <section id="S03_LAMBDA_PRODUCT">
+    <div class="container">
+      <span class="eyebrow">제품</span>
+      <h2 class="section-title">Lambda는 화물 회랑에서 시작하는 <span>항공 로봇입니다</span></h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 34px;">
+        <article class="tech-effect-card">
+          <h3>기체 라인업보다 먼저 운항 단위를 정합니다.</h3>
+          <p>노선, 탑재량, 도착 시간, 실패 대응, 편당 비용이 먼저입니다. 기체는 그 운항 조건을 만족하기 위해 설계됩니다.</p>
+          <div class="effect-line">초기 목표는 100~500kg급 화물 운항입니다. 이후 화물 운항 데이터와 안전 구조를 기반으로 유인 powered-lift와 자율 승객 운송까지 확장합니다.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>기술 스택</h3>
+          <ul class="metric-list">
+            <li><span>안전한 VTOL</span><strong>비동기 틸트로터 아키텍처</strong></li>
+            <li><span>결정론적 비행</span><strong>모드 인식 매트릭스 기반 제어</strong></li>
+            <li><span>단순한 기체</span><strong>무조종면 고정익 구조</strong></li>
+            <li><span>안전 여유</span><strong>무동력 활강, 자동회전, 차동항력 제어</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="specs-grid">
+        <!-- lambda-Prototype -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">lambda-Prototype</span>
+            <span class="spec-type">25kg급 개념시제기</span>
+          </div>
+          <div class="spec-cost">핵심 비행 전환 검증기</div>
+          <ul class="spec-list">
+            <li><span>체급</span><span>25 kg급</span></li>
+            <li><span>기체 구조</span><span>조종면 없는 탠덤윙</span></li>
+            <li><span>날개 / 스파</span><span>3 m급 카본 스파·윙</span></li>
+            <li><span>로터 / 틸트</span><span>8개 로터 / 8개 전체 틸팅</span></li>
+            <li><span>동력</span><span>4.5 kW급 하이브리드 전기 추진</span></li>
+          </ul>
+          <p class="spec-desc">비동기 틸트, 무동력 고양력장치, 가상피토관, 하이브리드 전력 버퍼를 실제 기체에서 검증하는 첫 체급입니다.</p>
+        </div>
+
+        <!-- lambda-Light -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">lambda-Light</span>
+            <span class="spec-type">Part 103 체급</span>
+          </div>
+          <div class="spec-cost">개인·레저·기술 홍보 파생형</div>
+          <ul class="spec-list">
+            <li><span>체급</span><span>Part 103급</span></li>
+            <li><span>역할</span><span>초기 공개 제품</span></li>
+            <li><span>용도</span><span>브랜드 노출 / 커뮤니티 / 비행 데이터</span></li>
+            <li><span>핵심 IP</span><span>비동기 틸트로터 / 가상조종면</span></li>
+          </ul>
+          <p class="spec-desc">상업 화물의 본게임은 아니지만, Lambda 아키텍처를 가장 빠르게 시장에 보여주는 경량 체급입니다.</p>
+        </div>
+
+        <!-- lambda-Mid -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">lambda-Mid</span>
+            <span class="spec-type">무인 화물 패밀리</span>
+          </div>
+          <div class="spec-cost">100kg급 BVLOS 화물 검증 체급</div>
+          <ul class="spec-list">
+            <li><span>체급</span><span>무인 BVLOS 화물</span></li>
+            <li><span>페이로드</span><span>100 kg</span></li>
+            <li><span>역할</span><span>무인 화물 운항 데이터 축적</span></li>
+            <li><span>위치</span><span>500kg 화물기로 가는 중간 체급</span></li>
+          </ul>
+          <p class="spec-desc">BVLOS 무인 화물 운항을 위한 중간 체급입니다. 500kg 미드마일 화물기로 가기 전에 실제 회랑에서 인증, 운항, 정비 데이터를 쌓는 라인입니다.</p>
+        </div>
+
+        <!-- lambda-Heavy -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">lambda-Heavy</span>
+            <span class="spec-type">무인 화물 패밀리</span>
+          </div>
+          <div class="spec-cost">1억원급 운항자산 목표</div>
+          <ul class="spec-list">
+            <li><span>체급</span><span>무인 미드마일 화물 VTOL</span></li>
+            <li><span>페이로드</span><span>500 kg</span></li>
+            <li><span>최대 속도</span><span>240 km/h</span></li>
+            <li><span>최대 항속거리</span><span>1,000 km</span></li>
+            <li><span>기체 구조</span><span>고정피치 로터 / 무조종면 / 저정비</span></li>
+            <li><span>사업 모델</span><span>Lease + Operate + SaaS</span></li>
+          </ul>
+          <p class="spec-desc">무인 미드마일 화물의 주력 체급입니다. 기체를 한 번 팔아넘기는 제품이 아니라 500kg급 처리량을 반복 판매하는 플릿 운항자산입니다.</p>
+        </div>
+
+        <!-- lambda-Shuttle -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">lambda-Shuttle</span>
+            <span class="spec-type">AC 21.17-4 powered-lift</span>
+          </div>
+          <div class="spec-cost">2억원급 자율 승객운송 확장 목표</div>
+          <ul class="spec-list">
+            <li><span>MTOW</span><span>890 kg</span></li>
+            <li><span>페이로드</span><span>475 kg = 5명 x 95 kg</span></li>
+            <li><span>좌석</span><span>5인승</span></li>
+            <li><span>페이로드 비율</span><span>약 53.4%</span></li>
+            <li><span>순항 속도</span><span>최대 240 km/h</span></li>
+            <li><span>파워트레인</span><span>200 kW급 하이브리드</span></li>
+          </ul>
+          <p class="spec-desc">여객형은 AC 21.17-4 powered-lift 규제 트랙의 후속 제품입니다. 무인 화물 플릿 데이터가 안전 케이스를 만들고, Flight OS가 원격감시형 및 무인 자율 승객운송으로 이어집니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S04_TECH_POSITIONING -->
+  <section id="S04_TECH_POSITIONING">
+    <div class="container">
+      <span class="eyebrow">기술</span>
+      <h2 class="section-title">운항 조건이 <span>기체 구조를 결정합니다</span></h2>
+
+      <div class="tech-effect-list">
+        <article class="tech-effect-card">
+          <h3>운항이 먼저입니다</h3>
+          <p>탑재량, 거리, 이착륙 공간, 도착 시간, 실패 거동, 편당 비용이 먼저 정해집니다.</p>
+          <div class="effect-line">기계는 그 다음입니다.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>설명 가능한 비행</h3>
+          <p>모드 인식 제어는 비행 거동을 경계 안에 두고, 반복 가능하게 만들며, 운항 로그와 시험 데이터로 설명할 수 있게 합니다.</p>
+          <div class="effect-line">물류 운항에 필요한 것은 신비한 자율성이 아니라 반복 가능한 신뢰성입니다.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>임무 하드웨어</h3>
+          <p>VTOL 접근성, 장거리 순항, 화물 반복 운항, 저정비는 별개 기능이 아니라 같은 운항 단가를 만드는 하나의 설계 문제입니다.</p>
+          <div class="effect-line">기체는 노선과 화물이 만듭니다.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>보호된 아키텍처</h3>
+          <p>시뮬레이션, 제어, 기체, 안전 거동, IP를 함께 개발해 기체 단가, 정비비, 운항률을 동시에 낮춥니다.</p>
+          <div class="effect-line">IP는 서류가 아니라 운항 단가를 지키는 방어벽입니다.</div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 34px;">
+        <a class="choices-cta" href="#" data-route="technology">기술 전체 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S05_UNIT_ECONOMICS -->
+  <section id="S05_UNIT_ECONOMICS">
+    <div class="container">
+      <span class="eyebrow">단위 경제성</span>
+      <h2 class="section-title">항공 물류는 기체 원가와 반복 운항률이 동시에 맞아야 열립니다</h2>
+ 
+      <div class="econ-layout">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+            더 좋은 항공기가 아니라 더 낮은 운항 단가가 필요합니다.
+          </h3>
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.75;">
+            항공 물류는 기체 단가, 에너지, 정비, 안전, 인증, 가동률이 동시에 맞아야 열립니다. Lambda는 이 비용층을 기체 구조와 운항 소프트웨어로 함께 줄입니다.
+          </p>
+          <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
+            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">원가 절감은 제조 공정만의 문제가 아니라 설계 단계에서 결정됩니다.</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">기체 단가, 정비 부담, 순항 에너지, 운항률은 하나의 물류 자산 경제성으로 묶입니다.</div>
+          </div>
+        </div>
+ 
+        <div class="econ-bars-wrap">
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>기체 단가</span>
+              <span>1/10 목표</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 78%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>무조종면 기체</span>
+              <span>자동화 생산 경로</span>
+            </div>
+          </div>
+ 
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>정비 부담</span>
+              <span>부품 수 감소</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 72%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>기계식 조종면 감소</span>
+              <span>점검 항목 감소</span>
+            </div>
+          </div>
+ 
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>에너지 비용</span>
+              <span>고정익 순항</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 66%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>멀티콥터 에너지 한계 없는 장거리</span>
+              <span>지역 노선의 실용화</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- S06_MARKET_ROUTE -->
+  <section id="S06_MARKET_ROUTE">
+    <div class="container">
+      <span class="eyebrow">시장</span>
+      <h2 class="section-title">시간 손실이 항공 운송비보다 비싼 구간들</h2>
+ 
+      <div class="route-grid">
+        <div class="route-visual">
+          <svg class="route-svg" viewBox="0 0 400 300">
+            <path d="M 0,150 L 400,150" stroke="#d2d2d7" />
+            <path d="M 100,100 Q 200,120 300,180" fill="none" stroke="var(--text-accent)" stroke-width="2.5" stroke-dasharray="6 4" />
+            <circle cx="100" cy="100" r="5" fill="var(--text-accent)" />
+            <circle cx="100" cy="100" r="10" fill="none" stroke="var(--text-accent)" stroke-width="1" class="animate-pulse" />
+            <circle cx="300" cy="180" r="5" fill="#1d1d1f" />
+            <circle cx="170" cy="135" r="3.5" fill="#86868b" />
+          </svg>
+          <div class="map-label label-busan">▲ 부산항 (Busan Port)</div>
+          <div class="map-label label-tsushima">대마도 (Tsushima)<br>[비교용 후순위]</div>
+          <div class="map-label label-japan">▲ 일본 본토 거점<br>(후쿠오카/기타큐슈/시모노세키)</div>
+        </div>
+ 
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+            도로로는 늦고, 해상으로는 일정이 묶이고, 기존 항공기로는 단가가 맞지 않는 구간이 있습니다.
+          </h3>
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; line-height: 1.7;">
+            Lambda는 그 틈을 위한 항공 물류 장비입니다. 도서 물류, 산간 보급, 산업 화물, 긴급 배송처럼 시간 손실이 상품가치와 안전성을 깎는 구간에서 직접 항공 접근을 제공합니다.
+          </p>
+          <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>도서 물류</span>
+              <strong style="color: var(--text-main);">항만 의존 없는 화물 접근</strong>
+            </li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>산업 화물</span>
+              <strong style="color: var(--text-main);">부품, 공구, 배터리, 샘플</strong>
+            </li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>자율 화물</span>
+              <strong style="color: var(--text-main);">고정익 순항 + VTOL 접근성</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- S07_IP_CERTIFICATION -->
+  <section id="S07_IP_CERTIFICATION">
+    <div class="container">
+      <span class="eyebrow">IP</span>
+      <h2 class="section-title">운항 단가와 안전 구조를 바꾸는 IP</h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 34px;">
+        <article class="tech-effect-card">
+          <h3>기체 가격, 정비비, 운항률, 안전성은 같은 구조에서 결정됩니다.</h3>
+          <p>Lambda의 IP는 수직이착륙 접근성, 결정론적 비행, 고정피치 저정비 로터, 무조종면 구조, 무동력 활강을 하나의 운항자산 구조로 연결합니다.</p>
+          <ul class="metric-list">
+            <li><span>안전한 VTOL</span><strong>비동기 틸트로터 아키텍처</strong></li>
+            <li><span>더 단순한 기체</span><strong>무조종면 고정익 구조</strong></li>
+            <li><span>낮은 부담</span><strong>가동 부품 감소, 더 명확한 안전 거동</strong></li>
+          </ul>
+          <div class="effect-line"><a href="#" data-route="ip" style="color: inherit; text-decoration: none;">IP 비교 전체 보기</a></div>
+        </article>
+      </div>
+ 
+      <div class="patents-grid">
+        <div class="patent-card">
+          <h4>비동기 틸트로터</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">안전한 VTOL</span>
+          <p>거점 접근성과 미드마일 순항 효율이 하나의 추진 아키텍처에서 만납니다.</p>
+        </div>
+        <div class="patent-card">
+          <h4>결정론적 비행</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">모드 인식 제어</span>
+          <p>비행 모드는 경계 안에 있고, 반복 가능하며, 운항 로그로 설명할 수 있습니다.</p>
+        </div>
+        <div class="patent-card">
+          <h4>무조종면 기체</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">생산 가능한 기체 구조</span>
+          <p>기존 조종면을 줄이면 기체 수준의 기계적 복잡도와 정비 항목이 함께 줄어듭니다.</p>
+        </div>
+        <div class="patent-card">
+          <h4>자동회전 인식 안전성</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">인증 장벽 축소</span>
+          <p>안전 거동은 추진과 활강 아키텍처 안에 설계됩니다.</p>
+        </div>
+        <div class="patent-card">
+          <h4>무동력 활강 제어</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">운항 복원력</span>
+          <p>무동력 거동은 기체 안전성의 핵심 정체성이 됩니다.</p>
+        </div>
+      </div>
+ 
+      <div class="cert-list">
+        <article class="cert-item">
+          <h4>기체 단가</h4>
+          <span>무조종면 구조</span>
+          <p>구조가 단순해질수록 기체 원가가 내려가는 경로가 열립니다.</p>
+        </article>
+        <article class="cert-item">
+          <h4>정비 부담</h4>
+          <span>가동 부품 최소화</span>
+          <p>움직이는 면이 줄면 점검, 교체, 서비스 항목이 함께 줄어듭니다.</p>
+        </article>
+        <article class="cert-item">
+          <h4>인증 장벽</h4>
+          <span>결정론적·안전 인식 거동</span>
+          <p>비행 거동이 결정론적일수록 안전 케이스를 설명하기 쉬워집니다.</p>
+        </article>
+        <article class="cert-item">
+          <h4>운영 모델</h4>
+          <span>리스, 플릿 운항, SaaS</span>
+          <p>기체는 단순 판매품이 아니라 반복 운항으로 수익을 생산하는 물류 자산이 됩니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- S08_PHYSICAL_AI_HUMANOID -->
+  <section id="S08_PHYSICAL_AI_HUMANOID">
+    <div class="container">
+      <span class="eyebrow">Physical AI</span>
+      <h2 class="section-title">항공 물류에서 시작해 <span>실제 기계를 움직이는 Physical AI로 확장합니다</span></h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 28px;">
+        <article class="tech-effect-card">
+          <h3>운항 조건에서 기계를 정의하는 방식은 공중에서 끝나지 않습니다.</h3>
+          <p>Lambda를 움직이는 같은 루프는 휴머노이드와 자율 기계에도 적용됩니다. 임무를 정의하고, 동작을 시뮬레이션하고, 제어 루프를 닫고, 기계를 운항 조건에 맞게 설계합니다.</p>
+          <div class="effect-line">항공 로봇은 첫 번째 증명입니다. 그 뒤에는 물류, 제조, 정비 현장을 움직이는 Physical AI가 있습니다.</div>
+        </article>
+      </div>
+
+      <div class="subpage-list">
+        <a class="subpage-card" href="#" data-route="technology">
+          <div>
+            <h3>AI 기반 하드웨어</h3>
+            <p>임무, 움직임, 제어, 안전, 배치 조건이 기계를 만듭니다.</p>
+          </div>
+          <strong>기술 페이지</strong>
+        </a>
+        <a class="subpage-card" href="#" data-route="technology">
+          <div>
+            <h3>휴머노이드 시스템</h3>
+            <p>실제 운용 환경을 위한 동작, 조작, 균형, 작업 수행입니다.</p>
+          </div>
+          <strong>기술 페이지</strong>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- S09_CONTACT -->
+  <section id="S09_CONTACT">
+    <div class="container contact-layout">
+      <div class="contact-info">
+        <h3>기술 협력을 논의하고 싶으시면<br>연락주세요.</h3>
+        <p>
+          기체 구조, Flight OS, 운항 회랑, IP 라이선스 — 어느 지점에서든 협력을 시작할 수 있습니다.
+        </p>
+        <p>
+          Lambda는 항공 물류에서 시작합니다. 더 큰 그림은 물리 세계를 위한 임무 정의형 기계입니다.
+        </p>
+        <div style="font-size: 14px; color: var(--text-muted);">
+          <strong>리시브파워</strong><br>
+          항공 로봇, Physical AI, 임무 정의형 기계 아키텍처.
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <form onsubmit="event.preventDefault(); alert('문의가 기록되었습니다.');">
+          <div class="form-group">
+            <label for="f-name">성함</label>
+            <input type="text" id="f-name" required placeholder="성함을 입력하세요.">
+          </div>
+          <div class="form-group">
+            <label for="f-company">소속</label>
+            <input type="text" id="f-company" required placeholder="회사 또는 기관명">
+          </div>
+          <div class="form-group">
+            <label for="f-email">이메일</label>
+            <input type="email" id="f-email" required placeholder="연락받으실 이메일 주소">
+          </div>
+          <div class="form-group">
+            <label for="f-type">문의 유형</label>
+            <select id="f-type" required>
+              <option value="partner">협력 논의</option>
+              <option value="investor">투자자 자료 요청</option>
+              <option value="technical">기술 구조 논의</option>
+              <option value="talent">인재 협의</option>
+              <option value="physical_ai">Physical AI 협력</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-msg">제안 내용</label>
+            <textarea id="f-msg" rows="4" required placeholder="협의 내용을 구체적으로 기재해 주십시오."></textarea>
+          </div>
+          <button class="submit-btn" type="submit">문의하기</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="logo-mark">R</span>
+      <div class="footer-copy">
+        &copy; 2026 리시브파워.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR INTERACTIVES -->
+  
+  </main>
+
+<main class="page-view" data-page="company">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">회사소개</span>
+        <h1>리시브파워는 지능형 로봇을 2019년부터 개발해 왔습니다.</h1>
+        <p class="lead">인간형 Humanoid부터 비행체 Aerial robot까지, Physical AI로 움직이는 기계를 만듭니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container subnav-grid">
+        <a class="subnav-card" href="#" data-route="company">
+          <strong>회사 소개</strong>
+          <span>리시브파워가 만드는 Physical AI 회사의 방향을 봅니다.</span>
+        </a>
+        <a class="subnav-card" href="#" data-route="company">
+          <strong>IR</strong>
+          <span>투자 논리, 플릿 자산, 반복수익 구조를 봅니다.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Mission</span>
+          <h2>2026년은 하늘을 나는 자동차의 원년입니다.</h2>
+          <p>하늘을 나는 자동차는, 자동차와 같은 가격, 자동차와 같은 유지비, 자동차와 같은 부품을 사용하지만 하늘을 날아다니는 비행체입니다.</p><a class="back-link" href="#company-flying-car-narrative">개발 내러티브 보기</a>
+        </article>
+</div>
+    </section>
+
+
+    <section class="message-section" id="company-flying-car-narrative">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Development Narrative</span>
+          <h2>하늘을 나는 자동차: 꿈에서 현실로</h2>
+          <p>누구나 어릴 적 하늘을 나는 자동차를 꿈꿉니다. 저 역시 마찬가지였습니다. 틸트로터가 그 꿈을 이뤄줄 미래의 비행기라 믿었지만, 1992년 발생한 오스프리 추락 사고는 거대한 의문을 남겼습니다. 도심을 날아다니려면 무엇보다 안전한 틸트로터가 먼저여야 했습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">01</span>
+          <h2>흔한 꿈, 그리고 발견한 장벽</h2>
+          <p>하늘을 나는 자동차는 오래된 꿈입니다. 하지만 그 꿈이 도심의 교통수단이 되려면 수직이착륙, 장거리 순항, 안전한 천이비행이 동시에 필요했습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">02</span>
+          <h2>람다엔진과 날개 계산</h2>
+          <p>자동차 부품으로 만들어야 진짜 하늘을 나는 자동차입니다. 2006년 독일 월드컵 즈음에, 우리나라가 독자 개발한 람다엔진을 보며 확신했습니다. 이 엔진을 얹었을 때 페이로드 여유분이 얼마나 될지, 날개 형태와 기체 종류별로 드라이 블록의 경량화와 냉각 시스템을 바꿔가며 셀 수 없는 사고실험이 취미가 되었습니다. 감마 엔진은 2인승, 람다엔진은 3인승이라는 식의 계산이 이어졌습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">03</span>
+          <h2>200종류의 수직이착륙기 검토와 잊혔던 특허</h2>
+          <p>수직이착륙기 형태만 200종류 이상 검토한 끝에, 안전 문제를 해결할 비동기 틸트로터 구조를 찾아내어 2020년 특허를 출원했습니다. 이후 지능형 로봇 개발에 몰두하느라 그 특허를 잠시 잊고 지냈습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">04</span>
+          <h2>뜻밖의 등록, 그리고 의기투합</h2>
+          <p>휴머노이드 로봇의 개발 계획(WBS)을 짜고 제품 양산을 준비하던 어느 날, 잊고 있던 특허의 등록 결정서가 날아왔습니다. 이 소식을 접한 뒤, 휴머노이드를 함께 개발하던 동업자들과 세상을 바꾸어 보기로 의기투합했습니다. 로봇 제어 기술의 정점인 휴머노이드 전문가들이 비행체 혁신을 위해 뜻을 모은 순간이었습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">05</span>
+          <h2>2026년, SDA 아키텍처의 완성</h2>
+          <p>기존 특허의 우선권 기간은 지났지만, 이는 더 큰 도약의 계기가 되었습니다. 단순히 이착륙과 천이비행 단계를 넘어, 실제 안전하게 운항하고 비행하는 전 과정을 아우르는 독점적인 특허 망을 구축하기로 하고 2026년 4월 SDA 아키텍처의 설계와 출원이 이루어졌습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">06</span>
+          <h2>트럭을 이기는 비행체</h2>
+          <p>SDA는 단순한 연구실 속 아이디어가 아닙니다. 어릴 적 꿈꾸던 하늘을 나는 자동차이자, 압도적인 제조·유지비 절감을 통해 실제 육상 트럭과의 가격 경쟁에서 이기는 유일한 비행체를 세상에 구현하는 시작점입니다.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="company">IR 보기</a>
+        <a class="button secondary" href="#" data-route="product" data-route="product">제품 보기</a>
+      </div>
+    </section>
+  </main>
+
+<main class="page-view" data-page="ir">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">투자자 관계</span>
+        <h1>1억원급 운항자산이 회랑별 반복수익을 만드는 구조.</h1>
+        <p class="lead">투자 논리는 기체 한 대의 판매가 아니라 플릿 보유, 회랑 운영권, MRO, Flight OS, 감항유지 데이터, 지역 JV로 확장되는 반복수익 구조에 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="company">Company로 돌아가기</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message" id="company-vc">
+          <span class="label">VC</span>
+          <h2>Exit 시나리오</h2>
+          <p>VC 관점의 핵심은 항공 로봇 플릿, 회랑별 운항권, 정비 데이터, Flight OS, 지역 JV로 확장되는 자산 구조입니다. 초기 시장은 100~500kg급 항공 미드마일 물류이며, 운항 데이터가 쌓일수록 인증, 보험, MRO, 소프트웨어 매출의 기반이 커집니다.</p>
+          <p>Exit 시나리오는 항공·물류·로보틱스·방산·인프라 기업의 전략적 인수, 지역 운항 JV의 지분 회수, 플릿 운영 자산의 금융화, Flight OS와 감항유지 데이터 사업의 분리 성장으로 나눠 볼 수 있습니다.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+        </article>
+
+        <article class="message" id="company-deeptech-individual">
+          <span class="label">개인 딥테크 관심자</span>
+          <h2>비행체의 비전과 개인 투자 가능성</h2>
+          <p>개인 딥테크 관심자에게는 시장 진입 순서와 기술의 확장성을 명확하게 전달합니다. Receivepower는 AI와 로보틱스 기술로 항공 물류의 기체 구조, 제어, 생산, 운항 비용을 다시 설계하고 있습니다.</p>
+          <p>개인 투자 가능성은 별도의 투자 조건, 모집 방식, 법적 절차가 정리된 뒤 안내합니다. 현재 단계에서는 Lambda의 화물 우선 진입, Part 108 / Part 22 축, 항공 물류 시장, IP 확장성을 먼저 확인하는 흐름으로 구성합니다.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="metric">1억원</span>
+          <p>lambda-Heavy의 목표 기체 단가입니다. 500kg급 미드마일 화물 운항자산 기준입니다.</p>
+        </article>
+        <article class="message">
+          <span class="metric">50억원</span>
+          <p>기체 1대의 생애 매출 잠재치입니다. 반복 운항, 리스, 소프트웨어 구독 수익이 장기 수익의 중심입니다.</p>
+        </article>
+        <article class="message">
+          <span class="metric">50%</span>
+          <p>무조종면, 고정피치 로터, 저정비 구조, 운항 소프트웨어 기반 운영 효율을 전제로 한 목표 마진입니다.</p>
+        </article>
+        <article class="message">
+          <h2>초기 진입 시장</h2>
+          <p>배를 놓치면 하루가 날아가고, 도로로 돌아가면 반나절이 사라지는 구간 — 그 시간 손실이 Lambda의 초기 시장입니다.</p>
+        </article>
+        <article class="message">
+          <h2>투자 방식</h2>
+          <p>회랑별 운영권, 현지 조립, MRO, 데이터 축적, Flight OS 구독을 묶은 플릿/JV 구조로 확장합니다.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- BRAND_CONTENT_SPREAD_20260627_ir.html -->
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">투자 논리</span>
+          <h2>플릿 인프라와 소프트웨어 반복매출을 함께 설계합니다.</h2>
+          <p>Lambda는 플릿 보유, 리스, 회랑 운영, 물류 SLA, 감항유지 데이터, Flight OS 구독을 결합해 반복수익 구조를 만듭니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">왜 지금인가</span>
+          <h2>항공기 원가가 트럭 수준이 되는 순간, 물류지도는 도로망이 아니라 직선거리로 다시 그려집니다.</h2>
+          <p>직선거리가 물류망 설계의 새로운 기준이 됩니다. 500kg급 payload와 최대 1,000km 항속은 항공 미드마일 물류망을 겨냥합니다.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band" id="company-request">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="home">IR 자료 요청</a>
+        <a class="button secondary" href="#" data-route="market">시장 보기</a>
+      </div>
+    </section>
+  </main>
+
+<main class="page-view" data-page="technology">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">기술</span>
+        <h1>Robotics Technology</h1>
+        <p class="lead">리시브파워는 실제 기계를 움직이는 Physical AI 기술을 다룹니다. 로봇 미들웨어, 산업제어, 좌표계, 센서융합, 가상공간, 비전, 조작, 접촉제어, AI 모델, 워크셀, 공장 데이터, 안전, 엔지니어링 시스템을 하나의 실행 체계로 연결합니다.</p>
+      </div>
+    </section>
+
+    <section class="message-section robotics-technology-taxonomy">
+      <div class="container message-list">
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Robot Middleware</h2>
+          <ul class="tech-keyword-list">
+              <li>ROS</li>
+              <li>ROS 2</li>
+              <li>DDS</li>
+              <li>Node Graph</li>
+              <li>Topic</li>
+              <li>Service</li>
+              <li>Action</li>
+              <li>TF Tree</li>
+              <li>URDF</li>
+              <li>SRDF</li>
+              <li>MoveIt</li>
+              <li>Nav2</li>
+              <li>Gazebo</li>
+              <li>Isaac Sim</li>
+              <li>MAVROS</li>
+              <li>Robot State Publisher</li>
+              <li>Joint State Publisher</li>
+              <li>Controller Manager</li>
+              <li>Hardware Interface</li>
+              <li>Real-Time Control Loop</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Industrial Control</h2>
+          <ul class="tech-keyword-list">
+              <li>PLC</li>
+              <li>Ladder Logic</li>
+              <li>Structured Text</li>
+              <li>Modbus TCP</li>
+              <li>Modbus RTU</li>
+              <li>EtherCAT</li>
+              <li>Ethernet/IP</li>
+              <li>PROFINET</li>
+              <li>CAN</li>
+              <li>CANopen</li>
+              <li>Digital I/O</li>
+              <li>Analog I/O</li>
+              <li>Relay Output</li>
+              <li>Safety Relay</li>
+              <li>Emergency Stop</li>
+              <li>Interlock</li>
+              <li>Watchdog</li>
+              <li>Heartbeat Signal</li>
+              <li>Machine State</li>
+              <li>Fault Code</li>
+              <li>Reset Sequence</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Coordinate System</h2>
+          <ul class="tech-keyword-list">
+              <li>World Frame</li>
+              <li>Map Frame</li>
+              <li>Base Frame</li>
+              <li>Tool Frame</li>
+              <li>Camera Frame</li>
+              <li>Gripper Frame</li>
+              <li>Workpiece Frame</li>
+              <li>Fixture Frame</li>
+              <li>Conveyor Frame</li>
+              <li>Calibration Frame</li>
+              <li>Homogeneous Transform</li>
+              <li>Rotation Matrix</li>
+              <li>Quaternion</li>
+              <li>Euler Angle</li>
+              <li>Pose Estimation</li>
+              <li>Hand-Eye Calibration</li>
+              <li>Extrinsic Calibration</li>
+              <li>Intrinsic Calibration</li>
+              <li>Coordinate Registration</li>
+              <li>Frame Alignment</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Sensor Fusion</h2>
+          <ul class="tech-keyword-list">
+              <li>Camera</li>
+              <li>Depth Camera</li>
+              <li>Stereo Camera</li>
+              <li>IMU</li>
+              <li>Encoder</li>
+              <li>Load Cell</li>
+              <li>Force Torque Sensor</li>
+              <li>Proximity Sensor</li>
+              <li>Limit Switch</li>
+              <li>Motor Current</li>
+              <li>Torque Estimate</li>
+              <li>PLC State</li>
+              <li>Time Synchronization</li>
+              <li>Signal Filtering</li>
+              <li>Kalman Filter</li>
+              <li>Extended Kalman Filter</li>
+              <li>Particle Filter</li>
+              <li>Complementary Filter</li>
+              <li>State Estimation</li>
+              <li>Outlier Rejection</li>
+              <li>Sensor Confidence</li>
+              <li>Multi-Rate Sampling</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Virtual Space</h2>
+          <ul class="tech-keyword-list">
+              <li>Digital Twin</li>
+              <li>Simulation Scene</li>
+              <li>OpenUSD</li>
+              <li>Physics Engine</li>
+              <li>Renderer</li>
+              <li>Robot Model</li>
+              <li>Factory Layout</li>
+              <li>Workcell Layout</li>
+              <li>Collision Mesh</li>
+              <li>Kinematic Model</li>
+              <li>Dynamic Model</li>
+              <li>Sensor Model</li>
+              <li>Synthetic Data</li>
+              <li>Domain Randomization</li>
+              <li>Scenario Generation</li>
+              <li>Motion Replay</li>
+              <li>Failure Replay</li>
+              <li>Real-to-Sim</li>
+              <li>Sim-to-Real</li>
+              <li>Virtual Commissioning</li>
+              <li>Process Simulation</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Vision</h2>
+          <ul class="tech-keyword-list">
+              <li>Object Detection</li>
+              <li>Instance Segmentation</li>
+              <li>Semantic Segmentation</li>
+              <li>SAM2</li>
+              <li>YOLO</li>
+              <li>Mask R-CNN</li>
+              <li>Keypoint Detection</li>
+              <li>Edge Detection</li>
+              <li>Pose Estimation</li>
+              <li>Depth Estimation</li>
+              <li>Visual Servoing</li>
+              <li>Marker Tracking</li>
+              <li>AprilTag</li>
+              <li>ArUco</li>
+              <li>OCR</li>
+              <li>Defect Detection</li>
+              <li>Surface Inspection</li>
+              <li>Part Presence</li>
+              <li>Position Verification</li>
+              <li>Orientation Verification</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Manipulation</h2>
+          <ul class="tech-keyword-list">
+              <li>Grasp Planning</li>
+              <li>Grasp Pose</li>
+              <li>Approach Vector</li>
+              <li>Tool Center Point</li>
+              <li>Inverse Kinematics</li>
+              <li>Motion Planning</li>
+              <li>Trajectory Generation</li>
+              <li>Path Constraint</li>
+              <li>Collision Avoidance</li>
+              <li>Pick and Place</li>
+              <li>Insertion</li>
+              <li>Alignment</li>
+              <li>Sorting</li>
+              <li>Stacking</li>
+              <li>Palletizing</li>
+              <li>Bin Picking</li>
+              <li>Tool Changing</li>
+              <li>Gripper Control</li>
+              <li>End-Effector Design</li>
+              <li>Affordance Map</li>
+              <li>Task Primitive</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Force / Contact</h2>
+          <ul class="tech-keyword-list">
+              <li>Force Control</li>
+              <li>Impedance Control</li>
+              <li>Admittance Control</li>
+              <li>Compliance Control</li>
+              <li>Contact Detection</li>
+              <li>Slip Detection</li>
+              <li>Pressing Force</li>
+              <li>Insertion Force</li>
+              <li>Load Threshold</li>
+              <li>Overload Detection</li>
+              <li>Current Limit</li>
+              <li>Torque Limit</li>
+              <li>Soft Stop</li>
+              <li>Hard Stop</li>
+              <li>Retraction Motion</li>
+              <li>Recovery Motion</li>
+              <li>Force Feedback</li>
+              <li>Contact State</li>
+              <li>Pressure Profile</li>
+              <li>Z-Axis Control</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>AI Model</h2>
+          <ul class="tech-keyword-list">
+              <li>Vision Model</li>
+              <li>Segmentation Model</li>
+              <li>Detection Model</li>
+              <li>Pose Model</li>
+              <li>Anomaly Detection</li>
+              <li>VAE</li>
+              <li>Diffusion Policy</li>
+              <li>Behavior Cloning</li>
+              <li>Reinforcement Learning</li>
+              <li>Imitation Learning</li>
+              <li>Policy Learning</li>
+              <li>Trajectory Model</li>
+              <li>Latent Space</li>
+              <li>Feature Embedding</li>
+              <li>Few-Shot Adaptation</li>
+              <li>Human-in-the-Loop</li>
+              <li>Active Learning</li>
+              <li>Dataset Curation</li>
+              <li>Annotation Pipeline</li>
+              <li>Model Evaluation</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Workcell</h2>
+          <ul class="tech-keyword-list">
+              <li>Robot Arm</li>
+              <li>Mobile Robot</li>
+              <li>AMR</li>
+              <li>AGV</li>
+              <li>Humanoid</li>
+              <li>Gripper</li>
+              <li>End-Effector</li>
+              <li>Camera Mount</li>
+              <li>Lighting</li>
+              <li>Fixture</li>
+              <li>Jig</li>
+              <li>Conveyor</li>
+              <li>Feeder</li>
+              <li>Tray</li>
+              <li>Pallet</li>
+              <li>Inspection Station</li>
+              <li>Reject Station</li>
+              <li>HMI</li>
+              <li>Operator Panel</li>
+              <li>Safety Zone</li>
+              <li>Work Envelope</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Factory Data</h2>
+          <ul class="tech-keyword-list">
+              <li>MQTT</li>
+              <li>OPC UA</li>
+              <li>REST API</li>
+              <li>WebSocket</li>
+              <li>Message Broker</li>
+              <li>Event Log</li>
+              <li>Telemetry</li>
+              <li>Time-Series Data</li>
+              <li>Production Count</li>
+              <li>Cycle Time</li>
+              <li>Takt Time</li>
+              <li>Downtime</li>
+              <li>Fault History</li>
+              <li>Inspection Result</li>
+              <li>Process Parameter</li>
+              <li>Quality Data</li>
+              <li>Traceability</li>
+              <li>Dashboard</li>
+              <li>Alert</li>
+              <li>Report</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Safety</h2>
+          <ul class="tech-keyword-list">
+              <li>Emergency Stop</li>
+              <li>Safety PLC</li>
+              <li>Safety Zone</li>
+              <li>Light Curtain</li>
+              <li>Area Scanner</li>
+              <li>Door Interlock</li>
+              <li>Torque Limit</li>
+              <li>Speed Limit</li>
+              <li>Workspace Limit</li>
+              <li>Collision Check</li>
+              <li>Fault Detection</li>
+              <li>Safe Stop</li>
+              <li>Protective Stop</li>
+              <li>Manual Mode</li>
+              <li>Auto Mode</li>
+              <li>Teach Mode</li>
+              <li>Recovery Mode</li>
+              <li>Restart Condition</li>
+              <li>Operator Confirmation</li>
+              <li>Audit Log</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Engineering System</h2>
+          <ul class="tech-keyword-list">
+              <li>Task Definition</li>
+              <li>Requirement Spec</li>
+              <li>Interface Spec</li>
+              <li>I/O Map</li>
+              <li>State Machine</li>
+              <li>Sequence Diagram</li>
+              <li>Failure Mode</li>
+              <li>Acceptance Criteria</li>
+              <li>Test Case</li>
+              <li>Simulation Test</li>
+              <li>Hardware Test</li>
+              <li>Regression Test</li>
+              <li>Version Control</li>
+              <li>Naming Rule</li>
+              <li>Component Registry</li>
+              <li>API Contract</li>
+              <li>RAG Rulebase</li>
+              <li>Agent Workflow</li>
+              <li>Review Protocol</li>
+              <li>Validation Report</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+<main class="page-view" data-page="ip">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">특허 포트폴리오</span>
+        <h1>5대 기술 해자는 운항 단가와 안전 구조를 지키는 방어벽입니다.</h1>
+        <p class="lead">Receivepower의 IP는 기체를 더 단순하게 만들고, 실패 시나리오를 설명 가능한 비행 구조로 바꾸며, 반복 운항의 단가를 낮추는 기술 자산입니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="technology">기술로 돌아가기</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <h2>IP를 보는 기준</h2>
+          <p>Receivepower의 IP는 기술명보다 구조 변화와 운항 효과로 읽어야 합니다. 각 기술 해자는 구성, 변화, 효과의 순서로 기체 가격, 정비비, 운항률, 안전성에 연결됩니다.</p>
+          <ul class="data-list">
+            <li><span>경제성</span><strong>기계식 부품, 생산 공정, 정비 항목을 줄이는 방향</strong></li>
+            <li><span>안전성</span><strong>전환, 고장, 동력 상실, 상태 인식을 설명 가능한 구조로 만드는 방향</strong></li>
+            <li><span>상태 표기</span><strong>등록 / 출원으로만 표시</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">등록</span>
+          <h2>1. 독립제어 틸팅 추력기관</h2>
+          <p>각 추력기관을 같은 각도로 한 번에 움직이는 방식에서 벗어나, 전환 구간에서 추력과 양력을 나누어 다루는 구조입니다.</p>
+          <ul class="data-list">
+            <li><span>구성</span><strong>추력기관별 독립 틸팅과 분산 추진 제어</strong></li>
+            <li><span>변화</span><strong>수직비행에서 고정익 순항으로 넘어가는 전환 구간을 세분화</strong></li>
+            <li><span>효과</span><strong>VTOL 전환 안정성, 유인비행 확장성</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">출원</span>
+          <h2>2. 가상 조종면 기반 비행 제어</h2>
+          <p>물리 조종면, 힌지, 링크, 액추에이터 의존을 줄이고 추진기 배치와 추력 차이를 비행 제어 자원으로 사용하는 구조입니다.</p>
+          <ul class="data-list">
+            <li><span>구성</span><strong>분산 추진기의 위치와 위상 차이를 제어 자원으로 사용</strong></li>
+            <li><span>변화</span><strong>가동 조종면과 관련 기계 부품 축소</strong></li>
+            <li><span>효과</span><strong>기체 원가, 정비 항목, 생산 복잡도 감소</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">출원</span>
+          <h2>3. 이산 매트릭스 기반 비행 관리 시스템</h2>
+          <p>비행 상태와 고장 상태를 사전에 나누고, 각 상태에 맞는 제어 모드를 전환하는 결정론적 비행 관리 구조입니다.</p>
+          <ul class="data-list">
+            <li><span>구성</span><strong>상태별 제어 매트릭스와 고장 대응 모드</strong></li>
+            <li><span>변화</span><strong>블랙박스식 판단보다 시험 가능한 제어 단위로 분리</strong></li>
+            <li><span>효과</span><strong>인증 설명력, 운항 로그, 실패 대응 구조</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">출원</span>
+          <h2>4. 무동력 고양력 제어</h2>
+          <p>동력 상실 또는 저속 구간에서 기체가 가진 양력과 회전 요소를 활용해 착륙 여유와 방향 제어 가능성을 확보하는 독립 발명입니다.</p>
+          <ul class="data-list">
+            <li><span>구성</span><strong>무동력 상태의 양력, 항력, 회전 거동 활용</strong></li>
+            <li><span>변화</span><strong>비상 상황에서 추가 시간과 공간을 확보</strong></li>
+            <li><span>효과</span><strong>동력 상실 시나리오, 비상 착륙 안전성</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">출원</span>
+          <h2>5. SADS 기반 가상피토관</h2>
+          <p>단일 물리 센서에만 의존하지 않고 여러 신호를 융합해 기체의 공기 속 상태를 추정하는 독립 발명입니다.</p>
+          <ul class="data-list">
+            <li><span>구성</span><strong>GNSS, IMU, 추진기 데이터, 센서융합 기반 상태 추정</strong></li>
+            <li><span>변화</span><strong>기체가 현재 어떤 공기 상태에 놓였는지 판단하는 보조 채널 확보</strong></li>
+            <li><span>효과</span><strong>상태 인식, 모드 전환, 제어 안정성</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <h2>5대 기술 해자의 연결</h2>
+          <ul class="data-list">
+            <li><span>트럭 수준의 경제성</span><strong>가상 조종면, 무조종면 구조, 생산·정비 단순화</strong></li>
+            <li><span>유인비행의 안전성</span><strong>틸팅 전환, 이산 제어, 무동력 고양력, SADS 상태 추정</strong></li>
+            <li><span>SDA</span><strong>운항 조건과 실패 시나리오에서 출발하는 비행체 아키텍처</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="technology">기술 보기</a>
+        <a class="button secondary" href="#" data-route="product" data-route="product">제품 보기</a>
+      </div>
+    </section>
+  </main>
+
+<main class="page-view" data-page="product">
+
+<section class="content-group" id="product-main">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">제품 방향</span>
+        <h1>Cargo-first Aerial Robot.</h1>
+        <p class="lead">Lambda는 Part 108 / Part 22 축에서 먼저 정리되는 Cargo-first Aerial Robot입니다. 화물 운항에서 경제성과 운항 데이터를 먼저 확보하고, 그 다음 유인비행 확장 경로를 만듭니다.</p>
+      </div>
+    </section>
+
+    
+    <section class="message-section product-reasoning-anchor" id="product-sda-reasoning">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Product Logic</span>
+          <h2>제품은 시장, 인증, 제조비, 유지비의 인과관계로 설명합니다.</h2>
+          <p>의심을 유발하는 과장된 수식어를 걷어내고, 팩트와 숫자를 중심으로 SDA의 제품 논리를 정렬합니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">01</span>
+          <h2>틸트로터여야 하는 이유: 시장 규모의 확장</h2>
+          <p>도심 항공 시장에 진입하려면 수직이착륙 능력이, 광역 이동 시장으로 확장하려면 멀리 갈 수 있는 날개가 필수적입니다.</p>
+          <p>비행 중 저항만 유발하는 데드로터(Dead Rotor)가 없어야 운항 효율이 극대화됩니다. 조비(Joby)가 높게 평가받는 본질적인 이유입니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">02</span>
+          <h2>독립 틸트로터여야 하는 이유: 인증 기간의 예측 가능성</h2>
+          <p>일반 틸트로터는 복잡한 확률 제어 기반이어서 가혹한 소프트웨어 인증 표준(DO-178C) 통과가 불확실합니다. 조비의 비즈니스 비용이 높은 이유도 이 불확실한 인증 일정 때문입니다.</p>
+          <p>독립 제어 방식은 모든 비행 응답의 추적과 재현이 가능합니다. 비행 알고리즘이 명증적(Deterministic)이므로, 인증 기간과 예산을 예측할 수 있습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">03</span>
+          <h2>가상조종면이어야 하는 이유: 제조 및 유지보수 비용의 하락</h2>
+          <p>물리적인 조종면과 기계적 구동 장치를 제거하고, 소프트웨어를 통한 로터 제어로 비행을 통제합니다.</p>
+          <p>기계적 연결 구조가 사라져 날개와 동체의 완전 자동화 생산이 가능해지며, 기체 가격이 기존의 10% 수준으로 낮아집니다.</p>
+          <p>가동 부품 수가 100분의 1로 감소함에 따라 마모와 고장 요소가 줄어들어, 운영 유지보수 비용과 정비 소요 시간이 단축됩니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">04</span>
+          <h2>무동력 비행 능력: 법적 제도권 진입 조건</h2>
+          <p>미 연방항공청(FAA) 가이드라인(AC 21.17-4 부록 A, PL.2105(g))은 동력 상실 시에도 활강이나 오토로테이션을 통한 제어된 비상착륙 능력을 필수 조건으로 명시하고 있습니다.</p>
+          <p>이 법적 기준을 만족해야만 실제 운항 허가를 취득할 수 있습니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">05</span>
+          <h2>SDA 통합 가치: 육상 화물운송과의 가격 경쟁</h2>
+          <p>SDA는 명증적 비행 제어, 무동력 비상착륙 능력, 그리고 극단적인 부품 단순화를 동시에 달성한 아키텍처입니다.</p>
+          <p>높은 안전성을 담보하는 동시에 생산 및 유지비용을 낮춤으로써, 항공 분야를 넘어 기존 육상 화물운송 시장과 운임으로 직접 경쟁할 수 있는 비행체입니다.</p>
+        </article>
+      </div>
+    </section>
+<section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Lambda</span>
+          <h2>화물 운항에서 시작하는 Lambda 항공 로봇</h2>
+          <p>Lambda는 고정익기처럼 멀리 날고, 드론처럼 정밀하게 제어되며, 글라이더처럼 활강하고, 자이로콥터처럼 무동력 착륙을 준비하는 틸트로터기입니다.</p>
+          <p>전체 항공기 라인업은 아직 확정하지 않습니다. 현재는 Lambda를 Part 108 / Part 22 축에서 화물 우선 진입과 안전 구조 검증을 다루는 항공 로봇으로 정리합니다.</p>
+        </article>
+
+        <article class="message">
+          <h2>왜 화물부터 시작하는가</h2>
+          <p>화물은 운임, 시간 가치, 반복 운항률이 숫자로 드러나는 시장입니다. 먼저 화물 운항에서 기체 가격, 정비비, 반복 운항률, 감항유지 데이터, 실패 대응 구조를 검증합니다.</p>
+          <ul class="data-list">
+            <li><span>첫 시장</span><strong>시간 가치가 큰 500kg급 미드마일 화물</strong></li>
+            <li><span>운항 데이터</span><strong>무인 화물 운항에서 축적</strong></li>
+            <li><span>확장 방향</span><strong>유인비행으로 갈 수 있는 안전 구조</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">검증기</span>
+          <h2>25kg급 개념시제기</h2>
+          <p>25kg급 개념시제기는 SDA의 핵심 비행 전환 기술을 실제 기체에서 확인하는 단계입니다. 비동기 틸트, 무동력 고양력 제어, SADS 기반 상태 추정, 전력 버퍼를 통합해 전환과 안전 여유를 확인합니다.</p>
+          <div class="link-grid">
+            <a class="link-card" href="#" data-route="product" data-route="product">
+              <span>Prototype</span>
+              <strong>25kg급 개념시제기</strong>
+              <p>SDA 비행 전환과 안전 여유를 확인하는 실물 검증기</p>
+            </a>
+            <a class="link-card" href="#" data-route="product" data-route="product">
+              <span>Part 108</span>
+              <strong>300-500kg급 무인 화물</strong>
+              <p>무인 미드마일 화물 운항을 위한 핵심 축</p>
+            </a>
+            <a class="link-card" href="#" data-route="product" data-route="product">
+              <span>Part 22</span>
+              <strong>유인비행 확장 축</strong>
+              <p>화물 운항 데이터와 안전 구조 이후의 확장 경로</p>
+            </a>
+          </div>
+        </article>
+
+        <article class="message">
+          <h2>제품 카테고리는 운항 조건에 따라 확정합니다.</h2>
+          <p>관측, 화물, 유인 이동, 휴머노이드 연동 같은 제품 카테고리는 각 임무 조건과 사업 검증에 맞춰 정리합니다. 현재 제품 페이지는 확정 라인업보다 Lambda의 화물 우선 진입과 안전 구조 검증 순서를 다룹니다.</p>
+          <ul class="data-list">
+            <li><span>현재 확정 축</span><strong>Lambda Part 108 / Part 22</strong></li>
+            <li><span>미정 영역</span><strong>관측, 화물 세부형, 유인 세부형, 휴머노이드 연동 제품군</strong></li>
+            <li><span>기준</span><strong>운항 조건, 인증 경로, 시장 진입 순서</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="technology">IP 보기</a>
+        <a class="button secondary" href="#" data-route="market">시장 보기</a>
+      </div>
+    </section>
+    </section>
+  
+  </main>
+
+<main class="page-view" data-page="market">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">시장 진입</span>
+        <h1>시간 손실이 비용이 되는 화물 회랑부터 시작합니다.</h1>
+        <p class="lead">Receivepower는 먼저 화물 운항에서 경제성과 운항 데이터를 확보합니다. 지상·해상 운송의 시간 손실이 큰 구간에서 항공 로봇의 반복 운항성을 검증하고, 그 데이터를 기반으로 유인비행 확장 경로를 만듭니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container subnav-grid">
+        <a class="subnav-card" href="#" data-route="market">
+          <strong>초기 시장</strong>
+          <span>항만, 산단, 섬, 의료 거점의 시간 민감 화물 회랑을 봅니다.</span>
+        </a>
+        <a class="subnav-card" href="#" data-route="market">
+          <strong>사업화와 협력</strong>
+          <span>지자체, 운항 모델, 리스, MRO, Flight OS 구조를 봅니다.</span>
+        </a>
+      </div>
+    </section>
+
+    
+    <section class="message-section market-targets-lead">
+      <div class="container message-list">
+        <article class="message" id="market-korea-local-government">
+          <span class="label">한국 지방자치단체</span>
+          <h2>지역실증기체 개발</h2>
+          <p>한국 지자체에는 지역 문제에 맞춘 항공 물류 PoC, 전용기체 개발, 도시 항공교통 기반 개선 연구용역을 제안합니다. 전용기체 개발은 Part 108, Part 22급을 기준으로 약 2억원 규모의 프로젝트로 정리합니다.</p>
+          <p>연구용역은 약 2,000만원, 전용기체 개발/제작은 약 2억원입니다. 도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응처럼 지역의 지형과 산업 조건에 맞는 항공 물류 회랑과 기체를 먼저 제작합니다. 국내 지자체 2곳을 선정하여 진행할 예정 입니다.</p>
+        </article>
+        <article class="message" id="market-japan-local-government">
+          <span class="label">일본 지방자치단체</span>
+          <h2>지역 물류 회랑과 현지 조립·정비 거점</h2>
+          <p>일본 지자체에는 지역 전용기체 개발과 현지 조립·정비 거점 설립을 함께 제안합니다. 섬, 항만, 산단, 의료 거점이 분산된 지역일수록 항공 미드마일 물류와 현지 산업 기반을 동시에 만들 수 있습니다.</p>
+          <p>초기 사업은 전용 노선 설계, 기체 사양 정의, 조립·정비 거점 검토, 운항 데이터 축적 순서로 구성합니다. 부산항과 일본 본토를 연결하는 초국경 화물 회랑은 첫 번째 사업 후보입니다.</p>
+        </article>
+        <article class="message" id="market-drone-aircraft-company">
+          <span class="label">드론·비행체 기업</span>
+          <h2>전용기체 개발과 공동사업 추진</h2>
+          <p>드론·비행체 기업에는 임무별 전용기체 개발과 공동사업 추진을 제안합니다. 핵심 접점은 비동기 틸팅 추력, 가상 조종면, 무조종면 구조, 이산 제어, 무동력 고양력 장치입니다.</p>
+          <p>협력 범위는 특정 임무용 기체 사양 정의, 로터·추진 배치, 제어 소프트웨어, 인증 데이터 축적, 지역 운항 모델 설계까지 확장할 수 있습니다.</p>
+        </article>
+        <article class="message" id="market-robotics-company">
+          <span class="label">휴머노이드·지능형로봇 기업</span>
+          <h2>물류 연동 DX 솔루션 개발</h2>
+          <p>휴머노이드·지능형로봇 기업에는 항공 물류와 지상 로봇을 연결하는 DX 솔루션 개발을 제안합니다. 항공 로봇이 거점 사이를 연결하고, 지상 로봇이 하역, 분류, 이동, 정비를 담당하는 구조입니다.</p>
+          <p>리시브파워의 Physical AI 역량은 센서융합, 상태추정, 제어, 이상상태 대응을 중심으로 합니다. 이 기술은 비행체 제어를 넘어 물류 현장의 로봇 시스템으로 확장됩니다.</p>
+        </article>
+      </div>
+    </section>
+<section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <h2>일본 본토 - 부산항</h2>
+          <p>부산에서 후쿠오카까지, 배로 가면 3시간, Lambda면 약 59분입니다. 이 회랑은 지상·해상 운송의 시간 손실이 큰 구간에서 항공 로봇의 경제성을 설명하는 초기 예시입니다.</p>
+          <ul class="data-list">
+            <li><span>간이 비행 거리</span><strong>약 200.0-216.2 km</strong></li>
+            <li><span>순항 비행시간</span><strong>약 50-59분</strong></li>
+            <li><span>기체 편도 직접 운항원가</span><strong>약 96,022-103,794원</strong></li>
+          </ul>
+        </article>
+      </section>
+</main>
+
+<main class="page-view" data-page="business">
+<section class="hero">
+      <div class="container">
+        <span class="eyebrow">비즈니스</span>
+        <h1>SDA는 지적자산을 바탕으로 소프트웨어와 하드웨어, 그리고 노선플랫폼으로 확산 됩니다.</h1>
+        <p class="lead">SDA는 기체, 리스, 회랑 운항, MRO, Flight OS, 감항유지 데이터가 함께 움직이는 항공 물류 운영모델입니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="market">시장으로 돌아가기</a>
+      </div>
+    </section>
+
+    
+    <section class="message-section business-architecture-lead">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Business Architecture</span>
+          <h2>자산은 가볍게, 통제권은 깊게</h2>
+          <p>SDA의 비즈니스는 비행을 통제하는 소프트웨어, 특허, 운항 데이터, 제조 파트너십을 중심에 두고 물리적 투자 리스크는 지역별 파트너와 공유합니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">Patent Licensing</span>
+          <h2>특허 라이선스</h2>
+          <p>비동기 틸팅, 가상 조종면, 이산 제어 매트릭스, 무동력 고양력 제어, SADS 기반 가상피토관은 SDA의 핵심 권리 축입니다. 완성 기체만 파는 대신 Flight OS, 기술 백서, IP 라이선스, 경상 로열티로 반복수익 구조를 만듭니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">Development JV</span>
+          <h2>개발 조인트벤처</h2>
+          <p>전략적 파트너는 자본과 양산 부품 공급망을 제공하고, Receivepower는 기체 설계, 제어 알고리즘, 운항 소프트웨어, 특허를 제공합니다. 핵심은 돈을 많이 쓰는 개발사가 아니라 표준 아키텍처를 쥐는 회사가 되는 것입니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">Manufacturing JV</span>
+          <h2>제조 합작회사</h2>
+          <p>공장, 설비, 현지 인허가, 조립 인력은 지역별 제조 JV가 맡습니다. Receivepower는 조종면 없는 단순한 기체 구조와 COTS 기반 공급망을 통해 제조 파트너가 빠르게 조립하고 교체 가능한 구조를 설계합니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">Revenue Stack</span>
+          <h2>비즈니스 모델은 안정성을 우선으로 합니다.</h2>
+          <p>SDA의 목표는 하드웨어 제조사가 아니라 항공 물류의 원가 구조와 운항 표준에 있습니다. 기체 판매, 리스, 회랑 운항권, MRO, Flight OS, 감항유지 데이터, 지역 JV의 스택이 비즈니스를 드라이브합니다.</p>
+        </article>
+      </div>
+    </section>
+<section class="message-section">
+      <div class="container message-list">
+        <article class="message" id="market-korea-local-government">
+          <span class="label">한국 지방자치단체</span>
+          <h2>지역실증기체 개발</h2>
+          <p>한국 지자체에는 지역 문제에 맞춘 항공 물류 PoC, 전용기체 개발, 도시 항공교통 기반 개선 연구용역을 제안합니다. 전용기체 개발은 Part 108, Part 22급을 기준으로 약 2억원 규모의 프로젝트로 정리합니다.</p>
+          <p>연구용역은 약 2,000만원, 전용기체 개발/제작은 약 2억원입니다. 도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응처럼 지역의 지형과 산업 조건에 맞는 항공 물류 회랑과 기체를 먼저 제작합니다. 국내 지자체 2곳을 선정하여 진행할 예정 입니다.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+        </article>
+
+        <article class="message" id="market-japan-local-government">
+          <span class="label">일본 지방자치단체</span>
+          <h2>지역 물류 회랑과 현지 조립·정비 거점</h2>
+          <p>일본 지자체에는 지역 전용기체 개발과 현지 조립·정비 거점 설립을 함께 제안합니다. 섬, 항만, 산단, 의료 거점이 분산된 지역일수록 항공 미드마일 물류와 현지 산업 기반을 동시에 만들 수 있습니다.</p>
+          <p>초기 사업은 전용 노선 설계, 기체 사양 정의, 조립·정비 거점 검토, 운항 데이터 축적 순서로 구성합니다. 부산항과 일본 본토를 연결하는 초국경 화물 회랑은 첫 번째 사업 후보입니다.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list compact">
+        <article class="message kpi">
+          <span class="label">화물 운항자산</span>
+          <span class="metric">1억원</span>
+          <p>500kg급 미드마일 화물기의 목표 기체 단가입니다. 기체는 운항수익을 생산하는 플릿 자산입니다.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">생애 매출 잠재력</span>
+          <span class="metric">50억원</span>
+          <p>1대의 기체가 반복 운항, 리스, 노선 슬롯, 소프트웨어 구독을 통해 만들 수 있는 생애 매출 목표입니다.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">목표 마진</span>
+          <span class="metric">50%</span>
+          <p>저가 기체, 무조종면 구조, 감항유지비 절감, Flight OS 기반 운영 효율을 전제로 한 목표 마진 구조입니다.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">운영 모델</span>
+          <span class="metric">Lease + Operate + SaaS</span>
+          <p>기체 공급, 리스, 직접 운항, 운항 소프트웨어, 감항유지 데이터 서비스를 결합해 장기적인 운영 수익을 만듭니다.</p>
+        </article>
+
+        <article class="message">
+          <h2>물류장비, 운송 네트워크, 소프트웨어의 결합</h2>
+          <p>Lambda의 사업 구조는 자동화 물류장비, 운송 네트워크, 소프트웨어 구독을 결합한 모델입니다. 고객은 500kg급 항공 미드마일 처리량과 SLA를 구매합니다.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- BRAND_CONTENT_SPREAD_20260627_business.html -->
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">자산 논리</span>
+          <h2>기체는 제품이면서 동시에 장기 운영자산입니다.</h2>
+          <p>1억원급 기체가 생애 50억원 매출 잠재력을 가진다면 반복 운항, 리스, 노선 운영, kg-km 처리량, Flight OS 구독, 감항유지 데이터 서비스가 장기 수익 구조를 만듭니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">고객 편의성</span>
+          <h2>고객이 사는 것은 항공기가 아닙니다. 정해진 시간 안에 화물이 도착하는 능력입니다.</h2>
+          <p>물류 고객은 특정 시간 안에 특정 중량을 특정 거점으로 보내는 능력을 구매합니다. Lambda는 500kg급 미드마일 SLA, 시간 단축 효과, 회랑별 반복 운항률을 중심으로 운영 가치를 만듭니다.</p>
+        </article>
+        <article class="message">
+          <span class="label">플랫폼 운영</span>
+          <h2>하드웨어는 낮은 가격으로 빠르게 깔고, 수익은 운항·정비·데이터에서 반복해서 법니다.</h2>
+          <p>비행계획, 이산 매트릭스 기반 Flight OS, 감항유지 로그, 배터리·모터 수명관리, 경로 최적화, 보험 데이터는 통합 운영 계층으로 연결됩니다. 하드웨어는 낮은 가격으로 빠르게 배치하고, 반복수익은 회랑 운항·정비·데이터 서비스에서 발생합니다.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="market">시장 보기</a>
+        <a class="button secondary" href="#" data-route="company">Company 보기</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function () {
+    const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
+    const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
+    const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
+
+    function showPage(page, pushUrl = true) {
+      if (!validPages.includes(page)) {
+        page = 'home';
+      }
+
+      pages.forEach((el) => {
+        const active = el.dataset.page === page;
+        el.classList.toggle('is-active', active);
+        el.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      navLinks.forEach((el) => {
+        const active = el.dataset.targetPage === page;
+        el.classList.toggle('is-active', active);
+        if (active) {
+          el.setAttribute('aria-current', 'page');
+        } else {
+          el.removeAttribute('aria-current');
+        }
+      });
+
+      if (pushUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', page);
+        url.hash = '';
+        window.history.pushState({ page }, '', url);
+      }
+
+      window.scrollTo(0, 0);
+    }
+
+    navLinks.forEach((el) => {
+      el.addEventListener('click', function () {
+        showPage(el.dataset.targetPage);
+      });
+    });
+
+
+    const navItems = Array.from(document.querySelectorAll('.nav-item'));
+    navItems.forEach((item) => {
+      item.addEventListener('mouseenter', function () {
+        navItems.forEach((el) => el.classList.remove('is-open'));
+        item.classList.add('is-open');
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.nav-item')) {
+        navItems.forEach((el) => el.classList.remove('is-open'));
+      }
+    });
+    document.addEventListener('click', function (event) {
+      const routeLink = event.target.closest('a[data-route]');
+      if (!routeLink) return;
+      const page = routeLink.dataset.route;
+      if (!validPages.includes(page)) return;
+      event.preventDefault();
+      showPage(page);
+    });
+
+    window.addEventListener('popstate', function () {
+      const params = new URLSearchParams(window.location.search);
+      showPage(params.get('page') || 'home', false);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    showPage(params.get('page') || 'home', false);
+  })();
+</script>
+</body>
+</html>
