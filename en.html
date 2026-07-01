@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Receivepower | Software Defined Aircraft</title>
+  <title>Receivepower</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -835,7 +835,7 @@ h1 {
       line-height: 1.6;
     }
 
-    /* 기술 Cards */
+    /* Technology Cards */
     .tech-effect-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -899,7 +899,7 @@ h1 {
       text-decoration: none;
     }
 
-    /* 단위 경제성 */
+    /* Unit Economics */
     .econ-layout {
       display: grid;
       grid-template-columns: 1fr;
@@ -2109,33 +2109,33 @@ footer {
 <!-- S01_HERO -->
 <section class="hero-sec" id="S01_HERO">
     <div class="container">
-      <h1 class="hero-h1">트럭보다 싸게, 여객기보다 안전하게 납니다.</h1>
-      <p class="hero-p">시간 손실이 운송비보다 비싼 구간부터 장악합니다.</p>
+      <h1 class="hero-h1">Flies cheaper than trucks and safer than passenger aircraft.</h1>
+      <p class="hero-p">We start with corridors where time loss is more expensive than transport cost.</p>
       
             <figure class="hero-media-card">
         <img src="assets/images/sda/sda-perspective-render.png" alt="SDA 분산추진 항공기 렌더링">
         <figcaption class="hero-media-caption">
           <strong>SDA Platform</strong>
-          <span>고정익 항속거리와 분산추진 제어를 결합한 Software Defined Aircraft 이미지입니다.</span>
+          <span>A Software Defined Aircraft image combining fixed-wing range with distributed-propulsion control.</span>
         </figcaption>
       </figure>
       <div class="market-viewpoints">
         <article class="viewpoint-card">
           <span>Lambda</span>
           <ul>
-            <li>비동기 틸트로터 — 활주로 없이 뜨고, 고정익으로 멀리 납니다.</li>
-            <li>고정익 순항 — 멀티콥터 에너지 한계 없이 200~1,000km를 커버합니다.</li>
-            <li>이산 매트릭스 Flight OS — 노선별 반복 운항과 감항 데이터를 동시에 쌓습니다.</li>
+            <li>Asynchronous tiltrotor: takes off without a runway and flies far as a fixed-wing aircraft.</li>
+            <li>Fixed-wing cruise: covers 200-1,000 km without multicopter energy limits.</li>
+            <li>Discrete Matrix Flight OS: builds repeat-operation data and airworthiness data by route.</li>
           </ul>
         </article>
 
         <article class="viewpoint-card">
-          <span>경제성</span>
-          <h3>기체가 단순하여 협력 범위가 넓습니다.</h3>
+          <span>Economics</span>
+          <h3>A simpler aircraft expands the range of collaboration.</h3>
           <ul>
-            <li>무조종면 구조 — 액추에이터, 힌지, 링크가 없어 제조·정비 협력이 쉽습니다.</li>
-            <li>고정피치 로터 — 가변피치 없이 반복 운항이 가능하여 정비 비용이 낮은 추진 구조입니다.</li>
-            <li>IP 라이선스·부품 생태계 — 기체, Flight OS, 운항 회랑 단위로 다양한 협력이 가능합니다.</li>
+            <li>Control-surface-free structure: no actuators, hinges, or links, making manufacturing and maintenance collaboration easier.</li>
+            <li>Fixed-pitch rotor: a low-maintenance propulsion structure that supports repeat operation without variable pitch.</li>
+            <li>IP licensing and parts ecosystem: collaboration can happen across aircraft, Flight OS, and operating corridors.</li>
           </ul>
         </article>
       </div>
@@ -2147,30 +2147,30 @@ footer {
   <section class="sda-image-section" id="S01B_SDA_IMAGE_BOXES">
     <div class="container">
       <span class="eyebrow">SDA Visual</span>
-      <h2 class="section-title">비동기틸트로터기의 <span>비행 예시</span></h2>
+      <h2 class="section-title">Asynchronous tiltrotor <span>flight example</span></h2>
             <div class="sda-photo-strip">
         <article class="sda-image-card">
           <img src="assets/images/sda/sda-async-render.png" alt="SDA 비동기 틸팅 항공기 렌더링">
           <div class="sda-image-caption">
             <span>PLATFORM</span>
-            <h3>분산추진 항공 로봇</h3>
-            <p>8개 추진기를 하나의 비행체 구조 안에서 소프트웨어로 제어합니다.</p>
+            <h3>Distributed-propulsion aerial robot</h3>
+            <p>Eight propulsors are controlled by software inside one aircraft architecture.</p>
           </div>
         </article>
         <article class="sda-image-card">
           <img src="assets/images/sda/sda-top-view-labeled.png" alt="SDA 상면 추진기 배치 이미지">
           <div class="sda-image-caption">
             <span>LAYOUT</span>
-            <h3>Stagger 기반 가상조종면</h3>
-            <p>조종면이 없으므로 기체의 제작비는 1/10으로 경감 됩니다.</p>
+            <h3>Stagger-based virtual control surface</h3>
+            <p>With no control surfaces, aircraft production cost is reduced toward one-tenth.</p>
           </div>
         </article>
         <article class="sda-image-card">
           <img src="assets/images/sda/sda-side-motor-labels.png" alt="SDA 측면 추진기 라벨 이미지">
           <div class="sda-image-caption">
             <span>CONTROL</span>
-            <h3>차동추력기반제어</h3>
-            <p>기체의 단차와 이산매트릭스를 바탕으로 가상조종면을 제어하여 비행합니다.</p>
+            <h3>Differential-thrust-based control</h3>
+            <p>The aircraft flies by controlling virtual control surfaces through staggered geometry and a discrete matrix.</p>
           </div>
         </article>
       </div>
@@ -2179,57 +2179,57 @@ footer {
           <img src="assets/images/sda/sda-control-interface.png" alt="비동기 틸팅 분산추진 SDA 제어 화면">
           <div class="sda-image-caption">
             <span>CONTROL LOGIC</span>
-            <h3>8개 추진기는 각각 다르게 움직입니다.</h3>
-            <p>내측과 외측 추진기를 나누어 단계적으로 틸팅하고, 비행 모드마다 제어권을 이전하는 SDA 전환 구조입니다.</p>
+            <h3>Each of the eight propulsors moves differently.</h3>
+            <p>SDA transitions by tilting inner and outer propulsor groups in stages and transferring control authority by flight mode.</p>
           </div>
         </article>
         <div class="sda-mode-grid">
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-vertical-takeoff.png" alt="SDA 수직 이륙 모드">
+            <img src="assets/images/sda/sda-vertical-takeoff.png" alt="SDA Vertical takeoff 모드">
             <div class="sda-image-caption">
               <span>01</span>
-              <h3>수직 이륙</h3>
-              <p>8개 추진기가 수직 추력으로 이륙합니다.</p>
+              <h3>Vertical takeoff</h3>
+              <p>Eight propulsors lift the aircraft with vertical thrust.</p>
             </div>
           </article>
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-transition-first-tilt.png" alt="SDA 첫 번째 틸팅 단계">
+            <img src="assets/images/sda/sda-transition-first-tilt.png" alt="SDA First tilt 단계">
             <div class="sda-image-caption">
               <span>02</span>
-              <h3>첫 번째 틸팅</h3>
-              <p>일부 추진기가 먼저 전환을 시작합니다.</p>
+              <h3>First tilt</h3>
+              <p>Some propulsors begin transition first.</p>
             </div>
           </article>
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-transition-control-transfer.png" alt="SDA 첫 틸팅 완료와 수평 제어권 이전">
+            <img src="assets/images/sda/sda-transition-control-transfer.png" alt="SDA 첫 틸팅 완료와 수평 Control-authority transfer">
             <div class="sda-image-caption">
               <span>03</span>
-              <h3>제어권 이전</h3>
-              <p>수직 추력과 수평 제어를 동시에 다룹니다.</p>
+              <h3>Control-authority transfer</h3>
+              <p>Vertical thrust and horizontal control are handled together.</p>
             </div>
           </article>
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-transition-second-tilt.png" alt="SDA 두 번째 틸팅 중">
+            <img src="assets/images/sda/sda-transition-second-tilt.png" alt="SDA Second tilt 중">
             <div class="sda-image-caption">
               <span>04</span>
-              <h3>두 번째 틸팅</h3>
-              <p>남은 추진기가 순항 방향으로 넘어갑니다.</p>
+              <h3>Second tilt</h3>
+              <p>The remaining propulsors transition toward cruise.</p>
             </div>
           </article>
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-transition-full-horizontal-control.png" alt="SDA 수평 제어권 전체 부여">
+            <img src="assets/images/sda/sda-transition-full-horizontal-control.png" alt="SDA Horizontal control authority 전체 부여">
             <div class="sda-image-caption">
               <span>05</span>
-              <h3>수평 제어권</h3>
-              <p>전환 완료 후 전체 수평 제어권을 확보합니다.</p>
+              <h3>Horizontal control authority</h3>
+              <p>Full horizontal control authority is secured after transition.</p>
             </div>
           </article>
           <article class="sda-image-card small">
-            <img src="assets/images/sda/sda-horizontal-cruise.png" alt="SDA 수평 순항 비행">
+            <img src="assets/images/sda/sda-horizontal-cruise.png" alt="SDA Horizontal cruise 비행">
             <div class="sda-image-caption">
               <span>06</span>
-              <h3>수평 순항</h3>
-              <p>고정익 순항으로 거리와 경제성을 확보합니다.</p>
+              <h3>Horizontal cruise</h3>
+              <p>Fixed-wing cruise secures range and economics.</p>
             </div>
           </article>
         </div>
@@ -2239,83 +2239,83 @@ footer {
 <!-- S02_VISITOR_ROUTING -->
   <section id="S02_VISITOR_ROUTING">
     <div class="container">
-      <span class="eyebrow">시작점</span>
-      <h2 class="section-title">어떤 협력을 <span>찾고 있습니까?</span></h2>
+      <span class="eyebrow">Starting Point</span>
+      <h2 class="section-title">What kind of collaboration <span>are you looking for?</span></h2>
 
       <div class="visitor-grid">
         <a class="visitor-card" href="#" data-route="ir">
           <div>
-            <h3>자본투자</h3>
-            <span>자본투자</span>
-            <p>기체 1억원, 생애 매출 50억원, 목표 마진 50%. 플릿·운항권·Flight OS·MRO로 확장되는 반복수익 구조입니다.</p>
+            <h3>Capital Investment</h3>
+            <span>Capital Investment</span>
+            <p>KRW 100M aircraft, KRW 5B lifetime revenue potential, and 50% target margin. A recurring revenue structure expanding through fleets, operating rights, Flight OS, and MRO.</p>
           </div>
-          <strong>비용 구조 보기</strong>
+          <strong>View Cost Structure</strong>
         </a>
         <a class="visitor-card" href="#" data-route="business">
           <div>
-            <h3>기술협력</h3>
-            <span>기술협력</span>
-            <p>UAM 천이비행 안전 케이스가 필요하다면, SDA의 검증 가능한 비동기 틸팅 시나리오가 협력 출발점입니다.</p>
+            <h3>Technology Collaboration</h3>
+            <span>Technology Collaboration</span>
+            <p>If a UAM transition-flight safety case is needed, SDA’s verifiable asynchronous tilting scenario is the starting point for collaboration.</p>
           </div>
-          <strong>협력 논의</strong>
+          <strong>Discuss Collaboration</strong>
         </a>
         <a class="visitor-card" href="#" data-route="technology">
           <div>
-            <h3>인재</h3>
-            <span>인재</span>
-            <p>임무를 먼저 정하고 기계를 거꾸로 만드는 팀입니다. 제어·시뮬레이션·하드웨어·Physical AI를 한 자리에서 다룹니다.</p>
+            <h3>Talent</h3>
+            <span>Talent</span>
+            <p>We define the mission first and build the machine backward from it. Control, simulation, hardware, and Physical AI sit at one table.</p>
           </div>
-          <strong>역할 보기</strong>
+          <strong>View Roles</strong>
         </a>
         <a class="visitor-card" href="#" data-route="ip">
           <div>
-            <h3>기술</h3>
-            <span>아키텍처</span>
-            <p>등록 1건, 출원 4건. 비동기 틸팅·가상 조종면·이산 제어·무동력 고양력·가상피토관.</p>
+            <h3>Technology</h3>
+            <span>Architecture</span>
+            <p>1 registered patent and 4 filed applications: asynchronous tilting, virtual control surface, discrete control, passive high-lift, and virtual pitot.</p>
           </div>
-          <strong>IP 구조 보기</strong>
+          <strong>View IP Structure</strong>
         </a>
       <!-- BRAND_CONTENT_SPREAD_20260627_HOME_VISITORS -->
 
         <a class="visitor-card" href="#" data-route="ir">
           <div>
-            <h3>VC / 자본</h3>
-            <span>자본 회수</span>
-            <p>핵심은 항공기 스펙이 아니라 회랑별 반복 운항에서 나오는 플릿 경제성입니다. 기체 단가, 정비비, 운항률, 감항유지 데이터가 맞는 순간 1억원급 운항자산은 생애 매출을 만드는 물류 인프라가 됩니다.</p>
+            <h3>VC / Capital</h3>
+            <span>Capital Recovery</span>
+            <p>The core is fleet economics from repeated corridor operation, not aircraft specifications. When aircraft price, maintenance cost, utilization, and airworthiness data align, a KRW 100M operating asset becomes logistics infrastructure that produces lifetime revenue.</p>
           </div>
-          <strong>자본투자 경로 보기</strong>
+          <strong>View Capital Path</strong>
         </a>
         <a class="visitor-card" href="#" data-route="business">
           <div>
-            <h3>지방자치단체(일본)</h3>
-            <span>지방자치단체</span>
-            <p>물류 회랑 하나에 조립 공장·MRO 거점·운항 인력이 함께 남습니다. 부산항 ↔ 일본 본토가 첫 번째 후보입니다.</p>
+            <h3>Local Government (Japan)</h3>
+            <span>Local Government</span>
+            <p>One logistics corridor can leave behind an assembly plant, an MRO base, and operating workforce. Busan Port to mainland Japan is the first candidate.</p>
           </div>
-          <strong>일본 경로 보기</strong>
+          <strong>View Japan Path</strong>
         </a>
         <a class="visitor-card" href="#" data-route="business">
           <div>
-            <h3>지방자치단체(한국)</h3>
-            <span>지방자치단체</span>
-            <p>드론 실증 이벤트가 아닙니다. 도서·산단·의료 구간에 반복 운항 가능한 공공 물류 노선을 설계합니다.</p>
+            <h3>Local Government (Korea)</h3>
+            <span>Local Government</span>
+            <p>This is not a one-off drone demonstration. We design repeatable public logistics routes for islands, industrial zones, and medical corridors.</p>
           </div>
-          <strong>한국 경로 보기</strong>
+          <strong>View Korea Path</strong>
         </a>
         <a class="visitor-card" href="#" data-route="technology">
           <div>
-            <h3>드론 기업</h3>
-            <span>페이로드 체급 확장</span>
-            <p>기체 구조, Flight OS, 시뮬레이션, 운항 회랑 — 모듈 단위로 협력합니다. 멀티콥터 다음 체급을 함께 만드실 수 있습니다.</p>
+            <h3>Drone Companies</h3>
+            <span>Payload Class Expansion</span>
+            <p>Aircraft structure, Flight OS, simulation, and operating corridors can be developed module by module. We can build the next class after multicopters together.</p>
           </div>
-          <strong>드론 기업 경로 보기</strong>
+          <strong>View Drone Company Path</strong>
         </a>
         <a class="visitor-card" href="#" data-route="ir">
           <div>
-            <h3>개인 투자자</h3>
-            <span>초기 스토리</span>
-            <p>에어택시보다 먼저 돈이 되는 하늘길은 화물입니다. 멀티콥터가 못 가는 거리, 항공기가 비싼 구간이 시장입니다.</p>
+            <h3>Individual Investors</h3>
+            <span>Early Story</span>
+            <p>The first profitable sky route comes from cargo before air taxis. The market is where multicopters cannot reach and conventional aircraft are too expensive.</p>
           </div>
-          <strong>개인 투자자 경로 보기</strong>
+          <strong>View Individual Investor Path</strong>
         </a>
       </div>
 
@@ -2326,23 +2326,23 @@ footer {
   <!-- BRAND_CONTENT_SPREAD_20260627_HOME_TRANSLATION -->
   <section id="S02B_TRANSLATION">
     <div class="container">
-      <span class="eyebrow">브랜드 해석</span>
-      <h2 class="section-title">기술 선택 하나가 <span>협력 범위를 결정합니다</span></h2>
+      <span class="eyebrow">Brand Interpretation</span>
+      <h2 class="section-title">One technology choice <span>defines the range of collaboration</span></h2>
       <div class="tech-effect-list">
         <article class="tech-effect-card">
-          <h3>고정피치 로터</h3>
-          <p>고정피치 로터는 최고속도보다 생산성, 정비성, 반복 운항률을 우선하는 선택입니다. 가변피치 메커니즘을 줄이면 기체 가격과 정비 항목이 낮아지고, 플릿 단위 배치가 쉬워집니다.</p>
-          <div class="effect-line">가변피치가 없으면 제조·정비 협력 진입 비용이 낮아집니다.</div>
+          <h3>Fixed-Pitch Rotor</h3>
+          <p>A fixed-pitch rotor prioritizes productivity, maintainability, and repeat-operation rate over top speed. Reducing variable-pitch mechanisms lowers aircraft price and maintenance items, making fleet deployment easier.</p>
+          <div class="effect-line">Without variable pitch, the entry cost for manufacturing and maintenance partners becomes lower.</div>
         </article>
         <article class="tech-effect-card">
-          <h3>무조종면 아키텍처</h3>
-          <p>무조종면 아키텍처는 자세 제어를 기계식 플랩과 링크 구조에서 분산추진, 위상 제어, 기체 배치로 옮깁니다. 그 결과 점검 항목, 액추에이터, 힌지, 백래시, 정비 부담이 줄어듭니다.</p>
-          <div class="effect-line">움직이는 면이 없으면 점검 항목이 줄고, 협력사 정비 교육도 단순해집니다.</div>
+          <h3>Control-Surface-Free Architecture</h3>
+          <p>A control-surface-free architecture moves attitude control from mechanical flaps and linkages to distributed propulsion, phase control, and aircraft geometry. As a result, inspection items, actuators, hinges, backlash, and maintenance burden decrease.</p>
+          <div class="effect-line">With no moving surfaces, inspection items decrease and partner maintenance training becomes simpler.</div>
         </article>
         <article class="tech-effect-card">
-          <h3>무동력 활강 안전성</h3>
-          <p>무동력 활강 안전성은 활강, 풍차회전, 자동회전, 차동항력 모드로 비상 제어 여유를 확보하는 구조입니다. 이는 화물 운항의 기체 손실 리스크와 장기적인 유인 확장 안전 케이스를 함께 낮춥니다.</p>
-          <div class="effect-line">화물이 먼저 안전 케이스를 쌓습니다. 그 데이터가 UAM 인증 경로를 단축합니다.</div>
+          <h3>Passive Glide Safety</h3>
+          <p>Passive glide safety secures emergency control margin through glide, windmilling, autorotation, and differential-drag modes. It reduces both cargo-aircraft loss risk and the long-term safety case burden for passenger expansion.</p>
+          <div class="effect-line">Cargo builds the safety case first. That data shortens the UAM certification path.</div>
         </article>
       </div>
     </div>
@@ -2351,22 +2351,22 @@ footer {
   <!-- S03_LAMBDA_PRODUCT -->
   <section id="S03_LAMBDA_PRODUCT">
     <div class="container">
-      <span class="eyebrow">제품</span>
-      <h2 class="section-title">Lambda는 화물 회랑에서 시작하는 <span>항공 로봇입니다</span></h2>
+      <span class="eyebrow">Product</span>
+      <h2 class="section-title">Lambda begins with cargo corridors as <span>an aerial robot.</span></h2>
 
       <div class="tech-effect-list" style="margin-bottom: 34px;">
         <article class="tech-effect-card">
-          <h3>기체 라인업보다 먼저 운항 단위를 정합니다.</h3>
-          <p>노선, 탑재량, 도착 시간, 실패 대응, 편당 비용이 먼저입니다. 기체는 그 운항 조건을 만족하기 위해 설계됩니다.</p>
-          <div class="effect-line">초기 목표는 100~500kg급 화물 운항입니다. 이후 화물 운항 데이터와 안전 구조를 기반으로 유인 powered-lift와 자율 승객 운송까지 확장합니다.</div>
+          <h3>We define the operating unit before the aircraft lineup.</h3>
+          <p>Route, payload, arrival time, failure response, and cost per flight come first. The aircraft is designed to meet those operating conditions.</p>
+          <div class="effect-line">The initial target is 100-500 kg cargo operation. From cargo data and the safety architecture, the platform expands toward crewed powered-lift and autonomous passenger transport.</div>
         </article>
         <article class="tech-effect-card">
-          <h3>기술 스택</h3>
+          <h3>Technology Stack</h3>
           <ul class="metric-list">
-            <li><span>안전한 VTOL</span><strong>비동기 틸트로터 아키텍처</strong></li>
-            <li><span>결정론적 비행</span><strong>모드 인식 매트릭스 기반 제어</strong></li>
-            <li><span>단순한 기체</span><strong>무조종면 고정익 구조</strong></li>
-            <li><span>안전 여유</span><strong>무동력 활강, 자동회전, 차동항력 제어</strong></li>
+            <li><span>Safe VTOL</span><strong>Asynchronous Tiltrotor Architecture</strong></li>
+            <li><span>Deterministic Flight</span><strong>Mode-Aware Matrix Control</strong></li>
+            <li><span>Simplified Aircraft</span><strong>Control-Surface-Free Fixed-Wing Structure</strong></li>
+            <li><span>Safety Margin</span><strong>Passive glide, autorotation, and differential-drag control</strong></li>
           </ul>
         </article>
       </div>
@@ -2376,67 +2376,67 @@ footer {
         <div class="spec-card">
           <div class="spec-header">
             <span class="spec-name">lambda-Prototype</span>
-            <span class="spec-type">25kg급 개념시제기</span>
+            <span class="spec-type">25 kg Concept Prototype</span>
           </div>
-          <div class="spec-cost">핵심 비행 전환 검증기</div>
+          <div class="spec-cost">Core Transition-Flight Test Vehicle</div>
           <ul class="spec-list">
-            <li><span>체급</span><span>25 kg급</span></li>
-            <li><span>기체 구조</span><span>조종면 없는 탠덤윙</span></li>
-            <li><span>날개 / 스파</span><span>3 m급 카본 스파·윙</span></li>
-            <li><span>로터 / 틸트</span><span>8개 로터 / 8개 전체 틸팅</span></li>
-            <li><span>동력</span><span>4.5 kW급 하이브리드 전기 추진</span></li>
+            <li><span>Class</span><span>25 kg class</span></li>
+            <li><span>Aircraft Structure</span><span>Tandem wing without control surfaces</span></li>
+            <li><span>Wing / Spar</span><span>3 m-class carbon spar and wing</span></li>
+            <li><span>Rotor / Tilt</span><span>8 rotors / all 8 tilt</span></li>
+            <li><span>Power</span><span>4.5 kW-class hybrid-electric propulsion</span></li>
           </ul>
-          <p class="spec-desc">비동기 틸트, 무동력 고양력장치, 가상피토관, 하이브리드 전력 버퍼를 실제 기체에서 검증하는 첫 체급입니다.</p>
+          <p class="spec-desc">This is the first class to validate asynchronous tilt, passive high-lift control, virtual pitot sensing, and a hybrid power buffer on a real aircraft.</p>
         </div>
 
         <!-- lambda-Light -->
         <div class="spec-card">
           <div class="spec-header">
             <span class="spec-name">lambda-Light</span>
-            <span class="spec-type">Part 103 체급</span>
+            <span class="spec-type">Part 103 Class</span>
           </div>
-          <div class="spec-cost">개인·레저·기술 홍보 파생형</div>
+          <div class="spec-cost">Personal, leisure, and technology demonstration variant</div>
           <ul class="spec-list">
-            <li><span>체급</span><span>Part 103급</span></li>
-            <li><span>역할</span><span>초기 공개 제품</span></li>
-            <li><span>용도</span><span>초기 비행 데이터 축적 및 시장 검증</span></li>
-            <li><span>핵심 IP</span><span>비동기 틸트로터 / 가상조종면</span></li>
+            <li><span>Class</span><span>Part 103 class</span></li>
+            <li><span>Role</span><span>Initial public product</span></li>
+            <li><span>Use</span><span>Initial flight-data accumulation and market validation</span></li>
+            <li><span>Core IP</span><span>Asynchronous tiltrotor / virtual control surface</span></li>
           </ul>
-          <p class="spec-desc">Lambda 아키텍처의 핵심 기술을 가장 먼저 실제 비행으로 증명하는 경량 체급입니다.</p>
+          <p class="spec-desc">A lightweight class that proves the core technologies of the Lambda architecture in actual flight first.</p>
         </div>
 
         <!-- lambda-Mid -->
         <div class="spec-card">
           <div class="spec-header">
             <span class="spec-name">lambda-Mid</span>
-            <span class="spec-type">무인 화물 패밀리</span>
+            <span class="spec-type">Uncrewed Cargo Family</span>
           </div>
-          <div class="spec-cost">100kg급 BVLOS 화물 검증 체급</div>
+          <div class="spec-cost">100 kg-class BVLOS cargo validation class</div>
           <ul class="spec-list">
-            <li><span>체급</span><span>무인 BVLOS 화물</span></li>
-            <li><span>페이로드</span><span>100 kg</span></li>
-            <li><span>역할</span><span>무인 화물 운항 데이터 축적</span></li>
-            <li><span>위치</span><span>500kg 화물기로 가는 중간 체급</span></li>
+            <li><span>Class</span><span>Uncrewed BVLOS cargo</span></li>
+            <li><span>Payload</span><span>100 kg</span></li>
+            <li><span>Role</span><span>Uncrewed cargo-operation data accumulation</span></li>
+            <li><span>Position</span><span>Intermediate class toward the 500 kg cargo aircraft</span></li>
           </ul>
-          <p class="spec-desc">BVLOS 무인 화물 운항을 위한 중간 체급입니다. 500kg 미드마일 화물기로 가기 전에 실제 회랑에서 인증, 운항, 정비 데이터를 쌓는 라인입니다.</p>
+          <p class="spec-desc">This is an intermediate class for BVLOS uncrewed cargo operation. It builds certification, operation, and maintenance data in real corridors before the 500 kg mid-mile cargo aircraft.</p>
         </div>
 
         <!-- lambda-Heavy -->
         <div class="spec-card">
           <div class="spec-header">
             <span class="spec-name">lambda-Heavy</span>
-            <span class="spec-type">무인 화물 패밀리</span>
+            <span class="spec-type">Uncrewed Cargo Family</span>
           </div>
-          <div class="spec-cost">1억원급 운항자산 목표</div>
+          <div class="spec-cost">KRW 100 million operating-asset target</div>
           <ul class="spec-list">
-            <li><span>체급</span><span>무인 미드마일 화물 VTOL</span></li>
-            <li><span>페이로드</span><span>500 kg</span></li>
-            <li><span>최대 속도</span><span>240 km/h</span></li>
-            <li><span>최대 항속거리</span><span>1,000 km</span></li>
-            <li><span>기체 구조</span><span>고정피치 로터 / 무조종면 / 저정비</span></li>
-            <li><span>사업 모델</span><span>Lease + Operate + SaaS</span></li>
+            <li><span>Class</span><span>Uncrewed mid-mile cargo VTOL</span></li>
+            <li><span>Payload</span><span>500 kg</span></li>
+            <li><span>Maximum speed</span><span>240 km/h</span></li>
+            <li><span>Maximum range</span><span>1,000 km</span></li>
+            <li><span>Aircraft Structure</span><span>Fixed-pitch rotor / no control surfaces / low maintenance</span></li>
+            <li><span>Business Model</span><span>Lease + Operate + SaaS</span></li>
           </ul>
-          <p class="spec-desc">무인 미드마일 화물의 주력 체급입니다. 기체를 한 번 팔아넘기는 제품이 아니라 500kg급 처리량을 반복 판매하는 플릿 운항자산입니다.</p>
+          <p class="spec-desc">This is the main class for uncrewed mid-mile cargo. It is not a one-time aircraft sale, but a fleet operating asset that repeatedly sells 500 kg-class throughput.</p>
         </div>
 
         <!-- lambda-Shuttle -->
@@ -2445,16 +2445,16 @@ footer {
             <span class="spec-name">lambda-Shuttle</span>
             <span class="spec-type">AC 21.17-4 powered-lift</span>
           </div>
-          <div class="spec-cost">2억원급 자율 승객운송 확장 목표</div>
+          <div class="spec-cost">KRW 200 million autonomous passenger-transport expansion target</div>
           <ul class="spec-list">
             <li><span>MTOW</span><span>890 kg</span></li>
-            <li><span>페이로드</span><span>475 kg = 5명 x 95 kg</span></li>
-            <li><span>좌석</span><span>5인승</span></li>
-            <li><span>페이로드 비율</span><span>약 53.4%</span></li>
-            <li><span>순항 속도</span><span>최대 240 km/h</span></li>
-            <li><span>파워트레인</span><span>200 kW급 하이브리드</span></li>
+            <li><span>Payload</span><span>475 kg = 5 people x 95 kg</span></li>
+            <li><span>Seats</span><span>5 seats</span></li>
+            <li><span>Payload ratio</span><span>Approx. 53.4%</span></li>
+            <li><span>Cruise speed</span><span>Up to 240 km/h</span></li>
+            <li><span>Powertrain</span><span>200 kW-class hybrid</span></li>
           </ul>
-          <p class="spec-desc">여객형은 AC 21.17-4 powered-lift 규제 트랙의 후속 제품입니다. 무인 화물 플릿 데이터가 안전 케이스를 만들고, Flight OS가 원격감시형 및 무인 자율 승객운송으로 이어집니다.</p>
+          <p class="spec-desc">The passenger variant is a later product on the AC 21.17-4 powered-lift regulatory track. Uncrewed cargo fleet data builds the safety case, and Flight OS leads to remote-supervised and autonomous passenger transport.</p>
         </div>
       </div>
     </div>
@@ -2463,37 +2463,37 @@ footer {
   <!-- S04_TECH_POSITIONING -->
   <section id="S04_TECH_POSITIONING">
     <div class="container">
-      <span class="eyebrow">기술</span>
-      <h2 class="section-title">운항 조건이 <span>기체 구조를 결정합니다</span></h2>
+      <span class="eyebrow">Technology</span>
+      <h2 class="section-title">Operating conditions <span>define the aircraft structure</span></h2>
 
       <div class="tech-effect-list">
         <article class="tech-effect-card">
-          <h3>운항이 먼저입니다</h3>
-          <p>탑재량, 거리, 이착륙 공간, 도착 시간, 실패 거동, 편당 비용이 먼저 정해집니다.</p>
-          <div class="effect-line">기체 구조는 그 다음입니다.</div>
+          <h3>Operation comes first</h3>
+          <p>Payload, distance, takeoff and landing space, arrival time, failure behavior, and cost per flight are defined first.</p>
+          <div class="effect-line">Aircraft structure follows.</div>
         </article>
 
         <article class="tech-effect-card">
-          <h3>설명 가능한 비행</h3>
-          <p>모드 인식 제어는 비행 거동을 경계 안에 두고, 반복 가능하게 만들며, 운항 로그와 시험 데이터로 설명할 수 있게 합니다.</p>
-          <div class="effect-line">물류 운항에 필요한 것은 신비한 자율성이 아니라 반복 가능한 신뢰성입니다.</div>
+          <h3>Explainable Flight</h3>
+          <p>Mode-aware control keeps flight behavior within boundaries, makes it repeatable, and explains it through operating logs and test data.</p>
+          <div class="effect-line">Logistics operation needs repeatable reliability, not mysterious autonomy.</div>
         </article>
 
         <article class="tech-effect-card">
-          <h3>임무 하드웨어</h3>
-          <p>VTOL 접근성, 장거리 순항, 화물 반복 운항, 저정비는 별개 기능이 아니라 같은 운항 단가를 만드는 하나의 설계 문제입니다.</p>
-          <div class="effect-line">기체 구조는 노선과 화물의 특징에 의해서 만들어집니다.</div>
+          <h3>Mission Hardware</h3>
+          <p>VTOL access, long-range cruise, repeated cargo operation, and low maintenance are not separate features. They are one design problem that creates the same operating cost.</p>
+          <div class="effect-line">Aircraft structure is shaped by the route and the cargo.</div>
         </article>
 
         <article class="tech-effect-card">
-          <h3>보호된 아키텍처</h3>
-          <p>시뮬레이션, 제어, 기체, 안전 거동, IP를 함께 개발해 기체 단가, 정비비, 운항률을 동시에 낮춥니다.</p>
-          <div class="effect-line">IP는 서류가 아니라 운항 단가를 지키는 방어벽입니다.</div>
+          <h3>Protected Architecture</h3>
+          <p>Simulation, control, aircraft structure, safety behavior, and IP are developed together to lower aircraft cost, maintenance cost, and utilization risk at the same time.</p>
+          <div class="effect-line">IP is not paperwork. It is a wall that protects operating cost.</div>
         </article>
       </div>
 
       <div style="text-align: center; margin-top: 34px;">
-        <a class="choices-cta" href="#" data-route="technology">기술 전체 보기</a>
+        <a class="choices-cta" href="#" data-route="technology">View Full Technology</a>
       </div>
     </div>
   </section>
@@ -2501,63 +2501,63 @@ footer {
   <!-- S05_UNIT_ECONOMICS -->
   <section id="S05_UNIT_ECONOMICS">
     <div class="container">
-      <span class="eyebrow">단위 경제성</span>
-      <h2 class="section-title">저비용 항공 물류 시장은 기체 원가와 반복 운항률이 동시에 맞아야 열립니다</h2>
+      <span class="eyebrow">Unit Economics</span>
+      <h2 class="section-title">A low-cost aerial logistics market opens only when aircraft cost and repeat-operation rate align.</h2>
  
       <div class="econ-layout">
         <div>
           <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
-            더 좋은 항공기가 아니라 더 낮은 운항 단가가 필요합니다.
+            The market needs lower operating cost, not just a better aircraft.
           </h3>
           <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.75;">
-            항공 물류는 기체 단가, 에너지, 정비, 안전, 인증, 가동률이 동시에 맞아야 열립니다. Lambda는 이 비용층을 기체 구조와 운항 소프트웨어로 함께 줄입니다.
+            Aerial logistics works only when aircraft price, energy, maintenance, safety, certification, and utilization align. Lambda reduces these cost layers through aircraft structure and operating software together.
           </p>
           <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
-            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">설계 혁신을 통해 기체 원가와 운항단가를 획기적으로 낮췄습니다.</div>
-            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">기체 단가, 정비 부담, 순항 에너지, 운항률은 하나의 물류 자산 경제성으로 묶입니다.</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">Design innovation sharply lowers aircraft cost and operating cost.</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Aircraft price, maintenance burden, cruise energy, and utilization are tied into one logistics-asset economy.</div>
           </div>
         </div>
  
         <div class="econ-bars-wrap">
           <div class="bar-row">
             <div class="bar-label">
-              <span>기체 단가</span>
-              <span>1/10 목표</span>
+              <span>Aircraft price</span>
+              <span>1/10 target</span>
             </div>
             <div class="bar-track">
               <div class="bar-fill" style="width: 78%;"></div>
             </div>
             <div class="bar-info">
-              <span>무조종면 기체</span>
-              <span>자동화 생산 경로</span>
+              <span>Control-surface-free aircraft</span>
+              <span>Automated production path</span>
             </div>
           </div>
  
           <div class="bar-row">
             <div class="bar-label">
-              <span>정비 부담</span>
-              <span>부품 수 감소</span>
+              <span>Maintenance burden</span>
+              <span>Reduced parts count</span>
             </div>
             <div class="bar-track">
               <div class="bar-fill" style="width: 72%;"></div>
             </div>
             <div class="bar-info">
-              <span>기계식 조종면 감소</span>
-              <span>점검 항목 감소</span>
+              <span>Reduced mechanical control surfaces</span>
+              <span>Reduced inspection items</span>
             </div>
           </div>
  
           <div class="bar-row">
             <div class="bar-label">
-              <span>에너지 비용</span>
-              <span>고정익 순항</span>
+              <span>Energy cost</span>
+              <span>Fixed-wing cruise</span>
             </div>
             <div class="bar-track">
               <div class="bar-fill" style="width: 66%;"></div>
             </div>
             <div class="bar-info">
-              <span>멀티콥터 에너지 한계 없는 장거리</span>
-              <span>지역 노선의 실용화</span>
+              <span>Long range without multicopter energy limits</span>
+              <span>Practical Regional Routes</span>
             </div>
           </div>
         </div>
@@ -2568,8 +2568,8 @@ footer {
   <!-- S06_MARKET_ROUTE -->
   <section id="S06_MARKET_ROUTE">
     <div class="container">
-      <span class="eyebrow">시장</span>
-      <h2 class="section-title">시간 손실이 항공 운송비보다 비싼 구간들</h2>
+      <span class="eyebrow">Market</span>
+      <h2 class="section-title">Corridors where time loss costs more than air transport</h2>
  
       <div class="route-grid">
         <div class="route-visual">
@@ -2581,30 +2581,30 @@ footer {
             <circle cx="300" cy="180" r="5" fill="#1d1d1f" />
             <circle cx="170" cy="135" r="3.5" fill="#86868b" />
           </svg>
-          <div class="map-label label-busan">▲ 부산항 (Busan Port)</div>
-          <div class="map-label label-tsushima">대마도 (Tsushima)</div>
-          <div class="map-label label-japan">▲ 일본 본토 거점<br>(후쿠오카/기타큐슈/시모노세키)</div>
+          <div class="map-label label-busan">▲ Busan Port</div>
+          <div class="map-label label-tsushima">Tsushima</div>
+          <div class="map-label label-japan">▲ Mainland Japan hub<br>(Fukuoka / Kitakyushu / Shimonoseki)</div>
         </div>
  
         <div>
           <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
-            도로로는 늦고, 해상으로는 일정이 묶이고, 기존 항공기로는 단가가 맞지 않는 구간이 있습니다.
+            Some corridors are too slow by road, schedule-bound by sea, and too expensive for conventional aircraft.
           </h3>
           <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; line-height: 1.7;">
-            Lambda는 그 틈을 위한 항공 물류 장비입니다. 도서 물류, 산간 보급, 산업 화물, 긴급 배송처럼 시간 손실이 상품가치와 안전성을 깎는 구간에서 직접 항공 접근을 제공합니다.
+            Lambda is aerial logistics equipment for that gap. It provides direct air access where time loss erodes value and safety, including island logistics, mountain supply, industrial cargo, and urgent delivery.
           </p>
           <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
             <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
-              <span>도서 물류</span>
-              <strong style="color: var(--text-main);">항만 의존 없는 화물 접근</strong>
+              <span>Island logistics</span>
+              <strong style="color: var(--text-main);">Cargo access without port dependence</strong>
             </li>
             <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
-              <span>산업 화물</span>
-              <strong style="color: var(--text-main);">부품, 공구, 배터리, 샘플</strong>
+              <span>Industrial cargo</span>
+              <strong style="color: var(--text-main);">Parts, tools, batteries, samples</strong>
             </li>
             <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
-              <span>자율 화물</span>
-              <strong style="color: var(--text-main);">고정익 순항 + VTOL 접근성</strong>
+              <span>Autonomous cargo</span>
+              <strong style="color: var(--text-main);">Fixed-wing cruise + VTOL access</strong>
             </li>
           </ul>
         </div>
@@ -2616,69 +2616,69 @@ footer {
   <section id="S07_IP_CERTIFICATION">
     <div class="container">
       <span class="eyebrow">IP</span>
-      <h2 class="section-title">Lambda IP는 운항 비용을 낮추고, 비행 구조를 안전하게 바꿉니다.</h2>
+      <h2 class="section-title">Lambda IP lowers operating cost and makes the flight structure safer.</h2>
 
       <div class="tech-effect-list" style="margin-bottom: 34px;">
         <article class="tech-effect-card">
           
-          <p>Lambda의 IP는 수직이착륙 접근성, 결정론적 비행, 고정피치 저정비 로터, 무조종면 구조, 무동력 활강을 하나의 통합된 운항자산으로 연결합니다.</p>
+          <p>Lambda IP connects VTOL access, deterministic flight, fixed-pitch low-maintenance rotors, a control-surface-free structure, and passive glide into one integrated operating asset.</p>
           <ul class="metric-list">
-            <li><span>안전한 VTOL</span><strong>비동기 틸트로터 아키텍처</strong></li>
-            <li><span>더 단순한 기체</span><strong>무조종면 고정익 구조</strong></li>
-            <li><span>낮은 부담</span><strong>가동 부품 감소, 더 명확한 안전 거동</strong></li>
+            <li><span>Safe VTOL</span><strong>Asynchronous Tiltrotor Architecture</strong></li>
+            <li><span>Simpler aircraft</span><strong>Control-Surface-Free Fixed-Wing Structure</strong></li>
+            <li><span>Lower burden</span><strong>Fewer moving parts and clearer safety behavior</strong></li>
           </ul>
-          <div class="effect-line"><a href="#" data-route="ip" style="color: inherit; text-decoration: none;">IP 비교 전체 보기</a></div>
+          <div class="effect-line"><a href="#" data-route="ip" style="color: inherit; text-decoration: none;">View Full IP Comparison</a></div>
         </article>
       </div>
  
       <div class="patents-grid">
         <div class="patent-card">
-          <h4>비동기 틸트로터</h4>
-          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">안전한 VTOL</span>
-          <p>거점 접근성과 미드마일 순항 효율을 동시에 만족시키는 추진 아키텍처입니다.</p>
+          <h4>Asynchronous Tiltrotor</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Safe VTOL</span>
+          <p>A propulsion architecture that satisfies both point access and mid-mile cruise efficiency.</p>
         </div>
         <div class="patent-card">
-          <h4>결정론적 비행</h4>
-          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">모드 인식 제어</span>
-          <p>비행 모드는 경계 안에 있고, 반복 가능하며, 운항 로그로 설명 가능한 형태로 관리합니다.</p>
+          <h4>Deterministic Flight</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Mode-Aware Control</span>
+          <p>Flight modes stay within boundaries, are repeatable, and are managed in a way that can be explained with operating logs.</p>
         </div>
         <div class="patent-card">
-          <h4>무조종면 기체</h4>
-          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">생산 가능한 기체 구조</span>
-          <p>조종면을 제거하여 기계적 복잡도와 정비 항목을 동시에 줄였습니다.</p>
+          <h4>Control-surface-free aircraft</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Manufacturable Aircraft Structure</span>
+          <p>Removing control surfaces reduces mechanical complexity and maintenance items at the same time.</p>
         </div>
         <div class="patent-card">
-          <h4>자동회전 인식 안전성</h4>
-          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">인증 장벽 축소</span>
-          <p>추진력 상실 상황에서도 자동회전과 활강 모드로 전환해 제어 가능한 하강을 유도하도록 설계되었습니다.</p>
+          <h4>Autorotation-Aware Safety</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Reduced certification burden</span>
+          <p>The aircraft is designed to shift into autorotation and glide modes after loss of thrust, inducing a controllable descent.</p>
         </div>
         <div class="patent-card">
-          <h4>무동력 활강 제어</h4>
-          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">운항 복원력</span>
-          <p>추진력이 사라진 상황에서도 기체 자체의 활강 성능으로 자세를 유지한 상태에서 하강이 가능합니다.</p>
+          <h4>Passive Glide Control</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Operational Resilience</span>
+          <p>Even after thrust is lost, the aircraft can descend while maintaining attitude through its own glide performance.</p>
         </div>
       </div>
  
       <div class="cert-list">
         <article class="cert-item">
-          <h4>기체 단가</h4>
-          <span>무조종면 구조</span>
-          <p>기체 구조가 단순하여 기체 원가는 획기적으로 낮아집니다.</p>
+          <h4>Aircraft price</h4>
+          <span>Control-Surface-Free Structure</span>
+          <p>A simplified aircraft structure sharply lowers aircraft cost.</p>
         </article>
         <article class="cert-item">
-          <h4>정비 부담</h4>
-          <span>가동 부품 최소화</span>
-          <p>움직이는 조종면과 기계 요소를 최소화해 점검, 교체, 서비스 항목을 줄이고 정비 부담을 낮춥니다.</p>
+          <h4>Maintenance burden</h4>
+          <span>Minimum Moving Parts</span>
+          <p>Minimizing moving control surfaces and mechanical elements reduces inspection, replacement, and service items.</p>
         </article>
         <article class="cert-item">
-          <h4>인증 장벽</h4>
-          <span>결정론적·안전 인식 거동</span>
-          <p>예측 가능하고 반복 가능한 비행 거동을 기반으로 안전성을 설명하고 입증하기 쉬운 인증 구조를 지향합니다.</p>
+          <h4>Certification Barrier</h4>
+          <span>Deterministic, safety-aware behavior</span>
+          <p>The certification structure aims to explain and prove safety through predictable and repeatable flight behavior.</p>
         </article>
         <article class="cert-item">
-          <h4>운영 모델</h4>
-          <span>리스, 플릿 운항, SaaS</span>
-          <p>단순한 기체 판매를 넘어, 반복 운항을 통해 지속적인 수익을 창출하는 항공 물류 자산으로 진화합니다.</p>
+          <h4>Operating Model</h4>
+          <span>Lease, fleet operation, SaaS</span>
+          <p>Beyond simple aircraft sales, it evolves into an aerial logistics asset that produces recurring revenue through repeat operation.</p>
         </article>
       </div>
     </div>
@@ -2688,30 +2688,30 @@ footer {
   <section id="S08_PHYSICAL_AI_HUMANOID">
     <div class="container">
       <span class="eyebrow">Physical AI</span>
-      <h2 class="section-title">항공 물류에서 시작해 <span>실제 기계를 움직이는 Physical AI로 확장합니다</span></h2>
+      <h2 class="section-title">Starting with aerial logistics, <span>it expands into Physical AI that moves real machines.</span></h2>
 
       <div class="tech-effect-list" style="margin-bottom: 28px;">
         <article class="tech-effect-card">
-          <h3>운항 조건에서 기계를 정의하는 방식은 공중에서 끝나지 않습니다.</h3>
-          <p>Lambda를 움직이는 같은 루프는 휴머노이드와 자율 기계에도 적용됩니다. 임무를 정의하고, 동작을 시뮬레이션하고, 제어 루프를 닫고, 기계를 운항 조건에 맞게 설계합니다.</p>
-          <div class="effect-line">항공 로봇은 첫 번째 증명입니다. 그 뒤에는 물류, 제조, 정비 현장을 움직이는 Physical AI가 있습니다.</div>
+          <h3>Defining machines from operating conditions does not end in the air.</h3>
+          <p>The same loop that moves Lambda also applies to humanoids and autonomous machines: define the mission, simulate the motion, close the control loop, and design the machine for its operating conditions.</p>
+          <div class="effect-line">The aerial robot is the first proof. Behind it is Physical AI for logistics, manufacturing, and maintenance sites.</div>
         </article>
       </div>
 
       <div class="subpage-list">
         <a class="subpage-card" href="#" data-route="technology">
           <div>
-            <h3>AI 기반 하드웨어</h3>
-            <p>임무, 움직임, 제어, 안전, 배치 조건이 기계를 만듭니다.</p>
+            <h3>AI-Based Hardware</h3>
+            <p>Mission, motion, control, safety, and deployment conditions shape the machine.</p>
           </div>
-          <strong>기술 페이지</strong>
+          <strong>Technology Page</strong>
         </a>
         <a class="subpage-card" href="#" data-route="technology">
           <div>
-            <h3>휴머노이드 시스템</h3>
-            <p>실제 운용 환경을 위한 동작, 조작, 균형, 작업 수행입니다.</p>
+            <h3>Humanoid Systems</h3>
+            <p>Motion, manipulation, balance, and task execution for real operating environments.</p>
           </div>
-          <strong>기술 페이지</strong>
+          <strong>Technology Page</strong>
         </a>
       </div>
 
@@ -2722,48 +2722,48 @@ footer {
   <section id="S09_CONTACT">
     <div class="container contact-layout">
       <div class="contact-info">
-        <h3>기술 협력을 논의하고 싶으시면<br>연락주세요.</h3>
+        <h3>To discuss technology collaboration,<br>contact us.</h3>
         <p>
-          기체 구조, Flight OS, 운항 회랑, IP 라이선스 — 어느 지점에서든 협력을 시작할 수 있습니다.
+          Aircraft structure, Flight OS, operating corridors, and IP licensing: collaboration can begin from any point.
         </p>
         <p>
-          Lambda는 항공 물류에서 시작합니다. 더 큰 그림은 물리 세계를 위한 임무 정의형 기계입니다.
+          Lambda starts in aerial logistics. The larger picture is mission-defined machines for the physical world.
         </p>
         <div style="font-size: 14px; color: var(--text-muted);">
-          <strong>리시브파워</strong><br>
-          항공 로봇, Physical AI, 임무 정의형 기계 아키텍처.
+          <strong>Receivepower</strong><br>
+          Aerial robots, Physical AI, and mission-defined machine architecture.
         </div>
       </div>
 
       <div class="contact-form-card">
         <form onsubmit="event.preventDefault(); alert('문의가 기록되었습니다.');">
           <div class="form-group">
-            <label for="f-name">성함</label>
-            <input type="text" id="f-name" required placeholder="성함을 입력하세요.">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" required placeholder="Name을 입력하세요.">
           </div>
           <div class="form-group">
-            <label for="f-company">소속</label>
+            <label for="f-company">Organization</label>
             <input type="text" id="f-company" required placeholder="회사 또는 기관명">
           </div>
           <div class="form-group">
-            <label for="f-email">이메일</label>
-            <input type="email" id="f-email" required placeholder="연락받으실 이메일 주소">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" required placeholder="연락받으실 Email 주소">
           </div>
           <div class="form-group">
-            <label for="f-type">문의 유형</label>
+            <label for="f-type">Inquiry Type</label>
             <select id="f-type" required>
-              <option value="partner">협력 논의</option>
-              <option value="investor">투자자 자료 요청</option>
-              <option value="technical">기술 구조 논의</option>
-              <option value="talent">인재 협의</option>
-              <option value="physical_ai">Physical AI 협력</option>
+              <option value="partner">Discuss Collaboration</option>
+              <option value="investor">Investor Materials</option>
+              <option value="technical">Technology Architecture Discussion</option>
+              <option value="talent">Talent Discussion</option>
+              <option value="physical_ai">Physical AI Collaboration</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="f-msg">제안 내용</label>
+            <label for="f-msg">Message</label>
             <textarea id="f-msg" rows="4" required placeholder="협의 내용을 구체적으로 기재해 주십시오."></textarea>
           </div>
-          <button class="submit-btn" type="submit">문의하기</button>
+          <button class="submit-btn" type="submit">Contact</button>
         </form>
       </div>
     </div>
@@ -2774,7 +2774,7 @@ footer {
     <div class="container footer-inner">
       <span class="logo-mark">R</span>
       <div class="footer-copy">
-        &copy; 2026 리시브파워.
+        &copy; 2026 Receivepower.
       </div>
     </div>
   </footer>
@@ -2786,21 +2786,21 @@ footer {
 <main class="page-view" data-page="company">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">회사소개</span>
-        <h1>리시브파워는 지능형 로봇을 2019년부터 개발해 왔습니다.</h1>
-        <p class="lead">인간형 Humanoid부터 비행체 Aerial robot까지, Physical AI로 움직이는 기계를 만듭니다.</p>
+        <span class="eyebrow">Company</span>
+        <h1>Receivepower has developed intelligent robots since 2019.</h1>
+        <p class="lead">From humanoids to aerial robots, we build machines that move through Physical AI.</p>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container subnav-grid">
         <a class="subnav-card" href="#" data-route="company">
-          <strong>회사 소개</strong>
-          <span>리시브파워가 만드는 Physical AI 회사의 방향을 봅니다.</span>
+          <strong>Company</strong>
+          <span>See the direction of the Physical AI company Receivepower is building.</span>
         </a>
         <a class="subnav-card" href="#" data-route="company">
           <strong>IR</strong>
-          <span>투자 논리, 플릿 자산, 반복수익 구조를 봅니다.</span>
+          <span>See the investment logic, fleet assets, and recurring revenue structure.</span>
         </a>
       </div>
     </section>
@@ -2809,8 +2809,8 @@ footer {
       <div class="container message-list">
         <article class="message">
           <span class="label">Mission</span>
-          <h2>하늘을 나는 자동차를 꿈 꾼 적이 있다면?</h2>
-          <p>Lambda SDA는, 자동차 수준의 가격, 자동차 수준의 유지비, 자동차 수준의 부품을 사용하지만 하늘을 날아다니는 비행체입니다.</p><a class="back-link" href="#company-flying-car-narrative">개발 내러티브 보기</a>
+          <h2>Have you ever dreamed of a flying car?</h2>
+          <p>Lambda SDA is an aircraft that flies in the sky while using car-level price targets, car-level maintenance cost, and car-level parts.</p><a class="back-link" href="#company-flying-car-narrative">View Development Narrative</a>
         </article>
 </div>
     </section>
@@ -2820,45 +2820,45 @@ footer {
       <div class="container message-list">
         <article class="message">
           <span class="label">Development Narrative</span>
-          <h2>하늘을 나는 자동차: 꿈에서 현실로</h2>
-          <p>누구나 어릴 적 하늘을 나는 자동차를 꿈꿉니다. 저 역시 마찬가지였습니다. 틸트로터가 그 꿈을 이뤄줄 미래의 비행기라 믿었지만, 1992년 발생한 오스프리 추락 사고는 거대한 의문을 남겼습니다. 도심을 날아다니려면 무엇보다 안전한 틸트로터가 먼저여야 했습니다.</p>
+          <h2>Flying Car: From Dream to Reality</h2>
+          <p>Almost everyone dreams of a flying car as a child. I did too. I believed the tiltrotor could become the aircraft that realized that dream, but the 1992 Osprey crash left a major question. To fly over cities, a safe tiltrotor had to come first.</p>
         </article>
         <article class="message">
           <span class="label">01</span>
-          <h2>흔한 꿈, 그리고 발견한 장벽</h2>
-          <p>하늘을 나는 자동차는 오래된 꿈입니다. 하지만 그 꿈이 도심의 교통수단이 되려면 수직이착륙, 장거리 순항, 안전한 천이비행이 동시에 필요했습니다.</p>
+          <h2>A Common Dream and the Barrier We Found</h2>
+          <p>The flying car is an old dream. But for that dream to become urban transportation, VTOL, long-range cruise, and safe transition flight must all exist together.</p>
         </article>
         <article class="message">
           <span class="label">02</span>
-          <h2>람다엔진과 날개 계산</h2>
-          <p>자동차 부품으로 만들어야 진짜 하늘을 나는 자동차입니다. 2006년 독일 월드컵 즈음에, 우리나라가 독자 개발한 람다엔진을 보며 확신했습니다. 이 엔진을 얹었을 때 페이로드 여유분이 얼마나 될지, 날개 형태와 기체 종류별로 드라이 블록의 경량화와 냉각 시스템을 바꿔가며 셀 수 없는 사고실험이 취미가 되었습니다. 감마 엔진은 2인승, 람다엔진은 3인승이라는 식의 계산이 이어졌습니다.</p>
+          <h2>Lambda Engine and Wing Calculations</h2>
+          <p>A true flying car must be made from automotive parts. Around the 2006 World Cup in Germany, Korea’s independently developed Lambda engine made that clear to me. I began countless thought experiments: how much payload margin would remain with that engine, how wing forms and aircraft types would change, and how the dry block and cooling system could be lightened. Gamma engine for two seats, Lambda engine for three seats: that was the kind of calculation that continued.</p>
         </article>
         <article class="message">
           <span class="label">03</span>
-          <h2>200종류의 수직이착륙기 검토와 잊혔던 특허</h2>
-          <p>수직이착륙기 형태만 200종류 이상 검토한 끝에, 안전 문제를 해결할 비동기 틸트로터 구조를 찾아내어 2020년 특허를 출원했습니다.</p>
+          <h2>Reviewing 200 VTOL Forms and the Forgotten Patent</h2>
+          <p>After reviewing more than 200 VTOL configurations, we found an asynchronous tiltrotor structure to address the safety problem and filed a patent in 2020.</p>
         </article>
         <article class="message">
           <span class="label">04</span>
-          <h2>뜻밖의 등록, 그리고 의기투합</h2>
-          <p>휴머노이드 로봇의 개발 계획(WBS)을 짜고 제품 양산을 준비하던 어느 날, 잊고 있던 특허의 등록 결정서가 날아왔습니다. 이 소식을 접한 뒤, 휴머노이드를 함께 개발하던 동업자들과 세상을 바꾸어 보기로 의기투합했습니다. 로봇 제어 기술의 정점인 휴머노이드 전문가들이 비행체 혁신을 위해 뜻을 모은 순간이었습니다.</p>
+          <h2>An Unexpected Registration and a Shared Decision</h2>
+          <p>While preparing the WBS and production plan for humanoid robots, the registration decision for the forgotten patent arrived. The partners developing humanoids together decided to take on a larger change. It was the moment humanoid experts at the peak of robot-control technology gathered around aircraft innovation.</p>
         </article>
         <article class="message">
           <span class="label">05</span>
-          <h2>2026년, SDA 아키텍처의 완성</h2>
-          <p>2020년 출원했던 초기 특허의 경험을 바탕으로, 2026년에는 운항 전 과정을 아우르는 독점적 특허망으로 새롭게 설계했습니다.</p>
+          <h2>2026: Completion of the SDA Architecture</h2>
+          <p>Based on the experience of the 2020 initial patent filing, we redesigned the architecture in 2026 as an exclusive patent network covering the full operating process.</p>
         </article>
         <article class="message">
           <span class="label">06</span>
-          <h2>트럭을 이기는 비행체</h2>
-          <p>SDA는 단순한 연구실 속 아이디어가 아닙니다. 어릴 적 꿈꾸던 하늘을 나는 자동차이자, 압도적인 제조·유지비 절감을 통해 실제 육상 트럭과의 가격 경쟁에서 이기는 유일한 비행체를 세상에 구현하는 시작점입니다.</p>
+          <h2>An Aircraft That Beats Trucks</h2>
+          <p>SDA is not just a lab idea. It is the flying car once dreamed of, and the starting point for building an aircraft that can beat real ground trucks through dramatic reductions in manufacturing and maintenance cost.</p>
         </article>
       </div>
     </section>
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="company">IR 보기</a>
-        <a class="button secondary" href="#" data-route="product" data-route="product">제품 보기</a>
+        <a class="button primary" href="#" data-route="company">View IR</a>
+        <a class="button secondary" href="#" data-route="product" data-route="product">View Product</a>
       </div>
     </section>
   </main>
@@ -2866,15 +2866,15 @@ footer {
 <main class="page-view" data-page="ir">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">투자자 관계</span>
-        <h1>1억원급 운항자산이 회랑별 반복수익을 만듭니다.</h1>
-        <p class="lead">단순한 기체 판매가 아니라 플릿 보유, 회랑 운영권, MRO, Flight OS, 감항유지 데이터, 지역 JV로 확장되는 반복수익 구조를 창출합니다.</p>
+        <span class="eyebrow">Investor Relations</span>
+        <h1>A KRW 100 million operating asset creates recurring revenue by corridor.</h1>
+        <p class="lead">The logic is not a simple aircraft sale. It creates recurring revenue across fleet ownership, corridor operating rights, MRO, Flight OS, airworthiness data, and regional JVs.</p>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="company">Company로 돌아가기</a>
+        <a class="back-link" href="#" data-route="company">Back to Company</a>
       </div>
     </section>
 
@@ -2882,34 +2882,34 @@ footer {
       <div class="container message-list">
         <article class="message" id="company-vc">
           <span class="label">VC</span>
-          <h2>인증 스케줄</h2>
-          <p>시총 10조짜리 AAM 회사도 몇 년째 못 끝낸 인증을, 저희는 수학으로 통과합니다.</p>
-          <p>우리가 주목해야 할 것은 인증입니다. 인증이 투명하게 예측되는 것은 불가능하지 않습니다.</p>
-          <p>조비(Joby) 같은 eVTOL 기업들의 기업가치가 흔들리는 이유는 단순합니다. 인증 일정을 아무도 확정할 수 없기 때문입니다. 시장은 이걸 기술력이 아니라 '자본이 얼마나 더 타들어갈지 모르는 리스크'로 읽습니다.</p>
-          <p>eVTOL은 다음 2가지 FAA 규제를 반드시 통과해야 합니다.</p>
+          <h2>Certification Schedule</h2>
+          <p>We address, with mathematics, the certification that even KRW 10 trillion AAM companies have not finished for years.</p>
+          <p>Certification is what matters. Making the certification schedule transparent and predictable is not impossible.</p>
+          <p>The reason valuations of eVTOL companies such as Joby fluctuate is simple: no one can fix the certification schedule. The market reads this not as technology strength, but as the risk of not knowing how much more capital will burn.</p>
+          <p>eVTOL aircraft must pass the following two FAA requirements.</p>
           <ul>
-            <li>결정론적 제어: DO-178C</li>
-            <li>무동력 비상착륙: FAA AC 21.17-4 중 PL.2105(g)</li>
+            <li>Deterministic control: DO-178C</li>
+            <li>Passive emergency landing: FAA AC 21.17-4, PL.2105(g)</li>
           </ul>
-          <p>저희는 이 두 규제를 설계 단계에서부터 통과하도록 만들었습니다.</p>
-          <h3>1. 정해진 대로만 반응합니다 (DO-178C)</h3>
-          <p>기존 비행체는 돌풍마다 실시간 연산으로 대응해, 결과를 사전에 100% 예측할 수 없습니다. 저희 기체는 모든 상황의 답을 미리 계산해두고 즉시 전환만 하므로, 결과를 인증 기관에 미리 증명할 수 있습니다.</p>
-          <h3>2. 엔진이 꺼져도 조종하며 착륙합니다 (PL.2105(g))</h3>
-          <p>동력 완전 상실 시에도 통제된 착륙이 가능해야 한다는 건 필수 인증 조건입니다. 저희는 별도 장치 없이 로터 각도와 회전 차이만으로 무동력 조향 착륙을 구현했습니다. PL.2105(g)를 충족하는 스펙의 비행체는 현재 Receivepower의 SDA가 유일합니다.</p>
-          <h3>3. 인증 대상 부품이 1/100 수준입니다</h3>
-          <p>일반 비행체는 조종면과 구동 장치 때문에 고장 지점이 수백 개이고, 이를 하나하나 증명해야 합니다. 저희는 기계식 조종면 자체를 없애 인증 대상 부품을 극적으로 줄였습니다.</p>
-          <h3>4. 사람보다 화물로 먼저 신뢰를 쌓습니다</h3>
-          <p>유인기 인증에 자본을 먼저 쏟는 대신, 화물 운송으로 실비행 데이터를 대량 축적합니다. 서류보다 확실한 무사고 운항 기록이 이후 유인기 인증을 앞당깁니다.</p>
-          <p>결론적으로, 계산을 단순화하고, 부품을 줄이고, 비상 대응까지 설계로 해결했습니다. 인증은 이제 예측 불가능한 R&amp;D가 아니라 정해진 순서를 실행하는 절차입니다.</p>
-          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+          <p>We designed SDA to address both requirements from the design stage.</p>
+          <h3>1. It responds only as defined (DO-178C)</h3>
+          <p>Conventional aircraft respond to gusts with real-time computation, so the result cannot be predicted 100% in advance. Our aircraft precomputes the answers for each state and switches immediately, so the result can be demonstrated to certification authorities beforehand.</p>
+          <h3>2. It can be controlled and landed even after engine loss (PL.2105(g))</h3>
+          <p>Controlled landing after total power loss is a required certification condition. We implement passive steering and landing through rotor angle and rotational differences without an additional device. Receivepower’s SDA is currently the only aircraft specification designed to satisfy PL.2105(g).</p>
+          <h3>3. Certifiable components are reduced to roughly 1/100</h3>
+          <p>Conventional aircraft have hundreds of failure points due to control surfaces and actuators, each of which must be proven. We remove mechanical control surfaces and drastically reduce the number of certifiable parts.</p>
+          <h3>4. Cargo builds trust before passengers</h3>
+          <p>Instead of spending capital on crewed certification first, we accumulate large amounts of real flight data through cargo operation. An accident-free operating record is stronger than paperwork and accelerates later crewed certification.</p>
+          <p>In short, the design simplifies computation, reduces parts, and resolves emergency response in the architecture. Certification becomes a defined procedure, not unpredictable R&amp;D.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Back to Home</a>
         </article>
 
         <article class="message" id="company-deeptech-individual">
-          <span class="label">개인 딥테크 관심자</span>
-          <h2>하늘을 새롭게 설계하는 기술</h2>
-          <p>Receivepower는 AI와 로보틱스 기술로 항공 물류의 미래를 다시 그려가고 있습니다. 기체의 구조부터 제어, 생산, 운항 방식까지 — 항공이 더 효율적이고 접근 가능한 방식으로 작동할 수 있도록 근본적인 재설계를 시도하고 있습니다.</p>
-          <p>딥테크에 관심 있는 분들이라면, 저희가 그리는 비전과 기술의 확장 가능성에 공감하실 수 있을 것입니다. 개인 투자 참여에 관한 안내는 준비되는 대로 별도로 전해드리겠습니다.</p>
-          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+          <span class="label">Individual Deep-Tech Audience</span>
+          <h2>Technology That Redesigns the Sky</h2>
+          <p>Receivepower is redrawing the future of aerial logistics with AI and robotics technology. From structure to control, production, and operation, we are redesigning how aviation can work more efficiently and accessibly.</p>
+          <p>Deep-tech audiences may understand the vision and scalability of the technology we are building. Guidance on individual investment participation will be provided separately when ready.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Back to Home</a>
         </article>
       </div>
     </section>
@@ -2917,24 +2917,24 @@ footer {
     <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <span class="metric">1억원</span>
-          <p>lambda-Heavy의 목표 기체 단가입니다. 500kg급 미드마일 화물 운항자산 기준입니다.</p>
+          <span class="metric">KRW 100M</span>
+          <p>Target aircraft price for lambda-Heavy, based on a 500 kg-class mid-mile cargo operating asset.</p>
         </article>
         <article class="message">
-          <span class="metric">50억원</span>
-          <p>기체 1대의 생애 매출 잠재치입니다. 반복 운항, 리스, 소프트웨어 구독 수익이 장기 수익의 중심입니다.</p>
+          <span class="metric">KRW 5B</span>
+          <p>Lifetime revenue potential per aircraft. Repeat operation, leasing, and software subscription revenue form the long-term revenue base.</p>
         </article>
         <article class="message">
           <span class="metric">50%</span>
-          <p>무조종면, 고정피치 로터, 저정비 구조, 운항 소프트웨어 기반 운영 효율을 전제로 한 목표 마진입니다.</p>
+          <p>Target margin based on a control-surface-free structure, fixed-pitch rotors, low maintenance, and operating-software efficiency.</p>
         </article>
         <article class="message">
-          <h2>초기 진입 시장</h2>
-          <p>배를 놓치면 하루가 날아가고, 도로로 돌아가면 반나절이 사라지는 구간 — 그 시간 손실이 Lambda의 초기 시장입니다.</p>
+          <h2>Initial Market Entry</h2>
+          <p>Corridors where missing a boat costs a day and returning to road transport costs half a day: that time loss is Lambda’s initial market.</p>
         </article>
         <article class="message">
-          <h2>투자 방식</h2>
-          <p>회랑별 운영권, 현지 조립, MRO, 데이터 축적, Flight OS 구독을 묶은 플릿/JV 구조로 확장합니다.</p>
+          <h2>Investment Structure</h2>
+          <p>Expansion through fleet/JV structures combining corridor operating rights, local assembly, MRO, data accumulation, and Flight OS subscriptions.</p>
         </article>
       </div>
     </section>
@@ -2945,21 +2945,21 @@ footer {
     <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <span class="label">투자 논리</span>
-          <h2>플릿 인프라와 소프트웨어 반복매출을 함께 설계합니다.</h2>
-          <p>Lambda는 플릿 보유, 리스, 회랑 운영, 물류 SLA, 감항유지 데이터, Flight OS 구독을 결합해 반복수익 구조를 만듭니다.</p>
+          <span class="label">Investment Logic</span>
+          <h2>Fleet infrastructure and recurring software revenue are designed together.</h2>
+          <p>Lambda combines fleet ownership, leasing, corridor operation, logistics SLAs, airworthiness data, and Flight OS subscriptions into a recurring revenue structure.</p>
         </article>
         <article class="message">
-          <span class="label">왜 지금인가</span>
-          <h2>항공 물류의 원가가 트럭 수준으로 낮아지는 순간, 물류지도는 도로를 따라 그려지지 않고 목적지를 향한 직선으로 다시 그려집니다.</h2>
-          <p>직선거리가 물류망 설계의 새로운 기준이 됩니다. 500kg급 payload와 최대 1,000km 항속은 항공 미드마일 물류망을 겨냥합니다.</p>
+          <span class="label">Why Now</span>
+          <h2>When aerial logistics cost falls to truck-level economics, logistics maps are redrawn as direct lines to destinations rather than along roads.</h2>
+          <p>Straight-line distance becomes the new standard for logistics-network design. A 500 kg-class payload and up to 1,000 km range target aerial mid-mile logistics networks.</p>
         </article>
       </div>
     </section>
     <section class="cta-band" id="company-request">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="home">IR 자료 요청</a>
-        <a class="button secondary" href="#" data-route="market">시장 보기</a>
+        <a class="button primary" href="#" data-route="home">Request IR Materials</a>
+        <a class="button secondary" href="#" data-route="market">View Market</a>
       </div>
     </section>
   </main>
@@ -2967,9 +2967,9 @@ footer {
 <main class="page-view" data-page="technology">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">기술</span>
+        <span class="eyebrow">Technology</span>
         <h1>Robotics Technology</h1>
-        <p class="lead">리시브파워는 실제 기계를 움직이는 Physical AI 기술을 다룹니다. 로봇 미들웨어, 산업제어, 좌표계, 센서융합, 가상공간, 비전, 조작, 접촉제어, AI 모델, 워크셀, 공장 데이터, 안전, 엔지니어링 시스템을 하나의 실행 체계로 연결합니다.</p>
+        <p class="lead">Receivepower works on Physical AI technology that moves real machines. Robot middleware, industrial control, coordinate systems, sensor fusion, virtual spaces, vision, manipulation, contact control, AI models, workcells, factory data, safety, and engineering systems are connected into one execution system.</p>
       </div>
     </section>
 
@@ -2977,73 +2977,73 @@ footer {
       <div class="container message-list compact">
         <article class="message" id="tech-physical-ai">
           <span class="label">Physical AI</span>
-          <h2>물리 세계에서 움직이는 AI</h2>
-          <p>카메라와 센서로 상태를 읽고, 실패 가능성을 예측하며, 실제 기계가 다음 행동을 선택하게 만드는 제어 지능입니다.</p>
+          <h2>AI That Moves in the Physical World</h2>
+          <p>Control intelligence that reads state through cameras and sensors, predicts possible failures, and lets real machines choose the next action.</p>
         </article>
         <article class="message" id="tech-robot-middleware">
           <span class="label">Robot Middleware</span>
-          <h2>로봇 미들웨어</h2>
-          <p>센서, 모터, 제어기, 시뮬레이터, AI 모델이 서로 데이터를 주고받게 만드는 로봇의 실행 기반입니다.</p>
+          <h2>Robot Middleware</h2>
+          <p>The execution layer that lets sensors, motors, controllers, simulators, and AI models exchange data.</p>
         </article>
         <article class="message" id="tech-industrial-control">
           <span class="label">Industrial Control</span>
-          <h2>산업제어</h2>
-          <p>PLC, CAN, EtherCAT, 안전 릴레이처럼 공장과 기계 현장에서 검증된 제어 체계를 실제 장비에 연결합니다.</p>
+          <h2>Industrial Control</h2>
+          <p>Connects field-proven control systems such as PLC, CAN, EtherCAT, and safety relays to real equipment.</p>
         </article>
         <article class="message" id="tech-coordinate-system">
           <span class="label">Coordinate System</span>
-          <h2>좌표계</h2>
-          <p>로봇의 몸체, 손, 카메라, 작업물, 공간 기준점을 하나의 수학적 위치 관계로 정렬합니다.</p>
+          <h2>Coordinate Systems</h2>
+          <p>Aligns the robot body, hand, camera, workpiece, and spatial reference points into one mathematical position relationship.</p>
         </article>
         <article class="message" id="tech-sensor-fusion">
           <span class="label">Sensor Fusion</span>
-          <h2>센서융합</h2>
-          <p>카메라, IMU, 엔코더, 전류, 힘 센서의 신호를 합쳐 기계가 지금 어떤 상태인지 안정적으로 판단합니다.</p>
+          <h2>Sensor Fusion</h2>
+          <p>Combines camera, IMU, encoder, current, and force signals so the machine can judge its current state reliably.</p>
         </article>
         <article class="message" id="tech-virtual-space">
           <span class="label">Virtual Space</span>
-          <h2>가상공간</h2>
-          <p>디지털 트윈과 시뮬레이션으로 실제 장비를 만들기 전에 동작, 충돌, 실패 조건을 먼저 검증합니다.</p>
+          <h2>Virtual Space</h2>
+          <p>Uses digital twins and simulation to verify motion, collision, and failure conditions before building real equipment.</p>
         </article>
         <article class="message" id="tech-vision">
           <span class="label">Vision</span>
-          <h2>비전</h2>
-          <p>물체 인식, 분할, 자세 추정, 검사 기술로 로봇이 보고 판단해야 할 대상을 구조화합니다.</p>
+          <h2>Vision</h2>
+          <p>Object detection, segmentation, pose estimation, and inspection technology structure what robots need to see and judge.</p>
         </article>
         <article class="message" id="tech-manipulation">
           <span class="label">Manipulation</span>
-          <h2>조작</h2>
-          <p>집기, 놓기, 끼우기, 정렬, 적재처럼 로봇이 물체를 실제로 다루는 행동을 설계합니다.</p>
+          <h2>Manipulation</h2>
+          <p>Designs actions for physically handling objects: grasping, placing, inserting, aligning, and stacking.</p>
         </article>
         <article class="message" id="tech-contact-control">
           <span class="label">Contact Control</span>
-          <h2>접촉제어</h2>
-          <p>힘, 토크, 미끄러짐, 압력을 읽어 로봇이 물체나 환경과 부딪히지 않고 섬세하게 상호작용하게 합니다.</p>
+          <h2>Force / Contact Control</h2>
+          <p>Reads force, torque, slip, and pressure so robots can interact delicately with objects and environments.</p>
         </article>
         <article class="message" id="tech-ai-model">
           <span class="label">AI Model</span>
-          <h2>AI 모델</h2>
-          <p>비전 모델, 행동 정책, 이상 감지, 모방학습을 이용해 로봇의 판단과 행동 선택을 학습시킵니다.</p>
+          <h2>AI Model</h2>
+          <p>Uses vision models, behavior policies, anomaly detection, and imitation learning to train judgment and action selection.</p>
         </article>
         <article class="message" id="tech-workcell">
           <span class="label">Workcell</span>
-          <h2>워크셀</h2>
-          <p>로봇팔, 이동로봇, 그리퍼, 카메라, 조명, 지그, 컨베이어가 함께 일하는 실제 작업 단위입니다.</p>
+          <h2>Workcell</h2>
+          <p>A real work unit where robot arms, mobile robots, grippers, cameras, lighting, jigs, and conveyors work together.</p>
         </article>
         <article class="message" id="tech-factory-data">
           <span class="label">Factory Data</span>
-          <h2>공장 데이터</h2>
-          <p>생산량, 사이클타임, 고장 이력, 검사 결과, 품질 데이터를 모아 운영 판단과 개선에 사용합니다.</p>
+          <h2>Factory Data</h2>
+          <p>Collects production count, cycle time, fault history, inspection results, and quality data for operational decisions and improvement.</p>
         </article>
         <article class="message" id="tech-safety">
           <span class="label">Safety</span>
-          <h2>안전</h2>
-          <p>비상정지, 안전영역, 속도 제한, 충돌 감지, 복구 절차를 통해 사람과 장비가 함께 일할 조건을 만듭니다.</p>
+          <h2>Safety</h2>
+          <p>Creates conditions for people and machines to work together through emergency stops, safety zones, speed limits, collision detection, and recovery procedures.</p>
         </article>
         <article class="message" id="tech-engineering-system">
           <span class="label">Engineering System</span>
-          <h2>엔지니어링 시스템</h2>
-          <p>요구사항, 인터페이스, 상태기계, 테스트, 검증 리포트를 묶어 기계 개발을 반복 가능한 절차로 만듭니다.</p>
+          <h2>Engineering System</h2>
+          <p>Connects requirements, interfaces, state machines, tests, and validation reports into a repeatable machine-development process.</p>
         </article>
       </div>
     </section>
@@ -3400,90 +3400,90 @@ footer {
 <main class="page-view" data-page="ip">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">특허 포트폴리오</span>
-        <h1>5대 기술 해자는 운항 단가와 안전 구조를 지키는 방어벽입니다.</h1>
-        <p class="lead">Receivepower의 IP는 기체 구조를 단순화하고, 비상 상황에서도 예측 가능한 안전 거동을 구현하며, 반복 운항의 단가를 낮추는 핵심 기술 자산입니다.</p>
+        <span class="eyebrow">Patent Portfolio</span>
+        <h1>The five technology moats protect operating cost and safety structure.</h1>
+        <p class="lead">Receivepower IP is a core technology asset that simplifies aircraft structure, implements predictable safety behavior in emergencies, and lowers the cost of repeat operation.</p>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="technology">기술로 돌아가기</a>
+        <a class="back-link" href="#" data-route="technology">Back to Technology</a>
       </div>
     </section>
 
     <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <h2>IP를 보는 기준</h2>
-          <p>Receivepower의 IP는 기술명보다 기체 구조 변화와 운항 효과로 읽어야 합니다. 각 기술 해자는 구성, 변화, 효과의 순서로 기체 가격, 정비비, 운항률, 안전성에 연결됩니다.</p>
+          <h2>How to Read the IP</h2>
+          <p>Receivepower IP should be read through aircraft-structure changes and operating effects rather than technology names alone. Each moat connects configuration, change, and effect to aircraft price, maintenance cost, utilization, and safety.</p>
           <ul class="data-list">
-            <li><span>경제성</span><strong>기계식 부품, 생산 공정, 정비 항목을 줄이는 방향</strong></li>
-            <li><span>안전성</span><strong>전환, 고장, 동력 상실, 상태 인식을 설명 가능한 구조로 만드는 방향</strong></li>
+            <li><span>Economics</span><strong>Direction: reduce mechanical parts, production steps, and maintenance items</strong></li>
+            <li><span>Safety</span><strong>Direction: make transition, failure, power loss, and state recognition explainable</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">등록</span>
-          <h2>1. 독립제어 틸팅 추력기관</h2>
-          <p>각 추력기관을 같은 각도로 한 번에 움직이는 방식에서 벗어나, 전환 구간에서 추력과 양력을 나누어 다루는 구조입니다.</p>
+          <span class="label">Registered</span>
+          <h2>1. Independently Controlled Tilting Propulsors</h2>
+          <p>A structure that moves beyond tilting every propulsor at the same angle at once, separating thrust and lift during the transition phase.</p>
           <ul class="data-list">
-            <li><span>구성</span><strong>추력기관별 독립 틸팅과 분산 추진 제어</strong></li>
-            <li><span>변화</span><strong>수직비행에서 고정익 순항으로 넘어가는 전환 구간을 세분화</strong></li>
-            <li><span>효과</span><strong>VTOL 전환 안정성, 유인비행 확장성</strong></li>
+            <li><span>Configuration</span><strong>Independent tilting by propulsor and distributed-propulsion control</strong></li>
+            <li><span>Change</span><strong>Subdivides the transition from vertical flight to fixed-wing cruise</strong></li>
+            <li><span>Effect</span><strong>VTOL transition stability and crewed-flight scalability</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">출원</span>
-          <h2>2. 가상 조종면 기반 비행 제어</h2>
-          <p>물리 조종면, 힌지, 링크, 액추에이터 의존을 줄이고 추진기 배치와 추력 차이를 비행 제어 자원으로 사용하는 구조입니다.</p>
+          <span class="label">Filed</span>
+          <h2>2. Virtual Control Surface-Based Flight Control</h2>
+          <p>A structure that reduces dependence on physical control surfaces, hinges, links, and actuators, using propulsor placement and thrust differences as flight-control resources.</p>
           <ul class="data-list">
-            <li><span>구성</span><strong>분산 추진기의 위치와 위상 차이를 제어 자원으로 사용</strong></li>
-            <li><span>변화</span><strong>가동 조종면과 관련 기계 부품 축소</strong></li>
-            <li><span>효과</span><strong>기체 원가, 정비 항목, 생산 복잡도 감소</strong></li>
+            <li><span>Configuration</span><strong>Uses the positions and phase differences of distributed propulsors as control resources</strong></li>
+            <li><span>Change</span><strong>Reduces moving control surfaces and related mechanical parts</strong></li>
+            <li><span>Effect</span><strong>Reduces aircraft cost, maintenance items, and production complexity</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">출원</span>
-          <h2>3. 이산 매트릭스 기반 비행 관리 시스템</h2>
-          <p>비행 상태와 고장 상태를 사전에 나누고, 각 상태에 맞는 제어 모드를 전환하는 결정론적 비행 관리 구조입니다.</p>
+          <span class="label">Filed</span>
+          <h2>3. Discrete Matrix-Based Flight Management System</h2>
+          <p>A deterministic flight-management structure that predefines flight states and failure states, then switches to the control mode for each state.</p>
           <ul class="data-list">
-            <li><span>구성</span><strong>상태별 제어 매트릭스와 고장 대응 모드</strong></li>
-            <li><span>변화</span><strong>블랙박스식 판단보다 시험 가능한 제어 단위로 분리</strong></li>
-            <li><span>효과</span><strong>인증 설명력, 운항 로그, 실패 대응 구조</strong></li>
+            <li><span>Configuration</span><strong>State-specific control matrices and failure-response modes</strong></li>
+            <li><span>Change</span><strong>Separates control into testable units instead of black-box decisions</strong></li>
+            <li><span>Effect</span><strong>Certification explainability, operating logs, and failure-response structure</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">출원</span>
-          <h2>4. 무동력 고양력 제어</h2>
-          <p>동력 상실 또는 저속 구간에서 기체가 가진 양력과 회전 요소를 활용해 착륙 여유와 방향 제어 가능성을 확보하는 독립 발명입니다.</p>
+          <span class="label">Filed</span>
+          <h2>4. Passive High-Lift Control</h2>
+          <p>An independent invention that uses the aircraft’s lift and rotating elements during power loss or low-speed phases to secure landing margin and directional control.</p>
           <ul class="data-list">
-            <li><span>구성</span><strong>무동력 상태의 양력, 항력, 회전 거동 활용</strong></li>
-            <li><span>변화</span><strong>비상 상황에서 추가 시간과 공간을 확보</strong></li>
-            <li><span>효과</span><strong>동력 상실 시나리오, 비상 착륙 안전성</strong></li>
+            <li><span>Configuration</span><strong>Uses lift, drag, and rotational behavior in passive state</strong></li>
+            <li><span>Change</span><strong>Secures additional time and space in emergencies</strong></li>
+            <li><span>Effect</span><strong>Power-loss scenarios and emergency-landing safety</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">출원</span>
-          <h2>5. SADS 기반 가상피토관</h2>
-          <p>단일 물리 센서에만 의존하지 않고 여러 신호를 융합해 기체의 공기 속 상태를 추정하는 독립 발명입니다.</p>
+          <span class="label">Filed</span>
+          <h2>5. SADS-Based Virtual Pitot</h2>
+          <p>An independent invention that estimates the aircraft’s air-state by fusing multiple signals rather than relying on a single physical sensor.</p>
           <ul class="data-list">
-            <li><span>구성</span><strong>GNSS, IMU, 추진기 데이터, 센서융합 기반 상태 추정</strong></li>
-            <li><span>변화</span><strong>기체가 현재 어떤 공기 상태에 놓였는지 판단하는 보조 채널 확보</strong></li>
-            <li><span>효과</span><strong>상태 인식, 모드 전환, 제어 안정성</strong></li>
+            <li><span>Configuration</span><strong>State estimation based on GNSS, IMU, propulsor data, and sensor fusion</strong></li>
+            <li><span>Change</span><strong>Secures an auxiliary channel for judging the aircraft’s current air-state</strong></li>
+            <li><span>Effect</span><strong>State recognition, mode transition, and control stability</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <h2>5대 기술 해자의 연결</h2>
+          <h2>How the Five Technology Moats Connect</h2>
           <ul class="data-list">
-            <li><span>트럭 수준의 경제성</span><strong>가상 조종면, 무조종면 구조, 생산·정비 단순화</strong></li>
-            <li><span>유인비행의 안전성</span><strong>틸팅 전환, 이산 제어, 무동력 고양력, SADS 상태 추정</strong></li>
-            <li><span>SDA</span><strong>운항 조건과 실패 시나리오에서 출발하는 비행체 아키텍처</strong></li>
+            <li><span>Truck-Level Economics</span><strong>Virtual control surfaces, control-surface-free structure, simplified production and maintenance</strong></li>
+            <li><span>Crewed-Flight Safety</span><strong>Tilting transition, discrete control, passive high-lift, and SADS state estimation</strong></li>
+            <li><span>SDA</span><strong>Aircraft architecture starting from operating conditions and failure scenarios</strong></li>
           </ul>
         </article>
       </div>
@@ -3491,8 +3491,8 @@ footer {
 
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="technology">기술 보기</a>
-        <a class="button secondary" href="#" data-route="product" data-route="product">제품 보기</a>
+        <a class="button primary" href="#" data-route="technology">View Technology</a>
+        <a class="button secondary" href="#" data-route="product" data-route="product">View Product</a>
       </div>
     </section>
   </main>
@@ -3502,9 +3502,9 @@ footer {
 <section class="content-group" id="product-main">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">제품 방향</span>
+        <span class="eyebrow">Product Direction</span>
         <h1>Cargo-first Aerial Robot.</h1>
-        <p class="lead">조종면을 없애고, 부품을 100분의 1로 줄이고, 인증을 절차로 바꿨습니다. Lambda가 먼저 증명합니다.</p>
+        <p class="lead">We removed control surfaces, reduced parts to 1/100, and turned certification into a procedure. Lambda proves it first.</p>
       </div>
     </section>
 
@@ -3513,39 +3513,39 @@ footer {
       <div class="container message-list">
         <article class="message">
           <span class="label">Product Logic</span>
-          <h2>Lambda의 제품은 시장, 인증, 제조비, 유지비의 인과관계에 의해 구성됩니다.</h2>
-          <p>Lambda SDA의 가치는 수식어가 아니라 수치로 증명됩니다. 성능, 안전성, 운항 경제성, 정비 구조를 사실 중심으로 정리했습니다.</p>
+          <h2>Lambda products are structured by the causal chain between market, certification, manufacturing cost, and maintenance cost.</h2>
+          <p>The value of Lambda SDA is proven by numbers, not adjectives. Performance, safety, operating economics, and maintenance structure are organized around facts.</p>
         </article>
         <article class="message">
           <span class="label">01</span>
-          <h2>틸트로터여야 하는 이유: 시장 규모의 확장</h2>
-          <p>도심 항공 시장에 진입하려면 수직이착륙 능력이, 광역 이동 시장으로 확장하려면 멀리 갈 수 있는 날개가 필수적입니다.</p>
-          <p>비행 중 저항만 유발하는 데드로터(Dead Rotor)가 없어야 운항 효율이 극대화됩니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
+          <h2>Why It Must Be a Tiltrotor: Market Expansion</h2>
+          <p>To enter urban aviation, VTOL is required. To expand into regional mobility, wings for long-range flight are essential.</p>
+          <p>Operating efficiency is maximized only when there are no dead rotors that create drag in flight. This is why existing tiltrotor-based eVTOL companies can have high valuations while carrying major uncertainty.</p>
         </article>
         <article class="message">
           <span class="label">02</span>
-          <h2>독립 틸트로터여야 하는 이유: 인증 기간의 예측 가능성</h2>
-          <p>일반 틸트로터는 복잡한 확률 제어 기반이어서 가혹한 소프트웨어 인증 표준(DO-178C) 통과가 불확실합니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
-          <p>독립 제어 방식은 모든 비행 응답의 추적과 재현이 가능합니다. 비행 알고리즘이 명증적(Deterministic)이므로, 인증 기간과 예산을 예측할 수 있습니다.</p>
+          <h2>Why It Must Be an Independent Tiltrotor: Predictable Certification Duration</h2>
+          <p>Conventional tiltrotors rely on complex probabilistic control, making DO-178C software certification uncertain. This is a core reason tiltrotor-based eVTOL companies carry both high valuation and high uncertainty.</p>
+          <p>Independent control makes every flight response traceable and reproducible. Because the flight algorithm is deterministic, certification time and budget can be forecast.</p>
         </article>
         <article class="message">
           <span class="label">03</span>
-          <h2>가상조종면이어야 하는 이유: 제조 및 유지보수 비용의 하락</h2>
-          <p>물리적인 조종면과 기계적 구동 장치를 제거하고, 소프트웨어를 통한 로터 제어로 비행을 통제합니다.</p>
-          <p>기계적 연결 구조가 사라져 날개와 동체의 완전 자동화 생산이 가능해지며, 기체 가격이 기존의 10% 수준으로 낮아집니다.</p>
-          <p>가동 부품 수가 100분의 1로 감소함에 따라 마모와 고장 요소가 줄어들어, 운영 유지보수 비용과 정비 소요 시간이 단축됩니다.</p>
+          <h2>Why Virtual Control Surfaces Matter: Lower Manufacturing and Maintenance Cost</h2>
+          <p>Physical control surfaces and mechanical actuation are removed, and flight is controlled through software-based rotor control.</p>
+          <p>Mechanical linkages disappear, enabling automated production of wings and fuselage and lowering aircraft price toward 10% of conventional levels.</p>
+          <p>As moving parts fall toward 1/100, wear and failure points decrease, reducing operating maintenance cost and maintenance time.</p>
         </article>
         <article class="message">
           <span class="label">04</span>
-          <h2>무동력 비행 능력: 법적 제도권 진입 조건</h2>
-          <p>미 연방항공청(FAA) 가이드라인(AC 21.17-4 부록 A, PL.2105(g))은 동력 상실 시에도 활강이나 오토로테이션을 통한 제어된 비상착륙 능력을 필수 조건으로 명시하고 있습니다.</p>
-          <p>이 법적 기준을 만족해야만 실제 운항 허가를 취득할 수 있습니다.</p>
+          <h2>Passive Flight Capability: A Condition for Regulatory Entry</h2>
+          <p>FAA guidance AC 21.17-4 Appendix A, PL.2105(g), states that controlled emergency landing through glide or autorotation after power loss is required.</p>
+          <p>Meeting this regulatory condition is necessary to obtain actual operating approval.</p>
         </article>
         <article class="message">
           <span class="label">05</span>
-          <h2>SDA 통합 가치: 육상 화물운송과의 가격 경쟁</h2>
-          <p>SDA는 명증적 비행 제어, 무동력 비상착륙 능력, 그리고 극단적인 부품 단순화를 동시에 달성한 아키텍처입니다.</p>
-          <p>높은 안전성을 담보하는 동시에 생산 및 유지비용을 낮춤으로써, 항공 분야를 넘어 기존 육상 화물운송 시장과 운임으로 직접 경쟁할 수 있는 비행체입니다.</p>
+          <h2>Integrated SDA Value: Competing with Ground Freight Prices</h2>
+          <p>SDA is an architecture that combines deterministic flight control, passive emergency landing capability, and extreme parts simplification.</p>
+          <p>By securing high safety while lowering production and maintenance cost, it can compete on freight price with existing ground logistics beyond aviation.</p>
         </article>
       </div>
     </section>
@@ -3553,51 +3553,51 @@ footer {
       <div class="container message-list">
         <article class="message">
           <span class="label">Lambda</span>
-          <h2>화물 운항에서 시작하는 Lambda 항공 로봇</h2>
-          <p>Lambda는 고정익기처럼 멀리 날고, 드론처럼 정밀하게 제어되며, 글라이더처럼 활강하고, 자이로콥터처럼 무동력 착륙을 준비하는 틸트로터기입니다.</p>
-          <p>Lambda는 화물 우선 진입과 안전 구조 검증에 집중하고 있습니다. 관측, 유인 이동, 휴머노이드 연동 등은 이 검증을 바탕으로 순차 확장합니다.</p>
+          <h2>Lambda Aerial Robot Starts with Cargo Operation</h2>
+          <p>Lambda is a tiltrotor aircraft that flies far like a fixed-wing aircraft, is precisely controlled like a drone, glides like a glider, and prepares passive landing like a gyroplane.</p>
+          <p>Lambda focuses first on cargo entry and safety-structure validation. Observation, crewed mobility, and humanoid-linked products expand sequentially from that validation.</p>
         </article>
 
         <article class="message">
-          <h2>왜 화물부터 시작하는가</h2>
-          <p>화물은 운임, 시간 가치, 반복 운항률이 숫자로 드러나는 시장입니다. 먼저 화물 운항에서 기체 가격, 정비비, 반복 운항률, 감항유지 데이터, 실패 대응 구조를 검증합니다.</p>
+          <h2>Why Start with Cargo</h2>
+          <p>Cargo is a market where freight price, time value, and repeat-operation rate appear as numbers. Cargo operation validates aircraft price, maintenance cost, utilization, airworthiness data, and failure-response structure first.</p>
           <ul class="data-list">
-            <li><span>첫 시장</span><strong>시간 가치가 큰 500kg급 미드마일 화물</strong></li>
-            <li><span>운항 데이터</span><strong>무인 화물 운항에서 축적</strong></li>
-            <li><span>확장 방향</span><strong>유인비행으로 갈 수 있는 안전 구조</strong></li>
+            <li><span>First Market</span><strong>500 kg-class mid-mile cargo with high time value</strong></li>
+            <li><span>Operating Data</span><strong>Accumulated through uncrewed cargo operation</strong></li>
+            <li><span>Expansion Direction</span><strong>Safety structure that can lead to crewed flight</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <span class="label">검증기</span>
-          <h2>25kg급 개념시제기</h2>
-          <p>25kg급 개념시제기는 SDA의 핵심 비행 전환 기술을 실제 기체에서 확인하는 단계입니다. 비동기 틸트, 무동력 고양력 제어, SADS 기반 상태 추정, 전력 버퍼를 통합해 전환과 안전 여유를 확인합니다.</p>
+          <span class="label">Test Vehicle</span>
+          <h2>25 kg Concept Prototype</h2>
+          <p>The 25 kg concept prototype validates SDA’s core transition-flight technologies on a real aircraft, integrating asynchronous tilt, passive high-lift control, SADS-based state estimation, and a power buffer.</p>
           <div class="link-grid">
             <a class="link-card" href="#" data-route="product" data-route="product">
               <span>Prototype</span>
-              <strong>25kg급 개념시제기</strong>
-              <p>SDA 비행 전환과 안전 여유를 확인하는 실물 검증기</p>
+              <strong>25 kg Concept Prototype</strong>
+              <p>A real test vehicle for SDA transition flight and safety margin</p>
             </a>
             <a class="link-card" href="#" data-route="product" data-route="product">
               <span>Part 108</span>
-              <strong>300-500kg급 무인 화물</strong>
-              <p>무인 미드마일 화물 운항을 위한 핵심 축</p>
+              <strong>300-500 kg uncrewed cargo</strong>
+              <p>Core axis for uncrewed mid-mile cargo operation</p>
             </a>
             <a class="link-card" href="#" data-route="product" data-route="product">
               <span>Part 22</span>
-              <strong>유인비행 확장 축</strong>
-              <p>화물 운항 데이터와 안전 구조 이후의 확장 경로</p>
+              <strong>Crewed-flight expansion axis</strong>
+              <p>Expansion path after cargo data and safety architecture</p>
             </a>
           </div>
         </article>
 
         <article class="message">
-          <h2>제품 카테고리는 운항 조건에 따라 확정합니다.</h2>
-          <p>관측, 화물, 유인 이동, 휴머노이드 연동 같은 제품 카테고리는 각 임무 조건과 사업 검증에 맞춰 정리합니다. 현재 제품 페이지는 확정 라인업보다 Lambda의 화물 우선 진입과 안전 구조 검증 순서를 다룹니다.</p>
+          <h2>Product categories are determined by operating conditions.</h2>
+          <p>Product categories such as observation, cargo, crewed mobility, and humanoid integration are organized by mission conditions and business validation. This page focuses on Lambda’s cargo-first entry and safety-validation sequence rather than a fixed lineup.</p>
           <ul class="data-list">
-            <li><span>현재 확정 축</span><strong>Lambda Part 108 / Part 22</strong></li>
-            <li><span>확장 대상</span><strong>관측, 화물 세부형, 유인 세부형, 휴머노이드 연동 제품군은 Lambda의 화물 우선 검증 이후 순차 확장 대상입니다.</strong></li>
-            <li><span>기준</span><strong>운항 조건, 인증 경로, 시장 진입 순서</strong></li>
+            <li><span>Currently Fixed Axis</span><strong>Lambda Part 108 / Part 22</strong></li>
+            <li><span>Expansion Targets</span><strong>Observation, cargo subtypes, crewed variants, and humanoid-linked products are sequential expansion targets after Lambda’s cargo-first validation.</strong></li>
+            <li><span>Criteria</span><strong>Operating conditions, certification path, market-entry sequence</strong></li>
           </ul>
         </article>
       </div>
@@ -3605,8 +3605,8 @@ footer {
 
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="technology">IP 보기</a>
-        <a class="button secondary" href="#" data-route="market">시장 보기</a>
+        <a class="button primary" href="#" data-route="technology">View IP</a>
+        <a class="button secondary" href="#" data-route="market">View Market</a>
       </div>
     </section>
     </section>
@@ -3616,21 +3616,21 @@ footer {
 <main class="page-view" data-page="market">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">시장 진입</span>
-        <h1>시간 손실이 비용이 되는 화물 회랑부터 시작합니다.</h1>
-        <p class="lead">Receivepower는 먼저 화물 운항에서 경제성과 운항 데이터를 확보합니다. 지상·해상 운송의 시간 손실이 큰 구간에서 항공 로봇의 반복 운항성을 검증하고, 그 데이터를 기반으로 유인비행 확장 경로를 만듭니다.</p>
+        <span class="eyebrow">Market Entry</span>
+        <h1>We start with cargo corridors where time loss becomes cost.</h1>
+        <p class="lead">Receivepower first secures economics and operating data through cargo operation. In corridors where ground and sea transport lose time, we validate repeat operation of aerial robots and use that data to build the path toward crewed flight.</p>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container subnav-grid">
         <a class="subnav-card" href="#" data-route="market">
-          <strong>초기 시장</strong>
-          <span>항만, 산단, 섬, 의료 거점의 시간 민감 화물 회랑을 봅니다.</span>
+          <strong>Initial Market</strong>
+          <span>Time-sensitive cargo corridors across ports, industrial zones, islands, and medical hubs.</span>
         </a>
         <a class="subnav-card" href="#" data-route="market">
-          <strong>사업화와 협력</strong>
-          <span>지자체, 운항 모델, 리스, MRO, Flight OS 구조를 봅니다.</span>
+          <strong>Commercialization and Partnerships</strong>
+          <span>Local governments, operating models, leasing, MRO, and Flight OS structures.</span>
         </a>
       </div>
     </section>
@@ -3639,40 +3639,40 @@ footer {
     <section class="message-section market-targets-lead">
       <div class="container message-list">
         <article class="message" id="market-korea-local-government">
-          <span class="label">한국 지방자치단체</span>
-          <h2>지역실증기체 개발</h2>
-          <p>한국 지자체에는 지역 문제에 맞춘 항공 물류 PoC, 전용기체 개발, 도시 항공교통 기반 개선 연구용역을 제안합니다. 전용기체 개발은 Part 108, Part 22급을 기준으로 약 2억원 규모의 프로젝트로 정리합니다.</p>
-          <p>연구용역은 약 2,000만원, 전용기체 개발/제작은 약 2억원입니다. 도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응처럼 지역의 지형과 산업 조건에 맞는 항공 물류 회랑과 기체를 먼저 제작합니다. 국내 지자체를 대상으로 순차적으로 시범 사업을 진행할 예정입니다.</p>
+          <span class="label">Local Government (Korea)</span>
+          <h2>Regional Demonstration Aircraft Development</h2>
+          <p>For Korean local governments, we propose aerial logistics PoCs, dedicated aircraft development, and urban air mobility infrastructure studies tailored to regional problems. Dedicated aircraft development is organized as an approximately KRW 200 million project based on Part 108 and Part 22 classes.</p>
+          <p>Study projects begin at around KRW 20 million, and dedicated aircraft development/production at around KRW 200 million. We first build aerial logistics corridors and aircraft matched to regional geography and industry, including island logistics, medical samples, urgent industrial parts, port connections, tourism, and disaster response. Pilot projects will proceed sequentially with Korean local governments.</p>
         </article>
         <article class="message" id="market-japan-local-government">
-          <span class="label">일본 지방자치단체</span>
-          <h2>지역 물류 회랑과 현지 조립·정비 거점</h2>
-          <p>일본 지자체에는 지역 전용기체 개발과 현지 조립·정비 거점 설립을 함께 제안합니다. 섬, 항만, 산단, 의료 거점이 분산된 지역일수록 항공 미드마일 물류와 현지 산업 기반을 동시에 만들 수 있습니다.</p>
-          <p>초기 사업은 전용 노선 설계, 기체 사양 정의, 조립·정비 거점 검토, 운항 데이터 축적 순서로 구성합니다. 부산항과 일본 본토를 연결하는 초국경 화물 회랑은 첫 번째 사업 후보입니다.</p>
+          <span class="label">Local Government (Japan)</span>
+          <h2>Regional Logistics Corridors and Local Assembly/MRO Bases</h2>
+          <p>For Japanese local governments, we propose dedicated regional aircraft development together with local assembly and maintenance bases. Regions with dispersed islands, ports, industrial zones, and medical hubs can build both aerial mid-mile logistics and local industrial infrastructure.</p>
+          <p>Initial projects proceed through dedicated route design, aircraft specification, assembly/MRO base review, and operating-data accumulation. A cross-border cargo corridor between Busan Port and mainland Japan is the first candidate.</p>
         </article>
         <article class="message" id="market-drone-aircraft-company">
-          <span class="label">드론·비행체 기업</span>
-          <h2>전용기체 개발과 공동사업 추진</h2>
-          <p>드론·비행체 기업에는 임무별 전용기체 개발과 공동사업 추진을 제안합니다. 핵심 접점은 비동기 틸팅 추력, 가상 조종면, 무조종면 구조, 이산 제어, 무동력 고양력 장치입니다.</p>
-          <p>협력 범위는 특정 임무용 기체 사양 정의, 로터·추진 배치, 제어 소프트웨어, 인증 데이터 축적, 지역 운항 모델 설계까지 확장할 수 있습니다.</p>
+          <span class="label">Drone and Aircraft Companies</span>
+          <h2>Dedicated Aircraft Development and Joint Business</h2>
+          <p>For drone and aircraft companies, we propose mission-specific aircraft development and joint business. Key collaboration points include asynchronous tilting thrust, virtual control surfaces, a control-surface-free structure, discrete control, and passive high-lift control.</p>
+          <p>Collaboration can extend to mission-specific aircraft specs, rotor and propulsion layout, control software, certification data accumulation, and regional operating-model design.</p>
         </article>
         <article class="message" id="market-robotics-company">
-          <span class="label">휴머노이드·지능형로봇 기업</span>
-          <h2>물류 연동 DX 솔루션 개발</h2>
-          <p>휴머노이드·지능형로봇 기업에는 항공 물류와 지상 로봇을 연결하는 DX 솔루션 개발을 제안합니다. 항공 로봇이 거점 사이를 연결하고, 지상 로봇이 하역, 분류, 이동, 정비를 담당하는 구조입니다.</p>
-          <p>리시브파워의 Physical AI 역량은 센서융합, 상태추정, 제어, 이상상태 대응을 중심으로 합니다. 이 기술은 비행체 제어를 넘어 물류 현장의 로봇 시스템으로 확장됩니다.</p>
+          <span class="label">Humanoid and Intelligent Robot Companies</span>
+          <h2>Logistics-Linked DX Solution Development</h2>
+          <p>For humanoid and intelligent robot companies, we propose DX solutions linking aerial logistics with ground robots. Aerial robots connect hubs, while ground robots handle unloading, sorting, movement, and maintenance.</p>
+          <p>Receivepower’s Physical AI capabilities center on sensor fusion, state estimation, control, and abnormal-state response. This technology extends beyond aircraft control into robot systems for logistics sites.</p>
         </article>
       </div>
     </section>
 <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <h2>일본 본토 - 부산항</h2>
-          <p>부산에서 후쿠오카까지, 배로 가면 3시간, Lambda면 약 59분입니다. 이 회랑은 지상·해상 운송의 시간 손실이 큰 구간에서 항공 로봇의 경제성을 설명하는 초기 예시입니다.</p>
+          <h2>Mainland Japan - Busan Port</h2>
+          <p>From Busan to Fukuoka, sea transport takes about three hours; Lambda takes about 59 minutes. This corridor is an early example of aerial-robot economics where ground and sea transport lose time.</p>
           <ul class="data-list">
-            <li><span>비행 거리</span><strong>약 200~215km</strong></li>
-            <li><span>순항 비행시간</span><strong>약 50-59분</strong></li>
-            <li><span>기체 편도 직접 운항원가</span><strong>약 9.6~10.4만원</strong></li>
+            <li><span>Flight distance</span><strong>Approx. 200-215 km</strong></li>
+            <li><span>Cruise flight time</span><strong>Approx. 50-59 min</strong></li>
+            <li><span>Direct one-way aircraft operating cost</span><strong>Approx. KRW 96,000-104,000</strong></li>
           </ul>
         </article>
       </section>
@@ -3681,13 +3681,13 @@ footer {
 <main class="page-view" data-page="business">
 <section class="hero">
       <div class="container">
-        <span class="eyebrow">비즈니스</span>
+        <span class="eyebrow">Business</span>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="market">시장으로 돌아가기</a>
+        <a class="back-link" href="#" data-route="market">Back to Market</a>
       </div>
     </section>
 
@@ -3696,42 +3696,42 @@ footer {
       <div class="container message-list">
         <article class="message">
           <span class="label">Patent Licensing</span>
-          <h2>특허 라이선스</h2>
-          <p>비동기 틸팅, 가상 조종면, 이산 제어 매트릭스, 무동력 고양력 제어, SADS 기반 가상피토관은 SDA의 핵심 권리 축입니다. 완성 기체만 파는 대신 Flight OS, 기술 백서, IP 라이선스, 경상 로열티로 반복수익 구조를 만듭니다.</p>
+          <h2>Patent Licensing</h2>
+          <p>Asynchronous tilting, virtual control surfaces, discrete control matrices, passive high-lift control, and SADS-based virtual pitot are the core rights of SDA. Instead of selling completed aircraft only, the model creates recurring revenue through Flight OS, technical white papers, IP licenses, and running royalties.</p>
         </article>
         <article class="message">
           <span class="label">Development JV</span>
-          <h2>개발 조인트벤처</h2>
-          <p>Receivepower는 설계·제어·소프트웨어·특허를 표준 아키텍처로 제공하고, 파트너는 자본과 공급망으로 함께 확장합니다.</p>
+          <h2>Development Joint Venture</h2>
+          <p>Receivepower provides design, control, software, and patents as a standard architecture, while partners expand with capital and supply chains.</p>
         </article>
         <article class="message">
           <span class="label">Manufacturing JV</span>
-          <h2>제조 합작회사</h2>
-          <p>공장, 설비, 현지 인허가, 조립 인력은 지역별 제조 JV가 맡습니다. Receivepower는 조종면 없는 단순한 기체 구조와 COTS 기반 공급망을 통해 제조 파트너가 빠르게 조립하고 교체 가능한 구조를 설계합니다.</p>
+          <h2>Manufacturing Joint Venture</h2>
+          <p>Factories, equipment, local permits, and assembly labor are handled by regional manufacturing JVs. Receivepower designs a simple control-surface-free aircraft structure and a COTS-based supply chain so manufacturing partners can assemble and replace parts quickly.</p>
         </article>
         <article class="message">
           <span class="label">Revenue Stack</span>
-          <h2>비즈니스 모델은 안정성을 우선으로 합니다.</h2>
-          <p>SDA의 목표는 하드웨어 제조사가 아니라 항공 물류의 원가 구조와 운항 표준에 있습니다. 기체 판매, 리스, 회랑 운항권, MRO, Flight OS, 감항유지 데이터, 지역 JV의 스택이 비즈니스를 드라이브합니다.</p>
+          <h2>The business model prioritizes stability.</h2>
+          <p>SDA’s target is not to become a hardware manufacturer, but to shape the cost structure and operating standard of aerial logistics. Aircraft sales, leasing, corridor operating rights, MRO, Flight OS, airworthiness data, and regional JVs drive the business stack.</p>
         </article>
       </div>
     </section>
 <section class="message-section">
       <div class="container message-list">
         <article class="message" id="market-korea-local-government">
-          <span class="label">한국 지방자치단체</span>
-          <h2>지역실증기체 개발</h2>
-          <p>한국 지자체에는 지역 문제에 맞춘 항공 물류 PoC, 전용기체 개발, 도시 항공교통 기반 개선 연구용역을 제안합니다. 전용기체 개발은 Part 108, Part 22급을 기준으로 약 2억원 규모의 프로젝트로 정리합니다.</p>
-          <p>연구용역은 약 2,000만원, 전용기체 개발/제작은 약 2억원입니다. 도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응처럼 지역의 지형과 산업 조건에 맞는 항공 물류 회랑과 기체를 먼저 제작합니다. 국내 지자체를 대상으로 순차적으로 시범 사업을 진행할 예정입니다.</p>
-          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+          <span class="label">Local Government (Korea)</span>
+          <h2>Regional Demonstration Aircraft Development</h2>
+          <p>For Korean local governments, we propose aerial logistics PoCs, dedicated aircraft development, and urban air mobility infrastructure studies tailored to regional problems. Dedicated aircraft development is organized as an approximately KRW 200 million project based on Part 108 and Part 22 classes.</p>
+          <p>Study projects begin at around KRW 20 million, and dedicated aircraft development/production at around KRW 200 million. We first build aerial logistics corridors and aircraft matched to regional geography and industry, including island logistics, medical samples, urgent industrial parts, port connections, tourism, and disaster response. Pilot projects will proceed sequentially with Korean local governments.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Back to Home</a>
         </article>
 
         <article class="message" id="market-japan-local-government">
-          <span class="label">일본 지방자치단체</span>
-          <h2>지역 물류 회랑과 현지 조립·정비 거점</h2>
-          <p>일본 지자체에는 지역 전용기체 개발과 현지 조립·정비 거점 설립을 함께 제안합니다. 섬, 항만, 산단, 의료 거점이 분산된 지역일수록 항공 미드마일 물류와 현지 산업 기반을 동시에 만들 수 있습니다.</p>
-          <p>초기 사업은 전용 노선 설계, 기체 사양 정의, 조립·정비 거점 검토, 운항 데이터 축적 순서로 구성합니다. 부산항과 일본 본토를 연결하는 초국경 화물 회랑은 첫 번째 사업 후보입니다.</p>
-          <a class="back-link" href="#home-visitor-sequences" data-route="home">Home으로 돌아가기</a>
+          <span class="label">Local Government (Japan)</span>
+          <h2>Regional Logistics Corridors and Local Assembly/MRO Bases</h2>
+          <p>For Japanese local governments, we propose dedicated regional aircraft development together with local assembly and maintenance bases. Regions with dispersed islands, ports, industrial zones, and medical hubs can build both aerial mid-mile logistics and local industrial infrastructure.</p>
+          <p>Initial projects proceed through dedicated route design, aircraft specification, assembly/MRO base review, and operating-data accumulation. A cross-border cargo corridor between Busan Port and mainland Japan is the first candidate.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">Back to Home</a>
         </article>
       </div>
     </section>
@@ -3739,27 +3739,27 @@ footer {
     <section class="message-section">
       <div class="container message-list compact">
         <article class="message kpi">
-          <span class="label">화물 운항자산</span>
-          <span class="metric">1억원</span>
-          <p>500kg급 미드마일 화물기의 목표 기체 단가입니다. 기체는 운항수익을 생산하는 플릿 자산입니다.</p>
+          <span class="label">Cargo Operating Asset</span>
+          <span class="metric">KRW 100M</span>
+          <p>Target aircraft price for the 500 kg-class mid-mile cargo aircraft. The aircraft is a fleet asset that produces operating revenue.</p>
         </article>
 
         <article class="message kpi">
-          <span class="label">생애 매출 잠재력</span>
-          <span class="metric">50억원</span>
-          <p>1대의 기체가 반복 운항, 리스, 노선 슬롯, 소프트웨어 구독을 통해 만들 수 있는 생애 매출 목표입니다.</p>
+          <span class="label">Lifetime Revenue Potential</span>
+          <span class="metric">KRW 5B</span>
+          <p>Lifetime revenue target that one aircraft can create through repeat operation, leasing, route slots, and software subscriptions.</p>
         </article>
 
         <article class="message kpi">
-          <span class="label">목표 마진</span>
+          <span class="label">Target Margin</span>
           <span class="metric">50%</span>
-          <p>저가 기체, 무조종면 구조, 감항유지비 절감, Flight OS 기반 운영 효율을 전제로 한 목표 마진 구조입니다.</p>
+          <p>Target margin structure based on low-cost aircraft, control-surface-free structure, reduced airworthiness-maintenance cost, and Flight OS operating efficiency.</p>
         </article>
 
         <article class="message kpi">
-          <span class="label">운영 모델</span>
+          <span class="label">Operating Model</span>
           <span class="metric">Lease + Operate + SaaS</span>
-          <p>기체 공급, 리스, 직접 운항, 운항 소프트웨어, 감항유지 데이터 서비스를 결합해 장기적인 운영 수익을 만듭니다.</p>
+          <p>Combines aircraft supply, leasing, direct operation, operating software, and airworthiness data services to create long-term operating revenue.</p>
         </article>
 
         <article class="message">
@@ -3775,25 +3775,25 @@ footer {
     <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <span class="label">자산 논리</span>
-          <h2>기체는 제품이면서 동시에 장기 운영자산입니다.</h2>
-          <p>1억원급 기체가 생애 50억원 매출 잠재력을 가진다면 반복 운항, 리스, 노선 운영, kg-km 처리량, Flight OS 구독, 감항유지 데이터 서비스가 장기 수익 구조를 만듭니다.</p>
+          <span class="label">Asset Logic</span>
+          <h2>The aircraft is both a product and a long-term operating asset.</h2>
+          <p>If a KRW 100 million aircraft has KRW 5 billion lifetime revenue potential, repeat operation, leasing, route operation, kg-km throughput, Flight OS subscriptions, and airworthiness data services create the long-term revenue structure.</p>
         </article>
         <article class="message">
           <span class="label">고객 편의성</span>
-          <h2>고객이 사는 것은 항공기가 아닙니다. 정해진 시간 안에 화물이 도착하는 능력입니다.</h2>
-          <p>물류 고객은 특정 시간 안에 특정 중량을 특정 거점으로 보내는 능력을 구매합니다. Lambda는 500kg급 미드마일 SLA, 시간 단축 효과, 회랑별 반복 운항률을 중심으로 운영 가치를 만듭니다.</p>
+          <h2>Customers do not buy an aircraft. They buy the ability to deliver cargo within a defined time.</h2>
+          <p>Logistics customers buy the ability to move a defined weight to a defined hub within a defined time. Lambda creates operating value around 500 kg-class mid-mile SLA, time savings, and repeat-operation rate by corridor.</p>
         </article>
         <article class="message">
-          <span class="label">플랫폼 운영</span>
-          <h2>하드웨어는 낮은 가격으로 빠르게 깔고, 수익은 운항·정비·데이터에서 반복해서 법니다.</h2>
+          <span class="label">Platform Operation</span>
+          <h2>Hardware is deployed quickly at low cost, while revenue repeats through operation, maintenance, and data.</h2>
           <p>비행계획, 이산 매트릭스 기반 Flight OS, 감항유지 로그, 배터리·모터 수명관리, 경로 최적화, 보험 데이터는 통합 운영 계층으로 연결됩니다. 하드웨어는 낮은 가격으로 빠르게 배치하고, 반복수익은 회랑 운항·정비·데이터 서비스에서 발생합니다.</p>
         </article>
       </div>
     </section>
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="market">시장 보기</a>
+        <a class="button primary" href="#" data-route="market">View Market</a>
         <a class="button secondary" href="#" data-route="company">Company 보기</a>
       </div>
     </section>
