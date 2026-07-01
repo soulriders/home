@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receivepower | Software Defined Aircraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#fff; --panel:#f5f5f7; --line:#d2d2d7; --text:#1d1d1f; --muted:#6e6e73; --blue:#0066cc; --display:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.88); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner,.container { width:min(1040px,calc(100% - 44px)); margin:0 auto; }
+    .topbar-inner { min-height:54px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { font:800 14px var(--display); text-transform:uppercase; text-decoration:none; }
+    .nav-stack { display:flex; flex-direction:column; align-items:flex-end; gap:2px; min-width:0; }
+    .language-switch { font-size:11px; font-weight:800; line-height:1; color:var(--blue); }
+    .language-switch a { color:var(--blue); text-decoration:none; }
+    .language-switch a + a::before { content:"|"; color:var(--line); margin:0 7px; }
+    .nav { display:flex; align-items:center; gap:0; overflow-x:auto; white-space:nowrap; scrollbar-width:none; }
+    .nav::-webkit-scrollbar { display:none; }
+    .nav a { color:var(--muted); font-size:13px; text-decoration:none; }
+    .nav a + a::before { content:"|"; color:var(--line); margin:0 10px; }
+    .nav a:hover { color:var(--text); }
+    .hero { padding:96px 0 44px; border-bottom:1px solid var(--line); }
+    .eyebrow { display:block; color:var(--blue); font:700 12px var(--mono); text-transform:uppercase; margin-bottom:14px; }
+    h1 { font:800 clamp(42px,7vw,80px)/1.05 var(--display); letter-spacing:0; max-width:940px; margin-bottom:22px; }
+    .lead { color:var(--muted); font-size:clamp(20px,2.5vw,27px); max-width:880px; }
+    .hero-media { margin-top:42px; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--panel); }
+    .hero-media img { display:block; width:100%; max-height:540px; object-fit:cover; }
+    .section { padding:64px 0; border-bottom:1px solid var(--line); }
+    .section-title { font:800 clamp(32px,4vw,52px)/1.12 var(--display); margin-bottom:18px; max-width:900px; }
+    .section-lead { color:var(--muted); font-size:20px; max-width:840px; margin-bottom:28px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px; }
+    .card h2,.card h3 { font:800 24px/1.25 var(--display); margin-bottom:12px; }
+    .card p { color:var(--muted); }
+    .label { display:inline-block; color:var(--blue); font:700 12px var(--mono); text-transform:uppercase; margin-bottom:12px; }
+    .data { list-style:none; margin-top:14px; display:grid; gap:10px; }
+    .data li { display:flex; justify-content:space-between; gap:18px; border-top:1px solid var(--line); padding-top:10px; }
+    .data span { color:var(--muted); }
+    .data strong { text-align:right; }
+    .cta { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border-radius:999px; background:var(--blue); color:#fff; text-decoration:none; font-weight:800; }
+    .button.secondary { background:#fff; color:var(--text); border:1px solid var(--line); }
+    footer { padding:34px 0; color:var(--muted); font-size:13px; }
+    @media (max-width:780px) { .topbar-inner,.container { width:min(100% - 28px,1040px); } .hero { padding-top:70px; } .grid { grid-template-columns:1fr; } .card { padding:22px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="ja.html">Receivepower</a>
+      <div class="nav-stack">
+        <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#company">Company</a>
+          <a href="#ir">IR</a>
+          <a href="#technology">Technology</a>
+          <a href="#ip">IP</a>
+          <a href="#product">Product</a>
+          <a href="#market">Market</a>
+          <a href="#business">Business</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="eyebrow">Software Defined Aircraft</span>
+        <h1>トラックより安く、旅客機より安全に飛ぶ。</h1>
+        <p class="lead">輸送費よりも時間損失が高い区間から攻略します。</p>
+        <figure class="hero-media"><img src="assets/images/sda/sda-perspective-render.png" alt="SDA Lambda aircraft rendering"></figure>
+        <div class="cta"><a class="button" href="#product">製品を見る</a><a class="button secondary" href="#ip">IPを見る</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="company">
+      <div class="container">
+        <span class="eyebrow">Company</span>
+        <h2 class="section-title">ヒューマノイドから空中ロボットまで、ReceivepowerはPhysical AIで動く機械をつくります。</h2>
+        <p class="section-lead">Receivepowerは2019年から知能型ロボットを開発してきました。Lambda SDAは、ロボティクス、決定論的制御、ソフトウェア定義飛行を組み合わせた航空機プラットフォームです。</p>
+        <div class="grid">
+          <article class="card"><h3>空飛ぶ自動車を夢見たことがあるなら</h3><p>Lambda SDAは、自動車水準の価格、維持費、部品を目指しながら空を飛ぶ航空機です。</p></article>
+          <article class="card"><h3>貨物から始める</h3><p>旅客認証から始めるのではなく、貨物運航、飛行データ、反復可能な安全ケースを通じて信頼を積み上げます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ir">
+      <div class="container">
+        <span class="eyebrow">IR</span>
+        <h2 class="section-title">1億円級の運航資産が、回廊ごとの反復収益を生みます。</h2>
+        <p class="section-lead">投資の論点は機体販売だけではありません。フリート保有、回廊運営権、MRO、Flight OS、耐空維持データ、地域JVへ広がる反復収益構造です。</p>
+        <div class="grid">
+          <article class="card"><h3>認証が中心リスク</h3><p>時価総額10兆ウォン級のAAM企業でさえ、認証を何年も終えられていません。私たちは決定論的な数学と説明可能な飛行挙動で認証に向かいます。</p></article>
+          <article class="card"><h3>資本戦略</h3><p>機体、リース、回廊運航、MRO、Flight OS、耐空維持データ、地域製造パートナーシップが一つの運営スタックになります。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="container">
+        <span class="eyebrow">Technology</span>
+        <h2 class="section-title">Robotics Technology</h2>
+        <p class="section-lead">Receivepowerは実際の機械を動かすPhysical AIを扱います。ロボットミドルウェア、産業制御、座標系、センサー融合、仮想空間、ビジョン、マニピュレーション、接触制御、AIモデル、ワークセル、工場データ、安全、エンジニアリングシステムを一つの実行体系につなげます。</p>
+        <div class="grid">
+          <article class="card"><span class="label">Physical AI</span><h3>現実世界で動くAI</h3><p>実機の状態を読み、故障可能性を予測し、次の安全な動作を選択する制御知能です。</p></article>
+          <article class="card"><span class="label">Robot Middleware</span><h3>実行基盤</h3><p>センサー、制御器、モーター、シミュレーター、AIモデルを一つの運用システムにつなぎます。</p></article>
+          <article class="card"><span class="label">Sensor Fusion</span><h3>状態推定</h3><p>カメラ、IMU、エンコーダ、モーター電流、力センサーを融合し、機械の現在状態を把握します。</p></article>
+          <article class="card"><span class="label">Safety</span><h3>設計された復旧</h3><p>非常停止、安全領域、速度制限、衝突確認、復旧条件をエンジニアリングの一部として扱います。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ip">
+      <div class="container">
+        <span class="eyebrow">IP</span>
+        <h2 class="section-title">Lambda IPは運航費用を下げ、飛行構造を安全に変えます。</h2>
+        <p class="section-lead">ReceivepowerのIPは、技術名だけでなく機体構造の変化と運航効果として読むべきものです。</p>
+        <div class="grid">
+          <article class="card"><h3>独立ティルティング推力</h3><p>拠点アクセス性と固定翼巡航効率を同時に満たす推進アーキテクチャです。</p></article>
+          <article class="card"><h3>仮想操縦面</h3><p>機械式操縦面をなくし、差動推力と機体形状で制御します。</p></article>
+          <article class="card"><h3>離散制御マトリクス</h3><p>飛行モードを境界内に置き、反復可能でログにより説明できる形で管理します。</p></article>
+          <article class="card"><h3>無動力高揚力と滑空</h3><p>推力喪失時にもオートローテーションと滑空モードへ移行し、制御可能な降下を誘導します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="product">
+      <div class="container">
+        <span class="eyebrow">Product</span>
+        <h2 class="section-title">Lambdaは貨物優先運航でSDAアーキテクチャを証明します。</h2>
+        <p class="section-lead">Lambda SDAの価値は形容詞ではなく数値で証明されます。性能、安全性、運航経済性、整備構造を事実中心で整理します。</p>
+        <div class="grid">
+          <article class="card"><h3>SDA Lambda</h3><p>SDA Lambdaは固定翼航空機の長距離飛行、ドローンの精密制御、ジャイロコプターとグライダーの安定した滑空を可能にするソフトウェア定義航空機です。</p></article>
+          <article class="card"><h3>拡張経路</h3><p>観測、貨物派生型、有人移動、ヒューマノイド連携製品群は、貨物優先検証後の段階的な拡張対象です。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="market">
+      <div class="container">
+        <span class="eyebrow">Market</span>
+        <h2 class="section-title">低コスト航空物流市場は、機体原価と反復運航率が同時に合ってこそ開きます。</h2>
+        <p class="section-lead">航空物流の原価がトラック水準まで下がる瞬間、物流地図は道路ではなく目的地への直線で描き直されます。</p>
+        <div class="grid">
+          <article class="card"><h3>釜山 - 福岡 回廊</h3><ul class="data"><li><span>飛行距離</span><strong>約200〜215km</strong></li><li><span>機体片道直接運航原価</span><strong>約9.6万〜10.4万ウォン</strong></li></ul></article>
+          <article class="card"><h3>地方自治体</h3><p>島しょ、港湾、産業団地、医療検体、緊急部品、観光、防災対応のための公共物流回廊を対象にします。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="business">
+      <div class="container">
+        <span class="eyebrow">Business</span>
+        <h2 class="section-title">ビジネスモデルは安定性を優先します。</h2>
+        <p class="section-lead">Receivepowerは設計、制御、ソフトウェア、特許を標準アーキテクチャとして提供し、パートナーは資本とサプライチェーンで共に拡張します。</p>
+        <div class="grid">
+          <article class="card"><h3>特許ライセンス</h3><p>中核IPはFlight OS、技術パッケージ、ライセンス、継続ロイヤルティへ拡張できます。</p></article>
+          <article class="card"><h3>開発JV</h3><p>Receivepowerはアーキテクチャとソフトウェアを提供し、パートナーは資本、製造、地域サプライチェーンを提供します。</p></article>
+          <article class="card"><h3>製造JV</h3><p>地域パートナーが工場、設備、許認可、組立を担い、機体は単純で交換可能な構造を維持します。</p></article>
+          <article class="card"><h3>運営スタック</h3><p>機体販売、リース、回廊権、MRO、Flight OS、耐空維持データ、地域JVがビジネスを駆動します。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© Receivepower. Software Defined Aircraft platform.</div></footer>
+</body>
+</html>

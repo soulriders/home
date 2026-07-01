@@ -464,6 +464,12 @@ h1 {
   color: var(--text-accent);
   text-decoration: none;
 }
+
+.language-switch a + a::before {
+  content: "|";
+  color: var(--border-main);
+  margin: 0 7px;
+}
 .global-nav {
   display: flex;
   align-items: center;
@@ -2079,7 +2085,7 @@ footer {
     <div class="topbar-inner">
       <button type="button" class="brand" data-target-page="home">Receivepower</button>
             <div class="nav-stack">
-        <div class="language-switch"><a href="en.html">EN</a></div>
+        <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
           <button type="button" class="nav-link" data-target-page="company">Company</button>
