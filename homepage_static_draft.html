@@ -2120,9 +2120,9 @@ footer {
 
 .hero-sec {
   min-height: calc(100svh - 76px);
-  padding-top: clamp(72px, 9vw, 118px) !important;
-  padding-bottom: clamp(56px, 8vw, 92px) !important;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 62%, #f3f4f6 100%) !important;
+  padding-top: clamp(58px, 7vw, 88px) !important;
+  padding-bottom: clamp(42px, 6vw, 72px) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 54%, #eef1f4 100%) !important;
   overflow: hidden;
 }
 
@@ -2132,7 +2132,7 @@ footer {
 
 .hero-label {
   display: inline-flex;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   color: #0066cc;
   font-size: 12px;
   font-weight: 800;
@@ -2141,24 +2141,25 @@ footer {
 }
 
 .hero-h1 {
-  max-width: 1060px;
-  font-size: clamp(46px, 6.4vw, 92px);
+  max-width: 940px;
+  font-size: clamp(44px, 5.25vw, 74px);
   font-weight: 560 !important;
-  line-height: 1.02;
+  line-height: 1.04;
 }
 
 .hero-p {
-  max-width: 680px;
-  margin-top: 26px;
+  max-width: 620px;
+  margin-top: 22px;
   color: #303640;
-  font-size: clamp(18px, 1.55vw, 22px);
+  font-size: clamp(17px, 1.35vw, 20px);
   line-height: 1.55;
 }
 
 .hero-media-card {
-  width: min(1320px, 100%);
-  margin: clamp(34px, 5vw, 58px) auto 0;
-  overflow: visible;
+  position: relative;
+  width: min(1180px, 100%);
+  margin: clamp(24px, 3.4vw, 38px) auto 0;
+  overflow: hidden;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -2167,21 +2168,26 @@ footer {
 
 .hero-media-card img {
   width: 100%;
-  height: min(54svh, 610px);
-  min-height: 340px;
-  object-fit: contain;
-  object-position: center;
+  height: clamp(360px, 47svh, 520px);
+  min-height: 0;
+  object-fit: cover;
+  object-position: center 50%;
   background: transparent;
-  filter: drop-shadow(0 28px 42px rgba(18, 26, 40, 0.22));
+  filter: saturate(0.96) contrast(1.02);
 }
 
 .hero-media-caption {
-  width: min(760px, 100%);
-  margin: 14px auto 0;
-  padding: 0;
-  justify-content: center;
-  color: #59616d;
-  font-size: 13px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 70%);
+  margin: 0;
+  padding: 18px 20px 18px 24px;
+  justify-content: flex-end;
+  color: rgba(17, 19, 24, 0.72);
+  font-size: 12px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.92) 24%, rgba(255, 255, 255, 0.98));
+  text-align: right;
 }
 
 .hero-media-caption strong {
@@ -2223,6 +2229,29 @@ footer {
   box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08) !important;
 }
 
+.sda-image-section {
+  padding-top: 82px !important;
+  background: #ffffff !important;
+}
+
+.sda-photo-strip,
+.sda-image-grid {
+  gap: 16px;
+}
+
+.sda-image-card {
+  border-color: rgba(18, 22, 28, 0.1) !important;
+  background: #f8f9fb !important;
+}
+
+.sda-image-caption {
+  background: #ffffff;
+}
+
+.section-title {
+  max-width: 760px;
+}
+
 @media (max-width: 760px) {
   .topbar-inner {
     width: min(100% - 28px, 1280px);
@@ -2252,7 +2281,7 @@ footer {
 
   .hero-sec {
     min-height: calc(100svh - 96px);
-    padding-top: 72px !important;
+    padding-top: 54px !important;
   }
 
   .hero-sec .container {
@@ -2260,22 +2289,22 @@ footer {
   }
 
   .hero-label {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     font-size: 11px;
   }
 
   .hero-h1 {
-    font-size: clamp(40px, 11.4vw, 52px);
+    font-size: clamp(34px, 9.5vw, 44px);
     line-height: 1.08;
   }
 
   .hero-p {
-    margin-top: 22px;
+    margin-top: 18px;
     font-size: 16px;
   }
 
   .hero-media-card {
-    margin-top: 34px;
+    margin-top: 30px;
   }
 
   .hero-media-card img {
@@ -2286,10 +2315,14 @@ footer {
   }
 
   .hero-media-caption {
+    position: static;
     display: block;
-    width: min(300px, 100%);
+    width: 100%;
+    padding: 14px 0 0;
+    background: transparent;
     font-size: 12px;
     line-height: 1.6;
+    text-align: center;
   }
 }
 /* Joby Archer benchmark design pass end */
@@ -2346,11 +2379,19 @@ footer {
       <h2 class="section-title">비동기틸트로터기의 <span>비행 예시</span></h2>
             <div class="sda-photo-strip">
         <article class="sda-image-card">
-          <img src="assets/images/sda/sda-async-render.png" alt="SDA 비동기 틸팅 항공기 렌더링">
+          <img src="assets/images/sda/tilt-lift-detail.png" alt="SDA 수직이착륙 틸팅 나셀 디테일">
           <div class="sda-image-caption">
-            <span>PLATFORM</span>
-            <h3>분산추진 항공 로봇</h3>
-            <p>8개 추진기를 하나의 비행체 구조 안에서 소프트웨어로 제어합니다.</p>
+            <span>VTOL</span>
+            <h3>수직이착륙 틸팅 나셀</h3>
+            <p>활주로 없이 뜨기 위한 추력 방향 전환 구조를 실제 부품 단위로 보여줍니다.</p>
+          </div>
+        </article>
+        <article class="sda-image-card">
+          <img src="assets/images/sda/tilt-cruise-detail.png" alt="SDA 순항 틸팅 나셀 디테일">
+          <div class="sda-image-caption">
+            <span>CRUISE</span>
+            <h3>고정익 순항 전환</h3>
+            <p>수직 추력 장치를 순항 추력으로 전환해 장거리 항공 물류의 효율을 확보합니다.</p>
           </div>
         </article>
         <article class="sda-image-card">
@@ -2359,14 +2400,6 @@ footer {
             <span>LAYOUT</span>
             <h3>Stagger 기반 가상조종면</h3>
             <p>조종면이 없으므로 기체의 제작비는 1/10으로 경감 됩니다.</p>
-          </div>
-        </article>
-        <article class="sda-image-card">
-          <img src="assets/images/sda/sda-side-motor-labels.png" alt="SDA 측면 추진기 라벨 이미지">
-          <div class="sda-image-caption">
-            <span>CONTROL</span>
-            <h3>차동추력기반제어</h3>
-            <p>기체의 단차와 이산매트릭스를 바탕으로 가상조종면을 제어하여 비행합니다.</p>
           </div>
         </article>
       </div>
