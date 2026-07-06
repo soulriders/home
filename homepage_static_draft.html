@@ -2076,8 +2076,223 @@ footer {
     white-space: normal;
   }
 }
-/* Robotics technology taxonomy end */
-/* Aerostructure style override end */
+
+/* Joby Archer benchmark design pass start */
+.topbar {
+  top: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(18, 22, 28, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.topbar-inner {
+  width: min(1280px, calc(100% - 48px));
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.brand {
+  color: #111318;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.language-switch {
+  justify-content: flex-end;
+  margin-bottom: 7px;
+}
+
+.language-switch a,
+.global-nav > .nav-link,
+.global-nav > .nav-item > .nav-link {
+  color: #252a33;
+}
+
+.page-view {
+  padding-top: 76px;
+}
+
+.hero-sec {
+  min-height: calc(100svh - 76px);
+  padding-top: clamp(72px, 9vw, 118px) !important;
+  padding-bottom: clamp(56px, 8vw, 92px) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 62%, #f3f4f6 100%) !important;
+  overflow: hidden;
+}
+
+.hero-sec .container {
+  width: min(1360px, calc(100% - 48px));
+}
+
+.hero-label {
+  display: inline-flex;
+  margin-bottom: 22px;
+  color: #0066cc;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-h1 {
+  max-width: 1060px;
+  font-size: clamp(46px, 6.4vw, 92px);
+  font-weight: 560 !important;
+  line-height: 1.02;
+}
+
+.hero-p {
+  max-width: 680px;
+  margin-top: 26px;
+  color: #303640;
+  font-size: clamp(18px, 1.55vw, 22px);
+  line-height: 1.55;
+}
+
+.hero-media-card {
+  width: min(1320px, 100%);
+  margin: clamp(34px, 5vw, 58px) auto 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero-media-card img {
+  width: 100%;
+  height: min(54svh, 610px);
+  min-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  filter: drop-shadow(0 28px 42px rgba(18, 26, 40, 0.22));
+}
+
+.hero-media-caption {
+  width: min(760px, 100%);
+  margin: 14px auto 0;
+  padding: 0;
+  justify-content: center;
+  color: #59616d;
+  font-size: 13px;
+}
+
+.hero-media-caption strong {
+  color: #111318;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.viewpoint-card,
+.visitor-card,
+.tech-effect-card,
+.spec-card,
+.patent-card,
+.cert-item,
+.message,
+.subnav-card,
+.link-card,
+.subpage-card,
+.contact-form-card,
+.route-visual,
+.econ-copy,
+.econ-bars-wrap,
+.sda-image-card {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.visitor-card:hover,
+.tech-effect-card:hover,
+.spec-card:hover,
+.patent-card:hover,
+.cert-item:hover,
+.message:hover,
+.subnav-card:hover,
+.link-card:hover,
+.subpage-card:hover,
+.sda-image-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08) !important;
+}
+
+@media (max-width: 760px) {
+  .topbar-inner {
+    width: min(100% - 28px, 1280px);
+    min-height: 96px;
+    padding: 12px 0;
+    gap: 5px 12px;
+  }
+
+  .brand {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .nav-stack {
+    width: 100%;
+  }
+
+  .language-switch,
+  .global-nav {
+    justify-content: center;
+  }
+
+  .page-view {
+    padding-top: 96px;
+  }
+
+  .hero-sec {
+    min-height: calc(100svh - 96px);
+    padding-top: 72px !important;
+  }
+
+  .hero-sec .container {
+    width: min(100% - 28px, 1280px);
+  }
+
+  .hero-label {
+    margin-bottom: 18px;
+    font-size: 11px;
+  }
+
+  .hero-h1 {
+    font-size: clamp(40px, 11.4vw, 52px);
+    line-height: 1.08;
+  }
+
+  .hero-p {
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  .hero-media-card {
+    margin-top: 34px;
+  }
+
+  .hero-media-card img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  .hero-media-caption {
+    display: block;
+    width: min(300px, 100%);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+/* Joby Archer benchmark design pass end */
 </style>
 </head>
 <body>
@@ -2098,7 +2313,7 @@ footer {
             <button type="button" class="submenu-link" data-target-page="market">시장</button>
           </div>
         </div>
-        <button type="button" class="nav-link" data-target-page="business">비즈니스</button>
+        <button type="button" class="nav-link" data-target-page="business">Business</button>
       </nav>
       </div>
     </div>
@@ -2109,36 +2324,17 @@ footer {
 <!-- S01_HERO -->
 <section class="hero-sec" id="S01_HERO">
     <div class="container">
+      <span class="hero-label">Software Defined Aircraft</span>
       <h1 class="hero-h1">트럭보다 싸게, 여객기보다 안전하게 납니다.</h1>
       <p class="hero-p">육상운송의 고급운임 구간부터 장악합니다.</p>
-      
-            <figure class="hero-media-card">
+
+      <figure class="hero-media-card">
         <img src="assets/images/sda/sda-perspective-render.png" alt="SDA 분산추진 항공기 렌더링">
         <figcaption class="hero-media-caption">
           <strong>SDA Platform</strong>
-          <span>고정익 항속거리와 분산추진 제어를 결합한 Software Defined Aircraft 이미지입니다.</span>
+          <span>활주로 없이 뜨고, 고정익으로 멀리 나는 항공 물류 플랫폼입니다.</span>
         </figcaption>
       </figure>
-      <div class="market-viewpoints">
-        <article class="viewpoint-card">
-          <span>Lambda</span>
-          <ul>
-            <li>비동기 틸트로터 — 활주로 없이 뜨고, 고정익으로 멀리 납니다.</li>
-            <li>고정익 순항 — 멀티콥터 에너지 한계 없이 200~1,000km를 커버합니다.</li>
-            <li>이산 매트릭스 Flight OS — 노선별 반복 운항과 감항 데이터를 동시에 쌓습니다.</li>
-          </ul>
-        </article>
-
-        <article class="viewpoint-card">
-          <span>경제성</span>
-          <h3>기체가 단순하여 협력 범위가 넓습니다.</h3>
-          <ul>
-            <li>무조종면 구조 — 액추에이터, 힌지, 링크가 없어 제조·정비 협력이 쉽습니다.</li>
-            <li>고정피치 로터 — 가변피치 없이 반복 운항이 가능하여 정비 비용이 낮은 추진 구조입니다.</li>
-            <li>IP 라이선스·부품 생태계 — 기체, Flight OS, 운항 회랑 단위로 다양한 협력이 가능합니다.</li>
-          </ul>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -2239,83 +2435,41 @@ footer {
 <!-- S02_VISITOR_ROUTING -->
   <section id="S02_VISITOR_ROUTING">
     <div class="container">
-      <span class="eyebrow">시작점</span>
-      <h2 class="section-title">어떤 협력을 <span>찾고 있습니까?</span></h2>
+      <span class="eyebrow">협력</span>
+      <h2 class="section-title">어떤 협력을 <span>원하십니까?</span></h2>
 
       <div class="visitor-grid">
         <a class="visitor-card" href="#" data-route="ir">
           <div>
-            <h3>자본투자</h3>
+            <h3>투자자</h3>
             <span>자본투자</span>
             <p>기체 1억원, 생애 매출 50억원, 목표 마진 50%. 플릿·운항권·Flight OS·MRO로 확장되는 반복수익 구조입니다.</p>
           </div>
-          <strong>비용 구조 보기</strong>
-        </a>
-        <a class="visitor-card" href="#" data-route="business">
-          <div>
-            <h3>기술협력</h3>
-            <span>기술협력</span>
-            <p>UAM 천이비행 안전 케이스가 필요하다면, SDA의 검증 가능한 비동기 틸팅 시나리오가 협력 출발점입니다.</p>
-          </div>
-          <strong>협력 논의</strong>
+          <strong>IR 보기 →</strong>
         </a>
         <a class="visitor-card" href="#" data-route="technology">
           <div>
-            <h3>인재</h3>
-            <span>인재</span>
-            <p>임무를 먼저 정하고 기계를 거꾸로 만드는 팀입니다. 제어·시뮬레이션·하드웨어·Physical AI를 한 자리에서 다룹니다.</p>
+            <h3>기술 협력사</h3>
+            <span>기술협력</span>
+            <p>SDA의 비동기 틸팅 구조와 Flight OS를 기반으로 모듈 단위 협력이 가능합니다.</p>
           </div>
-          <strong>역할 보기</strong>
+          <strong>기술 보기 →</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="business">
+          <div>
+            <h3>지자체 · 운항 파트너</h3>
+            <span>노선 협력</span>
+            <p>도서·산단·의료 구간과 부산항 ↔ 일본 본토 회랑이 초기 운항 후보입니다.</p>
+          </div>
+          <strong>비즈니스 보기 →</strong>
         </a>
         <a class="visitor-card" href="#" data-route="ip">
           <div>
-            <h3>기술</h3>
+            <h3>IP · 라이선스</h3>
             <span>아키텍처</span>
             <p>등록 1건, 출원 4건. 비동기 틸팅·가상 조종면·이산 제어·무동력 고양력·가상피토관.</p>
           </div>
-          <strong>IP 구조 보기</strong>
-        </a>
-      <!-- BRAND_CONTENT_SPREAD_20260627_HOME_VISITORS -->
-
-        <a class="visitor-card" href="#" data-route="ir">
-          <div>
-            <h3>VC / 자본</h3>
-            <span>자본 회수</span>
-            <p>핵심은 항공기 스펙이 아니라 회랑별 반복 운항에서 나오는 플릿 경제성입니다. 기체 단가, 정비비, 운항률, 감항유지 데이터가 맞는 순간 1억원급 운항자산은 생애 매출을 만드는 물류 인프라가 됩니다.</p>
-          </div>
-          <strong>자본투자 경로 보기</strong>
-        </a>
-        <a class="visitor-card" href="#" data-route="business">
-          <div>
-            <h3>지방자치단체(일본)</h3>
-            <span>지방자치단체</span>
-            <p>물류 회랑 하나에 조립 공장·MRO 거점·운항 인력이 함께 남습니다. 부산항 ↔ 일본 본토가 첫 번째 후보입니다.</p>
-          </div>
-          <strong>일본 경로 보기</strong>
-        </a>
-        <a class="visitor-card" href="#" data-route="business">
-          <div>
-            <h3>지방자치단체(한국)</h3>
-            <span>지방자치단체</span>
-            <p>드론 실증 이벤트가 아닙니다. 도서·산단·의료 구간에 반복 운항 가능한 공공 물류 노선을 설계합니다.</p>
-          </div>
-          <strong>한국 경로 보기</strong>
-        </a>
-        <a class="visitor-card" href="#" data-route="technology">
-          <div>
-            <h3>드론 기업</h3>
-            <span>페이로드 체급 확장</span>
-            <p>기체 구조, Flight OS, 시뮬레이션, 운항 회랑 — 모듈 단위로 협력합니다. 멀티콥터 다음 체급을 함께 만드실 수 있습니다.</p>
-          </div>
-          <strong>드론 기업 경로 보기</strong>
-        </a>
-        <a class="visitor-card" href="#" data-route="ir">
-          <div>
-            <h3>개인 투자자</h3>
-            <span>초기 스토리</span>
-            <p>에어택시보다 먼저 돈이 되는 하늘길은 화물입니다. 멀티콥터가 못 가는 거리, 항공기가 비싼 구간이 시장입니다.</p>
-          </div>
-          <strong>개인 투자자 경로 보기</strong>
+          <strong>IP 보기 →</strong>
         </a>
       </div>
 
@@ -2323,11 +2477,10 @@ footer {
   </section>
 
 
-  <!-- BRAND_CONTENT_SPREAD_20260627_HOME_TRANSLATION -->
   <section id="S02B_TRANSLATION">
     <div class="container">
-      <span class="eyebrow">브랜드 해석</span>
-      <h2 class="section-title">기술 선택 하나가 <span>협력 범위를 결정합니다</span></h2>
+      <span class="eyebrow">기술</span>
+      <h2 class="section-title">설계 선택이 <span>협력 범위를 결정합니다</span></h2>
       <div class="tech-effect-list">
         <article class="tech-effect-card">
           <h3>고정피치 로터</h3>
