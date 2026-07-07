@@ -2172,9 +2172,9 @@ footer {
   position: relative;
   z-index: 2;
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.98),
-    0 10px 34px rgba(255, 255, 255, 0.82),
-    0 0 3px rgba(255, 255, 255, 0.95);
+    0 1px 0 rgba(255, 255, 255, 0.96),
+    0 14px 32px rgba(255, 255, 255, 0.82),
+    0 0 2px rgba(255, 255, 255, 0.92);
 }
 
 .hero-label {
@@ -2191,8 +2191,9 @@ footer {
   max-width: 780px;
   margin-left: 0;
   margin-right: 0;
+  color: #070b12;
   font-size: clamp(48px, 5.8vw, 84px);
-  font-weight: 560 !important;
+  font-weight: 640 !important;
   line-height: 1.04;
 }
 
@@ -2201,7 +2202,7 @@ footer {
   margin-top: 22px;
   margin-left: 0;
   margin-right: 0;
-  color: #303640;
+  color: #222a35;
   font-size: clamp(17px, 1.35vw, 20px);
   line-height: 1.55;
 }
@@ -2265,7 +2266,20 @@ footer {
   background: #111318;
 }
 
+.motion-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(4, 8, 14, 0.82) 0%, rgba(4, 8, 14, 0.52) 34%, rgba(4, 8, 14, 0.14) 72%, rgba(4, 8, 14, 0.02) 100%),
+    linear-gradient(180deg, rgba(4, 8, 14, 0.04) 0%, rgba(4, 8, 14, 0.28) 100%);
+  pointer-events: none;
+}
+
 .motion-image {
+  position: relative;
+  z-index: 0;
   display: block;
   width: 100%;
   min-height: inherit;
@@ -2277,17 +2291,18 @@ footer {
   position: absolute;
   left: clamp(22px, 5vw, 72px);
   bottom: clamp(22px, 5vw, 72px);
+  z-index: 2;
   max-width: 560px;
   color: #ffffff;
   text-shadow:
-    0 2px 18px rgba(0, 0, 0, 0.48),
-    0 0 2px rgba(0, 0, 0, 0.72);
+    0 2px 18px rgba(0, 0, 0, 0.72),
+    0 0 2px rgba(0, 0, 0, 0.92);
 }
 
 .motion-caption span {
   display: inline-flex;
   margin-bottom: 14px;
-  color: rgba(255, 255, 255, 0.78);
+  color: #8fd2ff;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -2296,8 +2311,9 @@ footer {
 
 .motion-caption h2 {
   margin: 0;
+  color: #ffffff;
   font-size: clamp(30px, 4.8vw, 64px);
-  font-weight: 560;
+  font-weight: 660;
   line-height: 1.08;
   letter-spacing: 0;
 }
@@ -2305,7 +2321,7 @@ footer {
 .motion-caption p {
   max-width: 460px;
   margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.94);
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.62;
 }
@@ -2505,7 +2521,7 @@ footer {
     <div class="container">
       <span class="hero-label">Software Defined Aircraft</span>
       <h1 class="hero-h1">트럭보다 싸게, 여객기보다 안전하게 납니다.</h1>
-      <p class="hero-p">육상운송의 고급운임 구간부터 장악합니다.</p>
+      <p class="hero-p">트럭 운임과 경쟁하는 신기술 비행체</p>
 
       <figure class="hero-media-card">
         <img src="assets/images/sda/sda-perspective-render.png" alt="SDA 분산추진 항공기 렌더링">
@@ -2524,7 +2540,7 @@ footer {
         <div class="motion-caption">
           <span>Flight Visual</span>
           <h2>비동기 틸트로터 전환 비행</h2>
-          <p>수직 이륙에서 고정익 순항으로 넘어가는 전환 구조를 이미지로 먼저 배치합니다.</p>
+          <p>SDA는 비행기, 자이로콥터, 헬리콥터, 멀티콥터드론의 비행모드로 비행할 수 있습니다.</p>
         </div>
       </div>
     </div>
@@ -2542,7 +2558,7 @@ footer {
           <div class="sda-image-caption">
             <span>VTOL</span>
             <h3>수직이착륙 틸팅 나셀</h3>
-            <p>활주로 없이 뜨기 위한 추력 방향 전환 구조를 실제 부품 단위로 보여줍니다.</p>
+            <p>모든 로터는 독립적으로 틸팅 됩니다.</p>
           </div>
         </article>
         <article class="sda-image-card">
@@ -2628,14 +2644,14 @@ footer {
   <section id="S02_VISITOR_ROUTING">
     <div class="container">
       <span class="eyebrow">협력</span>
-      <h2 class="section-title">어떤 협력을 <span>원하십니까?</span></h2>
+      <h2 class="section-title">창조적인 협력</h2>
 
       <div class="visitor-grid">
         <a class="visitor-card" href="#" data-route="ir">
           <div>
             <h3>투자자</h3>
             <span>자본투자</span>
-            <p>기체 1억원, 생애 매출 50억원, 목표 마진 50%. 플릿·운항권·Flight OS·MRO로 확장되는 반복수익 구조입니다.</p>
+          <p>기체 1억원, 라이프사이클 매출 50억원, 목표 마진 50%. 플릿·운항권·Flight OS·MRO로 확장되는 반복수익 구조입니다.</p>
           </div>
           <strong>IR 보기 →</strong>
         </a>
@@ -2643,7 +2659,7 @@ footer {
           <div>
             <h3>기술 협력사</h3>
             <span>기술협력</span>
-            <p>SDA의 비동기 틸팅 구조와 Flight OS를 기반으로 모듈 단위 협력이 가능합니다.</p>
+            <p>SDA의 비동기 틸팅 구조와 Flight OS를 기반으로 신기술 비행체/비행로봇의 개발 협력</p>
           </div>
           <strong>기술 보기 →</strong>
         </a>
@@ -2651,7 +2667,7 @@ footer {
           <div>
             <h3>지자체 · 운항 파트너</h3>
             <span>노선 협력</span>
-            <p>도서·산단·의료 구간과 부산항 ↔ 일본 본토 회랑이 초기 운항 후보입니다.</p>
+            <p>UAM 도시 시뮬레이션, 기체 실증, 노선 실증</p>
           </div>
           <strong>비즈니스 보기 →</strong>
         </a>
@@ -2659,7 +2675,7 @@ footer {
           <div>
             <h3>IP · 라이선스</h3>
             <span>아키텍처</span>
-            <p>등록 1건, 출원 4건. 비동기 틸팅·가상 조종면·이산 제어·무동력 고양력·가상피토관.</p>
+            <p>비동기틸트로터기의 특허를 바탕으로 약 25종의 특허망으로 신기술이 보호 됩니다.</p>
           </div>
           <strong>IP 보기 →</strong>
         </a>
