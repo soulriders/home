@@ -1,4 +1,4 @@
-name: Deploy static site to Cafe24
+name: Deploy static site to Cafe24 server hosting
 
 on:
   push:
@@ -10,10 +10,12 @@ jobs:
   deploy-cafe24:
     runs-on: ubuntu-latest
     env:
-      CAFE24_FTP_SERVER: ${{ secrets.CAFE24_FTP_SERVER }}
-      CAFE24_FTP_USERNAME: ${{ secrets.CAFE24_FTP_USERNAME }}
-      CAFE24_FTP_PASSWORD: ${{ secrets.CAFE24_FTP_PASSWORD }}
-      CAFE24_SERVER_DIR: ${{ secrets.CAFE24_SERVER_DIR }}
+      CAFE24_SSH_HOST: ${{ secrets.CAFE24_SSH_HOST }}
+      CAFE24_SSH_USER: ${{ secrets.CAFE24_SSH_USER }}
+      CAFE24_SSH_PORT: ${{ secrets.CAFE24_SSH_PORT }}
+      CAFE24_SSH_KEY: ${{ secrets.CAFE24_SSH_KEY }}
+      CAFE24_WEB_ROOT: ${{ secrets.CAFE24_WEB_ROOT }}
+      CAFE24_RELEASE_DIR: ${{ secrets.CAFE24_RELEASE_DIR }}
 
     steps:
       - name: Checkout
@@ -37,28 +39,60 @@ jobs:
             echo "local_dir=./" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Deploy dist to Cafe24 /www/
-        if: ${{ env.CAFE24_FTP_SERVER != '' && env.CAFE24_FTP_USERNAME != '' && env.CAFE24_FTP_PASSWORD != '' && env.CAFE24_SERVER_DIR != '' }}
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Normalize Cafe24 SSH settings
+        id: cafe24-settings
+        shell: bash
+        run: |
+          echo "ssh_port=${CAFE24_SSH_PORT:-22}" >> "$GITHUB_OUTPUT"
+          echo "release_dir=${CAFE24_RELEASE_DIR:-~/receivepower-release}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload static output to Cafe24 release directory
+        if: ${{ env.CAFE24_SSH_HOST != '' && env.CAFE24_SSH_USER != '' && env.CAFE24_SSH_KEY != '' && env.CAFE24_WEB_ROOT != '' }}
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ env.CAFE24_FTP_SERVER }}
-          username: ${{ env.CAFE24_FTP_USERNAME }}
-          password: ${{ env.CAFE24_FTP_PASSWORD }}
-          local-dir: ${{ steps.cafe24-output.outputs.local_dir }}
-          server-dir: ${{ env.CAFE24_SERVER_DIR }}
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/node_modules/**
-            **/docs/**
-            **/src/**
-            **/scripts/**
-            **/package*.json
-            **/vite.config.*
-            **/tsconfig.json
+          host: ${{ env.CAFE24_SSH_HOST }}
+          username: ${{ env.CAFE24_SSH_USER }}
+          key: ${{ env.CAFE24_SSH_KEY }}
+          port: ${{ steps.cafe24-settings.outputs.ssh_port }}
+          source: ${{ steps.cafe24-output.outputs.local_dir }}
+          target: ${{ steps.cafe24-settings.outputs.release_dir }}
+          strip_components: 1
+          overwrite: true
+
+      - name: Publish release directory to Cafe24 web root
+        if: ${{ env.CAFE24_SSH_HOST != '' && env.CAFE24_SSH_USER != '' && env.CAFE24_SSH_KEY != '' && env.CAFE24_WEB_ROOT != '' }}
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ env.CAFE24_SSH_HOST }}
+          username: ${{ env.CAFE24_SSH_USER }}
+          key: ${{ env.CAFE24_SSH_KEY }}
+          port: ${{ steps.cafe24-settings.outputs.ssh_port }}
+          script_stop: true
+          script: |
+            set -eu
+            RELEASE_DIR="${{ steps.cafe24-settings.outputs.release_dir }}"
+            WEB_ROOT="${{ env.CAFE24_WEB_ROOT }}"
+            mkdir -p "$WEB_ROOT"
+            if command -v rsync >/dev/null 2>&1; then
+              rsync -av --delete \
+                --exclude '.git' \
+                --exclude '.github' \
+                --exclude 'docs' \
+                --exclude 'src' \
+                --exclude 'scripts' \
+                --exclude 'node_modules' \
+                --exclude 'package.json' \
+                --exclude 'package-lock.json' \
+                --exclude 'vite.config.ts' \
+                --exclude 'tsconfig.json' \
+                "$RELEASE_DIR"/ "$WEB_ROOT"/
+            else
+              find "$WEB_ROOT" -mindepth 1 -maxdepth 1 \
+                ! -name '.htaccess' \
+                -exec rm -rf {} +
+              cp -R "$RELEASE_DIR"/. "$WEB_ROOT"/
+            fi
 
       - name: Skip Cafe24 deploy notice
-        if: ${{ env.CAFE24_FTP_SERVER == '' || env.CAFE24_FTP_USERNAME == '' || env.CAFE24_FTP_PASSWORD == '' || env.CAFE24_SERVER_DIR == '' }}
-        run: echo "Cafe24 FTP Secrets are not configured. Build completed, FTP deploy skipped."
+        if: ${{ env.CAFE24_SSH_HOST == '' || env.CAFE24_SSH_USER == '' || env.CAFE24_SSH_KEY == '' || env.CAFE24_WEB_ROOT == '' }}
+        run: echo "Cafe24 SSH Secrets are not configured. Build completed, server deploy skipped."
