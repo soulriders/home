@@ -26,6 +26,7 @@
 - SSH 접속
 - GitHub Actions에서 정적 파일을 서버의 릴리스 폴더로 업로드
 - 서버 안에서 릴리스 폴더 내용을 실제 웹 루트로 동기화
+- FTP 정보만 있는 경우에는 FTP 방식으로 웹 루트에 업로드
 
 ## 빌드 명령
 
@@ -67,8 +68,9 @@ npm run build:site
 2. GitHub Actions 실행
 3. 소스 프로젝트라면 `npm ci`와 `npm run build:cafe24` 실행
 4. 정적 퍼블리시 저장소라면 현재 저장소 루트를 산출물로 사용
-5. 산출물을 Cafe24 서버의 릴리스 폴더로 SCP 업로드
+5. SSH Secrets가 있으면 산출물을 Cafe24 서버의 릴리스 폴더로 SCP 업로드
 6. SSH로 서버에 접속해 릴리스 폴더를 실제 웹 루트로 동기화
+7. SSH Secrets가 없고 FTP Secrets가 있으면 FTP로 웹 루트에 업로드
 
 Secrets가 아직 없으면 GitHub Actions는 빌드까지만 수행하고 Cafe24 서버 배포는 건너뛴다.
 
@@ -81,6 +83,8 @@ Repository → Settings → Secrets and variables → Actions → New repository
 ```
 
 필수 Secrets:
+
+SSH 배포를 쓸 때:
 
 ```text
 CAFE24_SSH_HOST
@@ -111,6 +115,25 @@ CAFE24_SSH_PORT=22
 CAFE24_RELEASE_DIR=~/receivepower-release
 ```
 
+FTP 배포를 쓸 때:
+
+```text
+CAFE24_FTP_SERVER
+CAFE24_FTP_USERNAME
+CAFE24_FTP_PASSWORD
+CAFE24_SERVER_DIR
+```
+
+FTP 방식의 `CAFE24_SERVER_DIR`는 Cafe24 웹 루트다.
+
+예:
+
+```text
+CAFE24_SERVER_DIR=/www/
+```
+
+SSH와 FTP를 둘 다 넣으면 SSH 방식이 먼저 실행된다. FTP는 SSH 정보가 없을 때 fallback으로만 실행된다.
+
 `CAFE24_WEB_ROOT`는 실제 도메인 `rcvpower.cafe24.com`이 바라보는 서버 폴더를 넣는다.
 
 예시는 서버마다 다르다.
@@ -137,6 +160,8 @@ CAFE24_RELEASE_DIR=~/receivepower-release
 
 ## 사람이 해야 할 Cafe24 설정
 
+SSH 방식:
+
 1. Cafe24 서버호스팅에서 SSH 접속 정보를 확인한다.
 2. `rcvpower.cafe24.com`의 실제 웹 루트 경로를 확인한다.
 3. 배포 전용 SSH 키를 만들고 공개키를 서버에 등록한다.
@@ -146,13 +171,21 @@ CAFE24_RELEASE_DIR=~/receivepower-release
 7. GitHub Actions에서 `Deploy static site to Cafe24 server hosting`이 성공했는지 확인한다.
 8. `http://rcvpower.cafe24.com/`에 접속해 HTML, CSS, 이미지가 정상 로드되는지 확인한다.
 
+FTP 방식:
+
+1. Cafe24 FTP 접속 정보를 확인한다.
+2. GitHub Actions Secrets에 `CAFE24_FTP_SERVER`, `CAFE24_FTP_USERNAME`, `CAFE24_FTP_PASSWORD`, `CAFE24_SERVER_DIR`를 넣는다.
+3. 보통 `CAFE24_SERVER_DIR`는 `/www/`를 먼저 시도한다.
+4. `main` 브랜치에 커밋을 push한다.
+5. GitHub Actions 결과와 `http://rcvpower.cafe24.com/` 표시를 확인한다.
+
 ## 커밋하면 어디에 반영되는가
 
 Secrets 설정이 끝난 뒤에는 다음 구조가 된다.
 
 - GitHub: 커밋과 push 즉시 저장소에 반영
 - Vercel: 기존 `vercel.json` 기준으로 정적 산출물을 자동 배포
-- Cafe24: GitHub Actions가 SSH/SCP로 서버 웹 루트에 정적 산출물을 배포
+- Cafe24: GitHub Actions가 SSH/SCP 또는 FTP로 서버 웹 루트에 정적 산출물을 배포
 
 즉, `main`에 push하면 GitHub, Vercel, Cafe24가 같은 정적 산출물 기준으로 갱신된다.
 
