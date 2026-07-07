@@ -1,0 +1,64 @@
+name: Deploy static site to Cafe24
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-cafe24:
+    runs-on: ubuntu-latest
+    env:
+      CAFE24_FTP_SERVER: ${{ secrets.CAFE24_FTP_SERVER }}
+      CAFE24_FTP_USERNAME: ${{ secrets.CAFE24_FTP_USERNAME }}
+      CAFE24_FTP_PASSWORD: ${{ secrets.CAFE24_FTP_PASSWORD }}
+      CAFE24_SERVER_DIR: ${{ secrets.CAFE24_SERVER_DIR }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Prepare Cafe24 static output
+        id: cafe24-output
+        shell: bash
+        run: |
+          if [ -f package.json ] && [ -f scripts/build-static-site.mjs ]; then
+            npm ci
+            npm run build:cafe24
+            echo "local_dir=./dist/" >> "$GITHUB_OUTPUT"
+          else
+            echo "No source build script found. Deploying repository root as static output."
+            echo "local_dir=./" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy dist to Cafe24 /www/
+        if: ${{ env.CAFE24_FTP_SERVER != '' && env.CAFE24_FTP_USERNAME != '' && env.CAFE24_FTP_PASSWORD != '' && env.CAFE24_SERVER_DIR != '' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ env.CAFE24_FTP_SERVER }}
+          username: ${{ env.CAFE24_FTP_USERNAME }}
+          password: ${{ env.CAFE24_FTP_PASSWORD }}
+          local-dir: ${{ steps.cafe24-output.outputs.local_dir }}
+          server-dir: ${{ env.CAFE24_SERVER_DIR }}
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/docs/**
+            **/src/**
+            **/scripts/**
+            **/package*.json
+            **/vite.config.*
+            **/tsconfig.json
+
+      - name: Skip Cafe24 deploy notice
+        if: ${{ env.CAFE24_FTP_SERVER == '' || env.CAFE24_FTP_USERNAME == '' || env.CAFE24_FTP_PASSWORD == '' || env.CAFE24_SERVER_DIR == '' }}
+        run: echo "Cafe24 FTP Secrets are not configured. Build completed, FTP deploy skipped."
