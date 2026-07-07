@@ -2171,6 +2171,10 @@ footer {
 .hero-p {
   position: relative;
   z-index: 2;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.98),
+    0 10px 34px rgba(255, 255, 255, 0.82),
+    0 0 3px rgba(255, 255, 255, 0.95);
 }
 
 .hero-label {
@@ -2246,6 +2250,64 @@ footer {
   color: #111318;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.motion-section {
+  padding-top: 0 !important;
+  padding-bottom: 88px !important;
+  background: #eef1f4 !important;
+}
+
+.motion-frame {
+  position: relative;
+  min-height: clamp(420px, 62vw, 760px);
+  overflow: hidden;
+  background: #111318;
+}
+
+.motion-image {
+  display: block;
+  width: 100%;
+  min-height: inherit;
+  height: 100%;
+  object-fit: cover;
+}
+
+.motion-caption {
+  position: absolute;
+  left: clamp(22px, 5vw, 72px);
+  bottom: clamp(22px, 5vw, 72px);
+  max-width: 560px;
+  color: #ffffff;
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.48),
+    0 0 2px rgba(0, 0, 0, 0.72);
+}
+
+.motion-caption span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.motion-caption h2 {
+  margin: 0;
+  font-size: clamp(30px, 4.8vw, 64px);
+  font-weight: 560;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.motion-caption p {
+  max-width: 460px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.62;
 }
 
 .viewpoint-card,
@@ -2393,6 +2455,21 @@ footer {
     line-height: 1.6;
     text-align: center;
   }
+
+  .motion-section {
+    padding-bottom: 56px !important;
+  }
+
+  .motion-frame {
+    min-height: 520px;
+  }
+
+  .motion-caption {
+    right: 22px;
+    left: 22px;
+    bottom: 28px;
+    max-width: none;
+  }
 }
 /* Joby Archer benchmark design pass end */
 </style>
@@ -2437,6 +2514,19 @@ footer {
           <span>활주로 없이 뜨고, 고정익으로 멀리 나는 항공 물류 플랫폼입니다.</span>
         </figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="motion-section" id="S01A_MOTION">
+    <div class="container">
+      <div class="motion-frame">
+        <img class="motion-image" src="assets/images/sda/sda-perspective-render.png" alt="SDA 비동기 틸트로터 기체 이미지">
+        <div class="motion-caption">
+          <span>Flight Visual</span>
+          <h2>비동기 틸트로터 전환 비행</h2>
+          <p>수직 이륙에서 고정익 순항으로 넘어가는 전환 구조를 이미지로 먼저 배치합니다.</p>
+        </div>
+      </div>
     </div>
   </section>
 
