@@ -2642,8 +2642,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   .data-list strong,
   .data-list span {
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     word-break: keep-all;
+  }
+
+  .data-list strong,
+  .hero-metrics {
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .visitor-grid,
