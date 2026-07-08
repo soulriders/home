@@ -2583,6 +2583,88 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     bottom: 28px;
     max-width: none;
   }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .global-nav {
+    flex-wrap: wrap;
+    gap: 0;
+    row-gap: 6px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .global-nav > .nav-link,
+  .global-nav > .nav-item > .nav-link {
+    min-width: auto;
+    padding: 4px 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .submenu {
+    max-width: calc(100vw - 24px);
+    white-space: normal;
+  }
+
+  .submenu-link {
+    white-space: nowrap;
+  }
+
+  .hero-sec .container,
+  .container {
+    width: min(100% - 24px, 1280px);
+  }
+
+  .hero-h1 {
+    max-width: 100%;
+    overflow-wrap: keep-all;
+    word-break: keep-all;
+    text-wrap: balance;
+    font-size: clamp(30px, 8.8vw, 42px);
+  }
+
+  .hero-p,
+  .section-title,
+  .motion-caption h2,
+  .motion-caption p,
+  .tech-effect-card h3,
+  .tech-effect-card p,
+  .message h1,
+  .message h2,
+  .message p,
+  .visitor-card p,
+  .spec-card,
+  .data-list strong,
+  .data-list span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  .visitor-grid,
+  .tech-effect-list,
+  .sda-image-grid,
+  .spec-grid,
+  .route-grid,
+  .econ-layout,
+  .patents-grid,
+  .subnav-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .data-list li {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .data-list strong {
+    text-align: right;
+  }
 }
 /* Joby Archer benchmark design pass end */
 </style>
@@ -3348,7 +3430,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h3>1. 정해진 대로만 반응합니다 (DO-178C)</h3>
           <p>기존 비행체는 돌풍마다 실시간 연산으로 대응해, 결과를 사전에 100% 예측할 수 없습니다. 저희 기체는 모든 상황의 답을 미리 계산해두고 즉시 전환만 하므로, 결과를 인증 기관에 미리 증명할 수 있습니다.</p>
           <h3>2. 엔진이 꺼져도 조종하며 착륙합니다 (PL.2105(g))</h3>
-          <p>동력 완전 상실 시에도 통제된 착륙이 가능해야 한다는 건 필수 인증 조건입니다. 저희는 별도 장치 없이 로터 각도, 자동회전, 차동항력으로 무동력 조향 착륙을 설계했습니다. SDA는 PL.2105(g)를 정면으로 겨냥해 만든 비행체입니다.</p>
+          <p>엔진이 꺼져도, 조종은 멈추지 않습니다. 모든 동력을 잃은 극한의 상황에서도 8개의 로터가 스스로 공기 저항의 차이, 즉 차동항력을 만들어 가상의 조종면을 형성합니다. 동력 없이도 기체의 방향과 궤적을 끝까지 통제하며 활강 착륙하는 페일세이프를 설계했습니다. SDA는 PL.2105(g)를 정면으로 겨냥해 만든 비행체입니다.</p>
           <h3>3. 인증 대상 부품이 1/100 수준입니다</h3>
           <p>일반 비행체는 조종면과 구동 장치 때문에 고장 지점이 수백 개이고, 이를 하나하나 증명해야 합니다. 저희는 기계식 조종면 자체를 없애 인증 대상 부품을 극적으로 줄였습니다.</p>
           <h3>4. 사람보다 화물로 먼저 신뢰를 쌓습니다</h3>
