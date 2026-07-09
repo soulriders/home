@@ -206,6 +206,39 @@ h1 {
   text-decoration: underline;
 }
 
+.business-submenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 0 4px;
+}
+
+.business-tab {
+  border: 1px solid var(--border-main);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 14px;
+}
+
+.business-tab.is-active {
+  background: var(--text-main);
+  border-color: var(--text-main);
+  color: #fff;
+}
+
+.business-panel {
+  display: none;
+}
+
+.business-panel.is-active {
+  display: block;
+}
+
 .message-list.compact {
   gap: 14px;
 }
@@ -4686,11 +4719,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="subnav-section">
       <div class="container">
         <a class="back-link" href="#" data-route="market">시장으로 돌아가기</a>
+        <div class="business-submenu" aria-label="Business submenu">
+          <button type="button" class="business-tab is-active" data-business-tab="models">거래유형</button>
+          <button type="button" class="business-tab" data-business-tab="kr-local">지자체(한국)</button>
+          <button type="button" class="business-tab" data-business-tab="jp-local">지자체(일본)</button>
+          <button type="button" class="business-tab" data-business-tab="tech-partner">기술협력</button>
+          <button type="button" class="business-tab" data-business-tab="logistics">물류기업</button>
+          <button type="button" class="business-tab" data-business-tab="revenue">수익구조</button>
+        </div>
       </div>
     </section>
 
-    
-    <section class="message-section business-architecture-lead">
+    <section class="message-section business-panel is-active" data-business-panel="models">
       <div class="container message-list">
         <article class="message">
           <span class="label">Patent Licensing</span>
@@ -4719,7 +4759,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
       </div>
     </section>
-<section class="message-section">
+
+    <section class="message-section business-panel" data-business-panel="kr-local">
       <div class="container message-list">
         <article class="message" id="market-korea-local-government">
           <span class="label">한국 지방자치단체</span>
@@ -4728,7 +4769,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>연구용역은 약 2,000만원, 전용기체 개발/제작은 약 2억원입니다. 도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응처럼 지역의 지형과 산업 조건에 맞는 항공 물류 회랑과 기체를 먼저 제작합니다. 국내 지자체를 대상으로 순차적으로 시범 사업을 진행할 예정입니다.</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ 목차로</a>
         </article>
+      </div>
+    </section>
 
+    <section class="message-section business-panel" data-business-panel="jp-local">
+      <div class="container message-list">
         <article class="message" id="market-japan-local-government">
           <span class="label">일본 지방자치단체</span>
           <h2>지역 물류 회랑과 현지 조립·정비 거점</h2>
@@ -4736,6 +4781,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>초기 사업은 전용 노선 설계, 기체 사양 정의, 조립·정비 거점 검토, 운항 데이터 축적 순서로 구성합니다. 부산항과 일본 본토를 연결하는 초국경 화물 회랑은 첫 번째 사업 후보입니다.</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ 목차로</a>
         </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="tech-partner">
+      <div class="container message-list">
         <article class="message" id="business-drone-aircraft-company">
           <span class="label">드론·비행체 기업</span>
           <h2>전용기체 개발과 공동사업 추진</h2>
@@ -4750,6 +4800,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>리시브파워의 Physical AI 역량은 센서융합, 상태추정, 제어, 이상상태 대응을 중심으로 합니다. 이 기술은 비행체 제어를 넘어 물류 현장의 로봇 시스템으로 확장됩니다.</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ 목차로</a>
         </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="logistics">
+      <div class="container message-list">
         <article class="message" id="business-logistics-company">
           <span class="label">물류기업</span>
           <h2>공동 플릿운영과 회랑 공동투자</h2>
@@ -4760,7 +4815,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
     </section>
 
-    <section class="message-section">
+    <section class="message-section business-panel" data-business-panel="revenue">
       <div class="container message-list compact">
         <article class="message kpi">
           <span class="label">화물 운항자산</span>
@@ -4791,12 +4846,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>Lambda의 사업 구조는 자동화 물류장비, 운송 네트워크, 소프트웨어 구독을 결합한 모델입니다. 고객은 500kg급 항공 미드마일 처리량과 SLA를 구매합니다.</p>
         </article>
       </div>
-    </section>
 
 
     <!-- BRAND_CONTENT_SPREAD_20260627_business.html -->
 
-    <section class="message-section">
       <div class="container message-list">
         <article class="message">
           <span class="label">자산 논리</span>
@@ -4899,6 +4952,29 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       if (!validPages.includes(page)) return;
       event.preventDefault();
       showPage(page);
+    });
+
+    const businessTabs = Array.from(document.querySelectorAll('[data-business-tab]'));
+    const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
+    businessTabs.forEach((tab) => {
+      tab.addEventListener('click', function () {
+        const target = tab.dataset.businessTab;
+        businessTabs.forEach((el) => {
+          const active = el.dataset.businessTab === target;
+          el.classList.toggle('is-active', active);
+          if (active) {
+            el.setAttribute('aria-current', 'true');
+          } else {
+            el.removeAttribute('aria-current');
+          }
+        });
+        businessPanels.forEach((panel) => {
+          const active = panel.dataset.businessPanel === target;
+          panel.classList.toggle('is-active', active);
+          panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+        window.scrollTo(0, 0);
+      });
     });
 
     const revealSelectors = [
