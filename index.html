@@ -206,31 +206,6 @@ h1 {
   text-decoration: underline;
 }
 
-.business-submenu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 18px 0 4px;
-}
-
-.business-tab {
-  border: 1px solid var(--border-main);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--text-muted);
-  cursor: pointer;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 9px 14px;
-}
-
-.business-tab.is-active {
-  background: var(--text-main);
-  border-color: var(--text-main);
-  color: #fff;
-}
-
 .business-panel {
   display: none;
 }
@@ -3189,7 +3164,17 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <button type="button" class="submenu-link" data-target-page="market">시장</button>
           </div>
         </div>
-        <button type="button" class="nav-link" data-target-page="business">Business</button>
+        <div class="nav-item">
+          <button type="button" class="nav-link" data-target-page="business" data-business-target="models">Business</button>
+          <div class="submenu" aria-label="Business submenu">
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="models">거래유형</button>
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="kr-local">지자체(한국)</button>
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="jp-local">지자체(일본)</button>
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="tech-partner">기술협력</button>
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="logistics">물류기업</button>
+            <button type="button" class="submenu-link" data-target-page="business" data-business-target="revenue">수익구조</button>
+          </div>
+        </div>
       </nav>
       </div>
     </div>
@@ -4719,14 +4704,6 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="subnav-section">
       <div class="container">
         <a class="back-link" href="#" data-route="market">시장으로 돌아가기</a>
-        <div class="business-submenu" aria-label="Business submenu">
-          <button type="button" class="business-tab is-active" data-business-tab="models">거래유형</button>
-          <button type="button" class="business-tab" data-business-tab="kr-local">지자체(한국)</button>
-          <button type="button" class="business-tab" data-business-tab="jp-local">지자체(일본)</button>
-          <button type="button" class="business-tab" data-business-tab="tech-partner">기술협력</button>
-          <button type="button" class="business-tab" data-business-tab="logistics">물류기업</button>
-          <button type="button" class="business-tab" data-business-tab="revenue">수익구조</button>
-        </div>
       </div>
     </section>
 
@@ -4881,10 +4858,33 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
     const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
+    const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
+    const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
 
-    function showPage(page, pushUrl = true) {
+    function showBusinessPanel(panel) {
+      if (!validBusinessPanels.includes(panel)) {
+        panel = 'models';
+      }
+
+      businessPanels.forEach((el) => {
+        const active = el.dataset.businessPanel === panel;
+        el.classList.toggle('is-active', active);
+        el.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      document.querySelectorAll('[data-business-target]').forEach((el) => {
+        const active = el.dataset.businessTarget === panel;
+        el.classList.toggle('is-active', active);
+      });
+    }
+
+    function showPage(page, pushUrl = true, businessPanel = null) {
       if (!validPages.includes(page)) {
         page = 'home';
+      }
+
+      if (page === 'business') {
+        showBusinessPanel(businessPanel || 'models');
       }
 
       pages.forEach((el) => {
@@ -4906,6 +4906,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       if (pushUrl) {
         const url = new URL(window.location.href);
         url.searchParams.set('page', page);
+        if (page === 'business' && businessPanel && validBusinessPanels.includes(businessPanel)) {
+          url.searchParams.set('section', businessPanel);
+        } else {
+          url.searchParams.delete('section');
+        }
         url.hash = '';
         window.history.pushState({ page }, '', url);
       }
@@ -4927,7 +4932,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           navItem.classList.add('is-open');
           return;
         }
-        showPage(el.dataset.targetPage);
+        showPage(el.dataset.targetPage, true, el.dataset.businessTarget || null);
       });
     });
 
@@ -4951,30 +4956,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       const page = routeLink.dataset.route;
       if (!validPages.includes(page)) return;
       event.preventDefault();
-      showPage(page);
-    });
-
-    const businessTabs = Array.from(document.querySelectorAll('[data-business-tab]'));
-    const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
-    businessTabs.forEach((tab) => {
-      tab.addEventListener('click', function () {
-        const target = tab.dataset.businessTab;
-        businessTabs.forEach((el) => {
-          const active = el.dataset.businessTab === target;
-          el.classList.toggle('is-active', active);
-          if (active) {
-            el.setAttribute('aria-current', 'true');
-          } else {
-            el.removeAttribute('aria-current');
-          }
-        });
-        businessPanels.forEach((panel) => {
-          const active = panel.dataset.businessPanel === target;
-          panel.classList.toggle('is-active', active);
-          panel.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
-        window.scrollTo(0, 0);
-      });
+      showPage(page, true, routeLink.dataset.businessTarget || null);
     });
 
     const revealSelectors = [
@@ -5016,11 +4998,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
     window.addEventListener('popstate', function () {
       const params = new URLSearchParams(window.location.search);
-      showPage(params.get('page') || 'home', false);
+      showPage(params.get('page') || 'home', false, params.get('section'));
     });
 
     const params = new URLSearchParams(window.location.search);
-    showPage(params.get('page') || 'home', false);
+    showPage(params.get('page') || 'home', false, params.get('section'));
   })();
 </script>
 </body>
