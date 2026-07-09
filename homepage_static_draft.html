@@ -4822,6 +4822,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
+      document.querySelectorAll('.nav-item.is-open').forEach((el) => el.classList.remove('is-open'));
       window.scrollTo(0, 0);
     }
 
