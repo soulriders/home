@@ -3116,6 +3116,25 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
 }
 
+
+/* Mobile submenu close behavior start */
+@media (max-width: 760px) {
+  .nav-item:hover .submenu,
+  .nav-item:focus-within .submenu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  .nav-item.is-open .submenu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+/* Mobile submenu close behavior end */
 /* Joby Archer benchmark design pass end */
 </style>
 </head>
@@ -4823,11 +4842,22 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       }
 
       document.querySelectorAll('.nav-item.is-open').forEach((el) => el.classList.remove('is-open'));
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
       window.scrollTo(0, 0);
     }
 
     navLinks.forEach((el) => {
-      el.addEventListener('click', function () {
+      el.addEventListener('click', function (event) {
+        const navItem = el.closest('.nav-item');
+        const submenu = navItem ? navItem.querySelector('.submenu') : null;
+        if (submenu && el.parentElement === navItem && !navItem.classList.contains('is-open')) {
+          event.preventDefault();
+          document.querySelectorAll('.nav-item.is-open').forEach((item) => item.classList.remove('is-open'));
+          navItem.classList.add('is-open');
+          return;
+        }
         showPage(el.dataset.targetPage);
       });
     });
