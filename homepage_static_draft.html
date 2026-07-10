@@ -3286,6 +3286,17 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 32%, rgba(255, 255, 255, 0.08) 68%, rgba(255, 255, 255, 0.02) 100%) !important;
 }
 
+@media (min-width: 900px) {
+  .hero-sec {
+    height: clamp(720px, 56.25vw, 1080px) !important;
+    min-height: 0 !important;
+  }
+
+  .hero-sec .container {
+    min-height: 100% !important;
+  }
+}
+
 .hero-media-card,
 .motion-frame,
 .route-visual,
@@ -3392,25 +3403,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <!-- S01_HERO -->
 <section class="hero-sec" id="S01_HERO">
     <div class="hero-loop-media" aria-hidden="true">
-      <video src="assets/videos/kakaotalk-final.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
+      <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="container">
       <span class="hero-label">Software Defined Aircraft</span>
       <h1 class="hero-h1">
         <span class="typo-line">가장 단순한 기체가 가장 안전하게 납니다.</span>
-        <span class="typo-line">소프트웨어 정의 비행체, Lambda.</span>
+        <span class="typo-line">소프트웨어 정의 비행체,</span>
+        <span class="typo-line">Lambda.</span>
       </h1>
       <p class="hero-p">특허받은 구조로 움직이는 조종면(날개의 움직이는 부품)과 기계적 복잡성을 없앴습니다. 더 적은 부품, 더 낮은 비용으로 화물에서 사람까지 실어 나릅니다.</p>
       <p class="hero-p hero-metrics">부산–후쿠오카 59분 · 500kg 화물 · 기체 단가 1/10 목표</p>
       <p class="hero-p hero-market">첫 시장은 트럭과 운임으로 경쟁하는 지역 간 항공 물류입니다.</p>
-
-      <figure class="hero-media-card">
-        <img src="assets/images/sda/sda-perspective-render.png" alt="SDA 분산추진 항공기 렌더링">
-        <figcaption class="hero-media-caption">
-          <strong>SDA Platform</strong>
-          <span>활주로 없이 뜨고, 고정익으로 멀리 날며, 동력 상실 시 자동회전과 차동항력으로 제어하강까지 설계한 소프트웨어 정의 비행체입니다.</span>
-        </figcaption>
-      </figure>
     </div>
   </section>
 
