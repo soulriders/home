@@ -3236,9 +3236,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 }
 
 .hero-loop-media {
-  inset: clamp(12px, 2.4vw, 36px) !important;
-  border-radius: var(--media-mask-radius) !important;
-  box-shadow: var(--media-mask-shadow) !important;
+  inset: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   isolation: isolate;
 }
 
@@ -3266,6 +3266,24 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+}
+
+.hero-loop-media video,
+.hero-loop-media img {
+  object-position: 50% 50% !important;
+  opacity: .92 !important;
+  transform: none !important;
+}
+
+.hero-sec::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.46) 34%, rgba(255, 255, 255, 0.10) 68%, rgba(255, 255, 255, 0.02) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.02) 46%, rgba(238, 241, 244, 0.12) 100%) !important;
+}
+
+.hero-sec .container::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 32%, rgba(255, 255, 255, 0.08) 68%, rgba(255, 255, 255, 0.02) 100%) !important;
 }
 
 .hero-media-card,
@@ -3316,7 +3334,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   }
 
   .hero-loop-media {
-    inset: 10px !important;
+    inset: 0 !important;
   }
 
   .hero-media-card,
