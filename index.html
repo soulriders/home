@@ -34,6 +34,8 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 a {
@@ -1448,6 +1450,32 @@ body::after {
   display: block;
 }
 
+.page-view > .hero {
+  position: relative;
+  min-height: 320px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.66), rgba(255,255,255,.22)),
+    var(--page-hero-image, url("assets/images/sda/sda-perspective-render.png"));
+  background-size: cover;
+  background-position: center;
+}
+
+.page-view > .hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-view[data-page="company"] { --page-hero-image: url("assets/images/sda/lambda-shuttle-city.png"); }
+.page-view[data-page="ir"] { --page-hero-image: url("assets/images/sda/sda-perspective-render.png"); }
+.page-view[data-page="technology"] { --page-hero-image: url("assets/images/sda/sda-control-interface.png"); }
+.page-view[data-page="ip"] { --page-hero-image: url("assets/images/sda/sda-top-view-labeled.png"); }
+.page-view[data-page="product"] { --page-hero-image: url("assets/images/sda/lambda-shuttle-city.png"); }
+.page-view[data-page="market"] { --page-hero-image: url("assets/images/sda/sda-horizontal-cruise.png"); }
+.page-view[data-page="business"] { --page-hero-image: url("assets/images/sda/sda-async-render.png"); }
+
 @keyframes aeroFade {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1468,6 +1496,15 @@ section,
 .cta-band {
   background: transparent !important;
   border: 0;
+}
+
+.page-view > .hero {
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.66), rgba(255,255,255,.22)),
+    var(--page-hero-image, url("assets/images/sda/sda-perspective-render.png")) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 .page-view > section,
@@ -1531,6 +1568,12 @@ h2 {
   max-width: 860px;
   margin-bottom: 34px;
   font-size: clamp(34px, 4.8vw, 60px);
+}
+
+.page-view[data-page="home"] .section-title {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(28px, 3.6vw, 52px);
 }
 
 .section-title span {
@@ -2153,6 +2196,32 @@ footer {
   padding-bottom: 0 !important;
   background: #eef1f4 !important;
   overflow: hidden;
+}
+
+.hero-loop-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #eef1f4;
+}
+
+.hero-loop-media img {
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
+  object-position: 62% 50%;
+  opacity: .74;
+  animation: sdaHeroLoop 9s ease-in-out infinite alternate;
+}
+
+@keyframes sdaHeroLoop {
+  from {
+    transform: scale(1.02) translate3d(-1.5%, 0, 0);
+  }
+  to {
+    transform: scale(1.09) translate3d(1.5%, -1%, 0);
+  }
 }
 
 .hero-sec::before {
@@ -3129,6 +3198,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     overflow: hidden !important;
   }
 
+  .page-view[data-page="home"] .section-title {
+    white-space: nowrap !important;
+    font-size: clamp(18px, 5.1vw, 28px) !important;
+    line-height: 1.18 !important;
+  }
+
 }
 
 
@@ -3191,6 +3266,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
 <!-- S01_HERO -->
 <section class="hero-sec" id="S01_HERO">
+    <div class="hero-loop-media" aria-hidden="true">
+      <img src="assets/images/sda/sda-async-render.png" alt="">
+    </div>
     <div class="container">
       <span class="hero-label">Software Defined Aircraft</span>
       <h1 class="hero-h1">
@@ -3264,7 +3342,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="tech-effect-card">
           <h3>동력이 꺼져도 조종은 멈추지 않습니다</h3>
-          <p>무동력 활강은 FAA 21.17-4 카테고리의 제어된 비상착륙 요구를 정면으로 겨냥한 구조입니다. 동력이 사라져도 로터의 자동회전과 차동항력이 기체의 방향 제어권을 남깁니다.</p>
+          <p>무동력 활강은 FAA 21.17-4 카테고리의 제어된 비상착륙 요건을 직접적으로 충족시키는 구조입니다. 동력이 사라져도 로터의 자동회전과 차동항력이 기체의 방향 제어권을 남깁니다.</p>
           <div class="effect-line">화물 운항 데이터는 유인 전세기 인증 경로를 여는 실증 자산이 됩니다.</div>
         </article>
       </div>
@@ -3313,7 +3391,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <section id="S07_IP_CERTIFICATION">
     <div class="container">
       <span class="eyebrow">IP</span>
-      <h2 class="section-title">약 25건의 특허망이 안전 구조와 운항 비용을 함께 보호합니다.</h2>
+      <h2 class="section-title">25건의 특허망으로 안전운항과 비용을 보호합니다</h2>
 
       <div class="tech-effect-list" style="margin-bottom: 34px;">
         <article class="tech-effect-card">
