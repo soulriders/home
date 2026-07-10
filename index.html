@@ -3225,6 +3225,113 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   }
 }
 /* Mobile submenu close behavior end */
+/* Media masking system start */
+:root {
+  --media-mask-radius: clamp(20px, 3vw, 46px);
+  --media-mask-shadow: 0 28px 80px rgba(17, 24, 39, 0.16);
+}
+
+.hero-sec {
+  background: #ffffff !important;
+}
+
+.hero-loop-media {
+  inset: clamp(12px, 2.4vw, 36px) !important;
+  border-radius: var(--media-mask-radius) !important;
+  box-shadow: var(--media-mask-shadow) !important;
+  isolation: isolate;
+}
+
+.hero-loop-media::after,
+.hero-media-card::after,
+.motion-frame::before,
+.sda-image-card::before,
+.route-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-loop-media video,
+.hero-loop-media img,
+.hero-media-card img,
+.motion-image,
+.sda-image-card img,
+.route-visual img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.hero-media-card,
+.motion-frame,
+.route-visual,
+.sda-image-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: var(--media-mask-radius) !important;
+  box-shadow: var(--media-mask-shadow) !important;
+}
+
+.hero-media-card {
+  aspect-ratio: 16 / 10;
+}
+
+.motion-frame {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  min-height: 0 !important;
+}
+
+.motion-image {
+  min-height: 0 !important;
+}
+
+.sda-image-card.hero-image img,
+.sda-image-card img {
+  aspect-ratio: 16 / 9 !important;
+}
+
+.sda-image-card.small img {
+  aspect-ratio: 4 / 3 !important;
+}
+
+.route-visual {
+  aspect-ratio: 16 / 9;
+}
+
+.route-visual img {
+  min-height: 100%;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --media-mask-radius: 22px;
+  }
+
+  .hero-loop-media {
+    inset: 10px !important;
+  }
+
+  .hero-media-card,
+  .motion-frame,
+  .route-visual,
+  .sda-image-card {
+    border-radius: 22px !important;
+  }
+
+  .motion-frame {
+    width: calc(100% - 24px);
+    aspect-ratio: 4 / 5;
+  }
+}
+/* Media masking system end */
 /* Joby Archer benchmark design pass end */
 </style>
 </head>
