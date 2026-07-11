@@ -3402,6 +3402,54 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   min-height: 100%;
 }
 
+.business-hero {
+  position: relative;
+  min-height: clamp(420px, 44vw, 760px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #050914 !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - clamp(30px, 4vw, 72px)), 0 100%);
+}
+
+.business-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.business-hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.business-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(3, 8, 18, 0.72), rgba(3, 8, 18, 0.34), rgba(3, 8, 18, 0.12)),
+    linear-gradient(180deg, rgba(3, 8, 18, 0.10), rgba(3, 8, 18, 0.58));
+  pointer-events: none;
+}
+
+.business-hero .container {
+  position: relative;
+  z-index: 2;
+  padding-bottom: clamp(56px, 8vw, 110px);
+}
+
+.business-hero .eyebrow {
+  color: #8fd2ff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.42);
+}
+
 .page-view[data-page="home"] > section:not(.hero-sec) {
   position: relative;
   isolation: isolate;
@@ -5062,7 +5110,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 </main>
 
 <main class="page-view" data-page="business">
-<section class="hero">
+<section class="hero business-hero">
+      <div class="business-hero-video" aria-hidden="true">
+        <video src="assets/videos/business-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">비즈니스</span>
       </div>
