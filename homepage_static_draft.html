@@ -3305,6 +3305,30 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 .hero-h1 .typo-line {
   color: #8fd2ff !important;
   -webkit-text-fill-color: #8fd2ff !important;
+  display: block !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+.hero-h1 {
+  width: max-content !important;
+  max-width: min(1120px, calc(100vw - 48px)) !important;
+  font-size: clamp(42px, 4.8vw, 80px) !important;
+  line-height: 1.08 !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-wrap: nowrap !important;
+}
+
+@media (max-width: 760px) {
+  .hero-h1 {
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px) !important;
+    font-size: clamp(20px, 5.6vw, 32px) !important;
+    line-height: 1.16 !important;
+    text-align: center !important;
+  }
 }
 
 .hero-p,
