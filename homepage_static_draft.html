@@ -3485,6 +3485,42 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.42);
 }
 
+.video-hero {
+  min-height: clamp(420px, 44vw, 760px) !important;
+  background: #050914 !important;
+}
+
+.subpage-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.subpage-hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.video-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.18)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.70));
+  pointer-events: none;
+}
+
+.video-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
 .page-view[data-page="home"] > section:not(.hero-sec) {
   position: relative;
   isolation: isolate;
@@ -4239,7 +4275,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
 <main class="page-view" data-page="ir">
-<section class="hero">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">투자자 관계</span>
         <h1>소프트웨어 정의 비행체가 만드는 반복수익 구조.</h1>
@@ -4340,7 +4379,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
 <main class="page-view" data-page="technology">
-<section class="hero">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">기술</span>
         <h1>Robotics Technology</h1>
@@ -4773,7 +4815,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
 <main class="page-view" data-page="ip">
-<section class="hero">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">특허 포트폴리오</span>
         <h1>5대 핵심 기술이 비용과 안전 구조를 바꿉니다.</h1>
@@ -4969,7 +5014,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="product">
 
 <section class="content-group" id="product-main">
-<section class="hero">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">제품 방향</span>
         <h1>Cargo-first Aerial Robot.</h1>
@@ -5204,7 +5252,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
 <main class="page-view" data-page="market">
-<section class="hero">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">시장 진입</span>
         <h1>첫 시장은 반복 운항하는 지역 간 항공 물류입니다.</h1>
