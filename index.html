@@ -3427,6 +3427,41 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   object-position: 50% 50%;
 }
 
+.company-hero {
+  background: #050914 !important;
+}
+
+.company-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.company-hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.company-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.90), rgba(255,255,255,0.62), rgba(255,255,255,0.18)),
+    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.70));
+  pointer-events: none;
+}
+
+.company-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
 .business-hero::before {
   content: "";
   position: absolute;
@@ -3927,7 +3962,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
 <main class="page-view" data-page="company">
-<section class="hero">
+<section class="hero company-hero">
+      <div class="company-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
       <div class="container">
         <span class="eyebrow">회사소개</span>
         <h1>리시브파워는</h1>
