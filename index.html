@@ -4278,12 +4278,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </p>
         <div style="font-size: 14px; color: var(--text-muted);">
           <strong>리시브파워</strong><br>
-          SDA, Physical AI, 임무 정의형 기계 아키텍처.
+          SDA, Physical AI, 임무 정의형 기계 아키텍처.<br>
+          <a href="mailto:contact@rcvpower.com" style="color: inherit;">contact@rcvpower.com</a>
         </div>
       </div>
 
       <div class="contact-form-card">
-        <form onsubmit="event.preventDefault(); alert('문의가 기록되었습니다.');">
+        <form onsubmit="sendContactEmail(event, 'Receivepower 문의');">
           <div class="form-group">
             <label for="f-name">성함</label>
             <input type="text" id="f-name" required placeholder="성함을 입력하세요.">
@@ -6032,6 +6033,26 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
   <script>
+  function sendContactEmail(event, subjectPrefix) {
+    event.preventDefault();
+    const name = document.getElementById('f-name')?.value || '';
+    const company = document.getElementById('f-company')?.value || '';
+    const email = document.getElementById('f-email')?.value || '';
+    const type = document.getElementById('f-type');
+    const typeLabel = type?.options[type.selectedIndex]?.text || '';
+    const message = document.getElementById('f-msg')?.value || '';
+    const subject = encodeURIComponent(`${subjectPrefix} - ${typeLabel}`);
+    const body = encodeURIComponent([
+      `성함: ${name}`,
+      `소속: ${company}`,
+      `이메일: ${email}`,
+      `문의 유형: ${typeLabel}`,
+      '',
+      message
+    ].join('\n'));
+    window.location.href = `mailto:contact@rcvpower.com?subject=${subject}&body=${body}`;
+  }
+
   (function () {
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
