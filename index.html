@@ -1162,6 +1162,70 @@ h1 {
       opacity: 0.9;
     }
 
+    .contact-direct-card h4 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      color: var(--text-main);
+    }
+    .contact-direct-kicker {
+      margin: 0 0 12px;
+      color: var(--brand-primary);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0;
+    }
+    .contact-copy-status {
+      min-height: 20px;
+      color: var(--brand-primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .kakao-contact-qr {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-main);
+    }
+    .kakao-contact-qr img {
+      width: 132px;
+      height: 132px;
+      border-radius: 8px;
+      border: 1px solid var(--border-main);
+      object-fit: cover;
+      background: #ffffff;
+    }
+    .kakao-contact-qr strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--text-main);
+    }
+    .kakao-contact-qr span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    @media (max-width: 560px) {
+      .kakao-contact-qr {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Footer */
     footer {
       background: #f5f5f7;
@@ -4284,35 +4348,23 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
 
       <div class="contact-form-card">
-        <form onsubmit="sendContactEmail(event, 'Receivepower 문의');">
-          <div class="form-group">
-            <label for="f-name">성함</label>
-            <input type="text" id="f-name" required placeholder="성함을 입력하세요.">
+        <div class="contact-direct-card">
+          <p class="contact-direct-kicker">Direct Contact</p>
+          <h4>contact@rcvpower.com</h4>
+          <p>협력, 투자자료, 기술 논의, 지역 실증 문의는 이메일로 보내주십시오.</p>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:contact@rcvpower.com?subject=Receivepower%20문의">이메일 보내기</a>
+            <button class="button secondary" type="button" data-copy-email="contact@rcvpower.com">이메일 복사</button>
           </div>
-          <div class="form-group">
-            <label for="f-company">소속</label>
-            <input type="text" id="f-company" required placeholder="회사 또는 기관명">
+          <div class="contact-copy-status" aria-live="polite"></div>
+          <div class="kakao-contact-qr">
+            <img src="assets/images/contact/kakao-openchat-qr.jpg" alt="리시브파워 카카오톡 문의 QR">
+            <div>
+              <strong>카카오톡 문의</strong>
+              <span>모바일에서는 QR을 길게 누르거나, 다른 기기에서 스캔해 문의할 수 있습니다.</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="f-email">이메일</label>
-            <input type="email" id="f-email" required placeholder="연락받으실 이메일 주소">
-          </div>
-          <div class="form-group">
-            <label for="f-type">문의 유형</label>
-            <select id="f-type" required>
-              <option value="partner">협력 논의</option>
-              <option value="investor">투자자 자료 요청</option>
-              <option value="technical">기술 구조 논의</option>
-              <option value="talent">인재 협의</option>
-              <option value="physical_ai">Physical AI 협력</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="f-msg">제안 내용</label>
-            <textarea id="f-msg" rows="4" required placeholder="협의 내용을 구체적으로 기재해 주십시오."></textarea>
-          </div>
-          <button class="submit-btn" type="submit">문의하기</button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -6033,27 +6085,24 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </main>
 
   <script>
-  function sendContactEmail(event, subjectPrefix) {
-    event.preventDefault();
-    const name = document.getElementById('f-name')?.value || '';
-    const company = document.getElementById('f-company')?.value || '';
-    const email = document.getElementById('f-email')?.value || '';
-    const type = document.getElementById('f-type');
-    const typeLabel = type?.options[type.selectedIndex]?.text || '';
-    const message = document.getElementById('f-msg')?.value || '';
-    const subject = encodeURIComponent(`${subjectPrefix} - ${typeLabel}`);
-    const body = encodeURIComponent([
-      `성함: ${name}`,
-      `소속: ${company}`,
-      `이메일: ${email}`,
-      `문의 유형: ${typeLabel}`,
-      '',
-      message
-    ].join('\n'));
-    window.location.href = `mailto:contact@rcvpower.com?subject=${subject}&body=${body}`;
+  function initContactCopy() {
+    document.querySelectorAll('[data-copy-email]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const email = button.dataset.copyEmail || 'contact@rcvpower.com';
+        const status = button.closest('.contact-form-card')?.querySelector('.contact-copy-status');
+        try {
+          await navigator.clipboard.writeText(email);
+          if (status) status.textContent = '이메일 주소가 복사되었습니다.';
+        } catch (error) {
+          window.prompt('이메일 주소를 복사하세요.', email);
+          if (status) status.textContent = '복사창에서 이메일 주소를 복사하세요.';
+        }
+      });
+    });
   }
 
   (function () {
+    initContactCopy();
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
     const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
