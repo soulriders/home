@@ -1,17 +1,17 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <!--
-    기본 지침:
-    1. 줄바꿈에서 단어가 잘리지 않게 한다.
-    2. 홈에서 중간 제목들은 한 줄로 작성한다.
-    3. Archer 첫 페이지처럼 동영상이 반복 실행되도록 첫 화면에 배치한다.
-    4. 메뉴의 각 첫 페이지 상단에는 대표 이미지를 배경으로 넣는다.
-    5. Company IR 화면의 VC용 인증 스케줄 문구는 FAA 21.17-4 요건 직접 충족 및 25건 특허망 표현을 기준으로 한다.
+    Base guidelines:
+    1. Do not break words across lines.
+    2. Keep intermediate home headings on one line.
+    3. Place a looping video on the first screen, as in Archer's first page.
+    4. Put a representative image background at the top of each first menu page.
+    5. Certification schedule copy for VC readers in Company/IR should use direct FAA 21.17-4 compliance and the 25-patent-network expression.
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Receivepower | Software-Defined Aircraft Lambda</title>
+  <title>Receivepower</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -930,7 +930,7 @@ h1 {
       text-decoration: none;
     }
 
-    /* 단위 경제성 */
+    /* Unit Economics */
     .econ-layout {
       display: grid;
       grid-template-columns: 1fr;
@@ -966,7 +966,7 @@ h1 {
       margin-top: 6px;
     }
 
-    /* First Route (첫 전장) */
+    /* First Route */
     .route-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -3987,104 +3987,1801 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
   <main class="page-view is-active" data-page="home">
 
+<!-- S01_HERO -->
 <section class="hero-sec" id="S01_HERO">
-  <video class="hero-bg-video" src="assets/videos/final360.mp4" autoplay muted loop playsinline preload="metadata"></video>
-  <div class="container hero-content">
-    <span class="eyebrow">Software Defined Aircraft</span>
-    <h1 class="hero-h1"><span class="typo-line">The simplest aircraft,</span><span class="typo-line">software-defined aircraft Lambda.</span></h1>
-    <p class="lead">Fewer parts. Lower cost. From cargo to people.</p>
-    <p class="hero-metric">Busan-Fukuoka in 59 minutes · 500 kg cargo · target aircraft cost at one-tenth of conventional aircraft</p>
-  </div>
-</section>
-<section class="visual-principles-section">
-  <div class="container">
-    <span class="eyebrow">SDA Platform</span>
-    <h2 class="section-title">Software <span>defines the aircraft</span></h2>
-    <div class="principle-grid">
-      <article><h3>An Aircraft With Fewer Moving Wing Parts</h3><p>When control surfaces, the moving parts of the wing, are reduced, wing and fuselage production can move toward automated manufacturing. The target is to bring aircraft cost down to one-tenth of conventional aircraft.</p></article>
-      <article><h3>Flight Mode Transition Architecture</h3><p>Software determines attitude and flight-mode transition across hover, transition, cruise, and glide. One Flight OS switches between multiple flight modes.</p></article>
-      <article><h3>Control Does Not Stop When the Engines Stop</h3><p>Unpowered glide directly addresses the controlled emergency landing requirement of FAA AC 21.17-4. Even when propulsion is lost, autorotation and differential drag preserve directional control authority.</p></article>
+    <div class="hero-loop-media" aria-hidden="true">
+      <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
-  </div>
-</section>
-<section id="S01_WHY_DIFFERENT">
-  <div class="container">
-    <span class="eyebrow">Why It Is Different</span>
-    <h2 class="section-title">Simplicity · Economics · Safety — <span>from one patented structure</span></h2>
-    <div class="feature-grid">
-      <article><h3>Simple</h3><p>By reducing moving control surfaces, Lambda reduces parts, failure points, certification items, and manufacturing processes at the same time.</p></article>
-      <article><h3>Economic</h3><p>The target aircraft cost of one-tenth, 500 kg repeated operations, and the Busan-Fukuoka 59-minute example all point to the same cost structure.</p></article>
-      <article><h3>Safe</h3><p>Even when power is lost, the aircraft is designed to manage direction and trajectory through autorotation and differential drag.</p></article>
+    <div class="container">
+      <span class="hero-label">Software Defined Aircraft</span>
+      <h1 class="hero-h1">
+        <span class="typo-line">The simplest aircraft,</span>
+        <span class="typo-line">software-defined aircraft Lambda.</span>
+      </h1>
+      <p class="hero-p">Fewer parts. Lower cost. From cargo to people.</p>
     </div>
-  </div>
-</section>
-<section class="motion-section">
-  <div class="container motion-layout">
-    <div><span class="eyebrow">Flight Visual</span><h2>Asynchronous Tiltrotor Transition Flight</h2><p>Hover takeoff and landing, transition, cruise, and emergency descent. One aircraft performs all four.</p></div>
-    <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA asynchronous tiltrotor flight image">
-  </div>
-</section>
-<section id="S02_VISITOR_ROUTING">
-  <div class="container">
-    <span class="eyebrow">Collaboration</span>
-    <h2 class="section-title">Creative Collaboration</h2>
-    <div class="visitor-grid">
-      <a class="visitor-card" href="#" data-route="ir"><h3>Investors</h3><p>A repeat-revenue structure that expands into fleets, operating rights, Flight OS, MRO, data, and regional JVs.</p></a>
-      <a class="visitor-card" href="#" data-route="technology"><h3>Technology Partners</h3><p>New-technology aircraft and aerial robots built with SDA's asynchronous tilting architecture and Flight OS.</p></a>
-      <a class="visitor-card" href="#" data-route="business"><h3>Local Governments · Operators</h3><p>UAM city simulation, aircraft demonstration, and route demonstration.</p></a>
-      <a class="visitor-card" href="#" data-route="ip"><h3>IP · Licensing</h3><p>About 25 patents protect the new technology based on the asynchronous tiltrotor patent.</p></a>
+  </section>
+
+  
+<section class="visual-principles-section" id="S02B_TRANSLATION">
+    <div class="container">
+      <div class="visual-principles-layout">
+        <figure class="visual-principles-media">
+          <img src="assets/images/sda/sda-top-view-labeled.png" alt="SDA eight-rotor top layout">
+        </figure>
+        <div class="visual-principles-copy">
+          <span class="eyebrow">Technology</span>
+          <h2 class="section-title">Software <span>defines the aircraft</span></h2>
+          <div class="tech-effect-list">
+            <article class="tech-effect-card">
+              <h3>An Aircraft With Fewer Moving Wing Parts</h3>
+              <p>When moving wing parts are removed, wing and fuselage production can move toward automated manufacturing. The target is to bring aircraft cost down to one-tenth of conventional aircraft.</p>
+              <div class="effect-line">When moving wing parts disappear, maintenance items disappear with them.</div>
+            </article>
+            <article class="tech-effect-card">
+              <h3>Flight Mode Transition Architecture</h3>
+              <p>Software determines attitude and flight-mode transition across hover, transition, cruise, and glide.</p>
+              <div class="effect-line">One Flight OS switches among multicopter, airplane, helicopter, and gyrocopter flight modes.</div>
+            </article>
+            <article class="tech-effect-card">
+              <h3>Control Does Not Stop When the Engines Stop</h3>
+              <p>Unpowered glide directly satisfies the controlled emergency landing requirement of FAA AC 21.17-4. Even when propulsion is lost, autorotation and differential drag preserve directional control authority.</p>
+              <div class="effect-line">Cargo operation data becomes a demonstration asset that opens the certification path for crewed charter aircraft.</div>
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  <section id="S01_WHY_DIFFERENT">
+    <div class="container">
+      <span class="eyebrow">Why It Is Different</span>
+      <h2 class="section-title">Simplicity · Economics · Safety — <span>from one patented structure</span></h2>
+      <article class="message hero-summary">
+        <span class="label">SDA Platform</span>
+        <h3>The key metrics are explained through operating cost and the first market.</h3>
+        <p>Busan-Fukuoka in 59 minutes · 500 kg cargo · target aircraft cost at one-tenth of conventional aircraft. The first market is regional air logistics competing with truck freight rates.</p>
+      </article>
+      <div class="tech-effect-list">
+        <article class="tech-effect-card">
+          <h3>Simple</h3>
+          <p>By reducing moving control surfaces, Lambda reduces parts, failure points, certification items, and manufacturing processes at the same time.</p>
+          <div class="effect-line">Reducing parts lowers maintenance cost and manufacturing difficulty at the same time.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>Economic</h3>
+          <p>The target aircraft cost of one-tenth, 500 kg repeated operations, and the Busan-Fukuoka 59-minute example all point to the same cost structure.</p>
+          <div class="effect-line">The market opens only when air logistics can compete with truck freight rates.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>Safe</h3>
+          <p>Even when power is lost, the aircraft is designed to manage direction and trajectory through autorotation and differential drag.</p>
+          <div class="effect-line">Unpowered glide and emergency descent are core safety structures for expansion into crewed flight.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="motion-section" id="S01A_MOTION">
+    <div class="container">
+      <div class="motion-frame">
+        <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA asynchronous tiltrotor flight image">
+        <div class="motion-caption">
+          <span>Flight Visual</span>
+          <h2>Asynchronous Tiltrotor Transition Flight</h2>
+          <p>Hover takeoff and landing, transition, cruise, and emergency descent. One aircraft performs all four.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- S04_TECH_POSITIONING -->
+  <section id="S04_TECH_POSITIONING">
+    <div class="container">
+      <span class="eyebrow">Technology</span>
+      <h2 class="section-title">Operating Conditions <span>Decide the Airframe</span></h2>
+
+      <div class="tech-effect-list">
+        <article class="tech-effect-card">
+          <h3>Operations Come First</h3>
+          <p>Payload, distance, takeoff and landing space, arrival time, failure behavior, and cost per trip come first.</p>
+          <div class="effect-line">The airframe comes next.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>Deterministic Flight</h3>
+          <p>Mode-aware control keeps flight behavior within defined boundaries, makes it repeatable, and makes it explainable through operation logs and test data.</p>
+          <div class="effect-line">The core of SDA is not black-box autonomy, but determinism that can be submitted to certification authorities.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>Mission Hardware</h3>
+          <p>VTOL access, long-range cruise, repeated cargo operations, and low maintenance are not separate features. They are one design problem that creates the same operating cost structure.</p>
+          <div class="effect-line">The airframe is shaped by the route and the cargo.</div>
+        </article>
+
+        <article class="tech-effect-card">
+          <h3>Protected Architecture</h3>
+          <p>Simulation, control, airframe, safety behavior, and IP are developed together to lower aircraft cost, maintenance cost, and improve utilization at the same time.</p>
+          <div class="effect-line">IP is not paperwork. It is the barrier that protects operating cost.</div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 34px;">
+        <a class="choices-cta" href="?page=technology" data-route="technology">View Full Technology</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S07_IP_CERTIFICATION -->
+  <section id="S07_IP_CERTIFICATION">
+    <div class="container">
+      <span class="eyebrow">IP</span>
+      <h2 class="section-title">A network of 25 patents protects safe operation and cost structure</h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 34px;">
+        <article class="tech-effect-card">
+          
+          <p>Lambda IP protects hover takeoff and landing access, deterministic flight, fixed-pitch low-maintenance rotors, a no-control-surface airframe, unpowered glide, and differential-drag control as one architecture.</p>
+          <ul class="metric-list">
+            <li><span>Safe VTOL</span><strong>Asynchronous tiltrotor architecture</strong></li>
+            <li><span>Simpler Airframe</span><strong>Fixed-wing structure without control surfaces</strong></li>
+            <li><span>Lower Burden</span><strong>Fewer moving parts, clearer safety behavior</strong></li>
+          </ul>
+          <div class="effect-line"><a href="?page=ip" data-route="ip" style="color: inherit; text-decoration: none;">View Full IP Comparison</a></div>
+        </article>
+      </div>
+ 
+      <div class="patents-grid">
+        <div class="patent-card">
+          <h4>Asynchronous Tiltrotor</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Safe VTOL</span>
+          <p>A propulsion architecture that satisfies both point access and mid-mile cruise efficiency.</p>
+        </div>
+        <div class="patent-card">
+          <h4>Deterministic Flight</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Mode-Aware Control</span>
+          <p>Flight modes stay within defined boundaries, are repeatable, and can be proven through operation logs.</p>
+        </div>
+        <div class="patent-card">
+          <h4>Aircraft Without Control Surfaces</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Manufacturable Airframe Structure</span>
+          <p>Removing moving wing parts reduces mechanical complexity and maintenance items at the same time.</p>
+        </div>
+        <div class="patent-card">
+          <h4>Autorotation-Aware Safety</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Lower Certification Barrier</span>
+          <p>Even in propulsion-loss scenarios, the aircraft is designed to switch into autorotation and glide modes and perform controlled descent using rotor-by-rotor drag differences.</p>
+        </div>
+        <div class="patent-card">
+          <h4>Unpowered Glide Control</h4>
+          <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">Operational Resilience</span>
+          <p>Even when propulsion is lost, the aircraft manages attitude and trajectory through its own glide performance and rotor-by-rotor differential drag.</p>
+        </div>
+      </div>
+ 
+      <div class="cert-list">
+        <article class="cert-item">
+          <h4>Aircraft Unit Cost</h4>
+          <span>No-control-surface structure</span>
+          <p>The simple airframe structure dramatically lowers aircraft cost.</p>
+        </article>
+        <article class="cert-item">
+          <h4>Maintenance Burden</h4>
+          <span>Minimized Moving Parts</span>
+          <p>Minimizing moving wing parts and mechanical elements reduces inspection, replacement, service items, and maintenance burden.</p>
+        </article>
+        <article class="cert-item">
+          <h4>Certification Barrier</h4>
+          <span>Deterministic, Safety-Aware Behavior</span>
+          <p>Predictable and repeatable flight behavior creates a certification structure where safety can be demonstrated.</p>
+        </article>
+        <article class="cert-item">
+          <h4>Operating Model</h4>
+          <span>Leasing, Fleet Operations, SaaS</span>
+          <p>Beyond simple aircraft sales, it evolves into an air logistics asset that creates continuing revenue through repeated operation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- S08_PHYSICAL_AI_HUMANOID -->
+  <section id="S08_PHYSICAL_AI_HUMANOID">
+    <div class="container">
+      <span class="eyebrow">Physical AI</span>
+      <h2 class="section-title">Starting from aircraft, <span>expanding into Physical AI that moves real machines</span></h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 28px;">
+        <article class="tech-effect-card">
+          <h3>The method of defining machines from operating conditions does not end in the air.</h3>
+          <p>The same loop that moves Lambda also applies to humanoids and autonomous machines. Define the mission, simulate the motion, close the control loop, and design the machine for its operating conditions.</p>
+          <div class="effect-line">SDA is the first proof. Behind it is Physical AI that moves logistics, manufacturing, and maintenance sites.</div>
+        </article>
+      </div>
+
+      <div class="subpage-list">
+        <a class="subpage-card" href="#" data-route="technology">
+          <div>
+            <h3>AI-Based Hardware</h3>
+            <p>Mission, motion, control, safety, and deployment conditions define the machine.</p>
+          </div>
+          <strong>Technology Page</strong>
+        </a>
+        <a class="subpage-card" href="#" data-route="technology">
+          <div>
+            <h3>Humanoid Systems</h3>
+            <p>Motion, manipulation, balance, and task execution for real operating environments.</p>
+          </div>
+          <strong>Technology Page</strong>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- S02_VISITOR_ROUTING -->
+  <section id="S02_VISITOR_ROUTING">
+    <div class="container">
+      <span class="eyebrow">Partnership</span>
+      <h2 class="section-title">Creative Collaboration</h2>
+
+      <div class="visitor-grid">
+        <a class="visitor-card" href="#" data-route="ir">
+          <div>
+            <h3>Investors</h3>
+            <span>Capital Investment</span>
+          <p>SDA expands a software-defined aircraft into an operating asset. A 100 million KRW aircraft, 5 billion KRW lifecycle revenue, 50% target margin, and repeat revenue through fleets, operating rights, Flight OS, and MRO.</p>
+          </div>
+          <strong>View IR →</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="technology">
+          <div>
+            <h3>Technology Partners</h3>
+            <span>Technology Collaboration</span>
+            <p>Development collaboration for new-technology aircraft and aerial robots based on SDA asynchronous tilting and Flight OS.</p>
+          </div>
+          <strong>View Technology →</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="business">
+          <div>
+            <h3>Local Governments · Operators</h3>
+            <span>Route Collaboration</span>
+            <p>UAM city simulation, aircraft demonstration, and route demonstration.</p>
+          </div>
+          <strong>View Business →</strong>
+        </a>
+        <a class="visitor-card" href="#" data-route="ip">
+          <div>
+            <h3>IP · Licensing</h3>
+            <span>Architecture</span>
+            <p>A network of about 25 patents protects the new technology based on the asynchronous tiltrotor patent.</p>
+          </div>
+          <strong>View IP →</strong>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  
+  <!-- S09_CONTACT -->
+<section id="S09_CONTACT">
+    <div class="container contact-layout">
+      <div class="contact-info">
+        <h3>If you want to discuss technical collaboration<br>contact us.</h3>
+        <p>
+          Aircraft structure, Flight OS, operating corridors, IP licensing. Collaboration can begin from any point.
+        </p>
+        <p>
+          Lambda begins with air logistics. The bigger picture is mission-defined machines for the physical world.
+        </p>
+        <div style="font-size: 14px; color: var(--text-muted);">
+          <strong>Receivepower</strong><br>
+          SDA, Physical AI, and mission-defined machine architecture.
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <form onsubmit="event.preventDefault(); alert('Your inquiry has been recorded.');">
+          <div class="form-group">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" required placeholder="Enter your name.">
+          </div>
+          <div class="form-group">
+            <label for="f-company">Organization</label>
+            <input type="text" id="f-company" required placeholder="Company or organization">
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" required placeholder="Email address for contact">
+          </div>
+          <div class="form-group">
+            <label for="f-type">Inquiry Type</label>
+            <select id="f-type" required>
+              <option value="partner">Partnership Discussion</option>
+              <option value="investor">Investor Materials Request</option>
+              <option value="technical">Technical Architecture Discussion</option>
+              <option value="talent">Talent Discussion</option>
+              <option value="physical_ai">Physical AI Partnership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" rows="4" required placeholder="Please describe the discussion in detail."></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Contact Us</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="logo-mark">R</span>
+      <div class="footer-copy">
+        &copy; 2026 Receivepower.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR INTERACTIVES -->
+  
   </main>
 
 <main class="page-view" data-page="company">
+<section class="hero company-hero">
+      <div class="company-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Company</span>
+        <h1>Receivepower</h1>
+        <p class="lead">Receivepower has been building intelligent robots since 2019. From walking humanoids to flying robots, we build machines moved by Physical AI.</p>
+      </div>
+    </section>
 
-<section class="hero company-hero"><div class="company-hero-video" aria-hidden="true"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="container"><span class="eyebrow">Company</span><h1>Receivepower</h1><p class="lead">Receivepower has been building intelligent robots since 2019. From walking humanoids to flying aerial robots, we build machines powered by Physical AI.</p></div></section>
-<section class="message-section"><div class="message-grid"><article class="message"><span class="label">Mission</span><h2>We design the flying car as a real aircraft.</h2><p>Lambda SDA is a VTOL aircraft platform that combines automotive-level cost structure with software-defined flight.</p></article><article class="message"><span class="label">Patent Foundation</span><h2>We began with the asynchronous tiltrotor patent.</h2><p>In 2020, we filed and completed registration for a patent on the asynchronous tiltrotor structure. It was designed to target hover takeoff and landing safety, and operating cost at one-tenth of conventional aircraft.</p></article></div></section>
-<section class="message-section"><div class="message full"><span class="label">Development Narrative</span><h2>Flying Car: From Dream to Reality</h2><p>Everyone dreams of a flying car at least once. We did too. We believed the tiltrotor would be the aircraft that could make that dream real. But in 1992, watching the crash of the Osprey V-22 left us with one question. If an aircraft is to fly above cities where people live, does it not need a much safer tiltrotor?</p><h3>An Old Dream, Three Barriers</h3><p>Take off and land in place. Fly far. Move safely between those two flight states. Until now, no aircraft had all three together.</p><h3>The Possibility of the Lambda Engine</h3><p>In 2006, looking at Korea's independently developed automotive engine Lambda, we asked whether that engine could become an aircraft engine. On paper, flying with automotive parts was already possible.</p><h3>The Invention of the Asynchronous Tiltrotor</h3><p>We drew and erased more than 200 forms of hover takeoff and landing aircraft. At the end of that process, we reached a structure where rotors tilt independently, one by one: the asynchronous tiltrotor. We filed the patent in 2020.</p><h3>2026, Completion of the SDA Architecture</h3><p>Starting from the first patent of 2020, we redesigned a patent network that connects the entire operating process from takeoff to emergency landing. The system completed in 2026 is the SDA architecture: five core technologies and about 25 patents.</p><h3>An Aircraft That Competes With Truck Freight</h3><p>SDA will not remain an idea on a drawing. It starts with cargo. At the end of that path, it carries people.</p></div></section>
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Mission</span>
+          <h2>We design the flying car as a real aircraft.</h2>
+          <p>Lambda SDA is a VTOL aviation platform that combines automotive-level cost structure with software-defined flight.</p><a class="back-link" href="#company-flying-car-narrative">View Development Narrative</a>
+        </article>
+        <article class="message">
+          <span class="label">Patent Foundation</span>
+          <h2>We began with the asynchronous tiltrotor patent.</h2>
+          <p>In 2020, we filed and completed registration for a patent on the asynchronous tiltrotor structure. It was designed for hover takeoff and landing safety and operating cost at one-tenth of conventional aircraft.</p>
+        </article>
+</div>
+    </section>
+
+
+    <section class="message-section" id="company-flying-car-narrative">
+      <div class="container message-list">
+        <article class="message narrative-single">
+          <span class="label">Development Narrative</span>
+          <h2>Flying Car: From Dream to Reality</h2>
+          <p>Everyone dreams of a flying car at least once. We did too. We believed the tiltrotor would be the aircraft that could make that dream real. But in 1992, watching the crash of the Osprey V-22 left us with one question: if an aircraft is to fly above cities where people live, does it not need a much safer tiltrotor?</p>
+          <h3>An Old Dream, Three Barriers</h3>
+          <p>For that dream to become urban transportation, three things had to be solved together: take off and land in place, fly far, and move safely between those two flight states. Until now, no aircraft had all three together.</p>
+          <h3>The Possibility of the Lambda Engine</h3>
+          <p>It began with calculation. In 2006, looking at Korea's independently developed automotive engine Lambda, we asked whether this engine could become an aircraft. Counting seats from engine weight and output gave an answer: Gamma for two seats, Lambda for three. On paper, flying with automotive parts was already possible.</p>
+          <h3>The Invention of the Asynchronous Tiltrotor</h3>
+          <p>The remaining problem was safety. We drew and erased more than 200 forms of hover takeoff and landing aircraft. At the end of that process, we reached a structure where rotors tilt independently, one by one: the asynchronous tiltrotor. We filed the patent in 2020.</p>
+          <p>After that, the company’s time went into humanoid robot development. The aircraft was folded away in a drawer. One day, while preparing robot mass production, the registration decision for that patent arrived. A forgotten idea returned as a right.</p>
+          <h3>2026, Completion of the SDA Architecture</h3>
+          <p>The registration decision was not a certificate of celebration. It was a question: can this structure really open the sky? Starting from the first patent in 2020, we redesigned a patent network connecting the entire operating process from takeoff to emergency landing. The system completed in 2026 is the SDA architecture: five core technologies and about 25 patents.</p>
+          <h3>An Aircraft That Competes With Truck Freight</h3>
+          <p>SDA will not remain an idea on a drawing. The flying car we dreamed of as children is now preparing to take off as an aircraft that competes with truck freight rates. It begins with cargo. At the end of that path is the day it carries people.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="company">View IR</a>
+        <a class="button secondary" href="#" data-route="product">View Product</a>
+      </div>
+    </section>
   </main>
 
 <main class="page-view" data-page="ir">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Investor Relations</span>
+        <h1>A repeat-revenue structure created by software-defined aircraft.</h1>
+        <p class="lead">It creates a repeat-revenue structure that expands beyond simple aircraft sales into fleet ownership, corridor operating rights, MRO, Flight OS, continuing airworthiness data, and regional JVs.</p>
+      </div>
+    </section>
 
-<section class="hero video-hero"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="container"><span class="eyebrow">Investor Relations</span><h1>A repeat-revenue structure created by software-defined aircraft.</h1><p class="lead">The logic is not one aircraft sale. It is a repeat-revenue structure that expands into fleet ownership, corridor operating rights, MRO, Flight OS, continuing airworthiness data, and regional JVs.</p></div></section>
-<section class="message-section"><div class="message full"><span class="label">VC</span><h2>Certification Schedule</h2><p>What matters is certification. Transparent certification scheduling is not impossible.</p><p>The reason eVTOL valuations fluctuate is simple. No one can fix the certification schedule. The market reads that as the risk of not knowing how much more capital will burn.</p><ul><li>Deterministic control: DO-178C</li><li>Unpowered emergency landing: FAA AC 21.17-4, PL.2105(g)</li></ul><h3>1. It responds only as defined</h3><p>The aircraft calculates the answers to defined situations in advance and switches instantly, so the outcome can be shown to certification authorities before flight.</p><h3>2. It can be controlled and landed even when the engines stop</h3><p>The eight rotors create differential drag and form a virtual control surface. Even without power, the aircraft direction and trajectory remain controlled.</p><h3>3. Certification-critical parts drop dramatically</h3><p>By removing mechanical control surfaces, the parts that certification must address are radically reduced.</p><h3>4. Cargo builds trust before people</h3><p>Cargo operations accumulate real flight data before passenger certification and accelerate the later crewed certification path.</p></div></section>
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="company">Back to Company</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message" id="company-vc">
+          <span class="label">VC</span>
+          <h2>Certification Schedule</h2>
+          <p>eVTOL certification has remained unfinished for years. We addressed certification requirements at the design stage.</p>
+          <p>What matters is certification. Transparent certification scheduling is not impossible.</p>
+          <p>The reason eVTOL valuations fluctuate is simple: no one can fix the certification schedule. The market reads this not as technology, but as the risk of not knowing how much more capital will burn.</p>
+          <p>eVTOL aircraft must pass two FAA requirements.</p>
+          <ul>
+            <li>Deterministic control: DO-178C</li>
+            <li>Unpowered emergency landing: FAA AC 21.17-4, PL.2105(g)</li>
+          </ul>
+          <p>We designed the aircraft to satisfy these requirements from the design stage.</p>
+          <h3>1. It responds only as defined (DO-178C)</h3>
+          <p>Conventional aircraft respond to gusts through real-time computation, so outcomes cannot be predicted 100% in advance. Our aircraft precomputes the answers to defined situations and switches instantly, so the outcome can be shown to certification authorities before flight.</p>
+          <h3>2. It can be controlled and landed even when the engines stop (PL.2105(g))</h3>
+          <p>Even when the engines stop, control does not stop. Even in the extreme case of total power loss, the eight rotors create differences in air resistance, or differential drag, to form virtual control surfaces. SDA is designed as a fail-safe aircraft that can control direction and trajectory through glide landing without propulsion, directly addressing PL.2105(g).</p>
+          <h3>3. Certification-critical parts drop toward one-hundredth</h3>
+          <p>Conventional aircraft have hundreds of failure points because of control surfaces and actuators, and each must be proven. We removed mechanical control surfaces themselves, dramatically reducing the parts that must be certified.</p>
+          <h3>4. Cargo builds trust before people</h3>
+          <p>Instead of spending capital first on crewed-aircraft certification, we accumulate large volumes of real flight data through cargo operations. Safe operation records are stronger than paperwork and accelerate later crewed-aircraft certification.</p>
+          <p>In conclusion, we simplified computation, reduced parts, and solved emergency response through design. Certification is no longer unpredictable R&amp;D. It becomes a procedure that executes a defined sequence.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ Back to Index</a>
+        </article>
+
+        <article class="message" id="company-deeptech-individual">
+          <span class="label">Individual Deep-Tech Audience</span>
+          <h2>Technology That Redesigns the Sky</h2>
+          <p>Receivepower designs the expansion path of software-defined aircraft through AI and robotics. From aircraft structure to control, production, and operation, we rewrite the core structure so aviation can operate more efficiently and accessibly.</p>
+          <p>If you are interested in deep tech, you can connect with the vision and scalability of the technology we are building. Guidance on individual investment participation will be provided separately when ready.</p>
+          <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ Back to Index</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="metric">100 million KRW</span>
+          <p>This is the initial asset unit from an investor perspective. A 100 million KRW-class aircraft expands into fleets, corridor operating rights, MRO, and Flight OS revenue.</p>
+        </article>
+        <article class="message">
+          <span class="metric">5 billion KRW</span>
+          <p>From an IR perspective, the core is not aircraft sales but lifetime operating revenue. As repeated operation data accumulates, the foundation for certification, insurance, maintenance, and software revenue grows.</p>
+        </article>
+        <article class="message">
+          <span class="metric">50%</span>
+          <p>In investment judgment, utilization and margin durability matter more than manufacturing cost. The low-maintenance structure and Flight OS defend fleet profitability.</p>
+        </article>
+        <article class="message">
+          <h2>Initial Entry Market</h2>
+          <p>Routes where missing a ship costs a day and returning to the road costs half a day: that lost time is Lambda’s initial market.</p>
+        </article>
+        <article class="message">
+          <h2>Investment Structure</h2>
+          <p>It expands into a fleet/JV structure combining corridor operating rights, local assembly, MRO, data accumulation, and Flight OS subscriptions.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- BRAND_CONTENT_SPREAD_20260627_ir.html -->
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Investment Logic</span>
+          <h2>We design fleet infrastructure and recurring software revenue together.</h2>
+          <p>Lambda combines fleet ownership, leasing, corridor operation, logistics SLA, continuing airworthiness data, and Flight OS subscriptions into a repeat-revenue structure.</p>
+        </article>
+        <article class="message">
+          <span class="label">Why Now</span>
+          <h2>When air logistics cost falls to truck level, the logistics map is redrawn not along roads but as direct lines to destinations.</h2>
+          <p>Straight-line distance becomes the new standard for logistics network design. The 500 kg-class payload and up to 1,000 km range target aerial mid-mile logistics networks.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band" id="company-request">
+      <div class="container cta-row">
+        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20Materials%20Request">Request IR Materials</a>
+        <a class="button secondary" href="#" data-route="market">View Market</a>
+      </div>
+    </section>
   </main>
 
 <main class="page-view" data-page="technology">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Technology</span>
+        <h1>Robotics Technology</h1>
+        <p class="lead">Receivepower works on Physical AI technologies that move real machines. Robot middleware, industrial control, coordinate systems, sensor fusion, virtual space, vision, manipulation, contact control, AI models, workcells, factory data, safety, and engineering systems are connected into one execution system.</p>
+      </div>
+    </section>
 
-<section class="hero video-hero"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="container"><span class="eyebrow">Technology</span><h1>Robotics Technology</h1><p class="lead">Receivepower works with Physical AI technologies that move real machines. Robot middleware, industrial control, coordinate systems, sensor fusion, virtual space, vision, manipulation, safety, and engineering systems are connected into one execution framework.</p></div></section>
-<section class="message-section robotics-anchor-glossary"><div class="message full"><h2>AI That Moves in the Physical World</h2><p>Physical AI is not a single model. It connects sensors, coordinates, machines, safety logic, and data so that real machines can move in the real world.</p></div><div class="glossary-grid"><article><h2>Robot Middleware</h2><p>The software layer that connects robot nodes, states, and hardware interfaces.</p></article><article><h2>Industrial Control</h2><p>PLC, I/O, interlocks, emergency stops, and reset sequences for real equipment.</p></article><article><h2>Sensor Fusion</h2><p>Cameras, IMUs, encoders, current, and force signals become one state estimate.</p></article><article><h2>Safety</h2><p>Safety PLCs, speed limits, collision checks, and recovery procedures define how machines work around people.</p></article></div></section>
+    <section class="message-section robotics-anchor-glossary">
+      <div class="container message-list compact">
+        <article class="message" id="tech-physical-ai">
+          <span class="label">Physical AI</span>
+          <h2>AI That Moves in the Physical World</h2>
+          <p>Control intelligence that reads state through cameras and sensors, predicts failure possibility, and lets real machines choose their next action.</p>
+        </article>
+        <article class="message" id="tech-robot-middleware">
+          <span class="label">Robot Middleware</span>
+          <h2>Robot Middleware</h2>
+          <p>The execution foundation that lets sensors, motors, controllers, simulators, and AI models exchange data.</p>
+        </article>
+        <article class="message" id="tech-industrial-control">
+          <span class="label">Industrial Control</span>
+          <h2>Industrial Control</h2>
+          <p>It connects proven control systems such as PLC, CAN, EtherCAT, and safety relays to real equipment in factories and machines.</p>
+        </article>
+        <article class="message" id="tech-coordinate-system">
+          <span class="label">Coordinate System</span>
+          <h2>Coordinate System</h2>
+          <p>It aligns the robot body, hand, camera, workpiece, and spatial reference points into one mathematical positional relationship.</p>
+        </article>
+        <article class="message" id="tech-sensor-fusion">
+          <span class="label">Sensor Fusion</span>
+          <h2>Sensor Fusion</h2>
+          <p>It fuses signals from cameras, IMUs, encoders, current, and force sensors to reliably determine the machine’s current state.</p>
+        </article>
+        <article class="message" id="tech-virtual-space">
+          <span class="label">Virtual Space</span>
+          <h2>Virtual Space</h2>
+          <p>Digital twins and simulation verify motion, collision, and failure conditions before real equipment is built.</p>
+        </article>
+        <article class="message" id="tech-vision">
+          <span class="label">Vision</span>
+          <h2>Vision</h2>
+          <p>Object detection, segmentation, pose estimation, and inspection structure the targets that robots must see and judge.</p>
+        </article>
+        <article class="message" id="tech-manipulation">
+          <span class="label">Manipulation</span>
+          <h2>Manipulation</h2>
+          <p>It designs real object-handling actions such as grasping, placing, insertion, alignment, and stacking.</p>
+        </article>
+        <article class="message" id="tech-contact-control">
+          <span class="label">Contact Control</span>
+          <h2>Contact Control</h2>
+          <p>It reads force, torque, slip, and pressure so robots can interact delicately with objects and environments without harmful collision.</p>
+        </article>
+        <article class="message" id="tech-ai-model">
+          <span class="label">AI Model</span>
+          <h2>AI Model</h2>
+          <p>Vision models, behavior policies, anomaly detection, and imitation learning train robot judgment and action selection.</p>
+        </article>
+        <article class="message" id="tech-workcell">
+          <span class="label">Workcell</span>
+          <h2>Workcell</h2>
+          <p>A real work unit where robot arms, mobile robots, grippers, cameras, lighting, jigs, and conveyors work together.</p>
+        </article>
+        <article class="message" id="tech-factory-data">
+          <span class="label">Factory Data</span>
+          <h2>Factory Data</h2>
+          <p>Production count, cycle time, fault history, inspection results, and quality data are collected for operational judgment and improvement.</p>
+        </article>
+        <article class="message" id="tech-safety">
+          <span class="label">Safety</span>
+          <h2>Safe</h2>
+          <p>Emergency stops, safety zones, speed limits, collision detection, and recovery procedures create the conditions for people and equipment to work together.</p>
+        </article>
+        <article class="message" id="tech-engineering-system">
+          <span class="label">Engineering System</span>
+          <h2>Engineering System</h2>
+          <p>Requirements, interfaces, state machines, tests, and validation reports turn machine development into a repeatable process.</p>
+        </article>
+      </div>
+    </section>
+    <section class="message-section robotics-technology-taxonomy">
+      <div class="container message-list">
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Robot Middleware</h2>
+          <ul class="tech-keyword-list">
+              <li>ROS</li>
+              <li>ROS 2</li>
+              <li>DDS</li>
+              <li>Node Graph</li>
+              <li>Topic</li>
+              <li>Service</li>
+              <li>Action</li>
+              <li>TF Tree</li>
+              <li>URDF</li>
+              <li>SRDF</li>
+              <li>MoveIt</li>
+              <li>Nav2</li>
+              <li>Gazebo</li>
+              <li>Isaac Sim</li>
+              <li>MAVROS</li>
+              <li>Robot State Publisher</li>
+              <li>Joint State Publisher</li>
+              <li>Controller Manager</li>
+              <li>Hardware Interface</li>
+              <li>Real-Time Control Loop</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Industrial Control</h2>
+          <ul class="tech-keyword-list">
+              <li>PLC</li>
+              <li>Ladder Logic</li>
+              <li>Structured Text</li>
+              <li>Modbus TCP</li>
+              <li>Modbus RTU</li>
+              <li>EtherCAT</li>
+              <li>Ethernet/IP</li>
+              <li>PROFINET</li>
+              <li>CAN</li>
+              <li>CANopen</li>
+              <li>Digital I/O</li>
+              <li>Analog I/O</li>
+              <li>Relay Output</li>
+              <li>Safety Relay</li>
+              <li>Emergency Stop</li>
+              <li>Interlock</li>
+              <li>Watchdog</li>
+              <li>Heartbeat Signal</li>
+              <li>Machine State</li>
+              <li>Fault Code</li>
+              <li>Reset Sequence</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Coordinate System</h2>
+          <ul class="tech-keyword-list">
+              <li>World Frame</li>
+              <li>Map Frame</li>
+              <li>Base Frame</li>
+              <li>Tool Frame</li>
+              <li>Camera Frame</li>
+              <li>Gripper Frame</li>
+              <li>Workpiece Frame</li>
+              <li>Fixture Frame</li>
+              <li>Conveyor Frame</li>
+              <li>Calibration Frame</li>
+              <li>Homogeneous Transform</li>
+              <li>Rotation Matrix</li>
+              <li>Quaternion</li>
+              <li>Euler Angle</li>
+              <li>Pose Estimation</li>
+              <li>Hand-Eye Calibration</li>
+              <li>Extrinsic Calibration</li>
+              <li>Intrinsic Calibration</li>
+              <li>Coordinate Registration</li>
+              <li>Frame Alignment</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Sensor Fusion</h2>
+          <ul class="tech-keyword-list">
+              <li>Camera</li>
+              <li>Depth Camera</li>
+              <li>Stereo Camera</li>
+              <li>IMU</li>
+              <li>Encoder</li>
+              <li>Load Cell</li>
+              <li>Force Torque Sensor</li>
+              <li>Proximity Sensor</li>
+              <li>Limit Switch</li>
+              <li>Motor Current</li>
+              <li>Torque Estimate</li>
+              <li>PLC State</li>
+              <li>Time Synchronization</li>
+              <li>Signal Filtering</li>
+              <li>Kalman Filter</li>
+              <li>Extended Kalman Filter</li>
+              <li>Particle Filter</li>
+              <li>Complementary Filter</li>
+              <li>State Estimation</li>
+              <li>Outlier Rejection</li>
+              <li>Sensor Confidence</li>
+              <li>Multi-Rate Sampling</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Virtual Space</h2>
+          <ul class="tech-keyword-list">
+              <li>Digital Twin</li>
+              <li>Simulation Scene</li>
+              <li>OpenUSD</li>
+              <li>Physics Engine</li>
+              <li>Renderer</li>
+              <li>Robot Model</li>
+              <li>Factory Layout</li>
+              <li>Workcell Layout</li>
+              <li>Collision Mesh</li>
+              <li>Kinematic Model</li>
+              <li>Dynamic Model</li>
+              <li>Sensor Model</li>
+              <li>Synthetic Data</li>
+              <li>Domain Randomization</li>
+              <li>Scenario Generation</li>
+              <li>Motion Replay</li>
+              <li>Failure Replay</li>
+              <li>Real-to-Sim</li>
+              <li>Sim-to-Real</li>
+              <li>Virtual Commissioning</li>
+              <li>Process Simulation</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Vision</h2>
+          <ul class="tech-keyword-list">
+              <li>Object Detection</li>
+              <li>Instance Segmentation</li>
+              <li>Semantic Segmentation</li>
+              <li>SAM2</li>
+              <li>YOLO</li>
+              <li>Mask R-CNN</li>
+              <li>Keypoint Detection</li>
+              <li>Edge Detection</li>
+              <li>Pose Estimation</li>
+              <li>Depth Estimation</li>
+              <li>Visual Servoing</li>
+              <li>Marker Tracking</li>
+              <li>AprilTag</li>
+              <li>ArUco</li>
+              <li>OCR</li>
+              <li>Defect Detection</li>
+              <li>Surface Inspection</li>
+              <li>Part Presence</li>
+              <li>Position Verification</li>
+              <li>Orientation Verification</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Manipulation</h2>
+          <ul class="tech-keyword-list">
+              <li>Grasp Planning</li>
+              <li>Grasp Pose</li>
+              <li>Approach Vector</li>
+              <li>Tool Center Point</li>
+              <li>Inverse Kinematics</li>
+              <li>Motion Planning</li>
+              <li>Trajectory Generation</li>
+              <li>Path Constraint</li>
+              <li>Collision Avoidance</li>
+              <li>Pick and Place</li>
+              <li>Insertion</li>
+              <li>Alignment</li>
+              <li>Sorting</li>
+              <li>Stacking</li>
+              <li>Palletizing</li>
+              <li>Bin Picking</li>
+              <li>Tool Changing</li>
+              <li>Gripper Control</li>
+              <li>End-Effector Design</li>
+              <li>Affordance Map</li>
+              <li>Task Primitive</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Force / Contact</h2>
+          <ul class="tech-keyword-list">
+              <li>Force Control</li>
+              <li>Impedance Control</li>
+              <li>Admittance Control</li>
+              <li>Compliance Control</li>
+              <li>Contact Detection</li>
+              <li>Slip Detection</li>
+              <li>Pressing Force</li>
+              <li>Insertion Force</li>
+              <li>Load Threshold</li>
+              <li>Overload Detection</li>
+              <li>Current Limit</li>
+              <li>Torque Limit</li>
+              <li>Soft Stop</li>
+              <li>Hard Stop</li>
+              <li>Retraction Motion</li>
+              <li>Recovery Motion</li>
+              <li>Force Feedback</li>
+              <li>Contact State</li>
+              <li>Pressure Profile</li>
+              <li>Z-Axis Control</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>AI Model</h2>
+          <ul class="tech-keyword-list">
+              <li>Vision Model</li>
+              <li>Segmentation Model</li>
+              <li>Detection Model</li>
+              <li>Pose Model</li>
+              <li>Anomaly Detection</li>
+              <li>VAE</li>
+              <li>Diffusion Policy</li>
+              <li>Behavior Cloning</li>
+              <li>Reinforcement Learning</li>
+              <li>Imitation Learning</li>
+              <li>Policy Learning</li>
+              <li>Trajectory Model</li>
+              <li>Latent Space</li>
+              <li>Feature Embedding</li>
+              <li>Few-Shot Adaptation</li>
+              <li>Human-in-the-Loop</li>
+              <li>Active Learning</li>
+              <li>Dataset Curation</li>
+              <li>Annotation Pipeline</li>
+              <li>Model Evaluation</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Workcell</h2>
+          <ul class="tech-keyword-list">
+              <li>Robot Arm</li>
+              <li>Mobile Robot</li>
+              <li>AMR</li>
+              <li>AGV</li>
+              <li>Humanoid</li>
+              <li>Gripper</li>
+              <li>End-Effector</li>
+              <li>Camera Mount</li>
+              <li>Lighting</li>
+              <li>Fixture</li>
+              <li>Jig</li>
+              <li>Conveyor</li>
+              <li>Feeder</li>
+              <li>Tray</li>
+              <li>Pallet</li>
+              <li>Inspection Station</li>
+              <li>Reject Station</li>
+              <li>HMI</li>
+              <li>Operator Panel</li>
+              <li>Safety Zone</li>
+              <li>Work Envelope</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Factory Data</h2>
+          <ul class="tech-keyword-list">
+              <li>MQTT</li>
+              <li>OPC UA</li>
+              <li>REST API</li>
+              <li>WebSocket</li>
+              <li>Message Broker</li>
+              <li>Event Log</li>
+              <li>Telemetry</li>
+              <li>Time-Series Data</li>
+              <li>Production Count</li>
+              <li>Cycle Time</li>
+              <li>Takt Time</li>
+              <li>Downtime</li>
+              <li>Fault History</li>
+              <li>Inspection Result</li>
+              <li>Process Parameter</li>
+              <li>Quality Data</li>
+              <li>Traceability</li>
+              <li>Dashboard</li>
+              <li>Alert</li>
+              <li>Report</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Safety</h2>
+          <ul class="tech-keyword-list">
+              <li>Emergency Stop</li>
+              <li>Safety PLC</li>
+              <li>Safety Zone</li>
+              <li>Light Curtain</li>
+              <li>Area Scanner</li>
+              <li>Door Interlock</li>
+              <li>Torque Limit</li>
+              <li>Speed Limit</li>
+              <li>Workspace Limit</li>
+              <li>Collision Check</li>
+              <li>Fault Detection</li>
+              <li>Safe Stop</li>
+              <li>Protective Stop</li>
+              <li>Manual Mode</li>
+              <li>Auto Mode</li>
+              <li>Teach Mode</li>
+              <li>Recovery Mode</li>
+              <li>Restart Condition</li>
+              <li>Operator Confirmation</li>
+              <li>Audit Log</li>
+          </ul>
+        </article>
+        <article class="message tech-taxonomy-card">
+          <span class="label">Robotics Technology</span>
+          <h2>Engineering System</h2>
+          <ul class="tech-keyword-list">
+              <li>Task Definition</li>
+              <li>Requirement Spec</li>
+              <li>Interface Spec</li>
+              <li>I/O Map</li>
+              <li>State Machine</li>
+              <li>Sequence Diagram</li>
+              <li>Failure Mode</li>
+              <li>Acceptance Criteria</li>
+              <li>Test Case</li>
+              <li>Simulation Test</li>
+              <li>Hardware Test</li>
+              <li>Regression Test</li>
+              <li>Version Control</li>
+              <li>Naming Rule</li>
+              <li>Component Registry</li>
+              <li>API Contract</li>
+              <li>RAG Rulebase</li>
+              <li>Agent Workflow</li>
+              <li>Review Protocol</li>
+              <li>Validation Report</li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </main>
 
 <main class="page-view" data-page="ip">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Patent Portfolio</span>
+        <h1>Five core technologies change the cost and safety structure.</h1>
+        <p class="lead">Receivepower IP simplifies the aircraft structure, creates predictable safety behavior in emergencies, and lowers the cost of repeated operation.</p>
+      </div>
+    </section>
 
-<section class="hero video-hero"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="container"><span class="eyebrow">Patent Portfolio</span><h1>Five core technologies change the cost and safety structure.</h1><p class="lead">Receivepower IP simplifies the airframe, implements predictable safety behavior in emergency situations, and lowers the cost of repeated operation.</p></div></section>
-<section class="message-section"><div class="message full"><h2>How to Read the IP</h2><p>Read the IP not only as technology names, but as changes in airframe structure and operational effect.</p></div><div class="message-grid"><article class="message"><span class="label">Registered</span><h2>1. Independently Controlled Tilting Propulsion Units</h2><p>Each propulsion unit tilts independently, dividing the transition from hover to cruise into controlled stages.</p></article><article class="message"><span class="label">Filed</span><h2>2. Virtual Control Surface Flight Control</h2><p>The aircraft reduces dependence on physical control surfaces, hinges, links, and actuators.</p></article><article class="message"><span class="label">Filed</span><h2>3. Discrete Matrix Flight Management</h2><p>State-based control matrices and failure-response modes are defined in advance.</p></article><article class="message"><span class="label">Filed</span><h2>4. Unpowered High-Lift Control</h2><p>Lift, autorotation, and differential drag are used in unpowered conditions.</p></article><article class="message"><span class="label">Filed</span><h2>5. SADS-Based Virtual Pitot System</h2><p>GNSS, IMU, and propulsion data are fused to estimate the aircraft state in the air.</p></article></div></section>
-<section class="sda-image-section"><div class="container"><h2 class="section-title">Asynchronous Tiltrotor <span>Flight Example</span></h2><div class="sda-image-grid"><article><img src="assets/images/sda/tilt-lift-detail.png" alt="hover takeoff and landing tilt nacelle"><h3>Hover Takeoff and Landing Tilt Nacelle</h3><p>Every rotor tilts independently.</p></article><article><img src="assets/images/sda/tilt-cruise-detail.png" alt="fixed-wing cruise transition"><h3>Fixed-Wing Cruise Transition</h3><p>The hover thrust system transitions into cruise thrust.</p></article><article><img src="assets/images/sda/sda-top-view-labeled.png" alt="propulsion layout"><h3>Flying Without Control Surfaces</h3><p>Propulsion placement and differential thrust control replace moving control surfaces.</p></article></div></div></section>
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="technology">Back to Technology</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <h2>How to Read the IP</h2>
+          <p>Receivepower IP should be read through structural change and operating effect, not only by technology names. Each moat directly shapes aircraft price, maintenance cost, utilization, and safety in the order of configuration, change, and effect.</p>
+          <ul class="data-list">
+            <li><span>Economic</span><strong>Reducing mechanical parts, production steps, and maintenance items</strong></li>
+            <li><span>Safety</span><strong>Fixing transition, failure, power loss, and state awareness into a provable structure</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Registered</span>
+          <h2>1. Independently Controlled Tilting Propulsors</h2>
+          <p>Instead of moving every propulsor to the same angle at once, this structure separates thrust and lift during transition.</p>
+          <ul class="data-list">
+            <li><span>Configuration</span><strong>Independent tilting by propulsor and distributed propulsion control</strong></li>
+            <li><span>Change</span><strong>Segmenting the transition from hover flight to fixed-wing cruise</strong></li>
+            <li><span>Effect</span><strong>VTOL transition stability and crewed-flight scalability</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Filed</span>
+          <h2>2. Virtual Control Surface Flight Control</h2>
+          <p>This structure reduces dependence on physical control surfaces, hinges, links, and actuators, and uses propulsor placement and thrust differentials as flight-control resources.</p>
+          <ul class="data-list">
+            <li><span>Configuration</span><strong>Using distributed propulsor position and phase differences as control resources</strong></li>
+            <li><span>Change</span><strong>Reducing moving control surfaces and related mechanical parts</strong></li>
+            <li><span>Effect</span><strong>Lower aircraft cost, fewer maintenance items, and lower production complexity</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Filed</span>
+          <h2>3. Discrete Matrix-Based Flight Management System</h2>
+          <p>A deterministic flight management structure that predefines flight and failure states and switches to the control mode for each state.</p>
+          <ul class="data-list">
+            <li><span>Configuration</span><strong>State-specific control matrices and failure-response modes</strong></li>
+            <li><span>Change</span><strong>Replacing black-box decisions with testable control units</strong></li>
+            <li><span>Effect</span><strong>Certification explainability, operation logs, and failure-response structure</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Filed</span>
+          <h2>4. Unpowered High-Lift Control</h2>
+          <p>An independent invention that uses the aircraft’s lift and rotating elements during power loss or low-speed flight to preserve landing margin and directional control.</p>
+          <ul class="data-list">
+            <li><span>Configuration</span><strong>Using lift, autorotation, and differential drag in unpowered states</strong></li>
+            <li><span>Change</span><strong>Securing extra time and space in emergencies</strong></li>
+            <li><span>Effect</span><strong>Power-loss scenarios and emergency-landing safety</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Filed</span>
+          <h2>5. SADS-Based Virtual Pitot Tube</h2>
+          <p>An independent invention that estimates the aircraft’s air-state by fusing multiple signals instead of relying on one physical sensor.</p>
+          <ul class="data-list">
+            <li><span>Configuration</span><strong>State estimation based on GNSS, IMU, propulsor data, and sensor fusion</strong></li>
+            <li><span>Change</span><strong>Securing a secondary channel to understand the aircraft’s current air-state</strong></li>
+            <li><span>Effect</span><strong>State awareness, mode switching, and control stability</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <h2>The SDA Architecture Built by Five Technical Moats</h2>
+          <ul class="data-list">
+            <li><span>Truck-Level Economics</span><strong>Virtual control surfaces, a no-control-surface structure, and simplified production and maintenance</strong></li>
+            <li><span>Crewed-Flight Safety</span><strong>Tilting transition, discrete control, unpowered high lift, differential drag, and SADS state estimation form one certification logic</strong></li>
+            <li><span>SDA</span><strong>An aircraft architecture that starts from operating conditions and failure scenarios</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- S01B_SDA_IMAGE_BOXES -->
+  <section class="sda-image-section" id="S01B_SDA_IMAGE_BOXES">
+    <div class="container">
+      <span class="eyebrow">SDA Visual</span>
+      <h2 class="section-title">Asynchronous Tiltrotor <span>Flight Example</span></h2>
+            <div class="sda-photo-strip">
+        <article class="sda-image-card">
+          <img src="assets/images/sda/tilt-lift-detail.png" alt="SDA hover takeoff and landing tilting nacelle detail">
+          <div class="sda-image-caption">
+            <span>VTOL</span>
+            <h3>Hover Takeoff and Landing Tilting Nacelle</h3>
+            <p>Every rotor tilts independently.</p>
+          </div>
+        </article>
+        <article class="sda-image-card">
+          <img src="assets/images/sda/tilt-cruise-detail.png" alt="SDA cruise tilting nacelle detail">
+          <div class="sda-image-caption">
+            <span>CRUISE</span>
+            <h3>Fixed-Wing Cruise Transition</h3>
+            <p>Hover thrust devices convert into cruise thrust to secure long-range air logistics efficiency.</p>
+          </div>
+        </article>
+        <article class="sda-image-card">
+          <img src="assets/images/sda/sda-top-view-labeled.png" alt="SDA top-view propulsor layout image">
+          <div class="sda-image-caption">
+            <span>LAYOUT</span>
+            <h3>Flying Without Control Surfaces</h3>
+          <p>Propulsor placement and differential-thrust control replace moving control surfaces. Stagger-based virtual control surfaces are explained in the detailed technology section.</p>
+          </div>
+        </article>
+      </div>
+      <div class="sda-image-grid">
+        <article class="sda-image-card hero-image">
+          <img src="assets/images/sda/sda-control-interface.png" alt="Asynchronous tilting distributed-propulsion SDA control screen">
+          <div class="sda-image-caption">
+            <span>CONTROL LOGIC</span>
+            <h3>The eight propulsors move differently.</h3>
+            <p>SDA transitions by separating inner and outer propulsor groups, tilting them in stages, and transferring control authority by flight mode.</p>
+          </div>
+        </article>
+        <div class="sda-mode-grid">
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-vertical-takeoff.png" alt="SDA hover takeoff mode">
+            <div class="sda-image-caption">
+              <span>01</span>
+              <h3>Hover Takeoff</h3>
+              <p>Eight propulsors lift the aircraft with hover thrust.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-first-tilt.png" alt="SDA first tilting stage">
+            <div class="sda-image-caption">
+              <span>02</span>
+              <h3>First Tilting</h3>
+              <p>Some propulsors begin transition first.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-control-transfer.png" alt="SDA first tilt complete and cruise control authority transfer">
+            <div class="sda-image-caption">
+              <span>03</span>
+              <h3>Control Transfer</h3>
+              <p>Hover thrust and cruise control are handled together.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-second-tilt.png" alt="SDA during second tilting">
+            <div class="sda-image-caption">
+              <span>04</span>
+              <h3>Second Tilting</h3>
+              <p>The remaining propulsors move into the cruise direction.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-transition-full-horizontal-control.png" alt="SDA full cruise control authority">
+            <div class="sda-image-caption">
+              <span>05</span>
+              <h3>Cruise Control Authority</h3>
+              <p>After transition, full cruise control authority is secured.</p>
+            </div>
+          </article>
+          <article class="sda-image-card small">
+            <img src="assets/images/sda/sda-horizontal-cruise.png" alt="SDA cruise flight">
+            <div class="sda-image-caption">
+              <span>06</span>
+              <h3>Cruise Flight</h3>
+              <p>Fixed-wing cruise secures range and economics.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="technology">View Technology</a>
+        <a class="button secondary" href="#" data-route="product">View Product</a>
+      </div>
+    </section>
   </main>
 
 <main class="page-view" data-page="product">
 
-<section class="hero video-hero"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="container"><span class="eyebrow">Product Direction</span><h1>Cargo-first Aerial Robot.</h1><p class="lead">We removed moving wing parts, reduced parts toward one-hundredth, and turned certification into a procedure. Lambda proves it first.</p></div></section>
-<section id="S03_LAMBDA_PRODUCT"><div class="container"><h2 class="section-title">Lambda opens the market from cargo corridors as a <span>software-defined aircraft</span></h2><div class="message-grid"><article class="message"><h3>Route and cargo come first. The airframe comes next.</h3><p>Route, payload, arrival time, failure response, and cost per trip come first. The aircraft is designed to meet those operating conditions.</p></article><article class="message"><h3>Technology Stack</h3><ul><li>Safe VTOL: asynchronous tiltrotor</li><li>Deterministic flight: mode-aware matrix control</li><li>Simple aircraft: fixed-wing structure without control surfaces</li><li>Safety margin: unpowered glide, autorotation, differential drag</li></ul></article></div><div class="spec-grid"><article class="spec-card"><h3>Lambda Prototype</h3><p>25 kg concept prototype for validating core flight transition on a real aircraft.</p></article><article class="spec-card"><h3>Lambda Light</h3><p>Part 103 class for early flight data and market validation.</p></article><article class="spec-card"><h3>Lambda Mid</h3><p>100 kg BVLOS cargo validation class.</p></article><article class="spec-card"><h3>Lambda Heavy</h3><p>500 kg unmanned mid-mile cargo VTOL.</p></article><article class="spec-card"><h3>Lambda Shuttle</h3><p>AC 21.17-4 powered-lift path toward autonomous passenger transport.</p></article></div></div></section>
+<section class="content-group" id="product-main">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Product Direction</span>
+        <h1>Cargo-first Aerial Robot.</h1>
+        <p class="lead">By removing moving wing parts, reducing parts toward one-hundredth, and turning certification into a procedure, Lambda proves the path first.</p>
+      </div>
+    </section>
+
+<!-- S03_LAMBDA_PRODUCT -->
+  <section id="S03_LAMBDA_PRODUCT">
+    <div class="container">
+      <span class="eyebrow">Product</span>
+      <h2 class="section-title">Lambda opens the market from cargo corridors <span>as a software-defined aircraft</span></h2>
+
+      <div class="tech-effect-list" style="margin-bottom: 34px;">
+        <article class="tech-effect-card">
+          <h3>Routes and cargo come first. The aircraft follows.</h3>
+          <p>Route, payload, arrival time, failure response, and cost per trip come first. The aircraft is designed to satisfy those operating conditions.</p>
+          <div class="effect-line">The initial target is 100-500 kg cargo operation. From there, cargo operation data and safety architecture expand toward crewed powered-lift and autonomous passenger transport.</div>
+        </article>
+        <article class="tech-effect-card">
+          <h3>Technology Stack</h3>
+          <ul class="metric-list">
+            <li><span>Safe VTOL</span><strong>Asynchronous tiltrotor architecture</strong></li>
+            <li><span>Deterministic Flight</span><strong>Mode-aware matrix-based control</strong></li>
+            <li><span>Simple aircraft</span><strong>Fixed-wing structure without control surfaces</strong></li>
+            <li><span>Safety margin</span><strong>Unpowered glide, autorotation, and differential-drag control</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="specs-grid">
+        <!-- Lambda Prototype -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">Lambda Prototype</span>
+            <span class="spec-type">25 kg concept prototype</span>
+          </div>
+          <div class="spec-cost">Core flight-transition demonstrator</div>
+          <ul class="spec-list">
+            <li><span>Class</span><span>25 kg class</span></li>
+            <li><span>Aircraft structure</span><span>Tandem wing with no moving wing parts</span></li>
+            <li><span>Wing / Spar</span><span>3 m-class carbon spar and wing</span></li>
+            <li><span>Rotor / Tilt</span><span>Eight rotors / all eight tilting</span></li>
+            <li><span>Power</span><span>4.5 kW-class hybrid-electric propulsion</span></li>
+          </ul>
+          <p class="spec-desc">The first class to verify asynchronous tilt, unpowered high-lift devices, virtual pitot, and hybrid power buffer on a real aircraft.</p>
+        </div>
+
+        <!-- Lambda Light -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">Lambda Light</span>
+            <span class="spec-type">Part 103 Class</span>
+          </div>
+          <div class="spec-cost">Personal, leisure, and technology-demonstration derivative</div>
+          <ul class="spec-list">
+            <li><span>Class</span><span>Part 103 class</span></li>
+            <li><span>Role</span><span>Initial public product</span></li>
+            <li><span>Use</span><span>Early flight-data accumulation and market validation</span></li>
+            <li><span>Core IP</span><span>Asynchronous tiltrotor / virtual control surface</span></li>
+          </ul>
+          <p class="spec-desc">A lightweight class that proves Lambda architecture’s core technologies first in actual flight.</p>
+        </div>
+
+        <!-- Lambda Mid -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">Lambda Mid</span>
+            <span class="spec-type">Uncrewed Cargo Family</span>
+          </div>
+          <div class="spec-cost">100 kg-class BVLOS cargo validation class</div>
+          <ul class="spec-list">
+            <li><span>Class</span><span>Uncrewed BVLOS cargo</span></li>
+            <li><span>Payload</span><span>100 kg</span></li>
+            <li><span>Role</span><span>Accumulating uncrewed cargo operation data</span></li>
+            <li><span>Position</span><span>Intermediate class toward the 500 kg cargo aircraft</span></li>
+          </ul>
+          <p class="spec-desc">An intermediate class for BVLOS uncrewed cargo operation. Before the 500 kg mid-mile cargo aircraft, this line accumulates certification, operation, and maintenance data in real corridors.</p>
+        </div>
+
+        <!-- Lambda Heavy -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">Lambda Heavy</span>
+            <span class="spec-type">Uncrewed Cargo Family</span>
+          </div>
+          <div class="spec-cost">100 million KRW-class operating asset target</div>
+          <ul class="spec-list">
+            <li><span>Class</span><span>Uncrewed mid-mile cargo VTOL</span></li>
+            <li><span>Payload</span><span>500 kg</span></li>
+            <li><span>Max Speed</span><span>240 km/h</span></li>
+            <li><span>Max Range</span><span>1,000 km</span></li>
+            <li><span>Aircraft structure</span><span>Fixed-pitch rotor / no moving wing parts / low maintenance</span></li>
+            <li><span>Business Model</span><span>Lease + Operate + SaaS</span></li>
+          </ul>
+          <p class="spec-desc">The main class for uncrewed mid-mile cargo. It is not a one-time aircraft sale, but a fleet operating asset that repeatedly sells 500 kg-class throughput.</p>
+        </div>
+
+        <!-- Lambda Shuttle -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <span class="spec-name">Lambda Shuttle</span>
+            <span class="spec-type">AC 21.17-4 powered-lift</span>
+          </div>
+          <div class="spec-cost">200 million KRW-class autonomous passenger transport expansion target</div>
+          <ul class="spec-list">
+            <li><span>MTOW</span><span>890 kg</span></li>
+            <li><span>Payload</span><span>475 kg = 5 people x 95 kg</span></li>
+            <li><span>Seats</span><span>5 seats</span></li>
+            <li><span>Payload Ratio</span><span>Approx. 53.4%</span></li>
+            <li><span>Cruise Speed</span><span>Up to 240 km/h</span></li>
+            <li><span>Powertrain</span><span>200 kW-class hybrid</span></li>
+          </ul>
+          <p class="spec-desc">The passenger type is the follow-on product on the AC 21.17-4 powered-lift track. Uncrewed cargo fleet data builds the safety case, and Flight OS leads to remotely supervised and uncrewed autonomous passenger transport.</p>
+        </div>
+        <figure class="spec-card sda-image-card">
+          <img src="assets/images/sda/lambda-shuttle-city.png" alt="Lambda Shuttle concept image flying above a city">
+          <div class="sda-image-caption">
+            <span>Passenger Extension</span>
+            <h3>Cargo data becomes the safety case for passenger transport</h3>
+            <p>A view of expansion from repeated uncrewed cargo operation data and safety architecture into powered-lift passenger aircraft and autonomous passenger transport.</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+    
+    <section class="message-section product-reasoning-anchor" id="product-sda-reasoning">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Product Logic</span>
+          <h2>Lambda products are structured by the causal relationship among market, certification, manufacturing cost, and maintenance cost.</h2>
+          <p>The value of Lambda SDA is proven by numbers, not adjectives. Performance, safety, operating economics, and maintenance structure are organized around facts.</p>
+        </article>
+        <article class="message">
+          <span class="label">01</span>
+          <h2>Why It Must Be a Tiltrotor: Expanding Market Scale</h2>
+          <p>To enter urban air markets, hover takeoff and landing is essential. To expand into regional movement, wings that can fly far are essential.</p>
+          <p>Operating efficiency is maximized when there are no dead rotors that only create drag in flight. This is the core reason tiltrotor-based eVTOL companies can hold high valuations while also carrying uncertainty.</p>
+        </article>
+        <article class="message">
+          <span class="label">02</span>
+          <h2>Why It Must Be an Independent Tiltrotor: Predictable Certification Schedule</h2>
+          <p>Conventional tiltrotors rely on complex probabilistic control, making passage through stringent software certification standards such as DO-178C uncertain. This is the core reason tiltrotor-based eVTOL companies carry both high valuations and uncertainty.</p>
+          <p>Independent control makes every flight response traceable and reproducible. Because the flight algorithm is deterministic, certification time and budget can be predicted.</p>
+        </article>
+        <article class="message">
+          <span class="label">03</span>
+          <h2>Why It Must Use Virtual Control Surfaces: Lower Manufacturing and Maintenance Cost</h2>
+          <p>It removes physical control surfaces and mechanical actuators, controlling flight through software-based rotor control.</p>
+          <p>With mechanical linkages removed, fully automated production of wings and fuselage becomes possible, bringing aircraft price down toward 10% of conventional levels.</p>
+          <p>As moving parts fall toward one-hundredth, wear and failure points decrease, reducing operating maintenance cost and maintenance time.</p>
+        </article>
+        <article class="message">
+          <span class="label">04</span>
+          <h2>Unpowered Flight Capability: Entry Condition for the Regulatory System</h2>
+          <p>FAA guidance AC 21.17-4 Appendix A, PL.2105(g), requires controlled emergency landing capability through glide or autorotation after loss of power. SDA builds an unpowered control logic for an aircraft with no moving wing parts through rotor-by-rotor autorotation and differential drag.</p>
+          <p>Actual operating approval requires satisfying this regulatory standard.</p>
+        </article>
+        <article class="message">
+          <span class="label">05</span>
+          <h2>SDA Integrated Value: Cost Competition with Ground Freight</h2>
+          <p>SDA is an architecture that simultaneously achieves deterministic flight control, unpowered emergency landing through autorotation and differential drag, and extreme parts simplification.</p>
+          <p>By ensuring high safety while lowering production and maintenance costs, it competes directly on freight rates with existing ground cargo transport beyond the aviation sector.</p>
+        </article>
+      </div>
+    </section>
+<section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Lambda</span>
+          <h2>Lambda SDA Opens the Market Through Cargo Operations</h2>
+          <p>Lambda is a tiltrotor that flies far like a fixed-wing aircraft, controls precisely like a drone, glides like a glider, and prepares unpowered landing like a gyroplane.</p>
+          <p>Lambda focuses on cargo-first market entry and safety-structure validation. Observation, crewed mobility, and humanoid integration will expand sequentially from this validation.</p>
+        </article>
+
+        <article class="message">
+          <h2>Why Cargo Comes First</h2>
+          <p>Cargo is a market where freight rate, time value, and repeat operation rate appear as numbers. Aircraft price, maintenance cost, repeat utilization, continuing airworthiness data, and failure-response structure are validated first in cargo operation.</p>
+          <ul class="data-list">
+            <li><span>First Market</span><strong>500 kg-class mid-mile cargo with high time value</strong></li>
+            <li><span>Operation Data</span><strong>Accumulated through uncrewed cargo operation</strong></li>
+            <li><span>Expansion Direction</span><strong>Safety structure for expansion into crewed flight</strong></li>
+          </ul>
+        </article>
+
+        <article class="message">
+          <span class="label">Demonstrator</span>
+          <h2>25 kg concept prototype</h2>
+          <p>The 25 kg concept prototype verifies SDA’s core flight-transition technologies on a real aircraft. It integrates asynchronous tilt, unpowered high-lift and differential-drag control, SADS-based state estimation, and power buffer to verify transition and safety margins.</p>
+          <div class="link-grid">
+            <a class="link-card" href="#" data-route="product">
+              <span>Prototype</span>
+              <strong>25 kg concept prototype</strong>
+              <p>A real demonstrator for SDA flight transition and safety margin</p>
+            </a>
+            <a class="link-card" href="#" data-route="product">
+              <span>Part 108</span>
+              <strong>300-500 kg-class uncrewed cargo</strong>
+              <p>Core axis for uncrewed mid-mile cargo operation</p>
+            </a>
+            <a class="link-card" href="#" data-route="product">
+              <span>Part 22</span>
+              <strong>Crewed-flight expansion axis</strong>
+              <p>Expansion path after cargo operation data and safety architecture</p>
+            </a>
+          </div>
+        </article>
+
+        <article class="message">
+          <h2>Product categories are defined by operating conditions.</h2>
+          <p>Product categories such as observation, cargo, crewed mobility, and humanoid integration are organized according to mission conditions and business validation. This product page focuses less on fixed lineups and more on Lambda’s cargo-first entry and safety validation sequence.</p>
+          <ul class="data-list">
+            <li><span>Current Confirmed Axis</span><strong>Lambda Part 108 / Part 22</strong></li>
+            <li><span>Expansion Targets</span><strong>Observation, cargo variants, crewed variants, and humanoid-linked product lines are sequential expansion targets after Lambda’s cargo-first validation.</strong></li>
+            <li><span>Criteria</span><strong>Operating conditions, certification path, and market-entry sequence</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="technology">View IP</a>
+        <a class="button secondary" href="#" data-route="market">View Market</a>
+      </div>
+    </section>
+    </section>
+  
   </main>
 
 <main class="page-view" data-page="market">
+<section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Market Entry</span>
+        <h1>The first market is repeated regional air logistics.</h1>
+        <p class="lead">Receivepower first secures economics and operating data through cargo operation. SDA’s repeatability is validated where ground and maritime transport lose time, then that data builds the path toward crewed flight.</p>
+      </div>
+    </section>
 
-<section class="hero video-hero"><video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video><div class="container"><span class="eyebrow">Market Entry</span><h1>The first market is repeated regional air logistics.</h1><p class="lead">Receivepower first secures economics and operation data through cargo operations, starting with routes where ground and sea transport lose too much time.</p></div></section>
-<section id="S06_MARKET_ROUTE"><div class="container"><span class="eyebrow">Market</span><h2 class="section-title">Corridors where time loss costs more than air transport</h2><div class="message-grid"><article class="message"><h2>Local problems become air logistics routes.</h2><p>Islands, industrial complexes, medical samples, and port connections create early demand where roads and sea transport lose time.</p></article><article class="message"><h2>Japan Mainland - Busan Port</h2><p>From Busan to Fukuoka, a ship takes about three hours. Lambda targets about 59 minutes. This corridor is an early example of SDA economics.</p></article></div></div></section>
-  </main>
+<!-- S06_MARKET_ROUTE -->
+  <section id="S06_MARKET_ROUTE">
+    <div class="container">
+      <span class="eyebrow">Market</span>
+      <h2 class="section-title">Routes where lost time costs more than air transport</h2>
+ 
+      <div class="route-grid">
+        <div class="route-visual">
+          <svg class="route-svg" viewBox="0 0 400 300">
+            <path d="M 0,150 L 400,150" stroke="#d2d2d7" />
+            <path d="M 100,100 Q 200,120 300,180" fill="none" stroke="var(--text-accent)" stroke-width="2.5" stroke-dasharray="6 4" />
+            <circle cx="100" cy="100" r="5" fill="var(--text-accent)" />
+            <circle cx="100" cy="100" r="10" fill="none" stroke="var(--text-accent)" stroke-width="1" class="animate-pulse" />
+            <circle cx="300" cy="180" r="5" fill="#1d1d1f" />
+            <circle cx="170" cy="135" r="3.5" fill="#86868b" />
+          </svg>
+          <div class="map-label label-busan">▲ Busan Port</div>
+          <div class="map-label label-tsushima">Tsushima</div>
+          <div class="map-label label-japan">▲ Japan Mainland Hubs<br>(Fukuoka / Kitakyushu / Shimonoseki)</div>
+        </div>
+ 
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+            Some routes are too slow by road, tied to schedules by sea, and too costly for conventional aircraft.
+          </h3>
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; line-height: 1.7;">
+            Lambda is air logistics equipment for that gap. It provides direct aerial access where lost time erodes product value and safety: island logistics, mountain supply, industrial cargo, and urgent delivery.
+          </p>
+          <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>Island logistics</span>
+              <strong style="color: var(--text-main);">Cargo access without port dependency</strong>
+            </li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>Industrial cargo</span>
+              <strong style="color: var(--text-main);">Parts, tools, batteries, samples</strong>
+            </li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
+              <span>Autonomous cargo</span>
+              <strong style="color: var(--text-main);">Fixed-wing cruise + VTOL access</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- S05_UNIT_ECONOMICS -->
+  <section id="S05_UNIT_ECONOMICS">
+    <div class="container">
+      <span class="eyebrow">Unit Economics</span>
+      <h2 class="section-title">Cargo revenue and data open the path to crewed flight</h2>
+ 
+      <div class="econ-layout">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+            The market needs economics that break truck freight rates, not merely a better aircraft.
+          </h3>
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.75;">
+            Air logistics opens only when aircraft price, energy, maintenance, safety, certification, and utilization align together. Lambda reduces these cost layers through airframe structure and operating software.
+          </p>
+          <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
+            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">Design innovation dramatically lowers aircraft cost and operating cost.</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Aircraft price, maintenance burden, cruise energy, and utilization combine into one logistics-asset economy.</div>
+          </div>
+        </div>
+ 
+        <div class="econ-bars-wrap">
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>Aircraft Unit Cost</span>
+              <span>1/10 Target</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 78%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>Aircraft Without Control Surfaces</span>
+              <span>Automated production path</span>
+            </div>
+          </div>
+ 
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>Maintenance Burden</span>
+              <span>Parts reduction</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 72%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>Mechanical control surface reduction</span>
+              <span>Inspection item reduction</span>
+            </div>
+          </div>
+ 
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>Energy Cost</span>
+              <span>Fixed-wing cruise</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 66%;"></div>
+            </div>
+            <div class="bar-info">
+              <span>Long range without multicopter energy limits</span>
+              <span>Practical regional routes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="subnav-section">
+      <div class="container subnav-grid">
+        <a class="subnav-card" href="#" data-route="market">
+          <strong>Initial Market</strong>
+          <span>Time-sensitive cargo corridors: Busan-Fukuoka, Korea-Japan ports, industrial complexes, islands, and medical hubs</span>
+        </a>
+        <a class="subnav-card" href="#" data-route="market">
+          <strong>Commercialization and Collaboration</strong>
+          <span>Municipalities, operation models, leasing, and MRO</span>
+        </a>
+      </div>
+    </section>
+
+    
+    <section class="message-section market-targets-lead">
+      <div class="container message-list">
+        <article class="message" id="market-korea-local-government-summary">
+          <span class="label">Korean Local Governments</span>
+          <h2>Turning regional problems into air logistics routes.</h2>
+          <p>Initial demand comes from routes where roads and seas lose time, such as island logistics, medical specimens, industrial emergency parts, and port connections.</p>
+          <p>The market page first shows demand and route potential. Contract structures, research services, and dedicated-aircraft development methods are handled on the business page.</p>
+          <a class="back-link" href="?page=business" data-route="business">View collaboration structure → Business</a>
+        </article>
+        <article class="message" id="market-japan-local-government-summary">
+          <span class="label">Japanese Local Governments</span>
+          <h2>There is regional air logistics demand connecting islands and ports.</h2>
+          <p>Japan’s islands, ports, industrial areas, and medical hubs are markets where aerial mid-mile logistics can work with local industrial bases.</p>
+          <p>The market page explains route potential and regional demand. Local assembly and maintenance bases, JVs, and operating structures are handled on the business page.</p>
+          <a class="back-link" href="?page=business" data-route="business">View collaboration structure → Business</a>
+        </article>
+      </div>
+    </section>
+<section class="message-section">
+      <div class="container message-list">
+        <article class="message">
+          <h2>Japan Mainland - Busan Port</h2>
+          <p>From Busan to Fukuoka, a ship takes about three hours; Lambda targets about 59 minutes. This corridor is an early example explaining SDA economics where ground and sea transport lose too much time.</p>
+          <ul class="data-list">
+            <li><span>Flight Distance</span><strong>About 200-215 km</strong></li>
+            <li><span>Cruise Flight Time</span><strong>About 50-59 minutes</strong></li>
+            <li><span>Direct One-Way Aircraft Operating Cost</span><strong>About 96,000-104,000 KRW</strong></li>
+          </ul>
+        </article>
+      </section>
+</main>
 
 <main class="page-view" data-page="business">
+<section class="hero business-hero">
+      <div class="business-hero-video" aria-hidden="true">
+        <video src="assets/videos/business-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Business</span>
+      </div>
+    </section>
 
-<section class="hero business-hero"><div class="business-hero-video" aria-hidden="true"><video src="assets/videos/business-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="container"><span class="eyebrow">Business</span><h1>We build routes together.</h1><p class="lead">Receivepower provides design, control, software, and patents as the standard architecture. Partners expand with capital, supply chains, demand, manufacturing, and regional operations.</p></div></section>
-<section class="message-section business-panel is-active" data-business-panel="models"><div class="message-grid"><article class="message"><h2>Patent Licensing</h2><p>Core patents such as asynchronous tilting, virtual control surfaces, discrete matrices, unpowered high-lift control, and SADS can be licensed.</p></article><article class="message"><h2>Development JV</h2><p>Receivepower provides design, control, software, and patents. Partners provide capital and supply chains.</p></article><article class="message"><h2>Manufacturing JV</h2><p>Regional manufacturing JVs can handle factories, equipment, local permits, and assembly teams.</p></article><article class="message"><h2>Operation JV</h2><p>Logistics companies, local governments, and operators can participate in fleets, corridors, MRO, Flight OS, and route data.</p></article></div><article class="message business-essay"><details><summary><span class="essay-kicker">Strategic Essay</span><h2>The Essential Competitiveness of Lambda</h2><p class="essay-lead">A software-defined aircraft that removes engineering difficulty and leaves the utility of aviation.</p></summary><div class="business-essay-body"><h3>Lambda structurally removes the reasons conventional aircraft become difficult.</h3><p>Conventional aircraft add mechanical structures, control surfaces, links, hydraulic devices, variable-pitch systems, and complex control systems to gain performance and functions. Lambda was designed in the opposite direction.</p><p>It implements required flight functions through independent tilting of identical fixed-pitch propulsion units and software-defined flight modes.</p><blockquote>Lambda transfers aircraft functions from complex mechanical devices to independent propulsion units and software-defined flight modes, lowering the difficulty and cost of manufacturing, maintenance, certification, and operation at the same time.</blockquote></div></details></article></section>
-<section class="message-section business-panel" data-business-panel="kr-local"><article class="message"><span class="label">Korean Local Governments</span><h2>Start from a regional aviation logistics demonstration.</h2><p>Research projects can begin around 20 million KRW, and dedicated aircraft development and production is structured around 200 million KRW.</p></article></section>
-<section class="message-section business-panel" data-business-panel="jp-local"><article class="message"><span class="label">Japanese Local Governments</span><h2>Air corridors can leave assembly and MRO jobs in the region.</h2><p>We propose dedicated regional aircraft, local assembly, maintenance bases, and operation workforce development.</p></article></section>
-<section class="message-section business-panel" data-business-panel="tech-partner"><article class="message"><span class="label">Technology Partner</span><h2>Develop on a validated architecture.</h2><p>Dedicated aircraft development, Flight OS, simulation, and certification data accumulation can be built together.</p></article></section>
-<section class="message-section business-panel" data-business-panel="logistics"><article class="message"><span class="label">Logistics Partner</span><h2>We are looking for partners to own corridors together.</h2><p>Busan-Fukuoka is an early candidate where time-sensitive logistics can be compared against direct aircraft operating cost.</p></article></section>
-<section class="message-section business-panel" data-business-panel="revenue"><article class="message"><span class="label">Revenue Model</span><h2>Customers do not buy an aircraft.</h2><p>They buy the ability to move a defined payload to a defined destination within a defined time. Aircraft sales, leasing, operating rights, MRO, Flight OS, and continuing airworthiness data form one revenue stack.</p></article></section>
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="market">Back to Market</a>
+      </div>
+    </section>
+
+    <section class="message-section business-panel is-active" data-business-panel="models">
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Collaboration Structure</span>
+          <h2>We provide design and software; partners provide capital, production, and demand. Together, we own the route.</h2>
+          <ul class="data-list">
+            <li><span>Patent Licensing</span><strong>IP, technical white papers, Flight OS / own productization</strong></li>
+            <li><span>Development JV</span><strong>Design, control, patent architecture / joint product equity</strong></li>
+            <li><span>Manufacturing JV</span><strong>Simple airframe structure, COTS supply chain / assembly and maintenance revenue</strong></li>
+            <li><span>Operation JV</span><strong>Aircraft, Flight OS, airworthiness data / route operation revenue</strong></li>
+          </ul>
+        </article>
+        <article class="message">
+          <span class="label">Patent Licensing</span>
+          <h2>Patent Licensing</h2>
+          <p>Asynchronous tilting, virtual control surfaces, discrete control matrices, unpowered high-lift and differential-drag control, and the SADS-based virtual pitot system are the core rights of SDA. Instead of only selling finished aircraft, we build recurring revenue through Flight OS, technical white papers, IP licensing, and running royalties.</p>
+        </article>
+        <article class="message">
+          <span class="label">Development JV</span>
+          <h2>Development Joint Venture</h2>
+          <p>Receivepower provides design, control, software, and patents as the standard architecture, while partners expand with capital and supply chains.</p>
+        </article>
+        <article class="message">
+          <span class="label">Manufacturing JV</span>
+          <h2>Manufacturing Joint Venture</h2>
+          <p>Regional manufacturing JVs handle factories, equipment, local permits, and assembly teams. Receivepower designs a no-control-surface structure and COTS-based supply chain so manufacturing partners can assemble and replace modules quickly.</p>
+        </article>
+        <article class="message">
+          <span class="label">Operation JV</span>
+          <h2>Operation Joint Venture</h2>
+          <p>With logistics companies, we can form Operation JVs that combine corridor-specific fleet operation, route co-investment, operating data, MRO, and Flight OS operation. Partners provide logistics demand and node operations, while SDA combines aircraft, operating software, and continuing airworthiness data into a repeat-operation structure.</p>
+        </article>
+        <article class="message">
+          <span class="label">Revenue Stack</span>
+          <h2>Revenue does not end with aircraft sales.</h2>
+          <p>SDA is not aiming to be a hardware manufacturer; it targets the cost structure and operating standard of air logistics. Aircraft sales, leasing, corridor operating rights, MRO, Flight OS, continuing airworthiness data, and regional JVs create long-term revenue.</p>
+        </article>
+        <article class="message business-essay">
+          <details>
+            <summary>
+              <div>
+                <span class="essay-kicker">Strategic Essay</span>
+                <h2>The Essential Competitiveness of Lambda</h2>
+                <p class="essay-lead">A software-defined aircraft that removes engineering difficulty and leaves the utility of aviation. The long explanation is collapsed so only readers who need it open the full text.</p>
+              </div>
+            </summary>
+            <div class="business-essay-body">
+              <p>A software-defined aircraft that removes engineering difficulty and leaves the utility of aviation</p>
+              <p>Lambda’s advantage is not simply vertical takeoff and landing. It is not simply fixed-wing cruise. Tiltrotors, distributed electric propulsion, and tandem wings already exist as separate technologies.</p>
+              <p>Lambda’s essential competitiveness is that it structurally removes the causes that make conventional aircraft difficult.</p>
+              <p>Conventional aircraft add mechanical structures, control surfaces, links, hydraulics, variable-pitch devices, and complex control systems to gain more performance and more flight functions. As functions increase, part count, manufacturing difficulty, maintenance burden, failure modes, and certification items all increase.</p>
+              <p>Lambda was designed in the opposite direction.</p>
+              <p>Required flight functions are not implemented by adding more mechanical devices. They are implemented through independent tilting of identical fixed-pitch propulsion units and software-defined flight modes.</p>
+              <p>As a result, engineering difficulty drops sharply while VTOL, fixed-wing cruise, transition flight, attitude control, high-lift flight, glide, and emergency flight capability remain inside one simple structure.</p>
+              <hr>
+              <h3>1. It did not solve the hard problem. It removed the hard problem itself.</h3>
+              <p>Lambda is not an aircraft that improves the complexity of traditional aircraft. It does not use the structures that create that complexity in the first place.</p>
+              <p>Because there are no traditional control surfaces such as ailerons, elevators, or rudders, aerodynamic design, hinge moments, flutter verification, servos, actuators, links, cables, backlash, wiring, jamming, breakage modes, assembly steps, and repeated tests for control surfaces disappear together.</p>
+              <p>There is also no helicopter-style swashplate or variable-pitch mechanism. Each propulsion unit uses a fixed-pitch propeller and a BLDC motor, and the whole propeller-motor-nacelle module rotates around a simple hinge.</p>
+              <p>Lambda did not improve the most expensive and difficult parts of aircraft. It removed them.</p>
+              <h3>2. It controls flight with propulsor direction and thrust instead of control surfaces.</h3>
+              <p>The eight propulsors are not just power sources. Each propulsor is an independent flight-control device that can change thrust magnitude and direction.</p>
+              <p>Roll, pitch, yaw, climb, descent, forward motion, and deceleration are created directly by combining propulsor output and tilt angle, not indirectly by moving control surfaces.</p>
+              <p>The same hardware can implement VTOL, hover, low-speed control, cruise attitude control, transition, high-lift flight, virtual flaps, differential-drag control, windmilling, autorotation-like behavior, and attitude control during unpowered glide.</p>
+              <h3>3. Asynchronous tilting structurally lowers transition-flight difficulty.</h3>
+              <p>The hardest region in a conventional tiltrotor is transition from vertical flight to cruise. If all propulsors tilt at once, lift source and control method change together.</p>
+              <p>Lambda does not transition every propulsor at the same time. Some propulsors continue to provide vertical lift and attitude control, while others tilt first to create forward thrust. After forward speed and wing lift are secured, the remaining propulsors transition sequentially.</p>
+              <p>Transition becomes a staged movement between stable states, not one unstable continuous optimization problem.</p>
+              <h3>4. MMA calls verified flight structures instead of real-time optimization.</h3>
+              <p>Lambda control differs from finding an optimal combination of many actuators every moment. It selects predefined and verified control matrices according to flight state, speed, attitude, propulsor state, and constraints.</p>
+              <p>Each MMA defines which propulsors provide lift, forward thrust, roll, pitch, yaw, tilt movement, output range, next transition condition, and fallback mode after propulsor failure.</p>
+              <p>This reduces computation, improves repeatability, and makes test conditions and results traceable. The same state and same input use the same MMA and control structure.</p>
+              <h3>5. It repeats identical front and rear wings and eight identical propulsion modules.</h3>
+              <p>The front and rear wings are not separate dedicated wings. The same wing part is repeated front and rear. Wing design, tooling, structural tests, inventory, maintenance education, replacement parts, and quality-control items are reduced.</p>
+              <p>The eight tilt nacelles also use identical motors, propellers, hinges, mounts, and control interfaces. The aircraft does not contain eight different dedicated propulsion devices. It repeats one verified module eight times.</p>
+              <h3>6. Fixed-pitch BLDC and simple tilt structure lower propulsion difficulty.</h3>
+              <p>The propulsion system is composed of fixed-pitch propellers, BLDC motors, ESCs, simple hinges, tilt actuators, and externally mounted structures. Without variable pitch, pitch links, bearings, hubs, actuators, and related maintenance items disappear.</p>
+              <h3>7. It combines multicopter simplicity and fixed-wing cruise efficiency.</h3>
+              <p>Lambda uses distributed electric propulsion for takeoff and landing, and fixed wings support the aircraft weight in cruise. In cruise, propulsors provide forward thrust to overcome drag, not continuous lift to hold the aircraft up.</p>
+              <h3>8. Tandem-wing stagger uses the structure itself for flight control.</h3>
+              <p>The stagger between front and rear wings is not a styling element. It is used for pitch stability, lift-center distribution, propulsor placement, and differential-drag control. The airframe geometry itself becomes part of the flight-control system.</p>
+              <h3>9. Manufacturing and maintenance move away from traditional aircraft production.</h3>
+              <p>Lambda uses a simple fuselage, identical front and rear wings, identical propulsion modules, externally mounted harnesses, and repeatable assembly. This suits composite panel forming, repeated module mounting, automated inspection, module replacement, and small-part inventory management.</p>
+              <h3>10. Certification difficulty falls with aircraft complexity.</h3>
+              <p>Lambda is designed from the beginning to reduce the certification target: no control surfaces, no variable-pitch devices, no hydraulics, no complex mechanical control system, repeated identical propulsion modules, clear flight-mode control structures, state-based discrete matrices, deterministic control, and predefined fallback MMA.</p>
+              <h3>11. Remaining development work is not unknown physics. It is filling test values.</h3>
+              <p>Lambda still requires testing and verification: rotor-wing interference, lift sharing, thrust values by flight mode, transition timing, center-of-gravity range, attitude-control gains, fallback MMA, lift-to-drag ratio, range, power consumption, maintenance cycles, noise, vibration, structural loads, and fatigue life.</p>
+              <p>These are engineering tasks that can be measured, calibrated, and verified on the aircraft, not problems that require discovering a new physical law.</p>
+              <h3>12. Two weight classes and three models lower the cost structure of air transport.</h3>
+              <p>Lambda is organized around 599 kg and 890 kg classes. The 599 kg uncrewed cargo type targets 300 kg payload and about 40 million KRW aircraft price. The 890 kg uncrewed cargo type targets 475 kg payload and about 100 million KRW aircraft price. The 890 kg crewed type targets about 200 million KRW and extends the same upper platform into passenger transport.</p>
+              <p>Cargo operation is not a side business separated from the crewed type. It first accumulates flight hours, part life, failure rate, maintenance cycles, weather response, energy use, and route operation data.</p>
+              <h3>13. Lambda’s biggest advantage is the whole industrial structure, not one performance number.</h3>
+              <p>The real advantage is that low engineering difficulty, fewer parts, repeated identical parts, easier automation, simple maintenance, deterministic control, clear flight modes, limited certification scope, lower aircraft price, high-turnover repeated operation, fixed-wing cruise efficiency, software extensibility, and cargo-to-crewed expansion are connected as one structure.</p>
+              <p>Lambda is not a technology that makes high-performance aircraft harder. It lowers engineering difficulty toward drone and industrial electric-machine levels while extending the utility of the result toward fixed-wing aircraft and regional transport infrastructure.</p>
+              <blockquote>Lambda is a software-defined aircraft that transfers aircraft functions from complex mechanical devices to independent propulsors and software flight modes, lowering the difficulty and cost of manufacturing, maintenance, certification, and operation at the same time.</blockquote>
+              <p>If this structure is verified through repeated operation, Lambda will not remain an aircraft competing only with existing eVTOLs. It will change the cost structure of building aircraft and operating air transport.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="kr-local">
+      <div class="container message-list">
+        <article class="message" id="market-korea-local-government">
+          <span class="label">Korean Local Governments</span>
+          <h2>Islands wait for ships, and industrial zones are tied to roads. It can start with one research project.</h2>
+          <p>For Korean local governments, we propose air logistics PoCs, dedicated aircraft development, and urban air mobility infrastructure studies tailored to local problems.</p>
+          <ul class="data-list">
+            <li><span>Step 1 · Research Project</span><strong>Approx. 20 million KRW / air logistics route analysis for local terrain and industry conditions</strong></li>
+            <li><span>Step 2 · Dedicated Aircraft Development and Build</span><strong>Approx. 200 million KRW / demonstrator aircraft development based on Part 108 and Part 22 class targets</strong></li>
+            <li><span>Step 3 · Pilot Operation</span><strong>Island logistics, medical specimens, industrial emergency parts, port connection, tourism and disaster response</strong></li>
+          </ul>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Local%20Government%20Demo%20Collaboration%20Inquiry">Ask About a Local Route</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="jp-local">
+      <div class="container message-list">
+        <article class="message" id="market-japan-local-government">
+          <span class="label">Japanese Local Governments</span>
+          <h2>With air corridors, local assembly and maintenance jobs are created.</h2>
+          <p>For Japanese local governments, we propose regional aircraft development together with local assembly and maintenance bases. Regions with dispersed islands, ports, industrial areas, and medical hubs can build aerial mid-mile logistics and local industrial bases together.</p>
+          <ul class="data-list">
+            <li><span>Step 1 · Route Design</span><strong>Define repeated-operation demand for islands, ports, industrial areas, and medical hubs</strong></li>
+            <li><span>Step 2 · Aircraft Specification</span><strong>Set payload, range, and takeoff/landing conditions for local missions</strong></li>
+            <li><span>Step 3 · Assembly and Maintenance Base</span><strong>Review local assembly, maintenance, and operator training</strong></li>
+            <li><span>Initial Candidate</span><strong>Busan Port-Japan mainland corridor, approx. 200-215 km / approx. 50-59 min</strong></li>
+          </ul>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Japan%20Local%20Government%20Collaboration%20Inquiry">Ask About Japan Regional Collaboration</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="tech-partner">
+      <div class="container message-list">
+        <article class="message" id="business-drone-aircraft-company">
+          <span class="label">Drone and Aircraft Companies</span>
+          <h2>Build on a verified architecture without patent concerns.</h2>
+          <p>We develop aircraft for your mission on top of a 25-patent network and Flight OS, from aircraft specification to certification data accumulation.</p>
+          <p>Collaboration can extend to mission-specific aircraft specification, rotor and propulsion layout, control software, certification data accumulation, and local operating model design.</p>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Technology%20Partner%20Collaboration%20Inquiry">Ask About Technology Partnership</a>
+        </article>
+        <article class="message" id="business-robotics-company">
+          <span class="label">Robotics and Humanoid Companies</span>
+          <h2>Logistics-Linked DX Solution Development</h2>
+          <p>Connect the air segment to your robots. SDA links hubs, while ground robots handle unloading, sorting, movement, and maintenance.</p>
+          <p>Receivepower’s Physical AI capability centers on sensor fusion, state estimation, control, and abnormal-state response. This technology extends beyond aircraft control into logistics-site robotic systems.</p>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Robot%20Logistics%20Integration%20Inquiry">Ask About Robot Logistics Integration</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="logistics">
+      <div class="container message-list">
+        <article class="message" id="business-logistics-company">
+          <span class="label">Logistics Companies</span>
+          <h2>Busan-Fukuoka one-way direct operating cost is about 100,000 KRW. We are looking for partners to co-own this route.</h2>
+          <p>For logistics companies, we propose joint fleet operation by corridor and co-investment in routes, not simple outsourced transport. Logistics partners provide cargo demand, hub operation, and SLA; SDA combines aircraft, operating software, continuing airworthiness data, and MRO structure.</p>
+          <ul class="data-list">
+            <li><span>Logistics Partner Provides</span><strong>Cargo demand, hub operation, customer SLA</strong></li>
+            <li><span>Receivepower Provides</span><strong>Aircraft, Flight OS, continuing airworthiness data, MRO structure</strong></li>
+            <li><span>Initial Corridor Example</span><strong>Busan-Fukuoka approx. 200-215 km / direct operating cost approx. 96,000-104,000 KRW</strong></li>
+          </ul>
+          <p>Initial corridors begin where the cost of lost time exceeds transport cost. As repeated operation data accumulates, revenue can expand into route leasing, operating rights, MRO, and Flight OS.</p>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Route%20Profitability%20Simulation%20Request">Request Route Profitability Simulation</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="message-section business-panel" data-business-panel="revenue">
+      <div class="container message-list compact">
+        <article class="message">
+          <span class="label">Customer Value</span>
+          <h2>Customers do not buy aircraft. They buy the ability to have cargo arrive within a fixed time.</h2>
+          <p>Logistics customers buy the ability to move a defined weight to a defined hub within a defined time. Lambda creates operating value around 500 kg-class mid-mile SLA, time reduction, and repeated utilization by corridor.</p>
+        </article>
+        <article class="message kpi">
+          <span class="label">Cargo Operating Asset</span>
+          <span class="metric">100 million KRW</span>
+          <p>An adoption asset unit from a partner perspective. It is the basis for local governments, operators, and regional JVs to design recovery structures through leasing and operation contracts.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">Lifecycle Revenue Potential</span>
+          <span class="metric">5 billion KRW</span>
+          <p>From a business perspective, repeated operation volume by corridor is the core. Leasing fees, operating rights, MRO, Flight OS subscriptions, and continuing airworthiness data services form lifecycle revenue.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">Target Margin</span>
+          <span class="metric">50%</span>
+          <p>Partner profitability is determined more by utilization, maintenance burden, and SLA reliability than by aircraft price. Low-maintenance structure and Flight OS create operating margin.</p>
+        </article>
+
+        <article class="message kpi">
+          <span class="label">Operating Model</span>
+          <span class="metric">Lease + Operate + SaaS</span>
+          <p>Aircraft supply, leasing, direct operation, operating software, and continuing airworthiness data services combine into long-term operating revenue.</p>
+        </article>
+
+        <article class="message">
+          <h2>Combination of Logistics Equipment, Transport Network, and Software</h2>
+          <p>Lambda’s business structure combines automated logistics equipment, transport networks, and software subscriptions. Customers buy 500 kg-class aerial mid-mile throughput and SLA.</p>
+        </article>
+      </div>
+
+
+    <!-- BRAND_CONTENT_SPREAD_20260627_business.html -->
+
+      <div class="container message-list">
+        <article class="message">
+          <span class="label">Asset Logic</span>
+          <h2>The aircraft is both a product and a long-term operating asset.</h2>
+          <p>If a 100 million KRW aircraft has 5 billion KRW lifecycle revenue potential, repeated operation, leasing, route operation, kg-km throughput, Flight OS subscriptions, and continuing airworthiness data services form the long-term revenue structure.</p>
+        </article>
+        <article class="message">
+          <span class="label">Platform Operation</span>
+          <h2>Aircraft are deployed quickly at low price, while revenue repeats through operation, maintenance, and data.</h2>
+          <p>Flight planning, discrete-matrix Flight OS, continuing airworthiness logs, battery and motor life management, route optimization, and insurance data connect into an integrated operating layer. Hardware is deployed quickly at low price, while recurring revenue comes from corridor operation, maintenance, and data services.</p>
+        </article>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="container cta-row">
+        <a class="button primary" href="#" data-route="market">View Market</a>
+        <a class="button secondary" href="#" data-route="company">View Company</a>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -4241,5 +5938,3 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 </script>
 </body>
 </html>
-
-
