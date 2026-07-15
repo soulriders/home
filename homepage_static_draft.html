@@ -866,6 +866,126 @@ h1 {
       line-height: 1.6;
     }
 
+    /* Lambda 체급 및 규제 트랙 */
+    .regulatory-model-section {
+      margin: 56px 0 48px;
+    }
+    .regulatory-model-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(280px, 1.18fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .regulatory-model-header h3 {
+      margin-top: 8px;
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.2vw, 48px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: 0;
+      color: var(--text-main);
+      word-break: keep-all;
+    }
+    .regulatory-model-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    .regulatory-model-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--border-main);
+    }
+    .regulatory-model {
+      min-width: 0;
+      padding: 24px 28px 26px 0;
+      border-bottom: 1px solid var(--border-main);
+    }
+    .regulatory-model:nth-child(even) {
+      padding-right: 0;
+      padding-left: 28px;
+      border-left: 1px solid var(--border-main);
+    }
+    .regulatory-model-index {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .regulatory-model h4 {
+      margin: 0 0 8px;
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+    .regulatory-model-facts {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+    }
+    .regulatory-model-facts li {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
+      padding: 9px 0;
+      border-top: 1px solid var(--border-main);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .regulatory-model-facts span {
+      color: var(--text-muted);
+    }
+    .regulatory-model-facts strong {
+      color: var(--text-main);
+      font-weight: 600;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .regulatory-model-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    @media (max-width: 760px) {
+      .regulatory-model-section {
+        margin: 40px 0 38px;
+      }
+      .regulatory-model-header {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+      .regulatory-model-header h3 {
+        font-size: 30px;
+        line-height: 1.2;
+      }
+      .regulatory-model-header p {
+        font-size: 15px;
+      }
+      .regulatory-model-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .regulatory-model,
+      .regulatory-model:nth-child(even) {
+        padding: 20px 0 22px;
+        border-left: 0;
+      }
+      .regulatory-model h4 {
+        font-size: 21px;
+      }
+    }
+
     /* 기술 Cards */
     .tech-effect-list {
       display: grid;
@@ -4015,6 +4135,137 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   }
 }
 /* Visual masking execution pass 2026-07-13 end */
+
+.product-hero-title span {
+  display: inline;
+}
+
+@media (max-width: 760px) {
+  .page-view[data-page="product"] #product-main {
+    padding-top: 0 !important;
+  }
+
+  .page-view[data-page="product"] .video-hero {
+    position: relative;
+    display: grid;
+    min-height: 430px !important;
+    padding: 44px 0 52px !important;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .page-view[data-page="product"] .video-hero .container {
+    width: min(100% - 28px, 1280px) !important;
+    overflow: visible;
+  }
+
+  .page-view[data-page="product"] .video-hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 18px auto 20px !important;
+    font-size: clamp(32px, 9.2vw, 36px) !important;
+    line-height: 1.08 !important;
+    text-wrap: balance !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+
+  .page-view[data-page="product"] .product-hero-title span {
+    display: block;
+  }
+
+  .page-view[data-page="product"] .video-hero .lead {
+    width: 100% !important;
+    max-width: 340px !important;
+    font-size: 15px !important;
+    line-height: 1.72 !important;
+    text-wrap: pretty !important;
+    word-break: keep-all !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-section {
+    display: block !important;
+    width: 100% !important;
+    margin: 34px 0 22px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-header,
+  .page-view[data-page="product"] .regulatory-model-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 22px 0 24px !important;
+    border-left: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .page-view:not([data-page="home"]) .hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(30px, 8.6vw, 36px) !important;
+    line-height: 1.12 !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .page-view:not([data-page="home"]) .hero .lead {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    font-size: 14px !important;
+    line-height: 1.72 !important;
+    white-space: normal !important;
+    text-wrap: pretty !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .page-view[data-page="company"] .company-hero {
+    min-height: 430px !important;
+    padding: 44px 0 52px !important;
+    align-items: center !important;
+  }
+
+  .page-view:not([data-page="home"]) .section-title,
+  .page-view:not([data-page="home"]) .message h1,
+  .page-view:not([data-page="home"]) .message h2,
+  .page-view:not([data-page="home"]) .tech-effect-card h3,
+  .page-view:not([data-page="home"]) .visitor-card h3,
+  .page-view:not([data-page="home"]) .patent-card h3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(24px, 6.8vw, 28px) !important;
+    line-height: 1.26 !important;
+    white-space: normal !important;
+    text-wrap: pretty !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -4207,7 +4458,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="patent-card">
           <h4>결정론적 비행</h4>
           <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">모드 인식 제어</span>
-          <p>비행 모드는 경계 안에 있고, 반복 가능하며, 운항 로그로 증명됩니다.</p>
+          <p>복잡한 펜로즈 역행렬연산과 실시간 편미분 연산을 배제하고, 예외 처리 없이 고정된 이산 매트릭스를 통째로 교체(Switching)하여 연산 지연 없는 100% 결정론적 비행을 구현</p>
         </div>
         <div class="patent-card">
           <h4>무조종면(날개의 움직이는 부품 없음) 기체</h4>
@@ -4389,7 +4640,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">회사소개</span>
         <h1>리시브파워는</h1>
-        <p class="lead">리시브파워는 2019년부터 지능형 로봇을 만들어 왔습니다. 걷는 휴머노이드부터 나는 비행 로봇까지 — Physical AI로 움직이는 기계를 만듭니다.</p>
+        <p class="lead">2019년부터 지능형 로봇을 만들어 왔습니다. 걷는 휴머노이드부터 나는 비행 로봇까지 — Physical AI로 움직이는 기계를 만듭니다.</p>
       </div>
     </section>
 
@@ -5183,7 +5434,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
       <div class="container">
         <span class="eyebrow">제품 방향</span>
-        <h1>Cargo-first Aerial Robot.</h1>
+        <h1 class="product-hero-title"><span>Cargo-first</span> <span>Aerial Robot.</span></h1>
         <p class="lead">날개의 움직이는 부품을 없애고, 부품을 100분의 1로 줄이고, 인증을 절차로 바꿨습니다. Lambda가 먼저 증명합니다.</p>
       </div>
     </section>
@@ -5211,100 +5462,97 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
       </div>
 
-      <div class="specs-grid">
-        <!-- Lambda Prototype -->
-        <div class="spec-card">
-          <div class="spec-header">
-            <span class="spec-name">Lambda Prototype</span>
-            <span class="spec-type">25kg급 개념시제기</span>
+      <section class="regulatory-model-section" aria-labelledby="lambda-regulatory-models-title">
+        <div class="regulatory-model-header">
+          <div>
+            <span class="eyebrow">체급 및 규제 트랙</span>
+            <h3 id="lambda-regulatory-models-title">4개 체급에서 유·무인 7종으로 확장합니다</h3>
           </div>
-          <div class="spec-cost">핵심 비행 전환 검증기</div>
-          <ul class="spec-list">
-            <li><span>체급</span><span>25 kg급</span></li>
-            <li><span>기체 구조</span><span>날개의 움직이는 부품 없는 탠덤윙</span></li>
-            <li><span>날개 / 스파</span><span>3 m급 카본 스파·윙</span></li>
-            <li><span>로터 / 틸트</span><span>8개 로터 / 8개 전체 틸팅</span></li>
-            <li><span>동력</span><span>4.5 kW급 하이브리드 전기 추진</span></li>
-          </ul>
-          <p class="spec-desc">비동기 틸트, 무동력 고양력장치, 가상피토관, 하이브리드 전력 버퍼를 실제 기체에서 검증하는 첫 체급입니다.</p>
+          <p>25kg급은 무인형 1종으로 시작합니다. 220kg급, 599kg급, 890kg급은 각각 무인형과 유인형으로 나뉘며, 체급과 운항 목적에 따라 규제 트랙이 달라집니다.</p>
         </div>
 
-        <!-- Lambda Light -->
-        <div class="spec-card">
-          <div class="spec-header">
-            <span class="spec-name">Lambda Light</span>
-            <span class="spec-type">Part 103 체급</span>
-          </div>
-          <div class="spec-cost">개인·레저·기술 홍보 파생형</div>
-          <ul class="spec-list">
-            <li><span>체급</span><span>Part 103급</span></li>
-            <li><span>역할</span><span>초기 공개 제품</span></li>
-            <li><span>용도</span><span>초기 비행 데이터 축적 및 시장 검증</span></li>
-            <li><span>핵심 IP</span><span>비동기 틸트로터 / 가상조종면(날개의 움직이는 부품을 소프트웨어로 대체)</span></li>
-          </ul>
-          <p class="spec-desc">Lambda 아키텍처의 핵심 기술을 가장 먼저 실제 비행으로 증명하는 경량 체급입니다.</p>
+        <div class="regulatory-model-list">
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">01 · UNMANNED</span>
+            <h4>Spectator</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>25kg급</strong></li>
+              <li><span>운용</span><strong>무인형</strong></li>
+              <li><span>PL / MTOW</span><strong>10kg / 25kg급</strong></li>
+              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 107</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">02 · UNMANNED</span>
+            <h4>Hecatoncheir</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>220kg급</strong></li>
+              <li><span>운용</span><strong>무인형</strong></li>
+              <li><span>PL / MTOW</span><strong>100kg / 220kg</strong></li>
+              <li><span>규제 트랙</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">03 · CREWED</span>
+            <h4>Solo</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>220kg급</strong></li>
+              <li><span>운용</span><strong>유인형</strong></li>
+              <li><span>PL / MTOW</span><strong>100kg / 220kg</strong></li>
+              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 103 검토</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">04 · UNMANNED</span>
+            <h4>Heavy</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>599kg급</strong></li>
+              <li><span>운용</span><strong>무인형</strong></li>
+              <li><span>PL / MTOW</span><strong>300kg / 599kg급</strong></li>
+              <li><span>규제 트랙</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">05 · CREWED</span>
+            <h4>Heavy</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>599kg급</strong></li>
+              <li><span>운용</span><strong>유인형</strong></li>
+              <li><span>PL / MTOW</span><strong>300kg / 599kg</strong></li>
+              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 22 · MOSAIC</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">06 · UNMANNED</span>
+            <h4>Eureka</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>890kg급</strong></li>
+              <li><span>운용</span><strong>무인형</strong></li>
+              <li><span>PL / MTOW</span><strong>475kg / 890kg</strong></li>
+              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 21·91</strong></li>
+            </ul>
+          </article>
+
+          <article class="regulatory-model">
+            <span class="regulatory-model-index">07 · CREWED</span>
+            <h4>Eureka</h4>
+            <ul class="regulatory-model-facts">
+              <li><span>체급</span><strong>890kg급</strong></li>
+              <li><span>운용</span><strong>유인형</strong></li>
+              <li><span>PL / MTOW</span><strong>475kg / 890kg</strong></li>
+              <li><span>규제 트랙</span><strong>FAA AC 21.17-4 · Powered-lift</strong></li>
+            </ul>
+          </article>
         </div>
 
-        <!-- Lambda Mid -->
-        <div class="spec-card">
-          <div class="spec-header">
-            <span class="spec-name">Lambda Mid</span>
-            <span class="spec-type">무인 화물 패밀리</span>
-          </div>
-          <div class="spec-cost">100kg급 BVLOS 화물 검증 체급</div>
-          <ul class="spec-list">
-            <li><span>체급</span><span>무인 BVLOS 화물</span></li>
-            <li><span>페이로드</span><span>100 kg</span></li>
-            <li><span>역할</span><span>무인 화물 운항 데이터 축적</span></li>
-            <li><span>위치</span><span>500kg 화물기로 가는 중간 체급</span></li>
-          </ul>
-          <p class="spec-desc">BVLOS 무인 화물 운항을 위한 중간 체급입니다. 500kg 미드마일 화물기로 가기 전에 실제 회랑에서 인증, 운항, 정비 데이터를 쌓는 라인입니다.</p>
-        </div>
+        <p class="regulatory-model-note">Part 108은 2026년 7월 현재 제안 규정입니다. 25kg급과 599kg급은 제품 체급명이며, 실제 인증 중량은 Part 107의 55lb 미만 및 Proposed Part 108의 1,320lb 이하 기준에 맞춰 확정합니다.</p>
+      </section>
 
-        <!-- Lambda Heavy -->
-        <div class="spec-card">
-          <div class="spec-header">
-            <span class="spec-name">Lambda Heavy</span>
-            <span class="spec-type">무인 화물 패밀리</span>
-          </div>
-          <div class="spec-cost">1억원급 운항자산 목표</div>
-          <ul class="spec-list">
-            <li><span>체급</span><span>무인 미드마일 화물 VTOL</span></li>
-            <li><span>페이로드</span><span>500 kg</span></li>
-            <li><span>최대 속도</span><span>240 km/h</span></li>
-            <li><span>최대 항속거리</span><span>1,000 km</span></li>
-            <li><span>기체 구조</span><span>고정피치 로터 / 무조종면(날개의 움직이는 부품 없음) / 저정비</span></li>
-            <li><span>사업 모델</span><span>Lease + Operate + SaaS</span></li>
-          </ul>
-          <p class="spec-desc">무인 미드마일 화물의 주력 체급입니다. 기체를 한 번 판매하고 끝나는 제품이 아니라 500kg급 처리량을 반복 판매하는 플릿 운항자산입니다.</p>
-        </div>
-
-        <!-- Lambda Shuttle -->
-        <div class="spec-card">
-          <div class="spec-header">
-            <span class="spec-name">Lambda Shuttle</span>
-            <span class="spec-type">AC 21.17-4 powered-lift</span>
-          </div>
-          <div class="spec-cost">2억원급 자율 승객운송 확장 목표</div>
-          <ul class="spec-list">
-            <li><span>MTOW</span><span>890 kg</span></li>
-            <li><span>페이로드</span><span>475 kg = 5명 x 95 kg</span></li>
-            <li><span>좌석</span><span>5인승</span></li>
-            <li><span>페이로드 비율</span><span>약 53.4%</span></li>
-            <li><span>순항 속도</span><span>최대 240 km/h</span></li>
-            <li><span>파워트레인</span><span>200 kW급 하이브리드</span></li>
-          </ul>
-          <p class="spec-desc">여객형은 AC 21.17-4 powered-lift 규제 트랙의 후속 제품입니다. 무인 화물 플릿 데이터가 안전 케이스를 만들고, Flight OS가 원격감시형 및 무인 자율 승객운송으로 이어집니다.</p>
-        </div>
-        <figure class="spec-card sda-image-card">
-          <img src="assets/images/sda/lambda-shuttle-city.png" alt="도시 상공을 비행하는 Lambda Shuttle 개념 이미지">
-          <div class="sda-image-caption">
-            <span>Passenger Extension</span>
-            <h3>화물 데이터가 승객 운송의 안전 케이스가 됩니다</h3>
-            <p>무인 화물 운항에서 축적한 반복 운항 데이터와 안전 구조를 기반으로, powered-lift 여객형과 자율 승객운송으로 확장하는 장면입니다.</p>
-          </div>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -6116,6 +6364,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const active = el.dataset.businessPanel === panel;
         el.classList.toggle('is-active', active);
         el.setAttribute('aria-hidden', active ? 'false' : 'true');
+        if (active) {
+          requestAnimationFrame(() => {
+            el.querySelectorAll('.reveal-target').forEach((target) => target.classList.add('is-visible'));
+          });
+        }
       });
 
       document.querySelectorAll('[data-business-target]').forEach((el) => {
@@ -6137,6 +6390,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const active = el.dataset.page === page;
         el.classList.toggle('is-active', active);
         el.setAttribute('aria-hidden', active ? 'false' : 'true');
+        if (active) {
+          requestAnimationFrame(() => {
+            el.querySelectorAll('.reveal-target').forEach((target) => target.classList.add('is-visible'));
+          });
+        }
       });
 
       navLinks.forEach((el) => {
