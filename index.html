@@ -926,6 +926,14 @@ h1 {
       letter-spacing: 0;
       word-break: keep-all;
     }
+    .regulatory-model-description {
+      min-height: 48px;
+      margin: 0 0 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
     .regulatory-model-facts {
       list-style: none;
       margin: 14px 0 0;
@@ -980,6 +988,9 @@ h1 {
       .regulatory-model:nth-child(even) {
         padding: 20px 0 22px;
         border-left: 0;
+      }
+      .regulatory-model-description {
+        min-height: 0;
       }
       .regulatory-model h4 {
         font-size: 21px;
@@ -5482,6 +5493,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">01 · UNMANNED</span>
             <h4>Spectator</h4>
+            <p class="regulatory-model-description">55lb 미만 소형 UAS 기준으로 실증과 초기 상업 운항을 시작하는 규제 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>25kg급</strong></li>
               <li><span>운용</span><strong>무인형</strong></li>
@@ -5493,6 +5505,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">02 · UNMANNED</span>
             <h4>Hecatoncheir</h4>
+            <p class="regulatory-model-description">최대 1,320lb급 무인기의 BVLOS 반복 운항을 목표로 하는 Proposed Part 108 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>220kg급</strong></li>
               <li><span>운용</span><strong>무인형</strong></li>
@@ -5504,6 +5517,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">03 · CREWED</span>
             <h4>Solo</h4>
+            <p class="regulatory-model-description">1인승 초경량 비행체의 Part 103 적용 가능성을 공허중량·속도·연료 한계로 검토하는 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>220kg급</strong></li>
               <li><span>운용</span><strong>유인형</strong></li>
@@ -5515,6 +5529,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">04 · UNMANNED</span>
             <h4>Heavy</h4>
+            <p class="regulatory-model-description">599kg급 산업·물류 무인기의 BVLOS 반복 운항을 Proposed Part 108 상한 체급에서 추진합니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>599kg급</strong></li>
               <li><span>운용</span><strong>무인형</strong></li>
@@ -5526,6 +5541,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">05 · CREWED</span>
             <h4>Heavy</h4>
+            <p class="regulatory-model-description">MOSAIC Part 22의 성능 기반 합의표준으로 경량 유인형을 인증하는 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>599kg급</strong></li>
               <li><span>운용</span><strong>유인형</strong></li>
@@ -5537,17 +5553,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <article class="regulatory-model">
             <span class="regulatory-model-index">06 · UNMANNED</span>
             <h4>Eureka</h4>
+            <p class="regulatory-model-description">Part 21 형식증명 체계와 §21.91 형식설계 변경 절차로 890kg급 무인 파생형을 관리하는 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>890kg급</strong></li>
               <li><span>운용</span><strong>무인형</strong></li>
               <li><span>PL / MTOW</span><strong>475kg / 890kg</strong></li>
-              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 21·91</strong></li>
+              <li><span>규제 트랙</span><strong>FAA 14 CFR Part 21 / §21.91</strong></li>
             </ul>
           </article>
 
           <article class="regulatory-model">
             <span class="regulatory-model-index">07 · CREWED</span>
             <h4>Eureka</h4>
+            <p class="regulatory-model-description">§21.17(b) 특수등급 powered-lift의 형식·생산·감항 인증을 AC 21.17-4 기준으로 진행하는 경로입니다.</p>
             <ul class="regulatory-model-facts">
               <li><span>체급</span><strong>890kg급</strong></li>
               <li><span>운용</span><strong>유인형</strong></li>
