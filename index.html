@@ -964,6 +964,47 @@ h1 {
       line-height: 1.7;
       word-break: keep-all;
     }
+    .product-logic-details {
+      border-top: 1px solid var(--border-main);
+      border-bottom: 1px solid var(--border-main);
+    }
+    .product-logic-details > summary {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 24px 0;
+      color: var(--text-main);
+      cursor: pointer;
+      list-style: none;
+    }
+    .product-logic-details > summary::-webkit-details-marker {
+      display: none;
+    }
+    .product-logic-details > summary span {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .product-logic-details > summary strong {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.3vw, 32px);
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+    .product-logic-details > summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 28px;
+      line-height: 1;
+    }
+    .product-logic-details[open] > summary::after {
+      content: "−";
+    }
+    .product-logic-details > .message-list {
+      padding: 12px 0 30px;
+    }
 
     @media (max-width: 760px) {
       .regulatory-model-section {
@@ -991,6 +1032,17 @@ h1 {
       }
       .regulatory-model-description {
         min-height: 0;
+      }
+      .product-logic-details > summary {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        padding: 20px 0;
+      }
+      .product-logic-details > summary span {
+        grid-column: 1 / -1;
+      }
+      .product-logic-details > summary strong {
+        font-size: 22px;
       }
       .regulatory-model h4 {
         font-size: 21px;
@@ -4221,14 +4273,39 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     transform: none !important;
   }
 
+  .page-view[data-page="product"] .regulatory-model-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+    border-top: 1px solid var(--border-main);
+  }
+
   .page-view[data-page="product"] .regulatory-model-facts li {
+    display: block;
+    min-width: 0;
+    padding: 10px 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--border-main);
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(n + 3) {
+    grid-column: 1 / -1;
+    display: grid;
     grid-template-columns: 82px minmax(0, 1fr);
     gap: 10px;
   }
 
   .page-view[data-page="product"] .regulatory-model-facts strong {
+    display: block;
     min-width: 0;
+    margin-top: 2px;
+    text-align: left;
     overflow-wrap: anywhere;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(n + 3) strong {
+    margin-top: 0;
+    text-align: right;
   }
 
   .page-view:not([data-page="home"]) .hero h1 {
@@ -5584,12 +5661,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
     
     <section class="message-section product-reasoning-anchor" id="product-sda-reasoning">
-      <div class="container message-list">
-        <article class="message">
-          <span class="label">Product Logic</span>
-          <h2>Lambda의 제품은 시장, 인증, 제조비, 유지비의 인과관계에 의해 구성됩니다.</h2>
-          <p>Lambda SDA의 가치는 수식어가 아니라 수치로 증명됩니다. 성능, 안전성, 운항 경제성, 정비 구조를 사실 중심으로 정리했습니다.</p>
-        </article>
+      <div class="container">
+        <details class="product-logic-details">
+          <summary>
+            <span>PRODUCT LOGIC</span>
+            <strong>왜 이 구조인가: 5가지 설계 이유</strong>
+          </summary>
+          <div class="message-list">
         <article class="message">
           <span class="label">01</span>
           <h2>틸트로터여야 하는 이유: 시장 규모의 확장</h2>
@@ -5621,59 +5699,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>SDA는 결정론적 비행 제어, 자동회전·차동항력 기반 무동력 비상착륙 능력, 그리고 극단적인 부품 단순화를 동시에 달성한 아키텍처입니다.</p>
           <p>높은 안전성을 담보하는 동시에 생산 및 유지비용을 낮춤으로써, 항공 분야를 넘어 기존 육상 화물운송 시장과 운임으로 직접 경쟁하는 비행체입니다.</p>
         </article>
-      </div>
-    </section>
-<section class="message-section">
-      <div class="container message-list">
-        <article class="message">
-          <span class="label">Lambda</span>
-          <h2>화물 운항에서 시장을 여는 Lambda SDA</h2>
-          <p>Lambda는 고정익기처럼 멀리 날고, 드론처럼 정밀하게 제어되며, 글라이더처럼 활강하고, 자이로콥터처럼 무동력 착륙을 준비하는 틸트로터기입니다.</p>
-          <p>Lambda는 화물 우선 진입과 안전 구조 검증에 집중하고 있습니다. 관측, 유인 이동, 휴머노이드 연동 등은 이 검증을 바탕으로 순차 확장합니다.</p>
-        </article>
-
-        <article class="message">
-          <h2>왜 화물부터 시작하는가</h2>
-          <p>화물은 운임, 시간 가치, 반복 운항률이 숫자로 드러나는 시장입니다. 먼저 화물 운항에서 기체 가격, 정비비, 반복 운항률, 감항유지 데이터, 실패 대응 구조를 검증합니다.</p>
-          <ul class="data-list">
-            <li><span>첫 시장</span><strong>시간 가치가 큰 500kg급 미드마일 화물</strong></li>
-            <li><span>운항 데이터</span><strong>무인 화물 운항에서 축적</strong></li>
-            <li><span>확장 방향</span><strong>유인비행으로 갈 수 있는 안전 구조</strong></li>
-          </ul>
-        </article>
-
-        <article class="message">
-          <span class="label">검증기</span>
-          <h2>25kg급 개념시제기</h2>
-          <p>25kg급 개념시제기는 SDA의 핵심 비행 전환 기술을 실제 기체에서 확인하는 단계입니다. 비동기 틸트, 무동력 고양력·차동항력 제어, SADS 기반 상태 추정, 전력 버퍼를 통합해 전환과 안전 여유를 확인합니다.</p>
-          <div class="link-grid">
-            <a class="link-card" href="#" data-route="product">
-              <span>Prototype</span>
-              <strong>25kg급 개념시제기</strong>
-              <p>SDA 비행 전환과 안전 여유를 확인하는 실물 검증기</p>
-            </a>
-            <a class="link-card" href="#" data-route="product">
-              <span>Part 108</span>
-              <strong>300-500kg급 무인 화물</strong>
-              <p>무인 미드마일 화물 운항을 위한 핵심 축</p>
-            </a>
-            <a class="link-card" href="#" data-route="product">
-              <span>Part 22</span>
-              <strong>유인비행 확장 축</strong>
-              <p>화물 운항 데이터와 안전 구조 이후의 확장 경로</p>
-            </a>
           </div>
-        </article>
-
-        <article class="message">
-          <h2>제품 카테고리는 운항 조건에 따라 확정합니다.</h2>
-          <p>관측, 화물, 유인 이동, 휴머노이드 연동 같은 제품 카테고리는 각 임무 조건과 사업 검증에 맞춰 정리합니다. 현재 제품 페이지는 확정 라인업보다 Lambda의 화물 우선 진입과 안전 구조 검증 순서를 다룹니다.</p>
-          <ul class="data-list">
-            <li><span>현재 확정 축</span><strong>Lambda Part 108 / Part 22</strong></li>
-            <li><span>확장 대상</span><strong>관측, 화물 세부형, 유인 세부형, 휴머노이드 연동 제품군은 Lambda의 화물 우선 검증 이후 순차 확장 대상입니다.</strong></li>
-            <li><span>기준</span><strong>운항 조건, 인증 경로, 시장 진입 순서</strong></li>
-          </ul>
-        </article>
+        </details>
       </div>
     </section>
 
