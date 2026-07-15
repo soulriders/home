@@ -964,11 +964,11 @@ h1 {
       line-height: 1.7;
       word-break: keep-all;
     }
-    .product-logic-details {
+    .ip-logic-details {
       border-top: 1px solid var(--border-main);
       border-bottom: 1px solid var(--border-main);
     }
-    .product-logic-details > summary {
+    .ip-logic-details > summary {
       display: grid;
       grid-template-columns: auto minmax(0, 1fr) auto;
       gap: 18px;
@@ -978,31 +978,31 @@ h1 {
       cursor: pointer;
       list-style: none;
     }
-    .product-logic-details > summary::-webkit-details-marker {
+    .ip-logic-details > summary::-webkit-details-marker {
       display: none;
     }
-    .product-logic-details > summary span {
+    .ip-logic-details > summary span {
       color: var(--accent);
       font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 700;
     }
-    .product-logic-details > summary strong {
+    .ip-logic-details > summary strong {
       font-family: var(--font-display);
       font-size: clamp(22px, 2.3vw, 32px);
       line-height: 1.25;
       word-break: keep-all;
     }
-    .product-logic-details > summary::after {
+    .ip-logic-details > summary::after {
       content: "+";
       color: var(--accent);
       font-size: 28px;
       line-height: 1;
     }
-    .product-logic-details[open] > summary::after {
+    .ip-logic-details[open] > summary::after {
       content: "−";
     }
-    .product-logic-details > .message-list {
+    .ip-logic-details > .message-list {
       padding: 12px 0 30px;
     }
 
@@ -1033,15 +1033,15 @@ h1 {
       .regulatory-model-description {
         min-height: 0;
       }
-      .product-logic-details > summary {
+      .ip-logic-details > summary {
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 12px;
         padding: 20px 0;
       }
-      .product-logic-details > summary span {
+      .ip-logic-details > summary span {
         grid-column: 1 / -1;
       }
-      .product-logic-details > summary strong {
+      .ip-logic-details > summary strong {
         font-size: 22px;
       }
       .regulatory-model h4 {
@@ -4211,8 +4211,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   .page-view[data-page="product"] .video-hero {
     position: relative;
     display: grid;
-    min-height: 430px !important;
-    padding: 44px 0 52px !important;
+    min-height: 340px !important;
+    padding: 32px 0 36px !important;
     align-items: center;
     overflow: hidden;
   }
@@ -4306,6 +4306,133 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   .page-view[data-page="product"] .regulatory-model-facts li:nth-child(n + 3) strong {
     margin-top: 0;
     text-align: right;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT {
+    padding-top: 34px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT > .container {
+    width: min(100% - 28px, 1280px) !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT > .container > .section-title {
+    margin-bottom: 22px !important;
+    font-size: 27px !important;
+    line-height: 1.18 !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT > .container > .tech-effect-list {
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .tech-effect-card {
+    padding: 18px !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .tech-effect-card h3 {
+    margin-bottom: 7px !important;
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .tech-effect-card p,
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .effect-line {
+    margin-bottom: 10px !important;
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .metric-list {
+    margin: 8px 0 0 !important;
+  }
+
+  .page-view[data-page="product"] #S03_LAMBDA_PRODUCT .metric-list li {
+    gap: 10px !important;
+    padding: 7px 0 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-section {
+    margin-top: 26px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-header {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-header h3 {
+    margin-top: 5px !important;
+    font-size: 26px !important;
+    line-height: 1.16 !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-header p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model,
+  .page-view[data-page="product"] .regulatory-model:nth-child(even) {
+    padding: 11px 0 13px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-index {
+    margin-bottom: 5px !important;
+    font-size: 10px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model h4 {
+    margin-bottom: 4px !important;
+    font-size: 19px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-description {
+    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr) !important;
+    gap: 0 12px !important;
+    margin-top: 7px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li {
+    padding: 6px 0 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(2) {
+    display: none !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(3) {
+    grid-column: auto !important;
+    display: block !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(4) {
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+    grid-template-columns: 66px minmax(0, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-facts li:nth-child(3) strong {
+    text-align: left !important;
+  }
+
+  .page-view[data-page="product"] .regulatory-model-note {
+    margin-top: 12px !important;
+    font-size: 10px !important;
+    line-height: 1.55 !important;
   }
 
   .page-view:not([data-page="home"]) .hero h1 {
@@ -5418,6 +5545,50 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
     </section>
 
+    <section class="message-section ip-reasoning-anchor" id="ip-sda-reasoning">
+      <div class="container">
+        <details class="ip-logic-details">
+          <summary>
+            <span>IP LOGIC</span>
+            <strong>왜 이 구조인가: 5가지 설계 논리</strong>
+          </summary>
+          <div class="message-list">
+            <article class="message">
+              <span class="label">01</span>
+              <h2>틸트로터여야 하는 이유: 시장 규모의 확장</h2>
+              <p>도심 항공 시장에 진입하려면 호버 이착륙 능력이, 광역 이동 시장으로 확장하려면 멀리 갈 수 있는 날개가 필수적입니다.</p>
+              <p>비행 중 저항만 유발하는 데드로터(Dead Rotor)가 없어야 운항 효율이 극대화됩니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
+            </article>
+            <article class="message">
+              <span class="label">02</span>
+              <h2>독립 틸트로터여야 하는 이유: 인증 기간의 예측 가능성</h2>
+              <p>일반 틸트로터는 복잡한 확률 제어 기반이어서 가혹한 소프트웨어 인증 표준(DO-178C) 통과가 불확실합니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
+              <p>독립 제어 방식은 모든 비행 응답의 추적과 재현이 가능합니다. 비행 알고리즘이 결정론적(Deterministic)이므로, 인증 기간과 예산을 예측할 수 있습니다.</p>
+            </article>
+            <article class="message">
+              <span class="label">03</span>
+              <h2>가상조종면(날개의 움직이는 부품을 소프트웨어로 대체)이어야 하는 이유: 제조 및 유지보수 비용의 하락</h2>
+              <p>물리적인 조종면(날개의 움직이는 부품)과 기계적 구동 장치를 제거하고, 소프트웨어를 통한 로터 제어로 비행을 통제합니다.</p>
+              <p>기계적 연결 구조가 사라져 날개와 동체의 완전 자동화 생산이 가능해지며, 기체 가격이 기존의 10% 수준으로 낮아집니다.</p>
+              <p>가동 부품 수가 100분의 1로 감소함에 따라 마모와 고장 요소가 줄어들어, 운영 유지보수 비용과 정비 소요 시간이 단축됩니다.</p>
+            </article>
+            <article class="message">
+              <span class="label">04</span>
+              <h2>무동력 비행 능력: 법적 제도권 진입 조건</h2>
+              <p>미 연방항공청(FAA) 가이드라인(AC 21.17-4 부록 A, PL.2105(g))은 동력 상실 시에도 활강이나 오토로테이션을 통한 제어된 비상착륙 능력을 필수 조건으로 명시하고 있습니다. SDA는 로터별 자동회전과 차동항력으로 날개의 움직이는 부품 없는 기체의 무동력 제어 논리를 세웁니다.</p>
+              <p>이 법적 기준을 만족해야만 실제 운항 허가를 취득할 수 있습니다.</p>
+            </article>
+            <article class="message">
+              <span class="label">05</span>
+              <h2>SDA 통합 가치: 육상 화물운송과의 가격 경쟁</h2>
+              <p>SDA는 결정론적 비행 제어, 자동회전·차동항력 기반 무동력 비상착륙 능력, 그리고 극단적인 부품 단순화를 동시에 달성한 아키텍처입니다.</p>
+              <p>높은 안전성을 담보하는 동시에 생산 및 유지비용을 낮춤으로써, 항공 분야를 넘어 기존 육상 화물운송 시장과 운임으로 직접 경쟁하는 비행체입니다.</p>
+            </article>
+          </div>
+        </details>
+      </div>
+    </section>
+
     <!-- S01B_SDA_IMAGE_BOXES -->
   <section class="sda-image-section" id="S01B_SDA_IMAGE_BOXES">
     <div class="container">
@@ -5660,50 +5831,6 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
 
     
-    <section class="message-section product-reasoning-anchor" id="product-sda-reasoning">
-      <div class="container">
-        <details class="product-logic-details">
-          <summary>
-            <span>PRODUCT LOGIC</span>
-            <strong>왜 이 구조인가: 5가지 설계 이유</strong>
-          </summary>
-          <div class="message-list">
-        <article class="message">
-          <span class="label">01</span>
-          <h2>틸트로터여야 하는 이유: 시장 규모의 확장</h2>
-          <p>도심 항공 시장에 진입하려면 호버 이착륙 능력이, 광역 이동 시장으로 확장하려면 멀리 갈 수 있는 날개가 필수적입니다.</p>
-          <p>비행 중 저항만 유발하는 데드로터(Dead Rotor)가 없어야 운항 효율이 극대화됩니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
-        </article>
-        <article class="message">
-          <span class="label">02</span>
-          <h2>독립 틸트로터여야 하는 이유: 인증 기간의 예측 가능성</h2>
-          <p>일반 틸트로터는 복잡한 확률 제어 기반이어서 가혹한 소프트웨어 인증 표준(DO-178C) 통과가 불확실합니다. 기존 틸트로터 기반 eVTOL 기업들이 높은 기업가치와 동시에 불확실성을 안고 가는 본질적인 이유입니다.</p>
-          <p>독립 제어 방식은 모든 비행 응답의 추적과 재현이 가능합니다. 비행 알고리즘이 결정론적(Deterministic)이므로, 인증 기간과 예산을 예측할 수 있습니다.</p>
-        </article>
-        <article class="message">
-          <span class="label">03</span>
-          <h2>가상조종면(날개의 움직이는 부품을 소프트웨어로 대체)이어야 하는 이유: 제조 및 유지보수 비용의 하락</h2>
-          <p>물리적인 조종면(날개의 움직이는 부품)과 기계적 구동 장치를 제거하고, 소프트웨어를 통한 로터 제어로 비행을 통제합니다.</p>
-          <p>기계적 연결 구조가 사라져 날개와 동체의 완전 자동화 생산이 가능해지며, 기체 가격이 기존의 10% 수준으로 낮아집니다.</p>
-          <p>가동 부품 수가 100분의 1로 감소함에 따라 마모와 고장 요소가 줄어들어, 운영 유지보수 비용과 정비 소요 시간이 단축됩니다.</p>
-        </article>
-        <article class="message">
-          <span class="label">04</span>
-          <h2>무동력 비행 능력: 법적 제도권 진입 조건</h2>
-          <p>미 연방항공청(FAA) 가이드라인(AC 21.17-4 부록 A, PL.2105(g))은 동력 상실 시에도 활강이나 오토로테이션을 통한 제어된 비상착륙 능력을 필수 조건으로 명시하고 있습니다. SDA는 로터별 자동회전과 차동항력으로 날개의 움직이는 부품 없는 기체의 무동력 제어 논리를 세웁니다.</p>
-          <p>이 법적 기준을 만족해야만 실제 운항 허가를 취득할 수 있습니다.</p>
-        </article>
-        <article class="message">
-          <span class="label">05</span>
-          <h2>SDA 통합 가치: 육상 화물운송과의 가격 경쟁</h2>
-          <p>SDA는 결정론적 비행 제어, 자동회전·차동항력 기반 무동력 비상착륙 능력, 그리고 극단적인 부품 단순화를 동시에 달성한 아키텍처입니다.</p>
-          <p>높은 안전성을 담보하는 동시에 생산 및 유지비용을 낮춤으로써, 항공 분야를 넘어 기존 육상 화물운송 시장과 운임으로 직접 경쟁하는 비행체입니다.</p>
-        </article>
-          </div>
-        </details>
-      </div>
-    </section>
-
     <section class="cta-band">
       <div class="container cta-row">
         <a class="button primary" href="#" data-route="technology">IP 보기</a>
