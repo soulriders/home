@@ -7,7 +7,7 @@
     2. ホームの中見出しは一行で表示する.
     3. Archerのトップページのように動画を最初の画面でループ再生する.
     4. 各メニューページの上部には代表画像を背景として配置する.
-    5. Company IRのVC向け認証スケジュール文言はFAA 21.17-4要件と25件の特許網を基準とする.
+    5. Company IRのVC向け認証スケジュール文言はFAA 21.17-4要件と25件の特許ポートフォリオを基準とする.
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -866,7 +866,7 @@ h1 {
       line-height: 1.6;
     }
 
-    /* Lambdaの重量級と規制トラック */
+    /* Lambdaの機体クラスと認証・規制区分 */
     .regulatory-model-section {
       margin: 56px 0 48px;
     }
@@ -4529,7 +4529,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <span class="typo-line">最もシンプルな航空機、</span>
         <span class="typo-line">ソフトウェア定義航空機 Lambda。</span>
       </h1>
-      <p class="hero-p">より少ない部品とより低いコストで、貨物から人まで運びます。</p>
+      <p class="hero-p">部品点数を減らし、コストを抑えながら、貨物輸送から有人輸送へ展開します。</p>
     </div>
   </section>
 
@@ -4546,18 +4546,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="tech-effect-list">
             <article class="tech-effect-card">
               <h3>翼の可動部品を減らした航空機</h3>
-              <p>翼の可動部品をなくすと、翼と胴体の製造は自動化生産構造に変わり、機体価格は従来航空機の10分の1を目標に下がります。</p>
+              <p>翼の可動部をなくすことで、翼と胴体の自動生産が可能になり、従来機の10分の1となる機体価格を目指します。</p>
               <div class="effect-line">翼の可動部品がなくなれば、整備項目も同時に減ります。</div>
             </article>
             <article class="tech-effect-card">
-              <h3>飛行モード転換アーキテクチャ</h3>
-              <p>ホバー、転換、巡航、滑空などの姿勢と飛行モードの切り替えをソフトウェアが決定します。</p>
-              <div class="effect-line">マルチコプター、飛行機、ヘリコプター、ジャイロコプターの各モードを、ひとつのFlight OS内で切り替えます。</div>
+              <h3>飛行モード遷移アーキテクチャ</h3>
+              <p>ホバー、遷移、巡航、滑空など、機体姿勢と飛行モードの切り替えをソフトウェアが制御します。</p>
+              <div class="effect-line">マルチコプター、固定翼機、ヘリコプター、ジャイロコプターの飛行モードを、ひとつのFlight OSで切り替えます。</div>
             </article>
             <article class="tech-effect-card">
               <h3>動力が失われても、操縦は止まりません</h3>
-              <p>無動力滑空は、FAA 21.17-4カテゴリーの制御された非常着陸要件を直接満たす構造です。動力が失われても、ローターのオートローテーションと差動抗力が機体の方向制御権を残します。</p>
-              <div class="effect-line">貨物運航データは、有人チャーター機の認証経路を開く実証資産になります。</div>
+              <p>無動力滑空は、FAA AC 21.17-4が定める制御された緊急着陸要件を直接満たすよう設計された構造です。動力を失っても、ローターのオートローテーションと差動抗力により、機体の方向・姿勢を制御する能力を維持します。</p>
+              <div class="effect-line">貨物運航で蓄積したデータは、有人機の認証につながる実証資産となります。</div>
             </article>
           </div>
         </div>
@@ -4572,7 +4572,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <h2 class="section-title">単純性・経済性・安全性 — <span>ひとつの特許構造から生まれます</span></h2>
       <article class="message hero-summary">
         <span class="label">SDA Platform</span>
-        <h3>主要指標は運航コストと最初の市場で説明します。</h3>
+        <h3>主要指標は、運航コストと初期市場の具体例で示します。</h3>
         <p>釜山–福岡59分・500kg貨物・機体単価10分の1目標。最初の市場は、トラック運賃と競争する地域間航空物流です。</p>
       </article>
       <div class="tech-effect-list">
@@ -4583,12 +4583,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="tech-effect-card">
           <h3>経済性</h3>
-          <p>機体単価10分の1目標、500kg級の反復運航、釜山–福岡59分という例は、同じコスト構造を説明します。</p>
-          <div class="effect-line">航空物流がトラック運賃と競争できて初めて、市場が開きます。</div>
+          <p>機体価格10分の1、500kg級の継続運航、釜山–福岡59分という目標は、ひとつのコスト構造から生まれます。</p>
+          <div class="effect-line">トラック輸送と運賃で競争できて初めて、航空物流市場が成立します。</div>
         </article>
         <article class="tech-effect-card">
           <h3>安全性</h3>
-          <p>動力が止まっても、オートローテーションと差動抗力で機体の方向と軌跡を最後まで扱う構造を設計しました。</p>
+          <p>動力を失っても、オートローテーションと差動抗力により、機体の方向と飛行経路を最後まで制御できる構造を設計しました。</p>
           <div class="effect-line">無動力滑空と非常降下は、有人飛行へ拡張するための中核安全構造です。</div>
         </article>
       </div>
@@ -4600,8 +4600,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA非同期ティルトローター飛行画像">
         <div class="motion-caption">
           <span>Flight Visual</span>
-          <h2>非同期ティルトローター転換飛行</h2>
-          <p>離着陸、転換、巡航、非常降下。この4つの飛行をひとつの機体で行います。</p>
+          <h2>非同期ティルトローターの遷移飛行</h2>
+          <p>離着陸、遷移、巡航、緊急降下。この4つの飛行状態をひとつの機体で実現します。</p>
         </div>
       </div>
     </div>
@@ -4622,19 +4622,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="tech-effect-card">
           <h3>決定論的飛行</h3>
           <p>モード認識制御は飛行挙動を境界内に置き、再現可能にし、運航ログと試験データで説明できるようにします。</p>
-          <div class="effect-line">SDAの核心はブラックボックス型の自律性ではなく、認証機関に提出できる決定論です。</div>
+          <div class="effect-line">SDAの中核はブラックボックス型の自律性ではなく、認証機関に説明できる決定論的な制御です。</div>
         </article>
 
         <article class="tech-effect-card">
           <h3>ミッションハードウェア</h3>
-          <p>VTOLのアクセス性、長距離巡航、貨物の反復運航、低整備性は別々の機能ではなく、同じ運航単価を作るひとつの設計問題です。</p>
+          <p>滑走路を必要としない離着陸、長距離巡航、貨物の継続運航、整備負担の低さは、別々の機能ではなく、同じ運航コストを左右するひとつの設計課題です。</p>
           <div class="effect-line">機体構造は、路線と貨物の特性によって作られます。</div>
         </article>
 
         <article class="tech-effect-card">
           <h3>保護されたアーキテクチャ</h3>
-          <p>シミュレーション、制御、機体、安全挙動、IPを一体で開発し、機体単価、整備費、運航率を同時に下げます。</p>
-          <div class="effect-line">IPは書類ではなく、運航単価を守る防壁です。</div>
+          <p>シミュレーション、制御、機体、安全側の挙動、IPを一体で開発し、機体価格、整備費、稼働率を同時に改善します。</p>
+          <div class="effect-line">IPは単なる書類ではなく、運航コストを守る競争力です。</div>
         </article>
       </div>
 
@@ -4648,16 +4648,16 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <section id="S07_IP_CERTIFICATION">
     <div class="container">
       <span class="eyebrow">IP</span>
-      <h2 class="section-title">25件の特許網で安全運航とコストを守ります</h2>
+      <h2 class="section-title">25件の特許ポートフォリオで安全運航とコストを守ります</h2>
 
       <div class="tech-effect-list" style="margin-bottom: 34px;">
         <article class="tech-effect-card">
           
-          <p>LambdaのIPは、ホバー離着陸アクセス性、決定論的飛行、固定ピッチ低整備ローター、無操縦面（翼の可動部品なし）構造、無動力滑空と差動抗力制御をひとつのアーキテクチャとして束ねて保護します。</p>
+          <p>LambdaのIPは、滑走路を必要としない離着陸、決定論的飛行、固定ピッチで整備負担の低いローター、操縦翼面レス構造、無動力滑空、差動抗力制御を、ひとつのアーキテクチャとして束ねて保護します。</p>
           <ul class="metric-list">
             <li><span>安全なVTOL</span><strong>非同期ティルトローターアーキテクチャ</strong></li>
-            <li><span>より単純な機体</span><strong>無操縦面（翼の可動部品なし）固定翼構造</strong></li>
-            <li><span>低い負担</span><strong>可動部品の削減、より明確な安全挙動</strong></li>
+            <li><span>より単純な機体</span><strong>操縦翼面（翼の可動部）を持たない固定翼構造</strong></li>
+            <li><span>低い負担</span><strong>可動部品の削減、より明確な安全側の挙動</strong></li>
           </ul>
           <div class="effect-line"><a href="?page=ip" data-route="ip" style="color: inherit; text-decoration: none;">IP比較全体を見る</a></div>
         </article>
@@ -4672,17 +4672,17 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="patent-card">
           <h4>決定論的飛行</h4>
           <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">モード認識制御</span>
-          <p>複雑なペンローズ逆行列演算とリアルタイム偏微分演算を排除し、例外処理なしに固定された離散マトリクスを丸ごと切り替えることで、演算遅延のない100%決定論的飛行を実現します。</p>
+          <p>複雑なムーア・ペンローズ擬似逆行列演算とリアルタイム偏微分演算を排除し、例外処理に依存せず、事前定義した離散マトリクスを一括で切り替えることで、演算遅延のない100%決定論的飛行を実現します。</p>
         </div>
         <div class="patent-card">
-          <h4>無操縦面（翼の可動部品なし）機体</h4>
+          <h4>操縦翼面を持たない機体</h4>
           <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">生産可能な機体構造</span>
           <p>翼の可動部品をなくし、機械的複雑性と整備項目を同時に減らしました。</p>
         </div>
         <div class="patent-card">
           <h4>ジャイロコプターモード安全性</h4>
           <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); display: block; margin-bottom: 10px;">認証障壁の縮小</span>
-          <p>推進力を失った状況でも、ローターをジャイロコプターのオートローテートモードに移行し、ローターごとの抗力差を利用して制御降下を行うよう設計されています。</p>
+          <p>推進力を失った場合でも、ローターをジャイロコプターのオートローテーションモードへ移行させ、ローターごとの抗力差を利用して制御降下を行うよう設計しています。</p>
         </div>
         <div class="patent-card">
           <h4>無動力滑空制御</h4>
@@ -4694,7 +4694,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="cert-list">
         <article class="cert-item">
           <h4>機体単価</h4>
-          <span>無操縦面（翼の可動部品なし）構造</span>
+          <span>操縦翼面レス構造</span>
           <p>機体構造が単純なため、機体原価は大幅に下がります。</p>
         </article>
         <article class="cert-item">
@@ -4704,13 +4704,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="cert-item">
           <h4>認証障壁</h4>
-          <span>決定論的・安全認識挙動</span>
-          <p>予測可能で反復される飛行挙動により、安全性を証明する認証構造を作ります。</p>
+          <span>決定論的で説明可能な安全挙動</span>
+          <p>予測可能で再現性のある飛行挙動を通じて、安全性を説明・立証しやすい認証構造を構築します。</p>
         </article>
         <article class="cert-item">
           <h4>運用モデル</h4>
           <span>リース、フリート運航、SaaS</span>
-          <p>単純な機体販売を超え、反復運航によって継続的な収益を生む航空物流資産へ進化します。</p>
+          <p>機体の単純販売にとどまらず、継続運航によって収益を生み出す航空物流資産へ発展します。</p>
         </article>
       </div>
     </div>
@@ -4734,7 +4734,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <a class="subpage-card" href="#" data-route="technology">
           <div>
             <h3>AIベースのハードウェア</h3>
-            <p>ミッション、動き、制御、安全、配置条件が機械を作ります。</p>
+            <p>任務、動作、制御、安全性、運用環境から、必要な機械の姿を定義します。</p>
           </div>
           <strong>技術ページ</strong>
         </a>
@@ -4761,7 +4761,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div>
             <h3>投資家</h3>
             <span>資本投資</span>
-          <p>SDAはソフトウェア定義航空機を運航資産へ拡張する構造です。機体1億ウォン、ライフサイクル売上50億ウォン、目標マージン50%。フリート、運航権、Flight OS、MROへ拡張する反復収益構造です。</p>
+          <p>SDAは、ソフトウェア定義航空機を運航資産へ発展させる事業構造です。機体価格1億ウォン、ライフサイクル売上50億ウォン、目標利益率50%。フリート、運航権、Flight OS、MROへ広がる継続収益モデルです。</p>
           </div>
           <strong>IRを見る →</strong>
         </a>
@@ -4769,7 +4769,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div>
             <h3>技術協力企業</h3>
             <span>技術協力</span>
-            <p>SDAの非同期ティルティング構造とFlight OSを基盤にした新技術航空機・飛行ロボットの開発協力</p>
+            <p>SDAの非同期ティルティング構造とFlight OSを基盤に、新しい航空機や飛行ロボットを共同開発します。</p>
           </div>
           <strong>技術を見る →</strong>
         </a>
@@ -4785,7 +4785,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div>
             <h3>IP・ライセンス</h3>
             <span>アーキテクチャ</span>
-            <p>非同期ティルトローター特許を基盤に、約25件の特許網が新技術を保護します。</p>
+            <p>非同期ティルトローター特許を基盤に、約25件の特許ポートフォリオで新技術を保護します。</p>
           </div>
           <strong>IPを見る →</strong>
         </a>
@@ -4854,7 +4854,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">会社紹介</span>
         <h1>リシーブパワーは</h1>
-        <p class="lead">2019年から知能型ロボットを作ってきました。歩くヒューマノイドから飛ぶ航空ロボットまで、Physical AIで動く機械を作ります。</p>
+        <p class="lead">2019年から知能ロボットを開発してきました。歩くヒューマノイドから飛ぶ航空ロボットまで、Physical AIで動く機械を作ります。</p>
       </div>
     </section>
 
@@ -4863,7 +4863,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Mission</span>
           <h2>空飛ぶクルマを現実の航空機として設計します。</h2>
-          <p>Lambda SDAは、自動車水準のコスト構造とソフトウェア定義飛行を結合したVTOL航空プラットフォームです。</p><a class="back-link" href="#company-flying-car-narrative">開発ナラティブを見る</a>
+          <p>Lambda SDAは、自動車並みのコスト構造とソフトウェア定義飛行を組み合わせたVTOL航空プラットフォームです。</p><a class="back-link" href="#company-flying-car-narrative">開発ストーリーを見る</a>
         </article>
         <article class="message">
           <span class="label">Patent Foundation</span>
@@ -4886,9 +4886,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>出発点は計算でした。2006年、韓国が独自開発した自動車エンジン「ラムダ」を見て問いを立てました。このエンジンを載せれば飛行機になるのか。エンジンの重量と出力で座席数を計算すると答えが見えました。ガンマエンジンなら2人乗り、ラムダエンジンなら3人乗り。自動車部品で空を飛ぶことは、数字の上ではすでに可能でした。</p>
           <h3>非同期ティルトローターの発明</h3>
           <p>残った問題は安全でした。ホバー離着陸機の形だけでも200種類以上描いては消すことを繰り返しました。その先で、ローターを一つずつ別々に傾ける構造、すなわち非同期ティルトローターにたどり着き、2020年に特許を出願しました。</p>
-          <p>その後、会社の時間はヒューマノイドロボット開発に注がれました。飛行機は引き出しの中にしまっておきました。ロボット量産を準備していたある日、その引き出しの中の特許に登録決定書が届きました。忘れていたアイデアが、権利になって戻ってきたのです。</p>
+          <p>その後、私たちはヒューマノイドロボットの開発に専念しました。飛行機は引き出しの中にしまっておきました。ロボット量産を準備していたある日、その引き出しの中の特許に登録決定書が届きました。忘れていたアイデアが、権利になって戻ってきたのです。</p>
           <h3>2026年、SDAアーキテクチャの完成</h3>
-          <p>登録決定書は祝状ではなく、問いかけでした。この構造で本当に空を開けるのか。2020年の最初の特許から出発し、離陸から非常着陸まで、運航の全過程をひとつに束ねる特許網を改めて設計しました。2026年に完成したこの体系がSDAアーキテクチャ、5大核心技術、約25件の発明です。</p>
+          <p>登録決定書は単なる朗報ではなく、新たな問いを突きつけるものでした。この構造で、本当に新しい空の市場を切り拓けるのか。2020年の最初の特許を起点に、離陸から緊急着陸まで、運航の全過程をひとつに束ねる知財網を改めて設計しました。2026年に完成したこの体系が、SDAアーキテクチャです。5つの中核技術と、約25件からなる発明群で構成されています。</p>
           <h3>トラック運賃と競争する航空機</h3>
           <p>SDAは図面上のアイデアでは終わりません。幼い頃に夢見た空飛ぶクルマは、いまトラック運賃と競争する航空機となって離陸を準備しています。その始まりは貨物です。そしてその先には、人を乗せて飛ぶ日があります。</p>
         </article>
@@ -4909,14 +4909,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
       <div class="container">
         <span class="eyebrow">投資家向け情報</span>
-        <h1>ソフトウェア定義航空機が作る反復収益構造。</h1>
-        <p class="lead">単純な機体販売ではなく、フリート保有、回廊運営権、MRO、Flight OS、耐空維持データ、地域JVへ拡張する反復収益構造を創出します。</p>
+        <h1>ソフトウェア定義航空機が生み出す継続収益モデル。</h1>
+        <p class="lead">機体の単純販売にとどまらず、フリート保有、運航ルートの事業権、MRO、Flight OS、継続耐空性データ、地域JVへ広がる継続収益モデルを構築します。</p>
       </div>
     </section>
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="company">Companyへ戻る</a>
+        <a class="back-link" href="#" data-route="company">会社情報へ戻る</a>
       </div>
     </section>
 
@@ -4926,19 +4926,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <span class="label">VC</span>
           <h2>認証スケジュール</h2>
           <p>何年も終わらないeVTOL認証。私たちは設計段階で認証要件を解きました。</p>
-          <p>注目すべきものは認証です。認証を透明に予測することは不可能ではありません。</p>
-          <p>JobyのようなeVTOL企業の企業価値が揺れる理由は単純です。認証日程を誰も確定できないからです。市場はこれを技術力ではなく「資本がどれだけ燃え続けるかわからないリスク」と読みます。</p>
-          <p>eVTOLは次の2つのFAA規制を必ず通過しなければなりません。</p>
+          <p>私たちが最も重視しているのは認証です。認証プロセスを透明かつ予測可能なものにすることは、不可能ではありません。</p>
+          <p>JobyのようなeVTOL企業の企業価値が揺れる理由は単純です。認証日程を誰も確定できないからです。市場はこれを技術力の問題ではなく、「追加資金がどこまで必要になるか分からないリスク」と捉えます。</p>
+          <p>eVTOLは、次の2つのFAA認証要件を満たす必要があります。</p>
           <ul>
             <li>決定論的制御：DO-178C</li>
             <li>無動力非常着陸：FAA AC 21.17-4のPL.2105(g)</li>
           </ul>
-          <p>私たちはこの2つの規制を設計段階から満たすように作りました。</p>
+          <p>私たちは、この2つの認証要件への適合を設計段階から組み込んでいます。</p>
           <h3>1. 決められた通りにだけ反応します（DO-178C）</h3>
-          <p>従来の航空機は突風ごとにリアルタイム演算で対応するため、結果を事前に100%予測できません。私たちの機体はすべての状況の答えをあらかじめ計算し、即時に切り替えるだけなので、結果を認証機関に事前に証明できます。</p>
+          <p>従来の航空機は、突風などの外乱に対してリアルタイム演算で対応するため、すべての応答を事前に予測することは困難です。SDAは、想定される各状態の制御応答をあらかじめ定義し、必要な制御マトリクスへ即時に切り替えることで、結果を認証機関へ説明・立証できる構造を目指します。</p>
           <h3>2. エンジンが止まっても操縦しながら着陸します（PL.2105(g)）</h3>
-          <p>エンジンが止まっても、操縦は止まりません。すべての動力を失った極限状況でも、8つのローターが自ら空気抵抗の差、すなわち差動抗力を作り、仮想操縦面（翼の可動部品の役割）を形成します。動力なしでも機体の方向と軌跡を最後まで制御しながら滑空着陸するフェイルセーフを設計しました。SDAはPL.2105(g)を真正面から狙って作った航空機です。</p>
-          <h3>3. 認証対象部品は100分の1水準です</h3>
+          <p>エンジンが止まっても、操縦は止まりません。すべての動力を失った極限状況でも、8つのローターが空気抵抗の差、すなわち差動抗力を生み、仮想操縦翼面を形成します。動力がなくても機体の方向と飛行経路を最後まで制御し、滑空着陸へ導くフェイルセーフを設計しました。SDAは、PL.2105(g)の要件を設計段階から満たす航空機です。</p>
+          <h3>3. 認証対象となる部品を約100分の1まで削減します</h3>
           <p>一般的な航空機は操縦面（翼の可動部品）と駆動装置のため故障点が数百個あり、それを一つずつ証明しなければなりません。私たちは機械式操縦面そのものをなくし、認証対象部品を劇的に減らしました。</p>
           <h3>4. 人より先に貨物で信頼を積みます</h3>
           <p>有人機認証に先に資本を投じる代わりに、貨物輸送で実飛行データを大量に蓄積します。書類より確かな無事故運航記録が、その後の有人機認証を前倒しします。</p>
@@ -4949,7 +4949,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="company-deeptech-individual">
           <span class="label">個人ディープテック関心層</span>
           <h2>空を新しく設計する技術</h2>
-          <p>ReceivepowerはAIとロボティクス技術でソフトウェア定義航空機の拡張経路を設計しています。機体構造から制御、生産、運航方式まで、航空がより効率的でアクセスしやすく機能するよう根本構造を書き換えます。</p>
+          <p>リシーブパワーは、AIとロボティクス技術を活用し、ソフトウェア定義航空機の発展経路を設計しています。機体構造から制御、生産、運航方式までを見直し、航空輸送をより効率的で利用しやすいものへ変えていきます。</p>
           <p>ディープテックに関心のある方なら、私たちが描くビジョンと技術の拡張性に共感していただけるはずです。個人投資参加に関する案内は準備でき次第、別途お知らせします。</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ 目次へ</a>
         </article>
@@ -4960,15 +4960,15 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <span class="metric">1億ウォン</span>
-          <p>投資家視点の初期資産単位です。1億ウォン級の機体がフリート、回廊運営権、MRO、Flight OS売上へ拡張する構造を見ます。</p>
+          <p>投資家にとっての初期資産単位です。1億ウォン級の機体が、フリート、運航ルートの事業権、MRO、Flight OSの売上へ広がる構造を示します。</p>
         </article>
         <article class="message">
           <span class="metric">50億ウォン</span>
-          <p>IR視点の核心は機体販売ではなく、生涯運航売上です。反復運航データが蓄積するほど、認証、保険、整備、ソフトウェア売上の基盤が大きくなります。</p>
+          <p>IRの中核は、機体販売ではなくライフサイクル売上です。継続運航のデータが蓄積するほど、認証、保険、整備、ソフトウェア売上の基盤が拡大します。</p>
         </article>
         <article class="message">
           <span class="metric">50%</span>
-          <p>投資判断では製造原価より運航率とマージンの持続性が重要です。低整備構造とFlight OSがフリート収益性を守ります。</p>
+          <p>投資判断では、製造原価だけでなく、稼働率と利益率の持続性が重要です。整備負担の低い構造とFlight OSが、フリートの収益性を支えます。</p>
         </article>
         <article class="message">
           <h2>初期参入市場</h2>
@@ -4976,7 +4976,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="message">
           <h2>投資方式</h2>
-          <p>回廊別運営権、現地組立、MRO、データ蓄積、Flight OSサブスクリプションを束ねたフリート/JV構造へ拡張します。</p>
+          <p>運航ルートごとの事業権、現地組立、MRO、データ蓄積、Flight OS利用料を束ねたフリート／JV構造へ展開します。</p>
         </article>
       </div>
     </section>
@@ -4988,8 +4988,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <span class="label">投資ロジック</span>
-          <h2>フリートインフラとソフトウェア反復売上を一体で設計します。</h2>
-          <p>Lambdaはフリート保有、リース、回廊運営、物流SLA、耐空維持データ、Flight OSサブスクリプションを結合し、反復収益構造を作ります。</p>
+          <h2>フリート基盤とソフトウェアの継続収益を一体で設計します。</h2>
+          <p>Lambdaは、フリート保有、リース、運航ルート運営、物流SLA、継続耐空性データ、Flight OS利用料を組み合わせ、継続収益モデルを構築します。</p>
         </article>
         <article class="message">
           <span class="label">なぜ今か</span>
@@ -5000,7 +5000,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
     <section class="cta-band" id="company-request">
       <div class="container cta-row">
-        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20materials%20request">IR資料を依頼</a>
+        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20materials%20request">IR資料を請求する</a>
         <a class="button secondary" href="#" data-route="market">市場を見る</a>
       </div>
     </section>
@@ -5014,7 +5014,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">技術</span>
         <h1>Robotics Technology</h1>
-        <p class="lead">リシーブパワーは実際の機械を動かすPhysical AI技術を扱います。ロボットミドルウェア、産業制御、座標系、センサーフュージョン、仮想空間、ビジョン、操作、接触制御、AIモデル、ワークセル、工場データ、安全、エンジニアリングシステムをひとつの実行体系に接続します。</p>
+        <p class="lead">リシーブパワーは、現実の機械を動かすPhysical AI技術を開発しています。ロボットミドルウェア、産業制御、座標系、センサーフュージョン、仮想空間、ビジョン、マニピュレーション、接触制御、AIモデル、ワークセル、工場データ、安全、エンジニアリングシステムを、ひとつの実行基盤に統合します。</p>
       </div>
     </section>
 
@@ -5048,7 +5048,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="tech-virtual-space">
           <span class="label">Virtual Space</span>
           <h2>仮想空間</h2>
-          <p>デジタルツインとシミュレーションで、実機を作る前に動作、衝突、失敗条件を先に検証します。</p>
+          <p>デジタルツインとシミュレーションを用いて、実機を製作する前に動作、衝突、異常・故障条件を検証します。</p>
         </article>
         <article class="message" id="tech-vision">
           <span class="label">Vision</span>
@@ -5083,12 +5083,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="tech-safety">
           <span class="label">Safety</span>
           <h2>安全性</h2>
-          <p>非常停止、安全領域、速度制限、衝突検知、復旧手順によって、人と設備が一緒に働く条件を作ります。</p>
+          <p>非常停止、安全領域、速度制限、衝突検知、復旧手順によって、人と設備が安全に協働できる環境を構築します。</p>
         </article>
         <article class="message" id="tech-engineering-system">
           <span class="label">Engineering System</span>
           <h2>エンジニアリングシステム</h2>
-          <p>要求事項、インターフェース、状態機械、テスト、検証レポートを束ね、機械開発を反復可能な手順にします。</p>
+          <p>要求事項、インターフェース、状態遷移モデル、試験、検証レポートを統合し、機械開発を再現可能なプロセスにします。</p>
         </article>
       </div>
     </section>
@@ -5449,8 +5449,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
       <div class="container">
         <span class="eyebrow">特許ポートフォリオ</span>
-        <h1>5大核心技術がコストと安全構造を変えます。</h1>
-        <p class="lead">世界初のasynchronousティルトローター。リシーブパワーの5大IP技術の堀は、価格、安全認証トラック、保守で独占的競争力を持ちます。</p>
+        <h1>5つの中核技術がコストと安全構造を変えます。</h1>
+        <p class="lead">世界初の非同期ティルトローター。リシーブパワーの5つの中核IPは、価格・安全認証・保守の各領域で独占的な競争力と高い参入障壁を形成します。</p>
       </div>
     </section>
 
@@ -5464,21 +5464,21 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <h2>IPを見る基準</h2>
-          <p>ReceivepowerのIPは、技術名よりも機体構造の変化と運航効果として読むべきです。各技術の堀は、構成、変化、効果の順に、機体価格、整備費、運航率、安全性の構造を直接決定します。</p>
+          <p>リシーブパワーのIPは、技術名称ではなく、機体構造の変化と運航上の効果から評価すべきものです。各技術が形成する参入障壁は、機体価格、整備費、稼働率、安全性を左右します。</p>
           <ul class="data-list">
             <li><span>経済性</span><strong>機械部品、生産工程、整備項目を減らす方向</strong></li>
-            <li><span>安全性</span><strong>転換、故障、動力喪失、状態認識を証明構造として固定</strong></li>
+            <li><span>安全性</span><strong>遷移、故障、動力喪失、状態認識を証明可能な構造として固定</strong></li>
           </ul>
         </article>
 
         <article class="message">
           <span class="label">登録</span>
           <h2>1. 独立制御ティルティング推力機関</h2>
-          <p>各推力機関を同じ角度で一度に動かす方式から離れ、転換区間で推力と揚力を分けて扱う構造です。</p>
+          <p>各推進器を同じ角度で一度に動かす方式ではなく、遷移区間で推力と揚力を分けて扱う構造です。</p>
           <ul class="data-list">
             <li><span>構成</span><strong>推力機関ごとの独立ティルティングと分散推進制御</strong></li>
-            <li><span>変化</span><strong>ホバー飛行から固定翼巡航へ移る転換区間を細分化</strong></li>
-            <li><span>効果</span><strong>VTOL転換安定性、有人飛行拡張性</strong></li>
+            <li><span>変化</span><strong>ホバー飛行から固定翼巡航へ移る遷移区間を細分化</strong></li>
+            <li><span>効果</span><strong>VTOL遷移時の安定性、有人飛行への拡張性</strong></li>
           </ul>
         </article>
 
@@ -5495,19 +5495,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
         <article class="message">
           <span class="label">出願</span>
-          <h2>3. 離散マトリクス基盤飛行管理システム</h2>
+          <h2>3. 離散マトリクスベースの飛行管理システム</h2>
           <p>飛行状態と故障状態を事前に分け、各状態に合う制御モードへ切り替える決定論的飛行管理構造です。</p>
           <ul class="data-list">
             <li><span>構成</span><strong>状態別制御マトリクスと故障対応モード</strong></li>
             <li><span>変化</span><strong>ブラックボックス型判断を排除し、試験可能な制御単位に固定</strong></li>
-            <li><span>効果</span><strong>認証説明力、運航ログ、失敗対応構造</strong></li>
+            <li><span>効果</span><strong>認証時の説明力、運航ログ、故障時対応構造</strong></li>
           </ul>
         </article>
 
         <article class="message">
           <span class="label">出願</span>
           <h2>4. 無動力高揚力制御</h2>
-          <p>動力喪失または低速区間で、機体が持つ揚力と回転要素を活用し、着陸余裕と方向制御権を確保する独立発明です。</p>
+          <p>動力喪失時や低速飛行時に、機体が持つ揚力と回転要素を活用し、着陸時の安全余裕と方向・姿勢の制御能力を確保する独立した発明です。</p>
           <ul class="data-list">
             <li><span>構成</span><strong>無動力状態の揚力、オートローテーション、差動抗力の活用</strong></li>
             <li><span>変化</span><strong>非常時に追加の時間と空間を確保</strong></li>
@@ -5517,20 +5517,20 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
         <article class="message">
           <span class="label">出願</span>
-          <h2>5. SADS基盤仮想ピトー管</h2>
+          <h2>5. SADSベースの仮想ピトー管</h2>
           <p>単一の物理センサーだけに依存せず、複数の信号を融合して機体の大気中状態を推定する独立発明です。</p>
           <ul class="data-list">
-            <li><span>構成</span><strong>GNSS、IMU、推進器データ、センサーフュージョン基盤の状態推定</strong></li>
+            <li><span>構成</span><strong>GNSS、IMU、推進器データを融合した状態推定</strong></li>
             <li><span>変化</span><strong>機体が現在どの空気状態にあるかを判断する補助チャネルを確保</strong></li>
-            <li><span>効果</span><strong>状態認識、モード転換、制御安定性</strong></li>
+            <li><span>効果</span><strong>状態認識、モード遷移、制御安定性</strong></li>
           </ul>
         </article>
 
         <article class="message">
-          <h2>5大技術の堀が作るSDAアーキテクチャ</h2>
+          <h2>5つの中核技術で構成するSDAアーキテクチャ</h2>
           <ul class="data-list">
-            <li><span>トラック水準の経済性</span><strong>仮想操縦面（翼の可動部品をソフトウェアで代替）、無操縦面（翼の可動部品なし）構造、生産・整備の単純化</strong></li>
-            <li><span>有人飛行の安全性</span><strong>ティルティング転換、離散制御、無動力高揚力、差動抗力、SADS状態推定がひとつの認証論理を完成</strong></li>
+            <li><span>トラック水準の経済性</span><strong>仮想操縦翼面、操縦翼面レス構造、生産・整備の単純化</strong></li>
+            <li><span>有人飛行の安全性</span><strong>ティルティング遷移、離散制御、無動力高揚力、差動抗力、SADS状態推定をひとつの認証ロジックに統合</strong></li>
             <li><span>SDA</span><strong>運航条件と失敗シナリオから出発する航空機アーキテクチャ</strong></li>
           </ul>
         </article>
@@ -5548,20 +5548,20 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <article class="message">
               <span class="label">01</span>
               <h2>ティルトローターである理由：市場規模の拡張</h2>
-              <p>都市航空市場に入るにはホバー離着陸能力が、広域移動市場へ拡張するには遠くまで飛べる翼が必須です。</p>
-              <p>飛行中に抵抗だけを生むデッドローターがなければ、運航効率が最大化されます。既存ティルトローター基盤eVTOL企業が高い企業価値と同時に不確実性を抱える本質的な理由です。</p>
+              <p>都市航空市場へ参入するにはホバー離着陸能力が、広域移動市場へ展開するには長距離を飛べる翼が欠かせません。</p>
+              <p>飛行中に抵抗だけを生むデッドローターをなくすことで、運航効率を最大化できます。既存のティルトローター型eVTOL企業が、高い企業価値と同時に不確実性を抱える本質的な理由です。</p>
             </article>
             <article class="message">
               <span class="label">02</span>
               <h2>独立ティルトローターである理由：認証期間の予測可能性</h2>
-              <p>一般的なティルトローターは複雑な確率制御基盤であるため、厳しいソフトウェア認証標準（DO-178C）の通過が不確実です。既存ティルトローター基盤eVTOL企業が高い企業価値と同時に不確実性を抱える本質的な理由です。</p>
+              <p>一般的なティルトローターは複雑な確率的制御に依存するため、厳しいソフトウェア認証規格（DO-178C）への適合時期を予測しにくい構造です。既存のティルトローター型eVTOL企業が、高い企業価値と同時に不確実性を抱える本質的な理由です。</p>
               <p>独立制御方式はすべての飛行応答の追跡と再現が可能です。飛行アルゴリズムが決定論的であるため、認証期間と予算を予測できます。</p>
             </article>
             <article class="message">
               <span class="label">03</span>
               <h2>仮想操縦面である理由：製造・保守コストの低下</h2>
               <p>物理的な操縦面（翼の可動部品）と機械駆動装置をなくし、ソフトウェアによるローター制御で飛行を統制します。</p>
-              <p>機械的接続構造がなくなり、翼と胴体の完全自動化生産が可能になり、機体価格は従来の10%水準まで下がります。</p>
+              <p>機械的な接続構造をなくすことで、翼と胴体の完全自動生産が可能になり、機体価格を従来の10%水準まで引き下げます。</p>
               <p>可動部品数が100分の1に減ることで摩耗と故障要素が減り、運用保守費用と整備所要時間が短縮されます。</p>
             </article>
             <article class="message">
@@ -5573,7 +5573,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <article class="message">
               <span class="label">05</span>
               <h2>SDA統合価値：陸上貨物輸送との価格競争</h2>
-              <p>SDAは決定論的飛行制御、オートローテーション・差動抗力基盤の無動力非常着陸能力、そして極端な部品単純化を同時に達成したアーキテクチャです。</p>
+              <p>SDAは、決定論的飛行制御、オートローテーションと差動抗力を用いた無動力緊急着陸能力、そして徹底した部品の単純化を同時に実現するアーキテクチャです。</p>
               <p>高い安全性を担保しながら生産・維持費を下げ、航空分野を超えて既存の陸上貨物輸送市場と運賃で直接競争する航空機です。</p>
             </article>
           </div>
@@ -5599,8 +5599,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <img src="assets/images/sda/tilt-cruise-detail.png" alt="SDA巡航ティルトナセル詳細">
           <div class="sda-image-caption">
             <span>CRUISE</span>
-            <h3>固定翼巡航への転換</h3>
-            <p>ホバー推力装置を巡航推力へ転換し、長距離航空物流の効率を確保します。</p>
+            <h3>固定翼巡航への遷移</h3>
+            <p>ホバー用の推力を巡航用の推力へ切り替え、長距離航空物流に必要な効率を確保します。</p>
           </div>
         </article>
         <article class="sda-image-card">
@@ -5608,7 +5608,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="sda-image-caption">
             <span>LAYOUT</span>
             <h3>操縦面なしで飛ぶ構造</h3>
-          <p>推進器配置と差動推力制御が動く操縦面（翼の可動部品）を代替します。Stagger基盤の仮想操縦面は詳細技術セクションで説明します。</p>
+          <p>推進器の配置と差動推力制御が、可動式の操縦翼面を代替します。Stagger構造を利用した仮想操縦翼面は、技術セクションで詳しく説明します。</p>
           </div>
         </article>
       </div>
@@ -5618,7 +5618,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="sda-image-caption">
             <span>CONTROL LOGIC</span>
             <h3>8つの推進器はそれぞれ異なる動きをします。</h3>
-            <p>内側と外側の推進器を分けて段階的にティルティングし、飛行モードごとに制御権を移すSDA転換構造です。</p>
+            <p>内側と外側の推進器を分けて段階的にティルティングし、飛行モードごとに制御能力を引き継ぐSDAの遷移構造です。</p>
           </div>
         </article>
         <div class="sda-mode-grid">
@@ -5635,7 +5635,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <div class="sda-image-caption">
               <span>02</span>
               <h3>第一ティルティング</h3>
-              <p>一部の推進器が先に転換を始めます。</p>
+              <p>一部の推進器が先に遷移を始めます。</p>
             </div>
           </article>
           <article class="sda-image-card small">
@@ -5659,7 +5659,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <div class="sda-image-caption">
               <span>05</span>
               <h3>巡航制御権</h3>
-              <p>転換完了後、全体の巡航制御権を確保します。</p>
+              <p>遷移完了後、すべての推進器で巡航時の制御能力を確保します。</p>
             </div>
           </article>
           <article class="sda-image-card small">
@@ -5699,7 +5699,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <section class="message-section" id="S03_LAMBDA_PRODUCT">
     <div class="container">
       <span class="eyebrow">製品</span>
-      <h2 class="section-title">Lambdaは予測可能な認証スケジュールと <span>貨物優先戦略で接近します</span></h2>
+      <h2 class="section-title">Lambdaは予測可能な認証計画と <span>貨物優先戦略で市場を切り拓きます</span></h2>
 
       <div class="message-list product-intro-list" style="margin-bottom: 34px;">
         <article class="message">
@@ -5711,8 +5711,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h3>技術スタック</h3>
           <ul class="data-list">
             <li><span>安全なVTOL</span><strong>非同期ティルトローターアーキテクチャ</strong></li>
-            <li><span>決定論的飛行</span><strong>モード認識マトリクス基盤制御</strong></li>
-            <li><span>単純な機体</span><strong>無操縦面（翼の可動部品なし）固定翼構造</strong></li>
+            <li><span>決定論的飛行</span><strong>モード認識マトリクスベースの制御</strong></li>
+            <li><span>単純な機体</span><strong>操縦翼面（翼の可動部）を持たない固定翼構造</strong></li>
             <li><span>安全余裕</span><strong>無動力滑空、オートローテーション、差動抗力制御</strong></li>
           </ul>
         </article>
@@ -5721,10 +5721,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <section class="regulatory-model-section" aria-labelledby="lambda-regulatory-models-title">
         <div class="regulatory-model-header">
           <div>
-            <span class="eyebrow">機体級と規制トラック</span>
-            <h3 id="lambda-regulatory-models-title">4つの機体級から有人・無人7種へ拡張します</h3>
+            <span class="eyebrow">機体クラスと認証・規制区分</span>
+            <h3 id="lambda-regulatory-models-title">4つの機体クラスから、有人・無人の7モデルへ展開します</h3>
           </div>
-          <p>25kg級は無人型1種から始まります。220kg級、599kg級、890kg級はそれぞれ無人型と有人型に分かれ、機体級と運航目的によって規制トラックが異なります。</p>
+          <p>25kg級は無人機1モデルから始まります。220kg級、599kg級、890kg級はそれぞれ無人機と有人機に分かれ、機体クラスと運航目的に応じて認証・規制区分が異なります。</p>
         </div>
 
         <!-- モデル画像確定時は各data-model-imageのsrcだけを交換する。未確定モデルはPart 103画像を暫定共通資産として使う。 -->
@@ -5735,12 +5735,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">01 · UNMANNED</span>
             <h2>Spectator</h2>
-            <p class="product-model-description">55lb未満の小型UAS基準で実証と初期商用運航を始める規制経路です。</p>
+            <p class="product-model-description">55lb未満の小型UASとして、実証と初期商用運航を始める認証・運用ルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>25kg級</strong></li>
-              <li><span>運用</span><strong>無人型</strong></li>
+              <li><span>機体クラス</span><strong>25kg級</strong></li>
+              <li><span>運用</span><strong>無人機</strong></li>
               <li><span>PL / MTOW</span><strong>10kg / 25kg級</strong></li>
-              <li><span>規制トラック</span><strong>FAA 14 CFR Part 107</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 107</strong></li>
             </ul>
           </article>
 
@@ -5750,12 +5750,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">02 · UNMANNED</span>
             <h2>Hecatoncheir</h2>
-            <p class="product-model-description">最大1,320lb級無人機のBVLOS反復運航を目標とするProposed Part 108経路です。</p>
+            <p class="product-model-description">最大1,320lb級の無人機によるBVLOS継続運航を想定した、Proposed Part 108の認証ルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>220kg級</strong></li>
-              <li><span>運用</span><strong>無人型</strong></li>
+              <li><span>機体クラス</span><strong>220kg級</strong></li>
+              <li><span>運用</span><strong>無人機</strong></li>
               <li><span>PL / MTOW</span><strong>100kg / 220kg</strong></li>
-              <li><span>規制トラック</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
             </ul>
           </article>
 
@@ -5765,12 +5765,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">03 · CREWED</span>
             <h2>Solo</h2>
-            <p class="product-model-description">1人乗り超軽量航空機のPart 103適用可能性を、空虚重量・速度・燃料制限で検討する経路です。</p>
+            <p class="product-model-description">1人乗り超軽量航空機として、空虚重量・速度・燃料制限を基準にPart 103の適用可能性を検討するルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>220kg級</strong></li>
-              <li><span>運用</span><strong>有人型</strong></li>
+              <li><span>機体クラス</span><strong>220kg級</strong></li>
+              <li><span>運用</span><strong>有人機</strong></li>
               <li><span>PL / MTOW</span><strong>100kg / 220kg</strong></li>
-              <li><span>規制トラック</span><strong>FAA 14 CFR Part 103検討</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 103を検討</strong></li>
             </ul>
           </article>
 
@@ -5780,12 +5780,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">04 · UNMANNED</span>
             <h2>Heavy</h2>
-            <p class="product-model-description">599kg級産業・物流無人機のBVLOS反復運航を、Proposed Part 108上限機体級で推進します。</p>
+            <p class="product-model-description">599kg級の産業・物流向け無人機によるBVLOS継続運航を、Proposed Part 108の上限に相当する機体クラスで目指します。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>599kg級</strong></li>
-              <li><span>運用</span><strong>無人型</strong></li>
+              <li><span>機体クラス</span><strong>599kg級</strong></li>
+              <li><span>運用</span><strong>無人機</strong></li>
               <li><span>PL / MTOW</span><strong>300kg / 599kg級</strong></li>
-              <li><span>規制トラック</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA Proposed 14 CFR Part 108</strong></li>
             </ul>
           </article>
 
@@ -5795,12 +5795,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">05 · CREWED</span>
             <h2>Heavy</h2>
-            <p class="product-model-description">MOSAIC Part 22の性能基盤合意標準で軽量有人型を認証する経路です。</p>
+            <p class="product-model-description">MOSAIC Part 22の性能ベース・コンセンサス規格に基づき、軽量有人機の認証を目指すルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>599kg級</strong></li>
-              <li><span>運用</span><strong>有人型</strong></li>
+              <li><span>機体クラス</span><strong>599kg級</strong></li>
+              <li><span>運用</span><strong>有人機</strong></li>
               <li><span>PL / MTOW</span><strong>300kg / 599kg</strong></li>
-              <li><span>規制トラック</span><strong>FAA 14 CFR Part 22 · MOSAIC</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 22 · MOSAIC</strong></li>
             </ul>
           </article>
 
@@ -5810,12 +5810,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">06 · UNMANNED</span>
             <h2>Eureka</h2>
-            <p class="product-model-description">Part 21型式証明体系と§21.91型式設計変更手続きで890kg級無人派生型を管理する経路です。</p>
+            <p class="product-model-description">Part 21の型式証明制度と§21.91の型式設計変更手続きにより、890kg級の無人派生型を管理する認証ルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>890kg級</strong></li>
-              <li><span>運用</span><strong>無人型</strong></li>
+              <li><span>機体クラス</span><strong>890kg級</strong></li>
+              <li><span>運用</span><strong>無人機</strong></li>
               <li><span>PL / MTOW</span><strong>475kg / 890kg</strong></li>
-              <li><span>規制トラック</span><strong>FAA 14 CFR Part 21 / §21.91</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 21 / §21.91</strong></li>
             </ul>
           </article>
 
@@ -5825,12 +5825,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">07 · CREWED</span>
             <h2>Eureka</h2>
-            <p class="product-model-description">§21.17(b)特殊等級powered-liftの型式・生産・耐空認証をAC 21.17-4基準で進める経路です。</p>
+            <p class="product-model-description">§21.17(b)の特別クラスに該当するPowered-liftとして、AC 21.17-4に基づく型式・製造・耐空認証を進めるルートです。</p>
             <ul class="data-list product-model-facts">
-              <li><span>機体級</span><strong>890kg級</strong></li>
-              <li><span>運用</span><strong>有人型</strong></li>
+              <li><span>機体クラス</span><strong>890kg級</strong></li>
+              <li><span>運用</span><strong>有人機</strong></li>
               <li><span>PL / MTOW</span><strong>475kg / 890kg</strong></li>
-              <li><span>規制トラック</span><strong>FAA AC 21.17-4 · Powered-lift</strong></li>
+              <li><span>認証・規制区分</span><strong>FAA AC 21.17-4 · Powered-lift</strong></li>
             </ul>
           </article>
         </div>
@@ -5858,8 +5858,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
       <div class="container">
         <span class="eyebrow">市場参入</span>
-        <h1>最初の市場は反復運航する地域間航空物流です。</h1>
-        <p class="lead">Receivepowerはまず貨物運航で経済性と運航データを確保します。地上・海上輸送の時間損失が大きい区間でSDAの反復運航性を検証し、そのデータを基盤に有人飛行拡張経路を作ります。</p>
+        <h1>最初の市場は、継続運航が見込める地域間航空物流です。</h1>
+        <p class="lead">リシーブパワーは、まず貨物運航を通じて経済性を実証し、運航データを蓄積します。陸上・海上輸送で時間損失が大きい区間にSDAを投入し、継続運航の実績を有人飛行への拡張につなげます。</p>
       </div>
     </section>
 
@@ -5889,7 +5889,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             道路では遅く、海上では日程に縛られ、既存航空機では単価が合わない区間があります。
           </h3>
           <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; line-height: 1.7;">
-            Lambdaはその隙間のための航空物流装備です。島嶼物流、山間補給、産業貨物、緊急配送のように、時間損失が商品価値と安全性を削る区間に直接航空アクセスを提供します。
+            Lambdaは、その空白を埋める航空物流プラットフォームです。島しょ物流、山間部への補給、産業貨物、緊急配送など、時間損失が商品価値や安全性を損なう区間に、直接アクセスできる空の輸送手段を提供します。
           </p>
           <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
             <li style="padding: 8px 0; border-bottom: 1px solid #d2d2d7; display: flex; justify-content: space-between;">
@@ -5913,7 +5913,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <!-- S05_UNIT_ECONOMICS -->
   <section id="S05_UNIT_ECONOMICS">
     <div class="container">
-      <span class="eyebrow">単位経済性</span>
+      <span class="eyebrow">ユニットエコノミクス</span>
       <h2 class="section-title">貨物で稼いだ資金とデータが有人飛行の道を開きます</h2>
  
       <div class="econ-layout">
@@ -5926,7 +5926,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </p>
           <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
             <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">設計革新により機体原価と運航単価を大幅に下げました。</div>
-            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">機体単価、整備負担、巡航エネルギー、運航率はひとつの物流資産経済性として結びつきます。</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">機体価格、整備負担、巡航エネルギー、稼働率は、ひとつの物流資産としての経済性に結びつきます。</div>
           </div>
         </div>
  
@@ -5940,8 +5940,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <div class="bar-fill" style="width: 78%;"></div>
             </div>
             <div class="bar-info">
-              <span>無操縦面（翼の可動部品なし）機体</span>
-              <span>自動化生産経路</span>
+              <span>操縦翼面を持たない機体</span>
+              <span>自動生産への移行</span>
             </div>
           </div>
  
@@ -5982,7 +5982,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container subnav-grid">
         <a class="subnav-card" href="#" data-route="market">
           <strong>初期市場</strong>
-          <span>釜山-福岡、韓日港湾、産業団地、島、医療拠点の時間敏感貨物回廊</span>
+          <span>釜山–福岡、韓日間の港湾、産業団地、島しょ、医療拠点を結ぶ、時間制約の厳しい貨物向け航空物流ルート</span>
         </a>
         <a class="subnav-card" href="#" data-route="market">
           <strong>事業化と協力</strong>
@@ -6004,7 +6004,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="market-japan-local-government-summary">
           <span class="label">日本の地方自治体</span>
           <h2>島と港湾を結ぶ地域航空物流の需要があります。</h2>
-          <p>日本の島、港湾、産業団地、医療拠点は、航空ミドルマイル物流と地域産業基盤がともに機能できる市場です。</p>
+          <p>日本の島しょ、港湾、産業団地、医療拠点は、航空ミドルマイル物流と地域産業の基盤を同時に育てられる市場です。</p>
           <p>市場ページでは路線の可能性と地域需要を説明します。現地の組立・整備拠点、JV、運営構造はビジネスページで扱います。</p>
           <a class="back-link" href="?page=business" data-route="business">協力構造を見る → ビジネス</a>
         </article>
@@ -6014,11 +6014,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <h2>日本本土－釜山港</h2>
-          <p>釜山から福岡までは船で3時間、Lambdaなら約59分です。この回廊は、陸上・海上輸送の時間損失が大きい区間でSDAの経済性を示す初期事例です。</p>
+          <p>釜山から福岡までは船で3時間、Lambdaなら約59分です。この航空物流ルートは、陸上・海上輸送による時間損失が大きい区間で、SDAの経済性を示す初期事例です。</p>
           <ul class="data-list">
             <li><span>飛行距離</span><strong>約200～215km</strong></li>
             <li><span>巡航飛行時間</span><strong>約50～59分</strong></li>
-            <li><span>機体の片道直接運航原価</span><strong>約9.6～10.4万ウォン</strong></li>
+            <li><span>機体の片道直接運航コスト</span><strong>約9.6～10.4万ウォン</strong></li>
           </ul>
         </article>
       </section>
@@ -6046,8 +6046,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <span class="label">協力構造</span>
           <h2>多様なパートナーとともにAAM市場を開きます。</h2>
           <ul class="data-list">
-            <li><span>特許ライセンス</span><strong>IP・技術白書・Flight OS／自社製品化</strong></li>
-            <li><span>開発JV</span><strong>設計・制御・特許アーキテクチャ／共同製品持分</strong></li>
+            <li><span>特許ライセンス</span><strong>IP・技術ホワイトペーパー・Flight OS／自社製品への展開</strong></li>
+            <li><span>開発JV</span><strong>設計・制御・特許アーキテクチャ／共同開発製品の持分</strong></li>
             <li><span>製造JV</span><strong>単純な機体構造・COTS供給網／組立・整備売上</strong></li>
             <li><span>運航JV</span><strong>機体・Flight OS・耐空性データ／路線運航収益</strong></li>
           </ul>
@@ -6055,27 +6055,27 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Patent Licensing</span>
           <h2>特許ライセンス</h2>
-          <p>非同期ティルティング、仮想操縦面、離散制御マトリクス、無動力高揚力・差動抗力制御、SADSベースの仮想ピトー管がSDAの中核権利です。完成機だけでなく、Flight OS、技術白書、IPライセンス、ランニングロイヤルティで継続収益を生みます。</p>
+          <p>非同期ティルティング、仮想操縦翼面、離散制御マトリクス、無動力高揚力・差動抗力制御、SADSベースの仮想ピトー管がSDAの中核知財です。完成機だけでなく、Flight OS、技術ホワイトペーパー、IPライセンス、ランニングロイヤルティから継続収益を生み出します。</p>
         </article>
         <article class="message">
           <span class="label">Development JV</span>
           <h2>開発ジョイントベンチャー</h2>
-          <p>リシーブパワーは設計・制御・ソフトウェア・特許を標準アーキテクチャとして提供し、パートナーは資本と供給網でともに拡張します。</p>
+          <p>リシーブパワーは設計・制御・ソフトウェア・特許を標準アーキテクチャとして提供し、パートナーの資本・供給網と組み合わせて事業を拡大します。</p>
         </article>
         <article class="message">
           <span class="label">Manufacturing JV</span>
           <h2>製造合弁会社</h2>
-          <p>工場、設備、現地許認可、組立人員は地域別の製造JVが担います。リシーブパワーは無操縦面構造とCOTS供給網により、製造パートナーが迅速に組み立て、交換できる構造を設計します。</p>
+          <p>工場、設備、現地許認可、組立人員は地域別の製造JVが担います。リシーブパワーは操縦翼面レス構造とCOTS供給網を活用し、製造パートナーが迅速に組み立て、モジュール交換できる生産体制を設計します。</p>
         </article>
         <article class="message">
           <span class="label">Operation JV</span>
           <h2>運航ジョイントベンチャー</h2>
-          <p>物流企業とは、回廊別の共同フリート運営、路線共同投資、運航データ蓄積、MRO、Flight OS運営を束ねたOperation JVを構成できます。パートナーが物流需要と拠点運営を提供し、SDAは機体・運航ソフトウェア・継続耐空性データを結合して反復運航構造を作ります。</p>
+          <p>物流企業とは、航空物流ルートごとの共同フリート運営、路線への共同投資、運航データ蓄積、MRO、Flight OS運営を束ねたOperation JVを組成できます。パートナーが物流需要と拠点運営を担い、SDAが機体・運航ソフトウェア・継続耐空性データを統合することで、継続運航モデルを構築します。</p>
         </article>
         <article class="message">
           <span class="label">Revenue Stack</span>
           <h2>収益は機体販売で終わりません。</h2>
-          <p>SDAの目標はハードウェアメーカーになることではなく、航空物流の原価構造と運航標準にあります。機体販売、リース、回廊運航権、MRO、Flight OS、継続耐空性データ、地域JVが長期収益構造を作ります。</p>
+          <p>SDAが目指すのは、単なるハードウェアメーカーではなく、航空物流のコスト構造と運航標準を担う事業者です。機体販売、リース、運航ルートの事業権、MRO、Flight OS、継続耐空性データ、地域JVが長期収益モデルを形成します。</p>
         </article>
         <article class="message business-essay">
           <details>
@@ -6093,7 +6093,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <p>一般的な航空機は性能と機能を増やすため、機械構造、操縦面、リンク、油圧、可変ピッチ装置、複雑な制御系を追加する。機能が増えるほど部品、製造・整備の難度、故障モード、認証項目も増える。</p>
               <p>Lambdaは逆の方向に設計された。</p>
               <p>必要な飛行機能を機械装置の追加ではなく、同一の固定ピッチ推進器の独立ティルティングとソフトウェア飛行モードで実現する。</p>
-              <p>その結果、工学的難度を大幅に下げながら、垂直離着陸、固定翼巡航、転換飛行、姿勢制御、高揚力飛行、滑空、非常飛行をひとつの単純な構造で確保できる。</p>
+              <p>その結果、工学的難度を大幅に下げながら、垂直離着陸、固定翼巡航、遷移飛行、姿勢制御、高揚力飛行、滑空、緊急飛行をひとつの単純な構造で実現できる。</p>
               <hr>
               <h3>1. 難問を解いたのではなく、難問そのものを削除した</h3>
               <p>Lambdaは従来航空機の複雑さを改善した機体ではない。複雑さを生む構造を最初から使わない。</p>
@@ -6107,8 +6107,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>バックラッシュと遊びの管理</li>
                 <li>操縦面内部配線</li>
                 <li>操縦面固着・破損の故障モード</li>
-                <li>操縦面別の製作・組立工程</li>
-                <li>操縦面変更に伴う反復解析と再試験</li>
+                <li>操縦翼面ごとの製造・組立工程</li>
+                <li>操縦翼面の変更に伴う再解析と再試験</li>
               </ul>
               <p>ヘリコプター式スワッシュプレートと可変ピッチ構造もない。</p>
               <p>各推進器は固定ピッチプロペラとBLDCモーターを使い、プロペラ・モーター・ナセルからなる推進モジュール全体が単純なヒンジを中心に回転する。</p>
@@ -6124,7 +6124,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>ホバリング</li>
                 <li>低速姿勢制御</li>
                 <li>巡航姿勢制御</li>
-                <li>転換飛行</li>
+                <li>遷移飛行</li>
                 <li>高揚力飛行</li>
                 <li>仮想フラップ</li>
                 <li>差動抗力による姿勢制御</li>
@@ -6134,25 +6134,25 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <p>従来機では機能ごとに操縦面と機械装置が必要だが、Lambdaでは同じ推進器の角度と出力配分を変えて処理する。</p>
               <p>飛行機能が増えてもハードウェアを追加し続ける必要はない。</p>
               <hr>
-              <h3>3. 非同期ティルティングで転換飛行の難度を構造的に下げた</h3>
-              <p>従来のティルトローターで最も難しいのは、垂直飛行から巡航飛行へ移る転換過程である。</p>
+              <h3>3. 非同期ティルティングにより遷移飛行の難度を構造的に下げた</h3>
+              <p>従来のティルトローターで最も難しいのは、垂直飛行から巡航飛行へ移る遷移過程である。</p>
               <p>全推進器が同時に傾くと、揚力源と制御方式が一度に変わる。ローター揚力、翼揚力、機体姿勢、推力方向、失速余裕を同時に計算・制御しなければならない。</p>
-              <p>Lambdaは全推進器を同時に転換しない。</p>
-              <p>一部の推進器が垂直揚力と姿勢制御を維持し、別の推進器を先に傾けて前進推力を作る。速度と翼揚力を確保した後、残りを順次転換する。</p>
-              <p>転換中も機体を支持・制御する推進器群が常に残る。</p>
-              <p>したがってLambdaの転換は複雑な連続遷移ではなく、安定状態間を段階的に移る問題となる。</p>
+              <p>Lambdaは全推進器を同時に遷移させない。</p>
+              <p>一部の推進器が垂直揚力と姿勢制御を維持し、別の推進器を先に傾けて前進推力を作る。速度と翼揚力を確保した後、残りを順次遷移させる。</p>
+              <p>遷移中も機体を支持・制御する推進器群が常に残る。</p>
+              <p>したがってLambdaの遷移は、複雑な連続制御ではなく、安定した状態間を段階的に移る問題となる。</p>
               <ul>
                 <li>垂直飛行状態</li>
-                <li>一部推進器の転換</li>
+                <li>一部推進器の遷移</li>
                 <li>前進推力の形成</li>
                 <li>前進速度の増加</li>
                 <li>翼揚力の形成</li>
-                <li>残りの推進器の転換</li>
+                <li>残りの推進器の遷移</li>
                 <li>巡航状態への移行</li>
               </ul>
               <p>各段階で、どの推進器が揚力、前進推力、姿勢制御を担うかが明確である。</p>
-              <p>全変数を同時最適化しながら不安定な転換域を通過する必要がない。</p>
-              <p>非同期ティルティングは強力な制御器で難題を抑える方式ではなく、転換構造そのものを単純化する方式である。</p>
+              <p>すべての変数を同時に最適化しながら、不安定な遷移領域を通過する必要がない。</p>
+              <p>非同期ティルティングは、強力な制御器で難題を抑え込む方式ではなく、遷移構造そのものを単純化する方式である。</p>
               <hr>
               <h3>4. MMAはリアルタイム最適化の代わりに検証済み飛行構造を呼び出す</h3>
               <p>Lambdaの制御は、毎瞬多数のアクチュエーター組合せを計算して最適解を探す方式とは異なる。</p>
@@ -6166,18 +6166,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>どの推進器がヨーを制御するか</li>
                 <li>どの推進器がティルティングするか</li>
                 <li>各推進器の出力範囲</li>
-                <li>どの条件で次のMMAへ転換するか</li>
+                <li>どの条件で次のMMAへ遷移するか</li>
                 <li>推進器故障時にどの代替MMAを使うか</li>
               </ul>
               <p>制御系は機体状態に応じて定められた制御構造を呼び出す。</p>
               <p>この方式は複雑なリアルタイム最適化より計算量が少なく、結果が再現可能で、試験条件と結果を追跡しやすい。</p>
               <p>同じ状態と入力では同じMMAと制御構造が使われる。</p>
-              <p>これがLambdaの決定論的飛行の核心である。</p>
+              <p>これがLambdaの決定論的飛行の中核である。</p>
               <p>認証機関にも、各飛行状態での推進器の役割、次モードへの条件、故障時の代替構造を事前提示できる。</p>
               <p>制御性能だけでなく、開発・認証日程の予測可能性も高まる。</p>
               <hr>
-              <h3>5. 同一の前後翼と8基の同一推進モジュールを反復する</h3>
-              <p>Lambdaの前翼と後翼は別々の専用翼ではなく、同一部品を前後に反復使用する。</p>
+              <h3>5. 同一の前後翼と8基の共通推進モジュールを使用する</h3>
+              <p>Lambdaの前翼と後翼は別々の専用翼ではなく、同一部品を前後に共用する。</p>
               <p>翼形状、スパン、コード、推進器間隔、取付構造を共通化すると次の費用が減る。</p>
               <ul>
                 <li>翼設計費</li>
@@ -6191,7 +6191,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>品質管理項目</li>
               </ul>
               <p>8基のティルトナセルも同一のモーター、プロペラ、ヒンジ、マウント、制御インターフェースを使う。</p>
-              <p>複数種類の専用推進装置ではなく、検証済みのひとつの推進モジュールを8回反復する。</p>
+              <p>複数種類の専用推進装置ではなく、検証済みのひとつの推進モジュールを8基共通で使用する。</p>
               <p>推進器が多くても機械的複雑性は大きく増えない。異なる8装置ではなく、同一の単純モジュール8基だからである。</p>
               <p>故障時も現場で複雑な部品を分解修理せず、モジュール単位で交換できる。</p>
               <p>Lambdaの生産・整備は従来航空機より自動車部品や産業用モジュールに近い。</p>
@@ -6210,7 +6210,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <p>可変ピッチ制御がないため、ピッチ機構のリンク、ベアリング、ハブ、アクチュエーター、整備項目がなくなる。</p>
               <p>複雑な機械式精密制御ではなく、モーター回転数とナセル角で推力を調整する。</p>
               <p>BLDCモーターとESCは自動車、産業ロボット、ドローンなどで大量使用される成熟技術である。</p>
-              <p>Lambdaは新しい動力機関を一から開発する機体ではない。成熟した電動部品を単純な推進モジュールにし、同一モジュールを反復配置する。</p>
+              <p>Lambdaは新しい動力機関を一から開発する機体ではない。成熟した電動部品を単純な推進モジュールにまとめ、同一モジュールを共通配置する。</p>
               <hr>
               <h3>7. マルチローターの単純性と固定翼の巡航効率を併用する</h3>
               <p>マルチローターは垂直離着陸とホバリングが単純だが、巡航中もローターが機体重量を支え続ける。</p>
@@ -6231,19 +6231,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <hr>
               <h3>9. 製造と整備を従来の航空機生産方式から変える</h3>
               <p>従来航空機は複雑な曲面、多数の専用部品、手作業組立により生産単価が高い。</p>
-              <p>Lambdaは単純な胴体、同一の前後翼、8基の同一推進モジュール、外部取付式ハーネス、反復可能な組立構造を使う。</p>
+              <p>Lambdaは単純な胴体、同一の前後翼、8基の共通推進モジュール、外部取付式ハーネス、再現性の高い組立構造を使う。</p>
               <p>この構造は次の生産方式に適する。</p>
               <ul>
                 <li>複合材パネルの自動成形</li>
                 <li>表面実装式部品組立</li>
-                <li>同一モジュールの反復取付</li>
+                <li>同一モジュールの共通取付</li>
                 <li>外部ハーネス組立</li>
                 <li>工程別自動検査</li>
                 <li>モジュール単位交換</li>
                 <li>少数部品中心の在庫管理</li>
               </ul>
               <p>航空機は一般に生産量が少なく単価が高い。</p>
-              <p>Lambdaは少量でも同一部品を反復し、生産増加時には自動車や産業機械に近い規模の経済を適用できる。</p>
+              <p>Lambdaは少量生産でも同一部品を共用し、生産量が増えれば自動車や産業機械に近い規模の経済を適用できる。</p>
               <p>整備方式も異なる。</p>
               <p>故障時は複雑な操縦系を分解修理せず、モーター、ESC、ティルトユニット、センサー、制御モジュールを単位交換する。</p>
               <p>整備時間と運航停止時間を減らし、整備員の熟練度依存も下げられる。</p>
@@ -6257,16 +6257,16 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>可変ピッチ装置の削除</li>
                 <li>油圧系統の削除</li>
                 <li>複雑な機械式操縦系の削除</li>
-                <li>同一推進モジュールの反復</li>
+                <li>同一推進モジュールの共通化</li>
                 <li>飛行モード別制御構造の明確化</li>
                 <li>状態ベース離散マトリクスの使用</li>
                 <li>決定論的制御</li>
                 <li>故障時の代替MMAを事前定義</li>
               </ul>
               <p>認証で確認する構成と作動論理も単純になる。</p>
-              <p>Lambdaの認証は、複雑な機体全体を巨大な一体系として説明するより、限定された飛行モードと明確な転換条件を一つずつ検証する方式に近い。</p>
+              <p>Lambdaの認証は、複雑な機体全体を巨大な一体系として説明するより、限定された飛行モードと明確な遷移条件を一つずつ検証する方式に近い。</p>
               <p>飛行状態別の推進器役割と制御権が事前に定まり、同じ状態では同じ制御構造を使う。</p>
-              <p>競合技術が複雑な機構とリアルタイムのブラックボックス制御により長期化するソフトウェア・システム認証を、Lambdaは決定論的飛行と固定MMA転換構造により、より短く予測可能な日程で計画できる。</p>
+              <p>競合技術では、複雑な機構とリアルタイムのブラックボックス制御によってソフトウェア・システム認証が長期化する。Lambdaは、決定論的飛行と固定MMAの遷移構造により、より短く予測可能な日程を計画できる。</p>
               <hr>
               <h3>11. 残る開発課題は未知の物理ではなく試験値を埋める作業である</h3>
               <p>Lambdaにも試験と検証は必要である。</p>
@@ -6276,35 +6276,35 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
                 <li>ローターと翼の実干渉</li>
                 <li>前翼と後翼の揚力分担</li>
                 <li>飛行モード別推力値</li>
-                <li>転換時点と速度条件</li>
+                <li>遷移時点と速度条件</li>
                 <li>重心許容範囲</li>
                 <li>姿勢制御ゲイン</li>
                 <li>推進器故障時の代替MMA</li>
                 <li>実揚抗比</li>
                 <li>実航続距離と電力消費</li>
-                <li>反復運航の整備周期</li>
+                <li>継続運航時の整備周期</li>
                 <li>騒音と振動</li>
                 <li>構造荷重と疲労寿命</li>
               </ul>
               <p>これらは新しい物理法則や不確実な飛行概念を発見する問題ではない。</p>
               <p>機体を製作・計測し、試験値を得てソフトウェアを補正する工学課題である。</p>
-              <p>飛行方法論、モード別推進器役割、転換順序はすでに定義されている。</p>
+              <p>飛行方法論、モード別の推進器の役割、遷移順序はすでに定義されている。</p>
               <p>開発の中心は新原理の探索ではなく、定めた構造の数値と許容範囲を試験で確定する作業である。</p>
               <hr>
-              <h3>12. 二つの重量級と三モデルで航空輸送のコスト構造を下げる</h3>
+              <h3>12. 二つの機体クラスと三つのモデルで航空輸送のコスト構造を下げる</h3>
               <p>Lambdaは599kg級と890kg級の二つで構成される。</p>
-              <p>599kg級は軽量無人貨物型、890kg級は無人貨物型と有人型に分かれる。</p>
+              <p>599kg級は軽量無人貨物モデル、890kg級は無人貨物モデルと有人モデルに分かれる。</p>
               <h4>599kg級 無人貨物型</h4>
               <ul>
                 <li>最大離陸重量：599kg</li>
                 <li>ペイロード：300kg</li>
                 <li>基準機体価格：約4,000万ウォン</li>
               </ul>
-              <p>599kg級は低い機体価格と高い運航頻度で反復輸送に投入する軽量型である。</p>
-              <p>島しょ、産業団地、港湾、医療検体、緊急部品など一定量を短周期で反復輸送する路線に適する。</p>
+              <p>599kg級は、低い機体価格と高い運航頻度を生かして継続輸送に投入する軽量モデルである。</p>
+              <p>島しょ、産業団地、港湾、医療検体、緊急部品など、一定量を短い間隔で継続輸送する路線に適している。</p>
               <p>機体価格が低く初期路線の資本負担が小さい。同じ投資でより多く配備し、運航頻度と路線密度を高められる。</p>
-              <p>高価な一機が断続的に大量輸送するのではなく、安価な複数機が短周期で反復運航する。</p>
-              <p>300kgのペイロードは小型配送ドローンを超え、地域間ミドルマイル物流と産業反復輸送を担える。</p>
+              <p>高価な一機が断続的に大量輸送するのではなく、低価格の複数機が短い間隔で継続運航する。</p>
+              <p>300kgのペイロードは小型配送ドローンの領域を超え、地域間ミドルマイル物流と産業向け継続輸送を担える。</p>
               <h4>890kg級 無人貨物型</h4>
               <ul>
                 <li>最大離陸重量：890kg</li>
@@ -6314,31 +6314,31 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <p>890kg級無人貨物型は一度に475kgを運ぶ主力物流モデルである。</p>
               <p>約500kgを搭載でき、小型ドローン配送ではなく、トラック、船舶、既存航空貨物の地域間輸送の一部を直接代替できる。</p>
               <p>599kg級より高価だが、輸送量が大きく、管制、離着陸、充電、点検、路線運営費を多くの貨物に分散できる。</p>
-              <p>十分な物量がある路線では一便売上と効率が高まり、航空輸送単価を地上ミドルマイル物流と直接比較できる。</p>
-              <h4>890kg級 有人型</h4>
+              <p>十分な物量がある路線では、1便あたりの売上と運航効率が高まり、航空輸送コストを陸上ミドルマイル物流と直接比較できる。</p>
+              <h4>890kg級 有人モデル</h4>
               <ul>
                 <li>最大離陸重量：890kg級</li>
                 <li>基準機体価格：約2億ウォン</li>
               </ul>
-              <p>890kg級有人型は同じ上位プラットフォームを旅客輸送へ拡張したモデルである。</p>
-              <p>無人貨物型と非同期ティルトローター、無操縦面構造、同一モジュール反復生産、ソフトウェア定義飛行体系を共有する。</p>
-              <p>貨物運航は有人型と切り離された副業ではない。</p>
-              <p>反復貨物運航で飛行時間、部品寿命、故障率、整備周期、気象対応、エネルギー消費、路線運営データを先に確保し、有人型の設計確定、信頼性立証、認証、事業化につなげる。</p>
-              <p>貨物型がキャッシュフローと飛行データを作り、同じプラットフォームの有人型が旅客市場へ拡張する。</p>
-              <h4>重量級別の経済性</h4>
+              <p>890kg級の有人モデルは、同じ上位プラットフォームを旅客輸送へ展開した機体である。</p>
+              <p>無人貨物モデルと、非同期ティルトローター、操縦翼面レス構造、同一モジュールの共通生産、ソフトウェア定義飛行システムを共有する。</p>
+              <p>貨物運航は、有人モデルと切り離された付随事業ではない。</p>
+              <p>継続的な貨物運航を通じて、飛行時間、部品寿命、故障率、整備周期、気象対応、エネルギー消費、路線運営データを先に蓄積し、有人モデルの設計確定、信頼性の立証、認証、事業化につなげる。</p>
+              <p>貨物モデルがキャッシュフローと飛行データを生み、同じプラットフォームの有人モデルが旅客市場へ展開する。</p>
+              <h4>機体クラス別の経済性</h4>
               <p>599kg級と890kg級は単なるサイズ違いではない。路線物量と事業目的によりコスト低減方式が異なる。</p>
               <ul>
-                <li>599kg級無人型：4,000万ウォンの低い資産価格と高い運航頻度</li>
-                <li>890kg級無人型：475kgの積載量と高い一便売上</li>
-                <li>890kg級有人型：貨物運航データに基づく旅客市場拡張</li>
-                <li>共通基盤：単純製造、低整備費、同一モジュール反復、無人運航、固定翼巡航効率</li>
+                <li>599kg級無人モデル：4,000万ウォンの低い資産価格と高い運航頻度</li>
+                <li>890kg級無人モデル：475kgの積載量と高い1便あたりの売上</li>
+                <li>890kg級有人モデル：貨物運航データに基づく旅客市場への展開</li>
+                <li>共通基盤：単純な製造、低い整備費、同一モジュールの共通化、無人運航、固定翼の巡航効率</li>
               </ul>
               <p>599kg級は少ない初期資本で路線を開き、高い回転率を作る。</p>
-              <p>890kg級無人型は一便輸送量を高め、地上ミドルマイル物流と本格的に単価競争する。</p>
-              <p>890kg級有人型は貨物運航で得た技術、運航体系、飛行データを旅客市場へ拡張する。</p>
+              <p>890kg級無人モデルは、1便あたりの輸送量を高め、陸上ミドルマイル物流との本格的な価格競争に入る。</p>
+              <p>890kg級有人モデルは、貨物運航で得た技術、運航システム、飛行データを旅客市場へ展開する。</p>
               <p>Lambdaの比較対象は高価なヘリコプターや特殊航空貨物機にとどまらない。</p>
-              <p>4,000万ウォンの機体が300kgを反復輸送し、1億ウォンの機体が475kgを運び、同じ890kg級が2億ウォンの有人型へ拡張する。</p>
-              <p>二つの重量級と三モデルが同じ技術、生産、整備、運航体系を共有する。</p>
+              <p>4,000万ウォンの機体が300kgを継続輸送し、1億ウォンの機体が475kgを運び、同じ890kg級が2億ウォンの有人モデルへ展開する。</p>
+              <p>二つの機体クラスと三つのモデルが、同じ技術、生産、整備、運航システムを共有する。</p>
               <p>Lambdaは貨物輸送でキャッシュフローと運航データを作り、その基盤から有人航空市場へ進むプラットフォームである。</p>
               <hr>
               <h3>13. Lambda最大の強みは個別性能ではなく産業構造全体である</h3>
@@ -6347,14 +6347,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <ul>
                 <li>工学的難度が低い。</li>
                 <li>部品数が少ない。</li>
-                <li>同一部品を反復使用する。</li>
+                <li>同一部品を共用する。</li>
                 <li>製造自動化が容易である。</li>
                 <li>整備が単純である。</li>
                 <li>制御が決定論的である。</li>
-                <li>飛行モードと転換条件が明確である。</li>
+                <li>飛行モードと遷移条件が明確である。</li>
                 <li>認証範囲を限定できる。</li>
                 <li>機体価格を下げられる。</li>
-                <li>高回転率の反復運航が可能である。</li>
+                <li>高い機体回転率で継続運航できる。</li>
                 <li>固定翼の巡航効率を使う。</li>
                 <li>ソフトウェアで機能を拡張できる。</li>
                 <li>貨物運航と有人拡張が一つのプラットフォームでつながる。</li>
@@ -6368,20 +6368,20 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <p>むしろ各方式の難題を取り除き、必要機能を同一の固定ピッチ推進器とソフトウェア飛行モードに統合した機体である。</p>
               <p>操縦面、スワッシュプレート、可変ピッチ、複雑な機械式操縦系がない。</p>
               <p>前翼と後翼は同一で、8基の推進器も同一である。</p>
-              <p>転換は全推進器を同時に動かさず、支持・制御群を残して順次行う。</p>
+              <p>遷移は全推進器を同時に動かさず、支持・制御を担う推進器群を残して順次行う。</p>
               <p>制御はブラックボックス型最適解を毎瞬探さず、機体状態に応じ検証済みMMAを呼ぶ。</p>
-              <p>製作は航空機の手作業より同一モジュールの反復組立と自動生産に近い。</p>
+              <p>製造は、航空機の手作業中心の工程よりも、同一モジュールの共通組立と自動生産に近い。</p>
               <p>整備は複雑な機構の分解修理よりモジュール交換に近い。</p>
-              <p>認証も多数の機構と不確実な制御を説明するのではなく、限定モードと決定論的転換条件を一つずつ検証する過程になる。</p>
-              <p>製品は二つの重量級と三モデルへ拡張する。</p>
-              <p>599kg級無人型は300kgを運び、約4,000万ウォンを目標とする。</p>
-              <p>890kg級無人型は475kgを運び、約1億ウォンを目標とする。</p>
-              <p>同じ890kg級有人型は約2億ウォンを目標とし、貨物運航で蓄積した技術とデータで旅客市場へ進む。</p>
+              <p>認証も、多数の機構と不確実な制御を説明するのではなく、限定されたモードと決定論的な遷移条件を一つずつ検証する過程になる。</p>
+              <p>製品は二つの機体クラスと三つのモデルへ展開する。</p>
+              <p>599kg級無人モデルは300kgを運び、約4,000万ウォンの機体価格を目標とする。</p>
+              <p>890kg級無人モデルは475kgを運び、約1億ウォンの機体価格を目標とする。</p>
+              <p>同じ890kg級の有人モデルは約2億ウォンの機体価格を目標とし、貨物運航で蓄積した技術とデータを基盤に旅客市場へ進む。</p>
               <p>Lambdaの本質は高性能機を難しく作る技術ではない。</p>
               <p>工学的難度をドローンや産業電動機械の水準まで下げ、効用を固定翼機と地域輸送インフラの水準へ広げた構造である。</p>
               <p>Lambda最大の競争力は次の一文に集約される。</p>
               <blockquote>Lambdaは航空機機能を複雑な機構から独立推進器とソフトウェア飛行モードへ移し、製造・整備・認証・運航の難度と費用を同時に下げたソフトウェア定義航空機である。</blockquote>
-              <p>この構造が反復運航で実証されれば、Lambdaは既存eVTOLとの競争にとどまらない。</p>
+              <p>この構造が継続運航で実証されれば、Lambdaは既存eVTOLとの競争にとどまらない。</p>
               <p>航空機製造のコスト構造と航空輸送の運航単価構造そのものを変える機体になる。</p>
             </div>
           </details>
@@ -6410,12 +6410,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="market-japan-local-government">
           <span class="label">日本の地方自治体</span>
           <h2>空の道とともに、地域に組立・整備の雇用が生まれます。</h2>
-          <p>日本の自治体には、地域専用機の開発と現地組立・整備拠点の設立を提案します。島、港湾、産業団地、医療拠点が分散する地域ほど、航空ミドルマイル物流と現地産業基盤を同時に作れます。</p>
+          <p>日本の自治体には、地域専用機の開発と現地組立・整備拠点の設立を提案します。島しょ、港湾、産業団地、医療拠点が分散する地域ほど、航空ミドルマイル物流と地域産業の基盤を同時に構築できます。</p>
           <ul class="data-list">
-            <li><span>第1段階・路線設計</span><strong>島、港湾、産業団地、医療拠点の反復運航需要を定義</strong></li>
+            <li><span>第1段階・路線設計</span><strong>島、港湾、産業団地、医療拠点における継続運航需要を定義</strong></li>
             <li><span>第2段階・機体仕様の定義</span><strong>地域任務に合わせたペイロード、距離、離着陸条件の設定</strong></li>
             <li><span>第3段階・組立・整備拠点</span><strong>現地組立、整備、運航人材の育成を検討</strong></li>
-            <li><span>初期候補</span><strong>釜山港－日本本土回廊、約200～215km／約50～59分</strong></li>
+            <li><span>初期候補</span><strong>釜山港－日本本土の航空物流ルート、約200～215km／約50～59分</strong></li>
           </ul>
           <a class="back-link" href="mailto:contact@rcvpower.com?subject=Japan%20local%20government%20partnership">日本地域での協力について問い合わせる</a>
         </article>
@@ -6427,7 +6427,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="business-drone-aircraft-company">
           <span class="label">ドローン・航空機企業</span>
           <h2>特許リスクを抑え、検証されたアーキテクチャ上で開発してください。</h2>
-          <p>貴社の任務に合う機体を25件の特許網とFlight OS上で開発します。機体仕様の定義から認証データの蓄積まで伴走します。</p>
+          <p>貴社の任務に合う機体を、25件の特許ポートフォリオとFlight OSを基盤に開発します。機体仕様の定義から認証データの蓄積まで伴走します。</p>
           <p>協力範囲は、特定任務向け機体仕様、ローター・推進配置、制御ソフトウェア、認証データ蓄積、地域運航モデル設計まで拡張できます。</p>
           <a class="back-link" href="mailto:contact@rcvpower.com?subject=technology%20partnership">技術パートナー協力について問い合わせる</a>
         </article>
@@ -6445,14 +6445,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message" id="business-logistics-company">
           <span class="label">物流企業</span>
-          <h2>釜山－福岡の片道直接運航原価は約10万ウォン。この路線を共同保有するパートナーを募集します。</h2>
-          <p>物流企業には単なる輸送委託ではなく、回廊別の共同フリート運営と路線共同投資を提案します。物流企業は実貨物需要、拠点運営、SLAを提供し、SDAは機体、運航ソフトウェア、継続耐空性データ、MROを結合します。</p>
+          <h2>釜山－福岡の片道直接運航コストは約10万ウォン。この路線を共同保有するパートナーを募集します。</h2>
+          <p>物流企業には、単なる輸送委託ではなく、航空物流ルートごとの共同フリート運営と路線への共同投資を提案します。物流企業は実貨物需要、拠点運営、SLAを提供し、SDAは機体、運航ソフトウェア、継続耐空性データ、MROを統合します。</p>
           <ul class="data-list">
             <li><span>物流企業の提供</span><strong>貨物需要、拠点運営、顧客SLA</strong></li>
             <li><span>リシーブパワーの提供</span><strong>機体、Flight OS、継続耐空性データ、MRO構造</strong></li>
-            <li><span>初期回廊例</span><strong>釜山－福岡 約200～215km／直接運航原価 約9.6～10.4万ウォン</strong></li>
+            <li><span>初期航空物流ルートの例</span><strong>釜山－福岡 約200～215km／直接運航コスト 約9.6～10.4万ウォン</strong></li>
           </ul>
-          <p>初期回廊は時間損失が輸送費より大きい区間から始めます。反復運航データが蓄積すれば、路線別リース、運営権、MRO、Flight OS収益へ拡張できます。</p>
+          <p>初期の航空物流ルートは、時間損失が輸送費を上回る区間から始めます。継続運航のデータが蓄積されれば、路線別リース、事業権、MRO、Flight OSの収益へ展開できます。</p>
           <a class="back-link" href="mailto:contact@rcvpower.com?subject=route%20profitability%20simulation">路線収益性シミュレーションを依頼</a>
         </article>
       </div>
@@ -6463,7 +6463,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">顧客価値</span>
           <h2>顧客が買うのは航空機ではありません。決められた時間内に貨物を届ける能力です。</h2>
-          <p>物流顧客は、特定時間内に特定重量を特定拠点へ送る能力を購入します。Lambdaは500kg級ミドルマイルSLA、時間短縮効果、回廊別反復運航率を中心に運用価値を作ります。</p>
+          <p>物流顧客が購入するのは、定められた時間内に、定められた重量を、指定拠点へ届ける能力です。Lambdaは500kg級ミドルマイルSLA、時間短縮効果、航空物流ルートごとの稼働率を中心に運用価値を生み出します。</p>
         </article>
         <article class="message kpi">
           <span class="label">貨物運航資産</span>
@@ -6474,24 +6474,24 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message kpi">
           <span class="label">ライフサイクル売上の可能性</span>
           <span class="metric">50億ウォン</span>
-          <p>ビジネスでは回廊別の反復運航量が核心です。リース料、運航権、MRO、Flight OS購読、継続耐空性データサービスがライフサイクル売上を構成します。</p>
+          <p>事業の中核は、航空物流ルートごとの継続運航量です。リース料、運航権、MRO、Flight OS利用料、継続耐空性データサービスがライフサイクル売上を構成します。</p>
         </article>
 
         <article class="message kpi">
-          <span class="label">目標マージン</span>
+          <span class="label">目標利益率</span>
           <span class="metric">50%</span>
-          <p>パートナーの収益性は機体価格より稼働率、整備負担、SLA維持能力で決まります。低整備構造とFlight OSが運営マージンを生みます。</p>
+          <p>パートナーの収益性は、機体価格だけでなく、稼働率、整備負担、SLAの維持能力で決まります。整備負担の低い構造とFlight OSが、運営利益を生み出します。</p>
         </article>
 
         <article class="message kpi">
           <span class="label">運用モデル</span>
           <span class="metric">Lease + Operate + SaaS</span>
-          <p>機体供給、リース、直接運航、運航ソフトウェア、継続耐空性データサービスを結合して長期運営収益を作ります。</p>
+          <p>機体供給、リース、直接運航、運航ソフトウェア、継続耐空性データサービスを組み合わせ、長期的な運営収益を生み出します。</p>
         </article>
 
         <article class="message">
           <h2>物流装備、輸送ネットワーク、ソフトウェアの結合</h2>
-          <p>Lambdaの事業構造は自動化物流装備、輸送ネットワーク、ソフトウェア購読を結合したモデルです。顧客は500kg級航空ミドルマイルの処理量とSLAを購入します。</p>
+          <p>Lambdaの事業構造は、自動化物流機器、輸送ネットワーク、ソフトウェア利用料を組み合わせたモデルです。顧客は500kg級航空ミドルマイルの輸送能力とSLAを購入します。</p>
         </article>
       </div>
 
@@ -6502,19 +6502,19 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">資産ロジック</span>
           <h2>機体は製品であると同時に長期運営資産です。</h2>
-          <p>1億ウォン級機体がライフサイクル50億ウォンの売上可能性を持つなら、反復運航、リース、路線運営、kg-km処理量、Flight OS購読、継続耐空性データサービスが長期収益構造を作ります。</p>
+          <p>1億ウォン級の機体がライフサイクルで50億ウォンの売上可能性を持つなら、継続運航、リース、路線運営、kg-km輸送量、Flight OS利用料、継続耐空性データサービスが長期収益モデルを形成します。</p>
         </article>
         <article class="message">
           <span class="label">プラットフォーム運営</span>
-          <h2>機体は低価格で迅速に普及させ、収益は運航・整備・データから反復的に生まれます。</h2>
-          <p>飛行計画、離散マトリクス型Flight OS、継続耐空性ログ、バッテリー・モーター寿命管理、経路最適化、保険データは統合運営層に接続されます。ハードウェアを低価格で迅速に配備し、反復収益は回廊運航・整備・データサービスから生まれます。</p>
+          <h2>機体を低価格で迅速に普及させ、運航・整備・データから継続収益を生み出します。</h2>
+          <p>飛行計画、離散マトリクス型Flight OS、継続耐空性ログ、バッテリー・モーター寿命管理、経路最適化、保険データは、統合運用レイヤーに接続されます。ハードウェアを低価格で迅速に配備し、航空物流ルートの運航・整備・データサービスから継続収益を生み出します。</p>
         </article>
       </div>
     </section>
     <section class="cta-band">
       <div class="container cta-row">
         <a class="button primary" href="#" data-route="market">市場を見る</a>
-        <a class="button secondary" href="#" data-route="company">Companyを見る</a>
+        <a class="button secondary" href="#" data-route="company">会社情報を見る</a>
       </div>
     </section>
   </main>
