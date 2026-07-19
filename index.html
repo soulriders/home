@@ -4680,6 +4680,297 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   visibility: visible !important;
   transform: none !important;
 }
+
+/* Home v2: identity -> proof -> architecture -> scale -> market -> company */
+.home-v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.home-v2-actions .button {
+  min-width: 128px;
+  text-align: center;
+}
+
+.home-v2-section {
+  position: relative;
+}
+
+.home-v2-intro {
+  max-width: 820px;
+  margin-bottom: 34px;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.7;
+}
+
+.home-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-stat {
+  min-width: 0;
+  padding: 30px 22px;
+}
+
+.home-v2-stat + .home-v2-stat {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-stat strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1;
+}
+
+.home-v2-stat span {
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.home-v2-refrain {
+  margin-top: 28px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-v2-problem {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: end;
+}
+
+.home-v2-problem blockquote {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.home-v2-problem-copy p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.home-v2-problem-copy p + p {
+  margin-top: 18px;
+}
+
+.home-v2-patent {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.home-v2-patent-visual {
+  overflow: hidden;
+  min-height: 520px;
+  margin: 0;
+  background: #e9edf2;
+  clip-path: polygon(0 0, 100% 5%, 96% 100%, 0 94%);
+}
+
+.home-v2-patent-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.home-v2-benefits {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+}
+
+.home-v2-benefits li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-main);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.home-v2-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 36px;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step {
+  position: relative;
+  min-height: 210px;
+  padding: 30px 30px 28px 0;
+}
+
+.home-v2-roadmap-step + .home-v2-roadmap-step {
+  padding-left: 30px;
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 28px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.home-v2-roadmap-step strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1;
+}
+
+.home-v2-roadmap-step h3 {
+  margin: 20px 0 8px;
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+.home-v2-roadmap-step p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.home-v2-market-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-market-list li {
+  min-height: 130px;
+  padding: 24px 20px;
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home-v2-market-list li + li {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-company {
+  max-width: 920px;
+}
+
+.home-v2-company p {
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .home-v2-stats,
+  .home-v2-roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-stat:nth-child(3),
+  .home-v2-roadmap-step:nth-child(3) {
+    border-left: 0;
+  }
+
+  .home-v2-stat:nth-child(n+3),
+  .home-v2-roadmap-step:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-problem,
+  .home-v2-patent {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-market-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-market-list li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .home-v2-market-list li:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-v2-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-v2-actions .button:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .home-v2-stats,
+  .home-v2-roadmap,
+  .home-v2-market-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-stat + .home-v2-stat,
+  .home-v2-roadmap-step + .home-v2-roadmap-step,
+  .home-v2-market-list li + li {
+    border-left: 0;
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-roadmap-step,
+  .home-v2-roadmap-step + .home-v2-roadmap-step {
+    min-height: 0;
+    padding: 24px 38px 24px 0;
+  }
+
+  .home-v2-roadmap-step:not(:last-child)::after {
+    top: auto;
+    right: 6px;
+    bottom: 22px;
+    transform: rotate(90deg);
+  }
+
+  .home-v2-market-list li {
+    min-height: 0;
+  }
+
+  .home-v2-patent-visual,
+  .home-v2-patent-visual img {
+    min-height: 300px;
+  }
+}
 </style>
 </head>
 <body>
@@ -4725,17 +5016,124 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="container">
-      <span class="hero-label">Software Defined Aircraft</span>
+      <span class="hero-label">소프트웨어 정의 비행체</span>
       <h1 class="hero-h1">
-        <span class="typo-line">가장 단순한 비행기,</span>
-        <span class="typo-line">소프트웨어 정의 비행체 Lambda.</span>
+        <span class="typo-line">세계 최초 비동기 틸트로터</span>
+        <span class="typo-line">아키텍처.</span>
       </h1>
-      <p class="hero-p">더 적은 부품, 더 낮은 비용으로 화물에서 사람까지 실어 나릅니다.</p>
+      <p class="hero-p">결정론적 비행제어로 항공기 인증 복잡도, 제조비, 사업화 기간을 줄입니다.</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=technology" data-route="technology">기술</a>
+        <a class="button secondary" href="?page=product" data-route="product">제품</a>
+        <a class="button secondary" href="?page=business" data-route="business">협력</a>
+      </div>
     </div>
   </section>
 
-  
-<section class="visual-principles-section" id="S02B_TRANSLATION">
+  <section class="home-v2-section" id="HOME_PROOF">
+    <div class="container">
+      <div class="home-v2-stats" aria-label="Lambda 핵심 지표">
+        <div class="home-v2-stat"><strong>8</strong><span>독립 틸팅 추진기관</span></div>
+        <div class="home-v2-stat"><strong>4</strong><span>기체 체급</span></div>
+        <div class="home-v2-stat"><strong>475 kg</strong><span>페이로드 플랫폼</span></div>
+        <div class="home-v2-stat"><strong>100%</strong><span>결정론적 비행제어</span></div>
+      </div>
+      <p class="home-v2-refrain">결정론적 비행. 더 빠른 인증. 더 낮은 비용.</p>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_WHY">
+    <div class="container home-v2-problem">
+      <blockquote>왜 새로운 비행기가 필요한가?</blockquote>
+      <div class="home-v2-problem-copy">
+        <p>기존 eVTOL은 점점 복잡해졌습니다. 더 많은 작동장치, 더 많은 소프트웨어, 더 긴 인증 일정과 더 높은 제조비가 필요합니다.</p>
+        <p><strong>리시브파워는 다른 방향으로 갑니다. 비행 자체를 단순화합니다.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_PATENT_FOUNDATION">
+    <div class="container home-v2-patent">
+      <figure class="home-v2-patent-visual">
+        <img src="assets/images/sda/sda-top-view-labeled.png" alt="비동기 틸트 추진기관과 기체 구조를 보여주는 Lambda 상면도">
+      </figure>
+      <div>
+        <span class="eyebrow">특허 기반 기술</span>
+        <h2 class="section-title">독립 비동기 틸트 추진</h2>
+        <p class="home-v2-intro">기존 조종면 없이 비행을 제어합니다. 동일한 추진기관을 독립적으로 틸팅하고, 검증된 비행모드를 소프트웨어로 전환합니다.</p>
+        <ul class="home-v2-benefits">
+          <li>인증 복잡도 감소</li>
+          <li>제조비 절감</li>
+          <li>예측 가능한 결정론적 제어</li>
+          <li>25kg에서 890kg까지 확장 가능한 아키텍처</li>
+        </ul>
+        <p class="home-v2-refrain">결정론적 비행. 더 빠른 인증. 더 낮은 비용.</p>
+        <a class="back-link" href="?page=ip" data-route="ip">특허 기술 전체 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_SCALE_PATH">
+    <div class="container">
+      <span class="eyebrow">체급·인증 로드맵</span>
+      <h2 class="section-title">하나의 기술이 네 개 체급으로 확장됩니다</h2>
+      <p class="home-v2-intro">작은 기체에서 비행 전환을 검증하고, 같은 아키텍처를 화물과 유인 플랫폼으로 확장합니다.</p>
+      <div class="home-v2-roadmap">
+        <article class="home-v2-roadmap-step">
+          <strong>25 kg</strong>
+          <h3>비행 전환 검증</h3>
+          <p>비동기 틸팅과 결정론적 제어를 실제 기체에서 검증합니다.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>220 kg</strong>
+          <h3>경량 유·무인 확장</h3>
+          <p>경량 체급의 운항과 규제 트랙을 검증합니다.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>599 kg</strong>
+          <h3>300kg 무인 화물</h3>
+          <p>반복 운항과 지역 노선의 경제성을 검증합니다.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>890 kg</strong>
+          <h3>475kg 화물·유인 확장</h3>
+          <p>주력 화물 플랫폼에서 지역 승객 운송으로 확장합니다.</p>
+        </article>
+      </div>
+      <a class="back-link" href="?page=product" data-route="product">제품과 규제 트랙 보기</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_MARKET_ENTRY">
+    <div class="container">
+      <span class="eyebrow">시장 진입</span>
+      <h2 class="section-title">화물부터 시작해 지역 항공으로 확장합니다</h2>
+      <p class="home-v2-intro">반복 화물 운항으로 비행 데이터와 수익을 만들고, 같은 플랫폼을 지역 승객 운송으로 확장합니다.</p>
+      <ul class="home-v2-market-list">
+        <li>의료 물류</li>
+        <li>긴급 운송</li>
+        <li>산업 물류</li>
+        <li>도서 지역 운송</li>
+        <li>지역 승객 이동</li>
+      </ul>
+      <a class="back-link" href="?page=market" data-route="market">시장과 노선 보기</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_COMPANY_STATEMENT">
+    <div class="container home-v2-company">
+      <span class="eyebrow">리시브파워</span>
+      <h2 class="section-title">소프트웨어 정의 비행체를 개발합니다</h2>
+      <p>우리의 목표는 또 하나의 eVTOL을 만드는 것이 아닙니다. 인증하기 쉽고, 제조비가 낮으며, 여러 기체 체급으로 확장할 수 있는 항공기 아키텍처를 만듭니다.</p>
+      <p class="home-v2-refrain">결정론적 비행. 더 빠른 인증. 더 낮은 비용.</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=company" data-route="company">회사 소개</a>
+        <a class="button secondary" href="?page=news" data-route="news">최근 소식</a>
+      </div>
+    </div>
+  </section>
+
+<section class="visual-principles-section" id="S02B_TRANSLATION" hidden>
     <div class="container">
       <div class="visual-principles-layout">
         <figure class="visual-principles-media">
@@ -4767,7 +5165,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
 
-  <section id="S01_WHY_DIFFERENT">
+  <section id="S01_WHY_DIFFERENT" hidden>
     <div class="container">
       <span class="eyebrow">왜 다른가</span>
       <h2 class="section-title">단순 · 경제성 · 안전 — <span>하나의 특허 구조에서 나옵니다</span></h2>
@@ -4795,7 +5193,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
     </div>
   </section>
-  <section class="motion-section" id="S01A_MOTION">
+  <section class="motion-section" id="S01A_MOTION" hidden>
     <div class="container">
       <div class="motion-frame">
         <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA 비동기 틸트로터 비행 이미지">
@@ -4808,7 +5206,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </div>
   </section>
   <!-- S04_TECH_POSITIONING -->
-  <section id="S04_TECH_POSITIONING">
+  <section id="S04_TECH_POSITIONING" hidden>
     <div class="container">
       <span class="eyebrow">기술</span>
       <h2 class="section-title">운항 조건이 <span>기체 구조를 결정합니다</span></h2>
@@ -4846,7 +5244,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S07_IP_CERTIFICATION -->
-  <section id="S07_IP_CERTIFICATION">
+  <section id="S07_IP_CERTIFICATION" hidden>
     <div class="container">
       <span class="eyebrow">IP</span>
       <h2 class="section-title">25건의 특허망으로 안전운항과 비용을 보호합니다</h2>
@@ -4918,7 +5316,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
  
   <!-- S08_PHYSICAL_AI_HUMANOID -->
-  <section id="S08_PHYSICAL_AI_HUMANOID">
+  <section id="S08_PHYSICAL_AI_HUMANOID" hidden>
     <div class="container">
       <span class="eyebrow">Physical AI</span>
       <h2 class="section-title">비행체에서 시작해 <span>실제 기계를 움직이는 Physical AI로 확장합니다</span></h2>
@@ -4952,7 +5350,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S02_VISITOR_ROUTING -->
-  <section id="S02_VISITOR_ROUTING">
+  <section id="S02_VISITOR_ROUTING" hidden>
     <div class="container">
       <span class="eyebrow">협력</span>
       <h2 class="section-title">창조적인 협력</h2>
