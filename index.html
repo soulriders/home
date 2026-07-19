@@ -249,6 +249,50 @@ h1 {
   margin-top: 10px;
 }
 
+.news-list {
+  border-top: 1px solid var(--border-main);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.news-item-meta {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.news-item-meta strong {
+  display: block;
+  color: var(--text-main);
+}
+
+.news-item-body h3 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.news-item-body p {
+  margin: 0;
+}
+
+.news-item-link {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .municipal-simulation {
   margin-top: 32px;
   padding-top: 28px;
@@ -565,6 +609,15 @@ h1 {
 
   .municipal-process-grid {
     grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .news-item-link {
+    margin-top: 4px;
   }
 
   .link-grid {
@@ -4641,6 +4694,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
+            <button type="button" class="submenu-link" data-target-page="news">News</button>
             <button type="button" class="submenu-link" data-target-page="technology">기술</button>
             <button type="button" class="submenu-link" data-target-page="ip">IP</button>
             <button type="button" class="submenu-link" data-target-page="product">제품</button>
@@ -5052,6 +5106,35 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
   </main>
 
+<main class="page-view" data-page="news">
+    <section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Company News</span>
+        <h1>리시브파워의 새로운 소식.</h1>
+        <p class="lead">기술, 특허, 제품 개발과 사업 확장에 관한 외부 보도를 모아 소개합니다.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="company">Company로 돌아가기</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Press Archive</span>
+          <h2>보도자료</h2>
+        </div>
+        <div class="news-list" data-news-list="all"></div>
+      </div>
+    </section>
+  </main>
+
 <main class="page-view" data-page="ir">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
@@ -5146,6 +5229,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h2>항공 물류의 원가가 트럭 수준으로 낮아지는 순간, 물류지도는 도로를 따라 그려지지 않고 목적지를 향한 직선으로 다시 그려집니다.</h2>
           <p>직선거리가 물류망 설계의 새로운 기준이 됩니다. 500kg급 payload와 최대 1,000km 항속은 항공 미드마일 물류망을 겨냥합니다.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="message-section" id="ir-news">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Recent News</span>
+          <h2>투자자가 확인할 최근 보도</h2>
+          <p>특허, 인증, 투자와 사업 확장에 관련된 주요 소식입니다.</p>
+        </div>
+        <div class="news-list" data-news-list="ir"></div>
+        <a class="back-link" href="?page=news" data-route="news">전체 보도자료 보기</a>
       </div>
     </section>
     <section class="cta-band" id="company-request">
@@ -6770,11 +6865,63 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     });
   }
 
+  const NEWS_ITEMS = [
+    {
+      date: '2026.07.16',
+      source: '머니투데이',
+      title: "리시브파워, 'eVTOL 난제 해결' 비행 제어 특허 등록",
+      summary: '리시브파워가 비동기 순차 틸팅과 이산 매트릭스 기반 비행모드 전환 기술을 바탕으로 eVTOL 전환비행 제어 특허를 등록했습니다.',
+      url: 'https://www.mt.co.kr/amp/industry/2026/07/16/2026071612022173830',
+      investor: true
+    }
+  ];
+
+  function createNewsItem(item) {
+    const article = document.createElement('article');
+    article.className = 'news-item';
+
+    const meta = document.createElement('div');
+    meta.className = 'news-item-meta';
+    const source = document.createElement('strong');
+    source.textContent = item.source;
+    const date = document.createElement('span');
+    date.textContent = item.date;
+    meta.append(source, date);
+
+    const body = document.createElement('div');
+    body.className = 'news-item-body';
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const summary = document.createElement('p');
+    summary.textContent = item.summary;
+    body.append(title, summary);
+
+    const link = document.createElement('a');
+    link.className = 'news-item-link';
+    link.href = item.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = '원문 보기 ↗';
+
+    article.append(meta, body, link);
+    return article;
+  }
+
+  function renderNews() {
+    document.querySelectorAll('[data-news-list]').forEach((list) => {
+      const items = list.dataset.newsList === 'ir'
+        ? NEWS_ITEMS.filter((item) => item.investor).slice(0, 5)
+        : NEWS_ITEMS;
+      list.replaceChildren(...items.map(createNewsItem));
+    });
+  }
+
   (function () {
     initContactCopy();
+    renderNews();
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
-    const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
+    const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
 
