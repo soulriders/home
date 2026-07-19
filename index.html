@@ -178,6 +178,51 @@ h1 {
   color: var(--text-muted);
 }
 
+.municipal-simulation {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation > h3 {
+  margin-bottom: 8px;
+}
+
+.municipal-simulation-intro {
+  max-width: 760px;
+}
+
+.municipal-simulation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 24px;
+}
+
+.municipal-simulation-item {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation-item h4 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.municipal-simulation-item .data-list {
+  margin-top: 14px;
+}
+
+.municipal-simulation-connection {
+  margin-top: 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-main);
+  color: var(--text-main) !important;
+}
+
 .narrative-single h3 {
   margin-top: 22px;
   margin-bottom: 8px;
@@ -441,6 +486,10 @@ h1 {
 
   .data-list strong {
     text-align: left;
+  }
+
+  .municipal-simulation-grid {
+    grid-template-columns: 1fr;
   }
 
   .link-grid {
@@ -6427,6 +6476,45 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <li><span>2단계 · 전용기체 개발·제작</span><strong>약 2억원 / Part 108·Part 22급 기준 실증 기체 개발</strong></li>
             <li><span>3단계 · 시범 운항</span><strong>도서 물류, 의료 검체, 산단 긴급 부품, 항만 연결, 관광·재난 대응</strong></li>
           </ul>
+          <div class="municipal-simulation">
+            <h3>지자체를 위한 시뮬레이션 기술</h3>
+            <p class="municipal-simulation-intro">리시브파워는 기체를 띄우기 전에, 노선과 도시를 먼저 시뮬레이션합니다.</p>
+            <div class="municipal-simulation-grid">
+              <section class="municipal-simulation-item">
+                <h4>노선 타당성 시뮬레이션</h4>
+                <p>지역 지형, 산업 분포, 화물 수요를 입력해 항공물류 노선의 경제성을 미리 계산합니다.</p>
+                <ul class="data-list">
+                  <li><span>구성</span><strong>거리, 이착륙 후보지, 화물 유형, 반복 운항 빈도</strong></li>
+                  <li><span>효과</span><strong>편도 운항원가, 손익분기 물동량, 노선 우선순위 산출</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>UAM 도시 시뮬레이션</h4>
+                <p>도심·지역 상공에 항로와 이착륙장을 배치하기 전, 소음·안전·교통 영향을 가상공간에서 먼저 검증합니다.</p>
+                <ul class="data-list">
+                  <li><span>구성</span><strong>3D 도시 모델, 회랑(Corridor) 설계, 이착륙장 후보지 배치</strong></li>
+                  <li><span>효과</span><strong>주민 수용성 사전 검토, 인허가 대응 근거자료</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>디지털트윈 기반 실증 시뮬레이션</h4>
+                <p>실제 기체를 띄우기 전, 가상공간에서 동작·충돌·고장 조건을 먼저 검증합니다.</p>
+                <ul class="data-list">
+                  <li><span>구성</span><strong>Digital Twin, Physics Engine, Scenario Generation, Failure Replay</strong></li>
+                  <li><span>효과</span><strong>실증 리스크 축소, 인증기관 제출용 시험 데이터 사전 확보</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>수익성·운영 시뮬레이션</h4>
+                <p>회랑별 리스, 정비, 가동률을 조합해 지자체·운항 파트너의 회수 구조를 계산합니다.</p>
+                <ul class="data-list">
+                  <li><span>구성</span><strong>리스료, MRO 비용, 가동률, Flight OS 구독</strong></li>
+                  <li><span>효과</span><strong>생애 매출 잠재력, 목표 마진, 투자 회수 기간 산출</strong></li>
+                </ul>
+              </section>
+            </div>
+            <p class="municipal-simulation-connection">이 네 가지 시뮬레이션은 <strong>1단계 연구용역</strong>에서 함께 수행됩니다.</p>
+          </div>
           <a class="back-link" href="mailto:contact@rcvpower.com?subject=지자체%20실증%20협력%20문의">우리 지역 노선 문의하기</a>
         </article>
       </div>
