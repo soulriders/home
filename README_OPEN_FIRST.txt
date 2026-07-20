@@ -18,6 +18,14 @@ PUBLISHING PIPELINE
 - Vercel deploys automatically from the GitHub main branch.
 - Do not use a separate direct Vercel upload path.
 
+CURRENT AIRCRAFT CLASS AND PRICE BASELINE
+
+- docs/source_materials/2026-07-21-032310-aircraft-class-price-consistency-policy.md
+- Maximum cargo payload is PL 475kg on the 890kg-class uncrewed Eureka.
+- The 890kg-class crewed Eureka is a four-seat aircraft.
+- Crewed and uncrewed aircraft prices must be stated separately.
+- Revenue, operating-cost, margin, distance, and time conversions belong in a later standalone policy.
+
 Open index.html first.
 The same file is also available as homepage_static_draft.html.
 
