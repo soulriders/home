@@ -4936,6 +4936,34 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     grid-column: 1 / -1;
   }
 
+  #S01_HERO .home-v2-actions {
+    grid-template-columns: minmax(132px, 1fr) auto auto;
+    align-items: center;
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  #S01_HERO .home-v2-actions .button {
+    min-width: 0;
+  }
+
+  #S01_HERO .home-v2-actions .button.secondary {
+    min-height: 40px;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+  }
+
+  #S01_HERO .home-v2-actions .button:last-child {
+    grid-column: auto;
+  }
+
   .home-v2-stats,
   .home-v2-roadmap,
   .home-v2-market-list {
