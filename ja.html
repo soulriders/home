@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
   <!--
-    基本ガイドライン:
-    1. 改行で単語を分断しない.
-    2. ホームの中見出しは一行で表示する.
-    3. Archerのトップページのように動画を最初の画面でループ再生する.
-    4. 各メニューページの上部には代表画像を背景として配置する.
-    5. Company IRのVC向け認証スケジュール文言はFAA 21.17-4要件と25件の特許ポートフォリオを基準とする.
+    基本方針：
+    1. 改行によって単語が途中で分断されないようにする。
+    2. ホームの中見出しは1行で表示する。
+    3. ファーストビューにループ再生動画を配置する。
+    4. 各メインページの上部には、そのページを代表するメディアを背景として配置する。
+    5. CompanyおよびIRページのVC向け認証説明では、FAA AC 21.17-4要件への直接対応と約25件の特許ポートフォリオを基準に表現する。
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -176,6 +176,166 @@ h1 {
 
 .message p {
   color: var(--text-muted);
+}
+
+.municipal-value-section,
+.municipal-process,
+.municipal-cta {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-value-section > h3,
+.municipal-process > h3,
+.municipal-cta > h3 {
+  margin-bottom: 10px;
+}
+
+.municipal-value-list {
+  margin-top: 20px;
+}
+
+.municipal-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 20px;
+}
+
+.municipal-process-step {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-process-step h4 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.municipal-process-meta {
+  margin-bottom: 12px;
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+.municipal-process-results {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.municipal-process-results::before {
+  content: "成果物";
+  display: block;
+  margin: 0 0 8px -20px;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.municipal-process-results li + li {
+  margin-top: 6px;
+}
+
+.municipal-cta p {
+  max-width: 760px;
+}
+
+.municipal-cta .back-link {
+  margin-top: 10px;
+}
+
+.news-list {
+  border-top: 1px solid var(--border-main);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.news-item-meta {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.news-item-meta strong {
+  display: block;
+  color: var(--text-main);
+}
+
+.news-item-body h3 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.news-item-body p {
+  margin: 0;
+}
+
+.news-item-link {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.municipal-simulation {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation > h3 {
+  margin-bottom: 8px;
+}
+
+.municipal-simulation-intro {
+  max-width: 760px;
+}
+
+.municipal-simulation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 24px;
+}
+
+.municipal-simulation-item {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation-item h4 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.municipal-simulation-item .data-list {
+  margin-top: 14px;
+}
+
+.municipal-simulation-connection {
+  margin-top: 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-main);
+  color: var(--text-main) !important;
 }
 
 .narrative-single h3 {
@@ -443,6 +603,23 @@ h1 {
     text-align: left;
   }
 
+  .municipal-simulation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .municipal-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .news-item-link {
+    margin-top: 4px;
+  }
+
   .link-grid {
     grid-template-columns: 1fr;
   }
@@ -608,7 +785,7 @@ h1 {
       --font-mono: 'JetBrains Mono', monospace;
     }
 
-
+    
 
     
 
@@ -866,7 +1043,7 @@ h1 {
       line-height: 1.6;
     }
 
-    /* Lambdaの機体クラスと認証・規制区分 */
+    /* Lambdaの機体クラスと認証ルート */
     .regulatory-model-section {
       margin: 56px 0 48px;
     }
@@ -1131,7 +1308,7 @@ h1 {
       margin-top: 6px;
     }
 
-    /* First Route (最初の市場) */
+    /* 最初の路線 */
     .route-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1372,6 +1549,15 @@ h1 {
       object-fit: cover;
       background: #ffffff;
     }
+    .kakao-contact-qr > a:first-child {
+      display: block;
+      width: 132px;
+      border-radius: 8px;
+    }
+    .kakao-contact-qr > a:first-child:focus-visible {
+      outline: 3px solid var(--brand-primary);
+      outline-offset: 4px;
+    }
     .kakao-contact-qr strong {
       display: block;
       margin-bottom: 6px;
@@ -1384,6 +1570,20 @@ h1 {
       color: var(--text-muted);
       font-size: 14px;
       line-height: 1.6;
+    }
+    .kakao-contact-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 4px;
+      background: #fee500;
+      color: #191919;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
     }
     @media (max-width: 560px) {
       .kakao-contact-qr {
@@ -2385,7 +2585,7 @@ footer {
   }
 }
 
-/* Joby Archer benchmark design pass start */
+/* AAM benchmark design pass start */
 .topbar {
   top: 0;
   padding: 0;
@@ -3964,7 +4164,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   }
 }
 /* Media masking system end */
-/* Joby Archer benchmark design pass end */
+/* AAM benchmark design pass end */
 
 /* Visual masking execution pass 2026-07-13 start */
 .hero-sec {
@@ -4480,6 +4680,297 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   visibility: visible !important;
   transform: none !important;
 }
+
+/* Home v2: identity -> proof -> architecture -> scale -> market -> company */
+.home-v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.home-v2-actions .button {
+  min-width: 128px;
+  text-align: center;
+}
+
+.home-v2-section {
+  position: relative;
+}
+
+.home-v2-intro {
+  max-width: 820px;
+  margin-bottom: 34px;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.7;
+}
+
+.home-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-stat {
+  min-width: 0;
+  padding: 30px 22px;
+}
+
+.home-v2-stat + .home-v2-stat {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-stat strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1;
+}
+
+.home-v2-stat span {
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.home-v2-refrain {
+  margin-top: 28px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-v2-problem {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: end;
+}
+
+.home-v2-problem blockquote {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.home-v2-problem-copy p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.home-v2-problem-copy p + p {
+  margin-top: 18px;
+}
+
+.home-v2-patent {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.home-v2-patent-visual {
+  overflow: hidden;
+  min-height: 520px;
+  margin: 0;
+  background: #e9edf2;
+  clip-path: polygon(0 0, 100% 5%, 96% 100%, 0 94%);
+}
+
+.home-v2-patent-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.home-v2-benefits {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+}
+
+.home-v2-benefits li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-main);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.home-v2-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 36px;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step {
+  position: relative;
+  min-height: 210px;
+  padding: 30px 30px 28px 0;
+}
+
+.home-v2-roadmap-step + .home-v2-roadmap-step {
+  padding-left: 30px;
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 28px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.home-v2-roadmap-step strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1;
+}
+
+.home-v2-roadmap-step h3 {
+  margin: 20px 0 8px;
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+.home-v2-roadmap-step p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.home-v2-market-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-market-list li {
+  min-height: 130px;
+  padding: 24px 20px;
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home-v2-market-list li + li {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-company {
+  max-width: 920px;
+}
+
+.home-v2-company p {
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .home-v2-stats,
+  .home-v2-roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-stat:nth-child(3),
+  .home-v2-roadmap-step:nth-child(3) {
+    border-left: 0;
+  }
+
+  .home-v2-stat:nth-child(n+3),
+  .home-v2-roadmap-step:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-problem,
+  .home-v2-patent {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-market-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-market-list li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .home-v2-market-list li:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-v2-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-v2-actions .button:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .home-v2-stats,
+  .home-v2-roadmap,
+  .home-v2-market-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-stat + .home-v2-stat,
+  .home-v2-roadmap-step + .home-v2-roadmap-step,
+  .home-v2-market-list li + li {
+    border-left: 0;
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-roadmap-step,
+  .home-v2-roadmap-step + .home-v2-roadmap-step {
+    min-height: 0;
+    padding: 24px 38px 24px 0;
+  }
+
+  .home-v2-roadmap-step:not(:last-child)::after {
+    top: auto;
+    right: 6px;
+    bottom: 22px;
+    transform: rotate(90deg);
+  }
+
+  .home-v2-market-list li {
+    min-height: 0;
+  }
+
+  .home-v2-patent-visual,
+  .home-v2-patent-visual img {
+    min-height: 300px;
+  }
+}
 </style>
 </head>
 <body>
@@ -4494,6 +4985,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
+            <button type="button" class="submenu-link" data-target-page="news">News</button>
             <button type="button" class="submenu-link" data-target-page="technology">技術</button>
             <button type="button" class="submenu-link" data-target-page="ip">IP</button>
             <button type="button" class="submenu-link" data-target-page="product">製品</button>
@@ -4524,17 +5016,123 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="container">
-      <span class="hero-label">Software Defined Aircraft</span>
+      <span class="hero-label">ソフトウェア定義航空機</span>
       <h1 class="hero-h1">
-        <span class="typo-line">最もシンプルな航空機、</span>
-        <span class="typo-line">ソフトウェア定義航空機 Lambda。</span>
+        <span class="typo-line">世界初の非同期ティルトローター</span>
+        <span class="typo-line">アーキテクチャ。</span>
       </h1>
-      <p class="hero-p">部品点数を減らし、コストを抑えながら、貨物輸送から有人輸送へ展開します。</p>
+      <p class="hero-p">決定論的飛行制御により、航空機認証の複雑さ、製造コスト、事業化までの期間を削減します。</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=technology" data-route="technology">技術</a>
+        <a class="button secondary" href="?page=product" data-route="product">製品</a>
+        <a class="button secondary" href="?page=business" data-route="business">パートナーシップ</a>
+      </div>
     </div>
   </section>
 
-  
-<section class="visual-principles-section" id="S02B_TRANSLATION">
+  <section class="home-v2-section" id="HOME_PROOF">
+    <div class="container">
+      <div class="home-v2-stats" aria-label="Lambdaの主要指標">
+        <div class="home-v2-stat"><strong>8</strong><span>独立ティルト推進ユニット</span></div>
+        <div class="home-v2-stat"><strong>4</strong><span>機体クラス</span></div>
+        <div class="home-v2-stat"><strong>475 kg</strong><span>最大貨物ペイロード</span></div>
+        <div class="home-v2-stat"><strong>全飛行モード</strong><span>決定論的制御</span></div>
+      </div>
+      <p class="home-v2-refrain">決定論的飛行。より速い認証。より低いコスト。</p>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_WHY">
+    <div class="container home-v2-problem">
+      <blockquote>なぜ、新しい航空機が必要なのか。</blockquote>
+      <div class="home-v2-problem-copy">
+        <p>従来のeVTOLは、ますます複雑になっています。アクチュエータが増えるほどソフトウェアも増え、認証期間と製造コストも膨らみます。</p>
+        <p><strong>リシーブパワーは別の道を選びます。飛行そのものを単純化します。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_PATENT_FOUNDATION">
+    <div class="container home-v2-patent">
+      <figure class="home-v2-patent-visual">
+        <img src="assets/images/sda/sda-top-view-labeled.png" alt="非同期ティルト推進ユニットと機体構造を示すLambdaの上面図">
+      </figure>
+      <div>
+        <span class="eyebrow">特許技術基盤</span>
+        <h2 class="section-title">独立非同期ティルト推進</h2>
+        <p class="home-v2-intro">従来型の操縦翼面を使わずに飛行を制御します。同一規格の8基の推進ユニットを個別にティルトし、事前に検証した飛行モードをソフトウェアで切り替えます。</p>
+        <ul class="home-v2-benefits">
+          <li>認証の複雑さを低減</li>
+          <li>製造コストを削減</li>
+          <li>予測可能な決定論的制御</li>
+          <li>25kgから890kgまで拡張可能なアーキテクチャ</li>
+        </ul>
+        <a class="back-link" href="?page=ip" data-route="ip">特許技術をすべて見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_SCALE_PATH">
+    <div class="container">
+      <span class="eyebrow">機体クラス・認証ロードマップ</span>
+      <h2 class="section-title">ひとつの技術を4つの機体クラスへ展開</h2>
+      <p class="home-v2-intro">小型機で飛行遷移を検証し、同じアーキテクチャを貨物機と有人プラットフォームへ展開します。</p>
+      <div class="home-v2-roadmap">
+        <article class="home-v2-roadmap-step">
+          <strong>25kg級</strong>
+          <h3>飛行遷移の検証</h3>
+          <p>非同期ティルトと決定論的制御を実機で検証します。</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>220kg級</strong>
+          <h3>軽量有人・無人型への展開</h3>
+          <p>軽量クラスの運航と認証ルートを検証します。</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>599kg級</strong>
+          <h3>ペイロード300kgの無人貨物機</h3>
+          <p>継続運航と地域路線の経済性を検証します。</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>890kg級</strong>
+          <h3>PL 475kg無人貨物・4人乗り有人型への展開</h3>
+          <p>主力貨物プラットフォームから地域旅客輸送へ展開します。</p>
+        </article>
+      </div>
+      <a class="back-link" href="?page=product" data-route="product">製品と認証ルートを見る</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_MARKET_ENTRY">
+    <div class="container">
+      <span class="eyebrow">市場参入</span>
+      <h2 class="section-title">貨物から始め、地域航空へ展開します</h2>
+      <p class="home-v2-intro">貨物の継続運航で飛行データと収益を生み出し、同じプラットフォームを地域旅客輸送へ展開します。</p>
+      <ul class="home-v2-market-list">
+        <li>医療物流</li>
+        <li>緊急輸送</li>
+        <li>産業物流</li>
+        <li>島しょ地域輸送</li>
+        <li>地域旅客モビリティ</li>
+      </ul>
+      <a class="back-link" href="?page=market" data-route="market">市場と路線を見る</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_COMPANY_STATEMENT">
+    <div class="container home-v2-company">
+      <span class="eyebrow">リシーブパワー</span>
+      <h2 class="section-title">ソフトウェア定義航空機を開発します</h2>
+      <p>私たちの目標は、単に新たなeVTOLを作ることではありません。認証しやすく、製造コストが低く、複数の機体クラスへ拡張できる航空機アーキテクチャを開発します。</p>
+      <p class="home-v2-refrain">決定論的飛行。より速い認証。より低いコスト。</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=company" data-route="company">会社紹介</a>
+        <a class="button secondary" href="?page=news" data-route="news">最新情報</a>
+      </div>
+    </div>
+  </section>
+
+<section class="visual-principles-section" id="S02B_TRANSLATION" hidden>
     <div class="container">
       <div class="visual-principles-layout">
         <figure class="visual-principles-media">
@@ -4566,7 +5164,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
 
-  <section id="S01_WHY_DIFFERENT">
+  <section id="S01_WHY_DIFFERENT" hidden>
     <div class="container">
       <span class="eyebrow">何が違うのか</span>
       <h2 class="section-title">単純性・経済性・安全性 — <span>ひとつの特許構造から生まれます</span></h2>
@@ -4594,7 +5192,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
     </div>
   </section>
-  <section class="motion-section" id="S01A_MOTION">
+  <section class="motion-section" id="S01A_MOTION" hidden>
     <div class="container">
       <div class="motion-frame">
         <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA非同期ティルトローター飛行画像">
@@ -4607,7 +5205,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </div>
   </section>
   <!-- S04_TECH_POSITIONING -->
-  <section id="S04_TECH_POSITIONING">
+  <section id="S04_TECH_POSITIONING" hidden>
     <div class="container">
       <span class="eyebrow">技術</span>
       <h2 class="section-title">運航条件が <span>機体構造を決めます</span></h2>
@@ -4645,7 +5243,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S07_IP_CERTIFICATION -->
-  <section id="S07_IP_CERTIFICATION">
+  <section id="S07_IP_CERTIFICATION" hidden>
     <div class="container">
       <span class="eyebrow">IP</span>
       <h2 class="section-title">25件の特許ポートフォリオで安全運航とコストを守ります</h2>
@@ -4717,7 +5315,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
  
   <!-- S08_PHYSICAL_AI_HUMANOID -->
-  <section id="S08_PHYSICAL_AI_HUMANOID">
+  <section id="S08_PHYSICAL_AI_HUMANOID" hidden>
     <div class="container">
       <span class="eyebrow">Physical AI</span>
       <h2 class="section-title">航空機から始まり <span>実際の機械を動かすPhysical AIへ拡張します</span></h2>
@@ -4751,7 +5349,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S02_VISITOR_ROUTING -->
-  <section id="S02_VISITOR_ROUTING">
+  <section id="S02_VISITOR_ROUTING" hidden>
     <div class="container">
       <span class="eyebrow">協力</span>
       <h2 class="section-title">創造的な協力</h2>
@@ -4802,7 +5400,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="contact-info">
         <h3>技術協力を議論したい場合は<br>ご連絡ください。</h3>
         <p>
-          航空機設計・製作、Flight OS、物流路線、IPライセンス
+          航空機の設計・製作、Flight OS、物流路線、IPライセンス
         </p>
         <div style="font-size: 14px; color: var(--text-muted);">
           <strong>リシーブパワー</strong><br>
@@ -4821,10 +5419,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
           <div class="contact-copy-status" aria-live="polite"></div>
           <div class="kakao-contact-qr">
-            <img src="assets/images/contact/kakao-openchat-qr.jpg" alt="リシーブパワーKakaoTalk問い合わせQR">
+            <a href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer" aria-label="リシーブパワーのKakaoTalkオープンチャットを開く">
+              <img src="assets/images/contact/kakao-openchat-qr.jpg" alt="リシーブパワーKakaoTalk問い合わせ用QRコード">
+            </a>
             <div>
               <strong>KakaoTalkで問い合わせ</strong>
-              <span>モバイルではQRを長押しするか、別の端末でスキャンして問い合わせできます。</span>
+              <span>QRコードを読み取るか、下のボタンからKakaoTalkオープンチャットで直接お問い合わせいただけます。</span>
+              <a class="kakao-contact-open" href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer">KakaoTalkで問い合わせる</a>
             </div>
           </div>
         </div>
@@ -4837,7 +5438,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <div class="container footer-inner">
       <span class="logo-mark">R</span>
       <div class="footer-copy">
-        &copy; 2026 リシーブパワー。
+        &copy; 2026 リシーブパワー.
       </div>
     </div>
   </footer>
@@ -4902,6 +5503,35 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
   </main>
 
+<main class="page-view" data-page="news">
+    <section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Company News</span>
+        <h1>リシーブパワーの最新情報。</h1>
+        <p class="lead">技術、特許、製品開発、事業展開に関するニュースと報道をまとめています。</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="company">Companyに戻る</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Press Archive</span>
+          <h2>ニュース・報道</h2>
+        </div>
+        <div class="news-list" data-news-list="all"></div>
+      </div>
+    </section>
+  </main>
+
 <main class="page-view" data-page="ir">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
@@ -4924,10 +5554,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message" id="company-vc">
           <span class="label">VC</span>
-          <h2>認証スケジュール</h2>
+          <h2>認証を予測可能なプロセスへ</h2>
           <p>何年たっても終わらないeVTOLの認証。私たちは、設計段階から認証要件を満たせる構造を組み込みました。</p>
-          <p>注目すべきは認証です。認証プロセスを可視化し、スケジュールを予測可能にすることは不可能ではありません。</p>
-          <p>JobyのようなeVTOL企業の企業価値が揺れる理由は単純です。認証スケジュールを誰も確定できないからです。市場はこれを技術力の問題ではなく、「追加資金がどこまで必要になるか分からないリスク」と捉えています。</p>
+          <p>投資判断の中核となる変数は認証です。私たちは認証スケジュールを予測可能なものにしました。</p>
+          <p>eVTOL企業の評価額が揺れる理由は単純です。認証スケジュールを誰も確定できないからです。市場はこれを技術力の問題ではなく、追加資本がどれだけ必要になるか分からないリスクとみなしています。</p>
           <p>eVTOLは、次の2つのFAA認証要件を満たす必要があります。</p>
           <ul>
             <li>決定論的制御：DO-178C</li>
@@ -4947,7 +5577,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
 
         <article class="message" id="company-deeptech-individual">
-          <span class="label">個人ディープテック関心層</span>
+          <span class="label">個人投資家</span>
           <h2>空を新しく設計する技術</h2>
           <p>リシーブパワーは、AIとロボティクス技術を活用し、ソフトウェア定義航空機の発展経路を設計しています。機体構造から制御、生産、運航方式までを見直し、航空輸送をより効率的で利用しやすいものへ変えていきます。</p>
           <p>ディープテックに関心のある方なら、私たちが描くビジョンと技術の拡張性に共感していただけるはずです。個人投資参加に関する案内は準備でき次第、別途お知らせします。</p>
@@ -4960,7 +5590,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <span class="metric">1億ウォン</span>
-          <p>投資家にとっての初期資産単位です。1億ウォン級の機体が、フリート、運航ルートの事業権、MRO、Flight OSの売上へ広がる構造を示します。</p>
+          <p>投資家の視点で見た初期資産単位です。約1億ウォンの機体は、フリート、回廊運営権、MRO、Flight OSの収益構造へ展開します。</p>
         </article>
         <article class="message">
           <span class="metric">50億ウォン</span>
@@ -4994,13 +5624,25 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">なぜ今か</span>
           <h2>航空物流の原価がトラック水準まで下がる瞬間、物流地図は道路に沿って描かれるのではなく、目的地へ向かう直線で描き直されます。</h2>
-          <p>直線距離が物流網設計の新しい基準になります。500kg級ペイロードと最大1,000km航続は、航空ミッドマイル物流網を狙います。</p>
+          <p>直線距離が物流網設計の新たな基準になります。ペイロード475kg（500kg級）と最大1,000kmの航続距離で、航空ミドルマイル物流を狙います。</p>
         </article>
+      </div>
+    </section>
+
+    <section class="message-section" id="ir-news">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Recent News</span>
+          <h2>投資家向けの最新報道</h2>
+          <p>特許、認証、投資、事業展開に関する主なニュースです。</p>
+        </div>
+        <div class="news-list" data-news-list="ir"></div>
+        <a class="back-link" href="?page=news" data-route="news">ニュース・報道をすべて見る</a>
       </div>
     </section>
     <section class="cta-band" id="company-request">
       <div class="container cta-row">
-        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20materials%20request">IR資料を請求する</a>
+        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20資料%20請求">IR資料を請求する</a>
         <a class="button secondary" href="#" data-route="market">市場を見る</a>
       </div>
     </section>
@@ -5014,7 +5656,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">技術</span>
         <h1>Robotics Technology</h1>
-        <p class="lead">リシーブパワーは、現実の機械を動かすPhysical AI技術を開発しています。ロボットミドルウェア、産業制御、座標系、センサーフュージョン、仮想空間、ビジョン、マニピュレーション、接触制御、AIモデル、ワークセル、工場データ、安全、エンジニアリングシステムを、ひとつの実行基盤に統合します。</p>
+        <p class="lead">Lambdaを飛ばすのは空気力学だけではありません。リシーブパワーは、実際の機械を動かすPhysical AI技術をひとつの実行体系に統合し、その基盤の上にソフトウェア定義航空機を構築します。非同期ティルトローターや仮想操縦翼面など、航空機固有の技術はIPページで紹介します。</p>
       </div>
     </section>
 
@@ -5450,7 +6092,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">特許ポートフォリオ</span>
         <h1>5つの中核技術がコストと安全構造を変えます。</h1>
-        <p class="lead">世界初の非同期ティルトローター。リシーブパワーの5つの中核IPは、価格競争力、安全認証、保守性の各面で、独占的な競争力と高い参入障壁を形成します。</p>
+        <p class="lead">世界初の非同期ティルトローター・アーキテクチャ。リシーブパワーの5つのコア技術と約25件の特許ポートフォリオが、機体価格、安全・認証、保守の面で独自の競争力を生み出します。</p>
       </div>
     </section>
 
@@ -5549,7 +6191,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <span class="label">01</span>
               <h2>ティルトローターである理由：市場規模の拡張</h2>
               <p>都市航空市場へ参入するにはホバー離着陸能力が、広域移動市場へ展開するには長距離を飛べる翼が欠かせません。</p>
-              <p>飛行中に抵抗だけを生むデッドローターをなくすことで、運航効率を最大化できます。既存のティルトローター型eVTOL企業が、高い企業価値と同時に不確実性を抱える本質的な理由です。</p>
+              <p>飛行中に使われない推進ユニットがデッドローターとして残らないため、ホバー離着陸と固定翼巡航の効率をひとつの推進アーキテクチャで両立します。</p>
             </article>
             <article class="message">
               <span class="label">02</span>
@@ -5699,7 +6341,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <section class="message-section" id="S03_LAMBDA_PRODUCT">
     <div class="container">
       <span class="eyebrow">製品</span>
-      <h2 class="section-title">Lambdaは、予測可能な認証スケジュールと<span>貨物優先戦略で市場を切り拓きます</span></h2>
+      <h2 class="section-title">Lambdaは、予測可能な認証スケジュールと <span>貨物優先戦略で市場に参入します</span></h2>
 
       <div class="message-list product-intro-list" style="margin-bottom: 34px;">
         <article class="message">
@@ -5727,7 +6369,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>25kg級は無人機1モデルから始まります。220kg級、599kg級、890kg級はそれぞれ無人機と有人機に分かれ、機体クラスと運航目的に応じて認証・規制区分が異なります。</p>
         </div>
 
-        <!-- モデル画像確定時は各data-model-imageのsrcだけを交換する。未確定モデルはPart 103画像を暫定共通資産として使う。 -->
+        <!-- モデル別画像の確定後は、各data-model-imageのsrcのみを差し替える。未確定モデルにはPart 103画像を共通の仮素材として使用する。 -->
         <div class="message-list regulatory-model-list">
           <article class="message regulatory-model">
             <figure class="regulatory-model-media" data-model-image="spectator">
@@ -5769,7 +6411,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <ul class="data-list product-model-facts">
               <li><span>機体クラス</span><strong>220kg級</strong></li>
               <li><span>運用</span><strong>有人機</strong></li>
-              <li><span>座席数 / MTOW</span><strong>1人 / 220kg</strong></li>
+              <li><span>座席 / MTOW</span><strong>1人乗り / 220kg</strong></li>
               <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 103を検討</strong></li>
             </ul>
           </article>
@@ -5799,7 +6441,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <ul class="data-list product-model-facts">
               <li><span>機体クラス</span><strong>599kg級</strong></li>
               <li><span>運用</span><strong>有人機</strong></li>
-              <li><span>座席数 / MTOW</span><strong>未確定 / 599kg</strong></li>
+              <li><span>座席 / MTOW</span><strong>未確定 / 599kg</strong></li>
               <li><span>認証・規制区分</span><strong>FAA 14 CFR Part 22 · MOSAIC</strong></li>
             </ul>
           </article>
@@ -5829,7 +6471,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <ul class="data-list product-model-facts">
               <li><span>機体クラス</span><strong>890kg級</strong></li>
               <li><span>運用</span><strong>有人機</strong></li>
-              <li><span>座席数 / MTOW</span><strong>4人 / 890kg</strong></li>
+              <li><span>座席 / MTOW</span><strong>4人乗り / 890kg</strong></li>
               <li><span>認証・規制区分</span><strong>FAA AC 21.17-4 · Powered-lift</strong></li>
             </ul>
           </article>
@@ -5842,6 +6484,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
 
+    
     <section class="cta-band">
       <div class="container cta-row">
         <a class="button primary" href="#" data-route="technology">IPを見る</a>
@@ -5925,7 +6568,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             航空物流市場が成立するには、機体価格、エネルギー、整備、安全性、認証、稼働率のすべてを両立させる必要があります。Lambdaは、機体構造と運航ソフトウェアの両面から、これらのコスト要因を削減します。
           </p>
           <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
-            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">設計革新により機体原価と運航単価を大幅に下げました。</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">設計革新によって機体コストと運航単価を引き下げます。</div>
             <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">機体価格、整備負担、巡航エネルギー、稼働率は、ひとつの物流資産としての経済性に結びつきます。</div>
           </div>
         </div>
@@ -5969,6 +6612,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </div>
             <div class="bar-info">
               <span>マルチコプター特有のエネルギー制約を受けない長距離地域路線の実用化</span>
+              <span>地域路線の実用化</span>
             </div>
           </div>
         </div>
@@ -6069,7 +6713,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Operation JV</span>
           <h2>運航ジョイントベンチャー</h2>
-          <p>物流企業とは、航空物流ルートごとの共同フリート運営、路線への共同投資、運航データ蓄積、MRO、Flight OS運営を束ねたOperation JVを組成できます。パートナーが物流需要と拠点運営を担い、SDAが機体・運航ソフトウェア・耐空性維持データを統合することで、継続運航モデルを構築します。</p>
+          <p>物流企業とは、回廊ごとの共同フリート運営、路線への共同投資、運航データの蓄積、MRO、Flight OS運用を組み合わせたOperation JVを構成できます。パートナーは物流需要と拠点運営を提供し、リシーブパワーは機体、運航ソフトウェア、耐空性維持データを統合して継続運航モデルを構築します。</p>
         </article>
         <article class="message">
           <span class="label">Revenue Stack</span>
@@ -6393,14 +7037,97 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message" id="market-korea-local-government">
           <span class="label">韓国の地方自治体</span>
-          <h2>島は船を待ち、産業団地は道路に縛られています。一件の調査業務から始められます。</h2>
-          <p>韓国の自治体には、地域課題に合わせた航空物流PoC、専用機開発、都市航空交通基盤改善の調査業務を提案します。</p>
-          <ul class="data-list">
-            <li><span>第1段階・調査業務</span><strong>約2,000万ウォン／地域の地形・産業条件に合う航空物流路線分析</strong></li>
-            <li><span>第2段階・専用機の開発・製作</span><strong>約2億ウォン／Part 108・Part 22級の実証機開発</strong></li>
-            <li><span>第3段階・試験運航</span><strong>島しょ物流、医療検体、産業団地の緊急部品、港湾接続、観光・災害対応</strong></li>
-          </ul>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=regional%20demonstration%20partnership">地域路線について問い合わせる</a>
+          <h2>UAM事業は、離着陸場の整備より先に、機体・路線・経済性の検証から始めるべきです。</h2>
+          <p>リシーブパワーは、地域条件に合った路線と実証機を先に設計します。</p>
+          <div class="municipal-value-section">
+            <h3>地域航空物流が自治体にもたらす価値</h3>
+            <ul class="data-list municipal-value-list">
+              <li><span>地域課題の解決</span><strong>医療・交通・物流が脆弱な地域へのアクセスを改善し、住民サービスを強化します。</strong></li>
+              <li><span>政策成果の具体化</span><strong>地域衰退対策、救急医療、生活インフラ、スマートシティなどの政策成果を具体化できます。</strong></li>
+              <li><span>国費連携の基盤</span><strong>国の公募事業や国費・道府県費のマッチング事業を進めるための根拠を整えます。</strong></li>
+              <li><span>地域産業の育成</span><strong>運航・整備・教育拠点を通じて、地域航空産業と雇用の基盤を構築します。</strong></li>
+              <li><span>地域ブランドの向上</span><strong>国内初の航空物流実証を通じて、先進地域としてのブランドを確立できます。</strong></li>
+            </ul>
+          </div>
+          <div class="municipal-process">
+            <h3>実施プロセス</h3>
+            <div class="municipal-process-grid">
+              <section class="municipal-process-step">
+                <h4>第1段階 · 地域航空物流の実現可能性調査</h4>
+                <p class="municipal-process-meta">約2,000万ウォン · 約1か月</p>
+                <p>地域の地形、産業、物流需要を分析し、航空物流の導入可能性を検討します。</p>
+                <ul class="municipal-process-results">
+                  <li>対象路線の選定</li>
+                  <li>運航経済性の分析</li>
+                  <li>事業推進ロードマップ</li>
+                </ul>
+              </section>
+              <section class="municipal-process-step">
+                <h4>第2段階 · 実証機の開発と運航準備</h4>
+                <p class="municipal-process-meta">約5億ウォン · 約12か月</p>
+                <p>選定した路線と運用目的に合った実証機を開発し、運航準備を進めます。</p>
+                <ul class="municipal-process-results">
+                  <li>実証機</li>
+                  <li>試験飛行・運航データ</li>
+                  <li>認証対応資料</li>
+                </ul>
+              </section>
+              <section class="municipal-process-step">
+                <h4>第3段階 · 地域実証運航</h4>
+                <p>地域特性に合ったサービスを実運航で検証します。</p>
+                <ul class="municipal-process-results">
+                  <li>救急医療検体・医薬品輸送</li>
+                  <li>島しょ・山間地域の生活物流</li>
+                  <li>産業団地の緊急部品輸送</li>
+                  <li>災害対応支援</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div class="municipal-simulation">
+            <h3>自治体向けシミュレーション技術</h3>
+            <p class="municipal-simulation-intro">リシーブパワーは、機体を飛ばす前に路線と都市をシミュレーションします。</p>
+            <div class="municipal-simulation-grid">
+              <section class="municipal-simulation-item">
+                <h4>路線実現可能性シミュレーション</h4>
+                <p>地域地形、産業分布、貨物需要を入力し、航空物流路線の経済性を事前に算出します。</p>
+                <ul class="data-list">
+                  <li><span>構成</span><strong>距離、離着陸候補地、貨物種類、継続運航頻度</strong></li>
+                  <li><span>効果</span><strong>片道運航原価、損益分岐貨物量、路線優先順位を算出</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>UAM都市シミュレーション</h4>
+                <p>都市・地域上空に航路や離着陸場を配置する前に、騒音、安全、交通への影響を仮想空間で検証します。</p>
+                <ul class="data-list">
+                  <li><span>構成</span><strong>3D都市モデル、回廊設計、離着陸場候補地の配置</strong></li>
+                  <li><span>効果</span><strong>住民受容性の事前検討、許認可対応の根拠資料</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>デジタルツイン実証シミュレーション</h4>
+                <p>実機を飛ばす前に、仮想空間で動作・衝突・故障条件を検証します。</p>
+                <ul class="data-list">
+                  <li><span>構成</span><strong>Digital Twin, Physics Engine, Scenario Generation, Failure Replay</strong></li>
+                  <li><span>効果</span><strong>実証リスクの低減、認証機関提出用試験データの事前確保</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>収益性・運用シミュレーション</h4>
+                <p>回廊ごとのリース、整備、稼働率を組み合わせ、自治体と運航パートナーの投資回収構造を算出します。</p>
+                <ul class="data-list">
+                  <li><span>構成</span><strong>リース料、MRO費用、稼働率、Flight OSサブスクリプション</strong></li>
+                  <li><span>効果</span><strong>ライフサイクル売上の可能性、目標利益率、投資回収期間を算出</strong></li>
+                </ul>
+              </section>
+            </div>
+            <p class="municipal-simulation-connection">これら4つのシミュレーションは、<strong>第1段階の調査業務</strong>で一括して実施します。</p>
+          </div>
+          <div class="municipal-cta">
+            <h3>地域航空物流の検討相談</h3>
+            <p>地域条件を分析し、調査業務の範囲、日程、実施手順をご案内します。</p>
+            <a class="back-link" href="mailto:contact@rcvpower.com?subject=地域航空物流%20検討相談">地域航空物流の検討相談</a>
+          </div>
         </article>
       </div>
     </section>
@@ -6417,7 +7144,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <li><span>第3段階・組立・整備拠点</span><strong>現地組立、整備、運航人材の育成を検討</strong></li>
             <li><span>初期候補</span><strong>釜山港－日本本土の航空物流ルート、約200～215km／約50～59分</strong></li>
           </ul>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Japan%20local%20government%20partnership">日本地域での協力について問い合わせる</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=日本自治体%20連携相談">日本地域での協力について問い合わせる</a>
         </article>
       </div>
     </section>
@@ -6429,14 +7156,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h2>特許リスクを抑え、検証されたアーキテクチャ上で開発してください。</h2>
           <p>貴社の任務に合う機体を、25件の特許ポートフォリオとFlight OSを基盤に開発します。機体仕様の定義から認証データの蓄積まで伴走します。</p>
           <p>協力範囲は、特定任務向け機体仕様、ローター・推進配置、制御ソフトウェア、認証データ蓄積、地域運航モデル設計まで拡張できます。</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=technology%20partnership">技術パートナー協力について問い合わせる</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=技術パートナー%20連携相談">技術パートナー協力について問い合わせる</a>
         </article>
         <article class="message" id="business-robotics-company">
           <span class="label">ロボット・ヒューマノイド企業</span>
-          <h2>物流連携DXソリューション開発</h2>
-          <p>貴社のロボットに空路の区間をつなげます。SDAが拠点間を結び、地上ロボットが荷役、仕分け、移動、整備を担う構造です。</p>
+          <h2>貴社のロボットネットワークに空路を加えます。</h2>
+          <p>SDAが拠点間を結び、地上ロボットが荷役、仕分け、移動、整備を担う構造です。</p>
           <p>リシーブパワーのPhysical AIはセンサー融合、状態推定、制御、異常対応を中核とし、航空機制御から物流現場のロボットシステムへ拡張します。</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=robotics%20logistics%20partnership">ロボット物流連携について問い合わせる</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=ロボット物流%20連携相談">ロボット物流連携について問い合わせる</a>
         </article>
       </div>
     </section>
@@ -6446,14 +7173,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="business-logistics-company">
           <span class="label">物流企業</span>
           <h2>釜山－福岡の片道直接運航コストは約10万ウォン。この路線を共同保有するパートナーを募集します。</h2>
-          <p>物流企業には、単なる輸送委託ではなく、航空物流ルートごとの共同フリート運営と路線への共同投資を提案します。物流企業は実貨物需要、拠点運営、SLAを提供し、SDAは機体、運航ソフトウェア、耐空性維持データ、MROを統合します。</p>
+          <p>物流企業には、単なる輸送委託ではなく、回廊ごとの共同フリート運営と路線への共同投資を提案します。物流企業は実際の貨物需要、拠点運営、サービスレベル契約（SLA）を提供し、リシーブパワーは機体、運航ソフトウェア、耐空性維持データ、MROの仕組みを統合します。</p>
           <ul class="data-list">
             <li><span>物流企業の提供</span><strong>貨物需要、拠点運営、顧客SLA</strong></li>
             <li><span>リシーブパワーの提供</span><strong>機体、Flight OS、耐空性維持データ、MRO構造</strong></li>
             <li><span>初期航空物流ルートの例</span><strong>釜山－福岡 約200～215km／直接運航コスト 約9.6～10.4万ウォン</strong></li>
           </ul>
           <p>初期の航空物流ルートは、時間損失が輸送費を上回る区間から始めます。継続運航のデータが蓄積されれば、路線別リース、事業権、MRO、Flight OSの収益へ展開できます。</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=route%20profitability%20simulation">路線収益性シミュレーションを依頼</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=路線収益性%20シミュレーション依頼">路線収益性シミュレーションを依頼</a>
         </article>
       </div>
     </section>
@@ -6463,12 +7190,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">顧客価値</span>
           <h2>顧客が買うのは航空機ではありません。決められた時間内に貨物を届ける能力です。</h2>
-          <p>物流顧客が購入するのは、定められた時間内に、定められた重量を、指定拠点へ届ける能力です。Lambdaは500kg級ミドルマイルSLA、時間短縮効果、航空物流ルートごとの稼働率を中心に運用価値を生み出します。</p>
+          <p>物流顧客が購入するのは、指定時間内に指定重量を指定拠点へ運ぶ能力です。Lambdaは、ペイロード475kg（500kg級）のミドルマイルSLA、時間短縮効果、回廊ごとの継続運航率を中心に運用価値を生み出します。</p>
         </article>
         <article class="message kpi">
           <span class="label">貨物運航資産</span>
-          <span class="metric">1億ウォン</span>
-          <p>パートナー視点の導入資産単位です。自治体、運航会社、地域JVがリース・運航契約で回収構造を設計する基準です。</p>
+          <span class="metric">4,000万～1億ウォン</span>
+          <p>599kg級から890kg級までの貨物運航資産を基準としています。自治体、運航会社、地域JVは、リース・運航契約によって投資回収構造を設計できます。</p>
         </article>
 
         <article class="message kpi">
@@ -6491,7 +7218,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
         <article class="message">
           <h2>物流装備、輸送ネットワーク、ソフトウェアの結合</h2>
-          <p>Lambdaの事業構造は、自動化物流機器、輸送ネットワーク、ソフトウェア利用料を組み合わせたモデルです。顧客は500kg級航空ミドルマイルの輸送能力とSLAを購入します。</p>
+          <p>Lambdaの事業構造は、自動物流設備、輸送ネットワーク、ソフトウェアサブスクリプションを組み合わせたモデルです。顧客は、ペイロード475kg（500kg級）の航空ミドルマイル処理能力とSLAを購入します。</p>
         </article>
       </div>
 
@@ -6502,7 +7229,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">資産ロジック</span>
           <h2>機体は製品であると同時に長期運営資産です。</h2>
-          <p>1億ウォン級の機体がライフサイクルで50億ウォンの売上可能性を持つなら、継続運航、リース、路線運営、kg-km輸送量、Flight OS利用料、耐空性維持データサービスが長期収益モデルを形成します。</p>
+          <p>約1億ウォンの機体には、50億ウォンのライフサイクル売上の可能性があります。継続運航、リース、路線運営、kg-km処理量、Flight OSサブスクリプション、耐空性維持データサービスで構成されます。</p>
         </article>
         <article class="message">
           <span class="label">プラットフォーム運営</span>
@@ -6530,17 +7257,69 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           if (status) status.textContent = 'メールアドレスをコピーしました。';
         } catch (error) {
           window.prompt('メールアドレスをコピーしてください。', email);
-          if (status) status.textContent = '表示されたウィンドウからメールアドレスをコピーしてください。';
+          if (status) status.textContent = 'ダイアログからメールアドレスをコピーしてください。';
         }
       });
     });
   }
 
+  const NEWS_ITEMS = [
+    {
+      date: '2026.07.16',
+      source: 'マネートゥデイ',
+      title: "リシーブパワー、eVTOLの難題に対応する飛行制御特許を登録",
+      summary: 'リシーブパワーは、非同期順次ティルトと離散マトリクスによる飛行モード切替技術を基盤とした、eVTOL遷移飛行制御特許を登録しました。',
+      url: 'https://www.mt.co.kr/amp/industry/2026/07/16/2026071612022173830',
+      investor: true
+    }
+  ];
+
+  function createNewsItem(item) {
+    const article = document.createElement('article');
+    article.className = 'news-item';
+
+    const meta = document.createElement('div');
+    meta.className = 'news-item-meta';
+    const source = document.createElement('strong');
+    source.textContent = item.source;
+    const date = document.createElement('span');
+    date.textContent = item.date;
+    meta.append(source, date);
+
+    const body = document.createElement('div');
+    body.className = 'news-item-body';
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const summary = document.createElement('p');
+    summary.textContent = item.summary;
+    body.append(title, summary);
+
+    const link = document.createElement('a');
+    link.className = 'news-item-link';
+    link.href = item.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = '原文を見る ↗';
+
+    article.append(meta, body, link);
+    return article;
+  }
+
+  function renderNews() {
+    document.querySelectorAll('[data-news-list]').forEach((list) => {
+      const items = list.dataset.newsList === 'ir'
+        ? NEWS_ITEMS.filter((item) => item.investor).slice(0, 5)
+        : NEWS_ITEMS;
+      list.replaceChildren(...items.map(createNewsItem));
+    });
+  }
+
   (function () {
     initContactCopy();
+    renderNews();
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
-    const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
+    const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
 
