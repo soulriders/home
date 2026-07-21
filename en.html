@@ -1,13 +1,13 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <!--
     Core guidelines:
     1. Do not split words across line breaks.
-    2. Keep intermediate Home headings on one line.
-    3. Place a looping video in the first viewport, as on Archer's home page.
-    4. Use a representative background image at the top of each menu page.
-    5. Base the Company IR certification message on FAA 21.17-4 requirements and the 25-invention IP network.
+    2. Keep intermediate headings on the Home page to one line.
+    3. Place a looping video in the opening viewport.
+    4. Use representative media as the background at the top of each primary page.
+    5. On Company and IR pages, certification copy for VCs should reference direct compliance with FAA AC 21.17-4 requirements and the portfolio of 25 patents.
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -176,6 +176,166 @@ h1 {
 
 .message p {
   color: var(--text-muted);
+}
+
+.municipal-value-section,
+.municipal-process,
+.municipal-cta {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-value-section > h3,
+.municipal-process > h3,
+.municipal-cta > h3 {
+  margin-bottom: 10px;
+}
+
+.municipal-value-list {
+  margin-top: 20px;
+}
+
+.municipal-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 20px;
+}
+
+.municipal-process-step {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-process-step h4 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.municipal-process-meta {
+  margin-bottom: 12px;
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+.municipal-process-results {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.municipal-process-results::before {
+  content: "Deliverables";
+  display: block;
+  margin: 0 0 8px -20px;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.municipal-process-results li + li {
+  margin-top: 6px;
+}
+
+.municipal-cta p {
+  max-width: 760px;
+}
+
+.municipal-cta .back-link {
+  margin-top: 10px;
+}
+
+.news-list {
+  border-top: 1px solid var(--border-main);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.news-item-meta {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.news-item-meta strong {
+  display: block;
+  color: var(--text-main);
+}
+
+.news-item-body h3 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.news-item-body p {
+  margin: 0;
+}
+
+.news-item-link {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.municipal-simulation {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation > h3 {
+  margin-bottom: 8px;
+}
+
+.municipal-simulation-intro {
+  max-width: 760px;
+}
+
+.municipal-simulation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 24px;
+}
+
+.municipal-simulation-item {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-main);
+}
+
+.municipal-simulation-item h4 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.municipal-simulation-item .data-list {
+  margin-top: 14px;
+}
+
+.municipal-simulation-connection {
+  margin-top: 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-main);
+  color: var(--text-main) !important;
 }
 
 .narrative-single h3 {
@@ -443,6 +603,23 @@ h1 {
     text-align: left;
   }
 
+  .municipal-simulation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .municipal-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .news-item-link {
+    margin-top: 4px;
+  }
+
   .link-grid {
     grid-template-columns: 1fr;
   }
@@ -608,7 +785,7 @@ h1 {
       --font-mono: 'JetBrains Mono', monospace;
     }
 
-
+    
 
     
 
@@ -866,7 +1043,7 @@ h1 {
       line-height: 1.6;
     }
 
-    /* Lambda weight classes and regulatory tracks */
+    /* Lambda aircraft classes and regulatory pathways */
     .regulatory-model-section {
       margin: 56px 0 48px;
     }
@@ -1131,7 +1308,7 @@ h1 {
       margin-top: 6px;
     }
 
-    /* First Route (first market) */
+    /* First Route */
     .route-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1372,6 +1549,15 @@ h1 {
       object-fit: cover;
       background: #ffffff;
     }
+    .kakao-contact-qr > a:first-child {
+      display: block;
+      width: 132px;
+      border-radius: 8px;
+    }
+    .kakao-contact-qr > a:first-child:focus-visible {
+      outline: 3px solid var(--brand-primary);
+      outline-offset: 4px;
+    }
     .kakao-contact-qr strong {
       display: block;
       margin-bottom: 6px;
@@ -1384,6 +1570,20 @@ h1 {
       color: var(--text-muted);
       font-size: 14px;
       line-height: 1.6;
+    }
+    .kakao-contact-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 4px;
+      background: #fee500;
+      color: #191919;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
     }
     @media (max-width: 560px) {
       .kakao-contact-qr {
@@ -2385,7 +2585,7 @@ footer {
   }
 }
 
-/* Joby Archer benchmark design pass start */
+/* AAM benchmark design pass start */
 .topbar {
   top: 0;
   padding: 0;
@@ -3964,7 +4164,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   }
 }
 /* Media masking system end */
-/* Joby Archer benchmark design pass end */
+/* AAM benchmark design pass end */
 
 /* Visual masking execution pass 2026-07-13 start */
 .hero-sec {
@@ -4480,6 +4680,297 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   visibility: visible !important;
   transform: none !important;
 }
+
+/* Home v2: identity -> proof -> architecture -> scale -> market -> company */
+.home-v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.home-v2-actions .button {
+  min-width: 128px;
+  text-align: center;
+}
+
+.home-v2-section {
+  position: relative;
+}
+
+.home-v2-intro {
+  max-width: 820px;
+  margin-bottom: 34px;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.7;
+}
+
+.home-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-stat {
+  min-width: 0;
+  padding: 30px 22px;
+}
+
+.home-v2-stat + .home-v2-stat {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-stat strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1;
+}
+
+.home-v2-stat span {
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.home-v2-refrain {
+  margin-top: 28px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-v2-problem {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: end;
+}
+
+.home-v2-problem blockquote {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.home-v2-problem-copy p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.home-v2-problem-copy p + p {
+  margin-top: 18px;
+}
+
+.home-v2-patent {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.home-v2-patent-visual {
+  overflow: hidden;
+  min-height: 520px;
+  margin: 0;
+  background: #e9edf2;
+  clip-path: polygon(0 0, 100% 5%, 96% 100%, 0 94%);
+}
+
+.home-v2-patent-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.home-v2-benefits {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+}
+
+.home-v2-benefits li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-main);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.home-v2-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 36px;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step {
+  position: relative;
+  min-height: 210px;
+  padding: 30px 30px 28px 0;
+}
+
+.home-v2-roadmap-step + .home-v2-roadmap-step {
+  padding-left: 30px;
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-roadmap-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 28px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.home-v2-roadmap-step strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1;
+}
+
+.home-v2-roadmap-step h3 {
+  margin: 20px 0 8px;
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+.home-v2-roadmap-step p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.home-v2-market-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-main);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.home-v2-market-list li {
+  min-height: 130px;
+  padding: 24px 20px;
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home-v2-market-list li + li {
+  border-left: 1px solid var(--border-main);
+}
+
+.home-v2-company {
+  max-width: 920px;
+}
+
+.home-v2-company p {
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .home-v2-stats,
+  .home-v2-roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-stat:nth-child(3),
+  .home-v2-roadmap-step:nth-child(3) {
+    border-left: 0;
+  }
+
+  .home-v2-stat:nth-child(n+3),
+  .home-v2-roadmap-step:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-problem,
+  .home-v2-patent {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-market-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-market-list li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .home-v2-market-list li:nth-child(n+3) {
+    border-top: 1px solid var(--border-main);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-v2-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-v2-actions .button:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .home-v2-stats,
+  .home-v2-roadmap,
+  .home-v2-market-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-stat + .home-v2-stat,
+  .home-v2-roadmap-step + .home-v2-roadmap-step,
+  .home-v2-market-list li + li {
+    border-left: 0;
+    border-top: 1px solid var(--border-main);
+  }
+
+  .home-v2-roadmap-step,
+  .home-v2-roadmap-step + .home-v2-roadmap-step {
+    min-height: 0;
+    padding: 24px 38px 24px 0;
+  }
+
+  .home-v2-roadmap-step:not(:last-child)::after {
+    top: auto;
+    right: 6px;
+    bottom: 22px;
+    transform: rotate(90deg);
+  }
+
+  .home-v2-market-list li {
+    min-height: 0;
+  }
+
+  .home-v2-patent-visual,
+  .home-v2-patent-visual img {
+    min-height: 300px;
+  }
+}
 </style>
 </head>
 <body>
@@ -4494,9 +4985,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <div class="submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
+            <button type="button" class="submenu-link" data-target-page="news">News</button>
             <button type="button" class="submenu-link" data-target-page="technology">Technology</button>
             <button type="button" class="submenu-link" data-target-page="ip">IP</button>
-            <button type="button" class="submenu-link" data-target-page="product">Product</button>
+            <button type="button" class="submenu-link" data-target-page="product">Products</button>
             <button type="button" class="submenu-link" data-target-page="market">Market</button>
           </div>
         </div>
@@ -4524,17 +5016,123 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="container">
-      <span class="hero-label">Software Defined Aircraft</span>
+      <span class="hero-label">Software-Defined Aircraft</span>
       <h1 class="hero-h1">
-        <span class="typo-line">The simplest aircraft,</span>
-        <span class="typo-line">the software-defined aircraft Lambda.</span>
+        <span class="typo-line">The World's First Asynchronous Tiltrotor</span>
+        <span class="typo-line">Architecture.</span>
       </h1>
-      <p class="hero-p">Fewer parts and lower cost, carrying cargo first and people eventually.</p>
+      <p class="hero-p">Deterministic flight control reduces aircraft certification complexity, manufacturing cost, and time to commercialization.</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=technology" data-route="technology">Technology</a>
+        <a class="button secondary" href="?page=product" data-route="product">Products</a>
+        <a class="button secondary" href="?page=business" data-route="business">Partnership</a>
+      </div>
     </div>
   </section>
 
-  
-<section class="visual-principles-section" id="S02B_TRANSLATION">
+  <section class="home-v2-section" id="HOME_PROOF">
+    <div class="container">
+      <div class="home-v2-stats" aria-label="Lambda key metrics">
+        <div class="home-v2-stat"><strong>8</strong><span>Independent Tilting Propulsors</span></div>
+        <div class="home-v2-stat"><strong>4</strong><span>Aircraft Classes</span></div>
+        <div class="home-v2-stat"><strong>475 kg</strong><span>Maximum Cargo Payload</span></div>
+        <div class="home-v2-stat"><strong>All Flight Modes</strong><span>Deterministic Control</span></div>
+      </div>
+      <p class="home-v2-refrain">Deterministic Flight. Faster Certification. Lower Cost.</p>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_WHY">
+    <div class="container home-v2-problem">
+      <blockquote>Why Do We Need a New Aircraft?</blockquote>
+      <div class="home-v2-problem-copy">
+        <p>Conventional eVTOL aircraft are becoming increasingly complex. More actuators mean more software, longer certification schedules, and higher manufacturing costs.</p>
+        <p><strong>Receivepower takes a different approach. We simplify flight itself.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_PATENT_FOUNDATION">
+    <div class="container home-v2-patent">
+      <figure class="home-v2-patent-visual">
+        <img src="assets/images/sda/sda-top-view-labeled.png" alt="Top view of Lambda showing its asynchronous tilting propulsors and aircraft structure">
+      </figure>
+      <div>
+        <span class="eyebrow">Patent Foundation</span>
+        <h2 class="section-title">Independent Asynchronous Tilt Propulsion</h2>
+        <p class="home-v2-intro">Flight is controlled without conventional control surfaces. Eight identical propulsors tilt independently, while software switches between prevalidated flight modes.</p>
+        <ul class="home-v2-benefits">
+          <li>Lower certification complexity</li>
+          <li>Lower manufacturing cost</li>
+          <li>Predictable deterministic control</li>
+          <li>Scalable architecture from 25 kg to 890 kg</li>
+        </ul>
+        <a class="back-link" href="?page=ip" data-route="ip">Explore All Patent Technologies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_SCALE_PATH">
+    <div class="container">
+      <span class="eyebrow">Aircraft Class and Certification Roadmap</span>
+      <h2 class="section-title">One Technology Scales Across Four Aircraft Classes</h2>
+      <p class="home-v2-intro">We validate flight transition on a small aircraft, then scale the same architecture to cargo and crewed platforms.</p>
+      <div class="home-v2-roadmap">
+        <article class="home-v2-roadmap-step">
+          <strong>25 kg Class</strong>
+          <h3>Flight-Transition Validation</h3>
+          <p>Validates asynchronous tilting and deterministic control on a real aircraft.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>220 kg Class</strong>
+          <h3>Lightweight Crewed and Uncrewed Expansion</h3>
+          <p>Validates operations and regulatory pathways for the lightweight class.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>599 kg Class</strong>
+          <h3>Uncrewed Cargo with a 300 kg Payload</h3>
+          <p>Validates repeated operations and the economics of regional routes.</p>
+        </article>
+        <article class="home-v2-roadmap-step">
+          <strong>890 kg Class</strong>
+          <h3>475 kg-Payload Uncrewed Cargo and Four-Seat Crewed Expansion</h3>
+          <p>Expands from the primary cargo platform into regional passenger transport.</p>
+        </article>
+      </div>
+      <a class="back-link" href="?page=product" data-route="product">Explore Products and Regulatory Pathways</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_MARKET_ENTRY">
+    <div class="container">
+      <span class="eyebrow">Market Entry</span>
+      <h2 class="section-title">Start with Cargo. Expand into Regional Aviation.</h2>
+      <p class="home-v2-intro">Repeated cargo operations generate flight data and revenue, enabling the same platform to expand into regional passenger transport.</p>
+      <ul class="home-v2-market-list">
+        <li>Medical Logistics</li>
+        <li>Emergency Transport</li>
+        <li>Industrial Logistics</li>
+        <li>Island Transportation</li>
+        <li>Regional Passenger Mobility</li>
+      </ul>
+      <a class="back-link" href="?page=market" data-route="market">Explore Markets and Routes</a>
+    </div>
+  </section>
+
+  <section class="home-v2-section" id="HOME_COMPANY_STATEMENT">
+    <div class="container home-v2-company">
+      <span class="eyebrow">Receivepower</span>
+      <h2 class="section-title">We Develop Software-Defined Aircraft</h2>
+      <p>Our mission is not simply to build another eVTOL. We are creating an aircraft architecture that is easier to certify, less expensive to manufacture, and scalable across multiple aircraft classes.</p>
+      <p class="home-v2-refrain">Deterministic Flight. Faster Certification. Lower Cost.</p>
+      <div class="home-v2-actions">
+        <a class="button primary" href="?page=company" data-route="company">Company</a>
+        <a class="button secondary" href="?page=news" data-route="news">Latest News</a>
+      </div>
+    </div>
+  </section>
+
+<section class="visual-principles-section" id="S02B_TRANSLATION" hidden>
     <div class="container">
       <div class="visual-principles-layout">
         <figure class="visual-principles-media">
@@ -4566,7 +5164,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
 
-  <section id="S01_WHY_DIFFERENT">
+  <section id="S01_WHY_DIFFERENT" hidden>
     <div class="container">
       <span class="eyebrow">Why It Is Different</span>
       <h2 class="section-title">Simplicity, economics, and safety — <span>come from one patented structure</span></h2>
@@ -4594,7 +5192,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
     </div>
   </section>
-  <section class="motion-section" id="S01A_MOTION">
+  <section class="motion-section" id="S01A_MOTION" hidden>
     <div class="container">
       <div class="motion-frame">
         <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA asynchronous tiltrotor in flight">
@@ -4607,7 +5205,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </div>
   </section>
   <!-- S04_TECH_POSITIONING -->
-  <section id="S04_TECH_POSITIONING">
+  <section id="S04_TECH_POSITIONING" hidden>
     <div class="container">
       <span class="eyebrow">Technology</span>
       <h2 class="section-title">Operating conditions <span>define the aircraft structure</span></h2>
@@ -4645,7 +5243,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S07_IP_CERTIFICATION -->
-  <section id="S07_IP_CERTIFICATION">
+  <section id="S07_IP_CERTIFICATION" hidden>
     <div class="container">
       <span class="eyebrow">IP</span>
       <h2 class="section-title">A 25-invention patent network protects safe operation and cost.</h2>
@@ -4717,7 +5315,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
  
   <!-- S08_PHYSICAL_AI_HUMANOID -->
-  <section id="S08_PHYSICAL_AI_HUMANOID">
+  <section id="S08_PHYSICAL_AI_HUMANOID" hidden>
     <div class="container">
       <span class="eyebrow">Physical AI</span>
       <h2 class="section-title">Starting with aircraft, <span>it expands into Physical AI that moves real machines</span></h2>
@@ -4751,7 +5349,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
   <!-- S02_VISITOR_ROUTING -->
-  <section id="S02_VISITOR_ROUTING">
+  <section id="S02_VISITOR_ROUTING" hidden>
     <div class="container">
       <span class="eyebrow">Partnership</span>
       <h2 class="section-title">Creative Partnerships</h2>
@@ -4821,10 +5419,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
           <div class="contact-copy-status" aria-live="polite"></div>
           <div class="kakao-contact-qr">
-            <img src="assets/images/contact/kakao-openchat-qr.jpg" alt="Receivepower KakaoTalk inquiry QR">
+            <a href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer" aria-label="Open Receivepower KakaoTalk chat">
+              <img src="assets/images/contact/kakao-openchat-qr.jpg" alt="QR code for contacting Receivepower on KakaoTalk">
+            </a>
             <div>
               <strong>KakaoTalk Inquiry</strong>
-              <span>On mobile, long-press the QR code or scan it from another device to contact us.</span>
+              <span>Scan the QR code or use the button below to contact us directly through KakaoTalk Open Chat.</span>
+              <a class="kakao-contact-open" href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer">Open KakaoTalk Inquiry</a>
             </div>
           </div>
         </div>
@@ -4902,6 +5503,35 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
   </main>
 
+<main class="page-view" data-page="news">
+    <section class="hero video-hero">
+      <div class="subpage-hero-video" aria-hidden="true">
+        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Company News</span>
+        <h1>News from Receivepower.</h1>
+        <p class="lead">News and media coverage on our technology, patents, product development, and business expansion.</p>
+      </div>
+    </section>
+
+    <section class="subnav-section">
+      <div class="container">
+        <a class="back-link" href="#" data-route="company">Back to Company</a>
+      </div>
+    </section>
+
+    <section class="message-section">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Press Archive</span>
+          <h2>News and Press</h2>
+        </div>
+        <div class="news-list" data-news-list="all"></div>
+      </div>
+    </section>
+  </main>
+
 <main class="page-view" data-page="ir">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
@@ -4924,10 +5554,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message" id="company-vc">
           <span class="label">VC</span>
-          <h2>Certification Schedule</h2>
+          <h2>Certification: A Predictable Process</h2>
           <p>eVTOL certification has dragged on for years — we addressed the certification requirements at the design stage.</p>
-          <p>Certification is what matters most here. Transparent, predictable certification is not out of reach.</p>
-          <p>The reason the valuations of eVTOL companies like Joby fluctuate is simple: no one can lock down the certification schedule. The market reads this not as a technology risk, but as uncertainty over how much more capital will be burned.</p>
+          <p>Certification is the central variable in an investment decision. We have made the certification schedule predictable.</p>
+          <p>The reason eVTOL company valuations fluctuate is simple: no one can confirm the certification schedule. The market sees this not as a question of technical capability, but as the risk of not knowing how much more capital will be consumed.</p>
           <p>eVTOL must pass the following two FAA regulatory requirements.</p>
           <ul>
             <li>Deterministic control: DO-178C</li>
@@ -4947,7 +5577,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
 
         <article class="message" id="company-deeptech-individual">
-          <span class="label">Individual Deep-Tech Audience</span>
+          <span class="label">Individual Investors</span>
           <h2>Technology that redesigns the sky</h2>
           <p>Receivepower uses AI and robotics to design the expansion path of software-defined aircraft. From aircraft structure to control, production, and operation, we rewrite the fundamentals so aviation can operate in a more efficient and accessible way.</p>
           <p>If you're interested in deep tech, you'll likely resonate with the vision and technical scalability we're building. Information on individual investment participation will be provided separately when ready.</p>
@@ -4960,7 +5590,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message">
           <span class="metric">KRW 100 million</span>
-          <p>This is the initial asset unit from an investor perspective. A KRW 100 million aircraft expands into fleets, corridor operating rights, MRO, and Flight OS revenue.</p>
+          <p>This is the initial asset unit from an investor's perspective. An aircraft priced at approximately KRW 100 million expands into fleet, corridor operating rights, MRO, and Flight OS revenue.</p>
         </article>
         <article class="message">
           <span class="metric">KRW 5 billion</span>
@@ -4994,13 +5624,25 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Why Now</span>
           <h2>Once air logistics costs fall to truck level, the logistics map is redrawn — no longer along roads, but in straight lines toward destinations.</h2>
-          <p>Straight-line distance becomes the new basis for logistics network design. A 500 kg payload class and up to 1,000 km range target an air mid-mile logistics network.</p>
+          <p>Straight-line distance becomes the new basis for logistics-network design. A 475 kg payload in the 500 kg class and up to 1,000 km of range target the air mid-mile logistics market.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="message-section" id="ir-news">
+      <div class="container">
+        <div class="section-title">
+          <span class="label">Recent News</span>
+          <h2>Recent Coverage for Investors</h2>
+          <p>Key news related to patents, certification, investment, and business expansion.</p>
+        </div>
+        <div class="news-list" data-news-list="ir"></div>
+        <a class="back-link" href="?page=news" data-route="news">View All News and Press</a>
       </div>
     </section>
     <section class="cta-band" id="company-request">
       <div class="container cta-row">
-        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20materials%20request">Request IR Materials</a>
+        <a class="button primary" href="mailto:contact@rcvpower.com?subject=IR%20Materials%20Request">Request IR Materials</a>
         <a class="button secondary" href="#" data-route="market">View Market</a>
       </div>
     </section>
@@ -5014,7 +5656,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">Technology</span>
         <h1>Robotics Technology</h1>
-        <p class="lead">Receivepower works on Physical AI technology that moves real machines. Robot middleware, industrial control, coordinate systems, sensor fusion, virtual space, vision, manipulation, contact control, AI models, workcells, factory data, safety, and engineering systems are connected into one execution framework.</p>
+        <p class="lead">Aerodynamics alone do not make Lambda fly. Receivepower connects the Physical AI technologies that move real machines into a single execution system, then builds software-defined aircraft on that foundation. Aircraft-specific technologies such as the asynchronous tiltrotor and virtual control surfaces are covered on the IP page.</p>
       </div>
     </section>
 
@@ -5450,7 +6092,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container">
         <span class="eyebrow">Patent Portfolio</span>
         <h1>Five core technologies change the cost and safety structure.</h1>
-        <p class="lead">The world’s first asynchronous tiltrotor. Receivepower’s five core IP moats create exclusive competitive strength in price, safety certification track, and maintenance.</p>
+        <p class="lead">The world's first asynchronous tiltrotor architecture. Receivepower's five core technologies and portfolio of approximately 25 patents create exclusive advantages in aircraft price, safety and certification, and maintenance.</p>
       </div>
     </section>
 
@@ -5549,7 +6191,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <span class="label">01</span>
               <h2>Why Tiltrotor: Expanding Market Size</h2>
               <p>To enter the urban air market, hover takeoff and landing capability is essential; to expand into wider mobility markets, wings that can fly far are essential.</p>
-              <p>Operational efficiency is maximized when there are no dead rotors creating only drag in flight. This is the fundamental reason existing tiltrotor-based eVTOL companies carry both high valuations and uncertainty.</p>
+              <p>No unused propulsor remains as a dead rotor in flight, allowing one propulsion architecture to deliver both hover takeoff and landing and efficient fixed-wing cruise.</p>
             </article>
             <article class="message">
               <span class="label">02</span>
@@ -5699,7 +6341,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   <section class="message-section" id="S03_LAMBDA_PRODUCT">
     <div class="container">
       <span class="eyebrow">Product</span>
-      <h2 class="section-title">Lambda approaches the market with <span>a predictable certification schedule and a cargo-first strategy</span></h2>
+      <h2 class="section-title">Lambda approaches the market with <span>a cargo-first strategy</span></h2>
 
       <div class="message-list product-intro-list" style="margin-bottom: 34px;">
         <article class="message">
@@ -5727,7 +6369,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>The 25 kg class begins as one uncrewed type. The 220 kg, 599 kg, and 890 kg classes divide into uncrewed and crewed types, and the regulatory track differs by class and operating purpose.</p>
         </div>
 
-        <!-- When model images are finalized, replace only each data-model-image src. Unconfirmed models use the Part 103 image as a shared temporary asset. -->
+        <!-- When model-specific images are finalized, replace only each data-model-image src. Unconfirmed models use the Part 103 image as a shared temporary asset. -->
         <div class="message-list regulatory-model-list">
           <article class="message regulatory-model">
             <figure class="regulatory-model-media" data-model-image="spectator">
@@ -5842,6 +6484,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </section>
 
 
+    
     <section class="cta-band">
       <div class="container cta-row">
         <a class="button primary" href="#" data-route="technology">View IP</a>
@@ -5925,7 +6568,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             Air logistics opens only when aircraft cost, energy, maintenance, safety, certification, and utilization all align. Lambda reduces these cost layers through airframe structure and operating software together.
           </p>
           <div style="background: #f5f5f7; border: 1px solid var(--border-main); padding: 20px; border-radius: 12px;">
-            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">Design innovation dramatically lowers aircraft cost and operating cost.</div>
+            <div style="font-size: 32px; font-weight: 700; color: var(--text-main); font-family: var(--font-display);">Design innovation lowers both aircraft cost and operating cost.</div>
             <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Aircraft cost, maintenance burden, cruise energy, and utilization are tied into one logistics-asset economics.</div>
           </div>
         </div>
@@ -6070,7 +6713,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Operation JV</span>
           <h2>Operation Joint Venture</h2>
-          <p>With logistics companies, we can form Operation JVs combining shared fleet operation, route co-investment, flight-data accumulation, MRO, and Flight OS. Partners provide demand and hub operations; SDA combines aircraft, operating software, and continuing-airworthiness data into a repeatable operating model.</p>
+          <p>With logistics companies, we can form Operation JVs combining shared fleet operations by corridor, route co-investment, flight-data accumulation, MRO, and Flight OS operations. Partners provide logistics demand and hub operations, while Receivepower combines aircraft, operating software, and continuing-airworthiness data into a repeatable operating model.</p>
         </article>
         <article class="message">
           <span class="label">Revenue Stack</span>
@@ -6394,14 +7037,97 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="container message-list">
         <article class="message" id="market-korea-local-government">
           <span class="label">Korean Local Governments</span>
-          <h2>Islands wait for ships, and industrial parks are bound to roads. A single research project can be the starting point.</h2>
-          <p>For Korean local governments, we propose air-logistics PoCs, dedicated-aircraft development, and research projects tailored to local challenges.</p>
-          <ul class="data-list">
-            <li><span>Phase 1 · Research</span><strong>Approx. KRW 20 million / air-logistics route analysis for local terrain and industry</strong></li>
-            <li><span>Phase 2 · Dedicated Aircraft Development</span><strong>Approx. KRW 200 million / demonstrator development to Part 108 and Part 22 class</strong></li>
-            <li><span>Phase 3 · Demonstration Operation</span><strong>Island logistics, medical samples, urgent industrial parts, port links, tourism and disaster response</strong></li>
-          </ul>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=regional%20demonstration%20partnership">Ask About a Regional Route</a>
+          <h2>A UAM program should begin by validating the aircraft, route, and economics before building vertiports.</h2>
+          <p>Receivepower first designs the route and demonstrator aircraft around local conditions.</p>
+          <div class="municipal-value-section">
+            <h3>What Regional Air Logistics Delivers to Local Governments</h3>
+            <ul class="data-list municipal-value-list">
+              <li><span>Solve Local Challenges</span><strong>Improve access in underserved medical, transport, and logistics areas while strengthening public services.</strong></li>
+              <li><span>Deliver Measurable Policy Outcomes</span><strong>Turn regional-decline response, emergency care, community infrastructure, and smart-city policy into measurable outcomes.</strong></li>
+              <li><span>Build a Basis for National Funding</span><strong>Create the evidence needed for national programs and matched national and provincial funding.</strong></li>
+              <li><span>Develop Regional Industry</span><strong>Build a regional aviation industry and employment base through operations, maintenance, and training hubs.</strong></li>
+              <li><span>Strengthen the Regional Brand</span><strong>Establish an innovation-city identity through a pioneering domestic air-logistics demonstration.</strong></li>
+            </ul>
+          </div>
+          <div class="municipal-process">
+            <h3>Program Process</h3>
+            <div class="municipal-process-grid">
+              <section class="municipal-process-step">
+                <h4>Phase 1 · Regional Air-Logistics Feasibility Study</h4>
+                <p class="municipal-process-meta">Approximately KRW 20 million · Approximately 1 month</p>
+                <p>Analyze local terrain, industry, and logistics demand to assess the feasibility of air logistics.</p>
+                <ul class="municipal-process-results">
+                  <li>Select target routes</li>
+                  <li>Analyze operating economics</li>
+                  <li>Develop an implementation roadmap</li>
+                </ul>
+              </section>
+              <section class="municipal-process-step">
+                <h4>Phase 2 · Demonstrator Aircraft Development and Preparation</h4>
+                <p class="municipal-process-meta">Approximately KRW 500 million · Approximately 12 months</p>
+                <p>Develop a demonstrator aircraft for the selected route and mission, then prepare it for operations.</p>
+                <ul class="municipal-process-results">
+                  <li>Demonstrator aircraft</li>
+                  <li>Flight-test and operational data</li>
+                  <li>Certification support materials</li>
+                </ul>
+              </section>
+              <section class="municipal-process-step">
+                <h4>Phase 3 · Regional Demonstration Operations</h4>
+                <p>Validate services tailored to regional needs through actual operations.</p>
+                <ul class="municipal-process-results">
+                  <li>Emergency medical specimen and pharmaceutical transport</li>
+                  <li>Everyday logistics for islands and mountain communities</li>
+                  <li>Urgent industrial-complex parts transport</li>
+                  <li>Disaster-response support</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div class="municipal-simulation">
+            <h3>Simulation Technologies for Local Governments</h3>
+            <p class="municipal-simulation-intro">Before flying an aircraft, Receivepower first simulates the route and the city.</p>
+            <div class="municipal-simulation-grid">
+              <section class="municipal-simulation-item">
+                <h4>Route-Feasibility Simulation</h4>
+                <p>Model local terrain, industrial distribution, and cargo demand to calculate route economics in advance.</p>
+                <ul class="data-list">
+                  <li><span>Inputs</span><strong>Distance, candidate takeoff and landing sites, cargo type, and operating frequency</strong></li>
+                  <li><span>Outputs</span><strong>One-way operating cost, break-even cargo volume, and route priorities</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>UAM City Simulation</h4>
+                <p>Before placing corridors and takeoff and landing sites over cities and regions, validate noise, safety, and traffic impacts in a virtual environment.</p>
+                <ul class="data-list">
+                  <li><span>Inputs</span><strong>3D city model, corridor design, and candidate takeoff and landing sites</strong></li>
+                  <li><span>Outputs</span><strong>Early review of community acceptance and evidence for permitting</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>Digital-Twin Demonstration Simulation</h4>
+                <p>Before flying the actual aircraft, validate motion, collision, and failure conditions in a virtual environment.</p>
+                <ul class="data-list">
+                  <li><span>Inputs</span><strong>Digital Twin, Physics Engine, Scenario Generation, Failure Replay</strong></li>
+                  <li><span>Outputs</span><strong>Lower demonstration risk and prepare test data for certification authorities in advance</strong></li>
+                </ul>
+              </section>
+              <section class="municipal-simulation-item">
+                <h4>Profitability and Operations Simulation</h4>
+                <p>Combine lease, maintenance, and utilization assumptions by corridor to calculate the return structure for local governments and operating partners.</p>
+                <ul class="data-list">
+                  <li><span>Inputs</span><strong>Lease payments, MRO cost, utilization, and Flight OS subscription</strong></li>
+                  <li><span>Outputs</span><strong>Lifecycle revenue potential, target margin, and payback period</strong></li>
+                </ul>
+              </section>
+            </div>
+            <p class="municipal-simulation-connection">These four simulations are performed together during the <strong>Phase 1 feasibility study</strong>.</p>
+          </div>
+          <div class="municipal-cta">
+            <h3>Request a Regional Air-Logistics Review</h3>
+            <p>We analyze local conditions and explain the scope, schedule, and process of the feasibility study.</p>
+            <a class="back-link" href="mailto:contact@rcvpower.com?subject=Regional%20Air%20Logistics%20Review">Request a Regional Air-Logistics Review</a>
+          </div>
         </article>
       </div>
     </section>
@@ -6418,7 +7144,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <li><span>Phase 3 · Assembly and MRO Hub</span><strong>Plan local assembly, maintenance, and operator training</strong></li>
             <li><span>Initial Candidate</span><strong>Busan Port–Japan mainland corridor, approx. 200–215 km / 50–59 minutes</strong></li>
           </ul>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Japan%20local%20government%20partnership">Ask About Partnership in Japan</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Japan%20Local%20Government%20Partnership">Ask About Partnership in Japan</a>
         </article>
       </div>
     </section>
@@ -6430,14 +7156,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h2>Develop on a validated architecture without starting from the IP problem.</h2>
           <p>We develop aircraft for your mission on a 25-invention IP network and Flight OS, from specification through certification-data accumulation.</p>
           <p>Collaboration can extend from mission-specific aircraft specifications to rotor and propulsion layout, control software, certification data, and regional operating models.</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=technology%20partnership">Ask About Technology Partnership</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Technology%20Partnership">Ask About Technology Partnership</a>
         </article>
         <article class="message" id="business-robotics-company">
           <span class="label">Robotics and Humanoid Companies</span>
-          <h2>Logistics-Connected DX Solutions</h2>
-          <p>Connect an aerial segment to your robots. SDA links hubs while ground robots handle loading, sorting, movement, and maintenance.</p>
+          <h2>Add an Aerial Leg to Your Robotics Network.</h2>
+          <p>SDA connects hubs while ground robots handle unloading, sorting, movement, and maintenance.</p>
           <p>Receivepower's Physical AI centers on sensor fusion, state estimation, control, and anomaly response, extending from aircraft control into logistics robotics.</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=robotics%20logistics%20partnership">Ask About Robotics-Logistics Integration</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Robotics%20Logistics%20Integration">Ask About Robotics-Logistics Integration</a>
         </article>
       </div>
     </section>
@@ -6447,14 +7173,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message" id="business-logistics-company">
           <span class="label">Logistics Companies</span>
           <h2>Busan–Fukuoka direct one-way operating cost: about KRW 100,000. We are looking for partners to co-own this route.</h2>
-          <p>We propose shared fleet operations and route co-investment, not simple outsourced transport. Logistics partners provide cargo demand, hub operations, and SLAs; SDA combines aircraft, operating software, continuing-airworthiness data, and MRO.</p>
+          <p>For logistics companies, we propose shared fleet operations and route co-investment by corridor rather than a simple transport contract. The logistics partner provides real cargo demand, hub operations, and service-level agreements, while Receivepower combines the aircraft, operating software, continuing-airworthiness data, and MRO structure.</p>
           <ul class="data-list">
             <li><span>Logistics Partner Provides</span><strong>Cargo demand, hub operations, customer SLA</strong></li>
             <li><span>Receivepower Provides</span><strong>Aircraft, Flight OS, continuing-airworthiness data, MRO structure</strong></li>
             <li><span>Initial Corridor Example</span><strong>Busan–Fukuoka approx. 200–215 km / direct operating cost approx. KRW 96,000–104,000</strong></li>
           </ul>
           <p>Initial corridors begin where time loss costs more than transport. As recurring flight data accumulates, revenue can expand into route leasing, operating rights, MRO, and Flight OS.</p>
-          <a class="back-link" href="mailto:contact@rcvpower.com?subject=route%20profitability%20simulation">Request Route-Profitability Simulation</a>
+          <a class="back-link" href="mailto:contact@rcvpower.com?subject=Route%20Profitability%20Simulation">Request Route-Profitability Simulation</a>
         </article>
       </div>
     </section>
@@ -6464,12 +7190,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Customer Value</span>
           <h2>Customers aren't buying an aircraft. They're buying the ability to deliver cargo on time.</h2>
-          <p>Logistics customers buy the ability to move a specified weight to a specified hub within a specified time. Lambda creates operating value through 500 kg-class mid-mile SLAs, time savings, and recurring corridor utilization.</p>
+          <p>Logistics customers buy the ability to move a specified weight to a specified hub within a specified time. Lambda creates operating value through a 475 kg-payload mid-mile SLA in the 500 kg class, time savings, and repeat operating rates by corridor.</p>
         </article>
         <article class="message kpi">
           <span class="label">Cargo Operating Asset</span>
-          <span class="metric">KRW 100 million</span>
-          <p>The deployment asset unit from a partner perspective, providing a basis for local governments, operators, and regional JVs to structure returns through lease and operating contracts.</p>
+          <span class="metric">KRW 40–100 million</span>
+          <p>This range covers cargo operating assets from the 599 kg class to the 890 kg class. Local governments, operators, and regional JVs can structure returns through lease and operating contracts.</p>
         </article>
 
         <article class="message kpi">
@@ -6492,7 +7218,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
         <article class="message">
           <h2>Combining Logistics Equipment, Transport Networks, and Software</h2>
-          <p>Lambda combines automated logistics equipment, transport networks, and software subscriptions. Customers purchase 500 kg-class air mid-mile throughput and SLAs.</p>
+          <p>Lambda's business structure combines automated logistics equipment, transport networks, and software subscriptions. Customers purchase 475 kg-payload air mid-mile throughput in the 500 kg class and its SLA.</p>
         </article>
       </div>
 
@@ -6503,7 +7229,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Asset Logic</span>
           <h2>The aircraft is both a product and a long-term operating asset.</h2>
-          <p>If a KRW 100 million aircraft has KRW 5 billion in lifecycle revenue potential, recurring operation, leasing, route management, kg-km throughput, Flight OS subscriptions, and continuing-airworthiness data create the long-term revenue structure.</p>
+          <p>An aircraft priced at approximately KRW 100 million has lifecycle revenue potential of KRW 5 billion, built from repeated operations, leasing, route operations, kg-km throughput, Flight OS subscriptions, and continuing-airworthiness data services.</p>
         </article>
         <article class="message">
           <span class="label">Platform Operation</span>
@@ -6537,11 +7263,63 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     });
   }
 
+  const NEWS_ITEMS = [
+    {
+      date: '2026.07.16',
+      source: 'MoneyToday',
+      title: "Receivepower Registers Flight-Control Patent Addressing a Key eVTOL Challenge",
+      summary: 'Receivepower has registered a patent for eVTOL transition-flight control based on asynchronous sequential tilting and discrete-matrix flight-mode switching.',
+      url: 'https://www.mt.co.kr/amp/industry/2026/07/16/2026071612022173830',
+      investor: true
+    }
+  ];
+
+  function createNewsItem(item) {
+    const article = document.createElement('article');
+    article.className = 'news-item';
+
+    const meta = document.createElement('div');
+    meta.className = 'news-item-meta';
+    const source = document.createElement('strong');
+    source.textContent = item.source;
+    const date = document.createElement('span');
+    date.textContent = item.date;
+    meta.append(source, date);
+
+    const body = document.createElement('div');
+    body.className = 'news-item-body';
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const summary = document.createElement('p');
+    summary.textContent = item.summary;
+    body.append(title, summary);
+
+    const link = document.createElement('a');
+    link.className = 'news-item-link';
+    link.href = item.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = 'Read the Original ↗';
+
+    article.append(meta, body, link);
+    return article;
+  }
+
+  function renderNews() {
+    document.querySelectorAll('[data-news-list]').forEach((list) => {
+      const items = list.dataset.newsList === 'ir'
+        ? NEWS_ITEMS.filter((item) => item.investor).slice(0, 5)
+        : NEWS_ITEMS;
+      list.replaceChildren(...items.map(createNewsItem));
+    });
+  }
+
   (function () {
     initContactCopy();
+    renderNews();
     const pages = Array.from(document.querySelectorAll('.page-view[data-page]'));
     const navLinks = Array.from(document.querySelectorAll('[data-target-page]'));
-    const validPages = ['home', 'company', 'ir', 'technology', 'ip', 'product', 'market', 'business'];
+    const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
 
