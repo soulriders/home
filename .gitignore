@@ -1,0 +1,18 @@
+# 3D/CAD and fabrication assets stay outside Git.
+*.stl
+*.obj
+*.fbx
+*.blend
+*.3dm
+*.step
+*.stp
+*.iges
+*.igs
+*.gltf
+*.glb
+*.3ds
+*.dae
+*.sldprt
+*.sldasm
+*.3mf
+*.gcode
