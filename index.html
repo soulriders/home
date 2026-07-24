@@ -1828,6 +1828,27 @@ body::after {
   font-weight: 800;
 }
 
+.nav-item > .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-item > .nav-link::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.nav-item.is-open > .nav-link::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
 .submenu {
   position: absolute;
   top: calc(100% + 14px);
@@ -1850,8 +1871,18 @@ body::after {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+
 .nav-item:hover .submenu,
-.nav-item:focus-within .submenu {
+.nav-item:focus-within .submenu,
+.nav-item.is-open .submenu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -3643,14 +3674,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transform: translateY(8px) !important;
+    transform: translateX(-50%) translateY(8px) !important;
   }
 
   .nav-item.is-open .submenu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    transform: translateY(0) !important;
+    transform: translateX(-50%) translateY(0) !important;
   }
 }
 /* Mobile submenu close behavior end */
@@ -5009,8 +5040,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="company">Company</button>
-          <div class="submenu" aria-label="Company submenu">
+          <button type="button" class="nav-link" data-target-page="company" aria-haspopup="true" aria-expanded="false" aria-controls="company-submenu">Company</button>
+          <div class="submenu" id="company-submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
             <button type="button" class="submenu-link" data-target-page="news">News</button>
@@ -5021,8 +5052,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
         </div>
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="business" data-business-target="models">Business</button>
-          <div class="submenu" aria-label="Business submenu">
+          <button type="button" class="nav-link" data-target-page="business" data-business-target="models" aria-haspopup="true" aria-expanded="false" aria-controls="business-submenu">Business</button>
+          <div class="submenu" id="business-submenu" aria-label="Business submenu">
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="models">협력 구조</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="kr-local">지자체(한국)</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="jp-local">지자체(일본)</button>
@@ -7364,6 +7395,47 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
+    const navItems = Array.from(document.querySelectorAll('.nav-item'));
+    const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const navCloseTimers = new WeakMap();
+
+    function setNavItemOpen(item, open) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+        navCloseTimers.delete(item);
+      }
+
+      item.classList.toggle('is-open', open);
+      const trigger = item.querySelector('.nav-link');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+    }
+
+    function closeNavItems(except = null) {
+      navItems.forEach((item) => {
+        if (item !== except) {
+          setNavItemOpen(item, false);
+        }
+      });
+    }
+
+    function openNavItem(item) {
+      closeNavItems(item);
+      setNavItemOpen(item, true);
+    }
+
+    function scheduleNavClose(item) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+
+      navCloseTimers.set(item, window.setTimeout(() => {
+        setNavItemOpen(item, false);
+      }, 220));
+    }
 
     function showBusinessPanel(panel) {
       if (!validBusinessPanels.includes(panel)) {
@@ -7429,7 +7501,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
-      document.querySelectorAll('.nav-item.is-open').forEach((el) => el.classList.remove('is-open'));
+      closeNavItems();
       if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
       }
@@ -7440,28 +7512,53 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       el.addEventListener('click', function (event) {
         const navItem = el.closest('.nav-item');
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
-        if (submenu && el.parentElement === navItem && !navItem.classList.contains('is-open')) {
+        if (submenu && el.parentElement === navItem) {
           event.preventDefault();
-          document.querySelectorAll('.nav-item.is-open').forEach((item) => item.classList.remove('is-open'));
-          navItem.classList.add('is-open');
+          const shouldOpen = !navItem.classList.contains('is-open');
+          closeNavItems(navItem);
+          setNavItemOpen(navItem, shouldOpen);
           return;
         }
         showPage(el.dataset.targetPage, true, el.dataset.businessTarget || null);
       });
     });
 
-
-    const navItems = Array.from(document.querySelectorAll('.nav-item'));
     navItems.forEach((item) => {
-      item.addEventListener('mouseenter', function () {
-        navItems.forEach((el) => el.classList.remove('is-open'));
-        item.classList.add('is-open');
+      if (hoverCapable.matches) {
+        item.addEventListener('mouseenter', function () {
+          openNavItem(item);
+        });
+
+        item.addEventListener('mouseleave', function () {
+          scheduleNavClose(item);
+        });
+      }
+
+      item.addEventListener('focusin', function (event) {
+        if (event.target.matches(':focus-visible')) {
+          openNavItem(item);
+        }
+      });
+
+      item.addEventListener('focusout', function (event) {
+        if (!item.contains(event.relatedTarget)) {
+          scheduleNavClose(item);
+        }
       });
     });
 
     document.addEventListener('click', function (event) {
       if (!event.target.closest('.nav-item')) {
-        navItems.forEach((el) => el.classList.remove('is-open'));
+        closeNavItems();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeNavItems();
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
       }
     });
     document.addEventListener('click', function (event) {
