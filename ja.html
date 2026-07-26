@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
   <!--
@@ -1828,6 +1828,27 @@ body::after {
   font-weight: 800;
 }
 
+.nav-item > .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-item > .nav-link::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.nav-item.is-open > .nav-link::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
 .submenu {
   position: absolute;
   top: calc(100% + 14px);
@@ -1850,8 +1871,18 @@ body::after {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+
 .nav-item:hover .submenu,
-.nav-item:focus-within .submenu {
+.nav-item:focus-within .submenu,
+.nav-item.is-open .submenu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -3643,14 +3674,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transform: translateY(8px) !important;
+    transform: translateX(-50%) translateY(8px) !important;
   }
 
   .nav-item.is-open .submenu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    transform: translateY(0) !important;
+    transform: translateX(-50%) translateY(0) !important;
   }
 }
 /* Mobile submenu close behavior end */
@@ -4638,6 +4669,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     overflow-wrap: break-word !important;
   }
 
+  html[lang="ja"] .page-view:not([data-page="home"]) .hero h1 {
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+    line-break: strict;
+  }
+
   .page-view:not([data-page="home"]) .hero .lead {
     width: 100% !important;
     max-width: 330px !important;
@@ -5009,8 +5046,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="company">Company</button>
-          <div class="submenu" aria-label="Company submenu">
+          <button type="button" class="nav-link" data-target-page="company" aria-haspopup="true" aria-expanded="false" aria-controls="company-submenu">Company</button>
+          <div class="submenu" id="company-submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
             <button type="button" class="submenu-link" data-target-page="news">News</button>
@@ -5021,8 +5058,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
         </div>
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="business" data-business-target="models">Business</button>
-          <div class="submenu" aria-label="Business submenu">
+          <button type="button" class="nav-link" data-target-page="business" data-business-target="models" aria-haspopup="true" aria-expanded="false" aria-controls="business-submenu">Business</button>
+          <div class="submenu" id="business-submenu" aria-label="Business submenu">
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="models">協力構造</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="kr-local">自治体（韓国）</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="jp-local">自治体（日本）</button>
@@ -5049,7 +5086,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <span class="typo-line">世界初の非同期ティルトローター</span>
         <span class="typo-line">アーキテクチャ。</span>
       </h1>
-      <p class="hero-p">決定論的飛行制御により、航空機認証の複雑さを軽減し、製造コストと事業化までの期間を短縮します。</p>
+      <p class="hero-p">航続距離1,000km。1億ウォン台。4人乗りVTOL。Lambda。<br>2026年10月、25kg級機体の飛行試験を開始。</p>
       <div class="home-v2-actions">
         <a class="button primary" href="?page=technology" data-route="technology">技術</a>
         <a class="button secondary" href="?page=product" data-route="product">製品</a>
@@ -5072,10 +5109,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
   <section class="home-v2-section" id="HOME_WHY">
     <div class="container home-v2-problem">
-      <blockquote>なぜ、新しい航空機が必要なのか。</blockquote>
+      <blockquote>誰もが膝を打つはずです。なぜ、もっと早くやらなかったのか。</blockquote>
       <div class="home-v2-problem-copy">
         <p>従来のeVTOLは、ますます複雑になっています。アクチュエータが増えるほどソフトウェアも増え、認証期間と製造コストも膨らみます。</p>
-        <p><strong>リシーブパワーは別の道を選びます。飛行そのものを単純化します。</strong></p>
+        <p><strong>世界で最もシンプルなティルトローター機。</strong></p>
       </div>
     </div>
   </section>
@@ -5591,16 +5628,16 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <li>決定論的制御：DO-178C</li>
             <li>無動力非常着陸：FAA AC 21.17-4のPL.2105(g)</li>
           </ul>
-          <p>私たちは、この2つの認証要件への適合を設計段階から組み込んでいます。</p>
+          <p>認証で最も難しい二つの要件を、機体設計に当初から組み込みました。</p>
           <h3>1. あらかじめ定義された通りに応答します（DO-178C）</h3>
-          <p>従来の航空機は、突風などの外乱に対してリアルタイム演算で対応するため、すべての応答を事前に予測することは困難です。SDAは、想定される各状態の制御応答をあらかじめ定義し、必要な制御マトリクスへ即時に切り替えることで、結果を認証機関へ説明・立証できる構造を目指します。</p>
+          <p>従来方式は飛行中も答えを計算し続けます。Lambdaは、事前に検証した答えへ即座に切り替えます。</p>
           <h3>2. エンジンが止まっても操縦しながら着陸します（PL.2105(g)）</h3>
           <p>エンジンが止まっても、操縦は止まりません。すべての動力を失った極限状況でも、8つのローターが空気抵抗の差、すなわち差動抗力を生み、仮想操縦翼面を形成します。動力がなくても機体の方向と飛行経路を最後まで制御し、滑空着陸へ導くフェイルセーフを設計しました。SDAは、PL.2105(g)の要件を設計段階から満たす航空機です。</p>
           <h3>3. 認証対象となる部品を約100分の1まで削減します</h3>
           <p>一般的な航空機は操縦面（翼の可動部品）と駆動装置のため故障点が数百個あり、それを一つずつ証明しなければなりません。私たちは機械式操縦面そのものをなくし、認証対象部品を劇的に減らしました。</p>
           <h3>4. 有人輸送に先立ち、貨物運航で信頼を積み上げます</h3>
-          <p>有人機認証に先に資本を投じる代わりに、貨物輸送で実飛行データを大量に蓄積します。書類より確かな無事故運航記録が、その後の有人機認証を前倒しします。</p>
-          <p>結論として、計算を単純化し、部品を減らし、非常対応まで設計で解決しました。認証はもはや予測不能なR&amp;Dではなく、定められた順序を実行する手続きです。</p>
+          <p>有人機認証に先に資本を投じる代わりに、貨物輸送で実飛行データを大量に蓄積します。まず貨物機を数多く飛ばし、有人機認証に必要な実飛行記録を蓄積します。</p>
+          <p>結論として、計算を単純化し、部品を減らし、非常対応まで設計で解決しました。認証に必要な技術課題を設計段階で先に解決し、その後のプロセスを予測可能にしました。</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ 目次へ</a>
         </article>
 
@@ -5762,354 +5799,6 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
       </div>
     </section>
-    <section class="message-section robotics-technology-taxonomy">
-      <div class="container message-list">
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Robot Middleware</h2>
-          <ul class="tech-keyword-list">
-              <li>ROS</li>
-              <li>ROS 2</li>
-              <li>DDS</li>
-              <li>Node Graph</li>
-              <li>Topic</li>
-              <li>Service</li>
-              <li>Action</li>
-              <li>TF Tree</li>
-              <li>URDF</li>
-              <li>SRDF</li>
-              <li>MoveIt</li>
-              <li>Nav2</li>
-              <li>Gazebo</li>
-              <li>Isaac Sim</li>
-              <li>MAVROS</li>
-              <li>Robot State Publisher</li>
-              <li>Joint State Publisher</li>
-              <li>Controller Manager</li>
-              <li>Hardware Interface</li>
-              <li>Real-Time Control Loop</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Industrial Control</h2>
-          <ul class="tech-keyword-list">
-              <li>PLC</li>
-              <li>Ladder Logic</li>
-              <li>Structured Text</li>
-              <li>Modbus TCP</li>
-              <li>Modbus RTU</li>
-              <li>EtherCAT</li>
-              <li>Ethernet/IP</li>
-              <li>PROFINET</li>
-              <li>CAN</li>
-              <li>CANopen</li>
-              <li>Digital I/O</li>
-              <li>Analog I/O</li>
-              <li>Relay Output</li>
-              <li>Safety Relay</li>
-              <li>Emergency Stop</li>
-              <li>Interlock</li>
-              <li>Watchdog</li>
-              <li>Heartbeat Signal</li>
-              <li>Machine State</li>
-              <li>Fault Code</li>
-              <li>Reset Sequence</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Coordinate System</h2>
-          <ul class="tech-keyword-list">
-              <li>World Frame</li>
-              <li>Map Frame</li>
-              <li>Base Frame</li>
-              <li>Tool Frame</li>
-              <li>Camera Frame</li>
-              <li>Gripper Frame</li>
-              <li>Workpiece Frame</li>
-              <li>Fixture Frame</li>
-              <li>Conveyor Frame</li>
-              <li>Calibration Frame</li>
-              <li>Homogeneous Transform</li>
-              <li>Rotation Matrix</li>
-              <li>Quaternion</li>
-              <li>Euler Angle</li>
-              <li>Pose Estimation</li>
-              <li>Hand-Eye Calibration</li>
-              <li>Extrinsic Calibration</li>
-              <li>Intrinsic Calibration</li>
-              <li>Coordinate Registration</li>
-              <li>Frame Alignment</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Sensor Fusion</h2>
-          <ul class="tech-keyword-list">
-              <li>Camera</li>
-              <li>Depth Camera</li>
-              <li>Stereo Camera</li>
-              <li>IMU</li>
-              <li>Encoder</li>
-              <li>Load Cell</li>
-              <li>Force Torque Sensor</li>
-              <li>Proximity Sensor</li>
-              <li>Limit Switch</li>
-              <li>Motor Current</li>
-              <li>Torque Estimate</li>
-              <li>PLC State</li>
-              <li>Time Synchronization</li>
-              <li>Signal Filtering</li>
-              <li>Kalman Filter</li>
-              <li>Extended Kalman Filter</li>
-              <li>Particle Filter</li>
-              <li>Complementary Filter</li>
-              <li>State Estimation</li>
-              <li>Outlier Rejection</li>
-              <li>Sensor Confidence</li>
-              <li>Multi-Rate Sampling</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Virtual Space</h2>
-          <ul class="tech-keyword-list">
-              <li>Digital Twin</li>
-              <li>Simulation Scene</li>
-              <li>OpenUSD</li>
-              <li>Physics Engine</li>
-              <li>Renderer</li>
-              <li>Robot Model</li>
-              <li>Factory Layout</li>
-              <li>Workcell Layout</li>
-              <li>Collision Mesh</li>
-              <li>Kinematic Model</li>
-              <li>Dynamic Model</li>
-              <li>Sensor Model</li>
-              <li>Synthetic Data</li>
-              <li>Domain Randomization</li>
-              <li>Scenario Generation</li>
-              <li>Motion Replay</li>
-              <li>Failure Replay</li>
-              <li>Real-to-Sim</li>
-              <li>Sim-to-Real</li>
-              <li>Virtual Commissioning</li>
-              <li>Process Simulation</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Vision</h2>
-          <ul class="tech-keyword-list">
-              <li>Object Detection</li>
-              <li>Instance Segmentation</li>
-              <li>Semantic Segmentation</li>
-              <li>SAM2</li>
-              <li>YOLO</li>
-              <li>Mask R-CNN</li>
-              <li>Keypoint Detection</li>
-              <li>Edge Detection</li>
-              <li>Pose Estimation</li>
-              <li>Depth Estimation</li>
-              <li>Visual Servoing</li>
-              <li>Marker Tracking</li>
-              <li>AprilTag</li>
-              <li>ArUco</li>
-              <li>OCR</li>
-              <li>Defect Detection</li>
-              <li>Surface Inspection</li>
-              <li>Part Presence</li>
-              <li>Position Verification</li>
-              <li>Orientation Verification</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Manipulation</h2>
-          <ul class="tech-keyword-list">
-              <li>Grasp Planning</li>
-              <li>Grasp Pose</li>
-              <li>Approach Vector</li>
-              <li>Tool Center Point</li>
-              <li>Inverse Kinematics</li>
-              <li>Motion Planning</li>
-              <li>Trajectory Generation</li>
-              <li>Path Constraint</li>
-              <li>Collision Avoidance</li>
-              <li>Pick and Place</li>
-              <li>Insertion</li>
-              <li>Alignment</li>
-              <li>Sorting</li>
-              <li>Stacking</li>
-              <li>Palletizing</li>
-              <li>Bin Picking</li>
-              <li>Tool Changing</li>
-              <li>Gripper Control</li>
-              <li>End-Effector Design</li>
-              <li>Affordance Map</li>
-              <li>Task Primitive</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Force / Contact</h2>
-          <ul class="tech-keyword-list">
-              <li>Force Control</li>
-              <li>Impedance Control</li>
-              <li>Admittance Control</li>
-              <li>Compliance Control</li>
-              <li>Contact Detection</li>
-              <li>Slip Detection</li>
-              <li>Pressing Force</li>
-              <li>Insertion Force</li>
-              <li>Load Threshold</li>
-              <li>Overload Detection</li>
-              <li>Current Limit</li>
-              <li>Torque Limit</li>
-              <li>Soft Stop</li>
-              <li>Hard Stop</li>
-              <li>Retraction Motion</li>
-              <li>Recovery Motion</li>
-              <li>Force Feedback</li>
-              <li>Contact State</li>
-              <li>Pressure Profile</li>
-              <li>Z-Axis Control</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>AI Model</h2>
-          <ul class="tech-keyword-list">
-              <li>Vision Model</li>
-              <li>Segmentation Model</li>
-              <li>Detection Model</li>
-              <li>Pose Model</li>
-              <li>Anomaly Detection</li>
-              <li>VAE</li>
-              <li>Diffusion Policy</li>
-              <li>Behavior Cloning</li>
-              <li>Reinforcement Learning</li>
-              <li>Imitation Learning</li>
-              <li>Policy Learning</li>
-              <li>Trajectory Model</li>
-              <li>Latent Space</li>
-              <li>Feature Embedding</li>
-              <li>Few-Shot Adaptation</li>
-              <li>Human-in-the-Loop</li>
-              <li>Active Learning</li>
-              <li>Dataset Curation</li>
-              <li>Annotation Pipeline</li>
-              <li>Model Evaluation</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Workcell</h2>
-          <ul class="tech-keyword-list">
-              <li>Robot Arm</li>
-              <li>Mobile Robot</li>
-              <li>AMR</li>
-              <li>AGV</li>
-              <li>Humanoid</li>
-              <li>Gripper</li>
-              <li>End-Effector</li>
-              <li>Camera Mount</li>
-              <li>Lighting</li>
-              <li>Fixture</li>
-              <li>Jig</li>
-              <li>Conveyor</li>
-              <li>Feeder</li>
-              <li>Tray</li>
-              <li>Pallet</li>
-              <li>Inspection Station</li>
-              <li>Reject Station</li>
-              <li>HMI</li>
-              <li>Operator Panel</li>
-              <li>Safety Zone</li>
-              <li>Work Envelope</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Factory Data</h2>
-          <ul class="tech-keyword-list">
-              <li>MQTT</li>
-              <li>OPC UA</li>
-              <li>REST API</li>
-              <li>WebSocket</li>
-              <li>Message Broker</li>
-              <li>Event Log</li>
-              <li>Telemetry</li>
-              <li>Time-Series Data</li>
-              <li>Production Count</li>
-              <li>Cycle Time</li>
-              <li>Takt Time</li>
-              <li>Downtime</li>
-              <li>Fault History</li>
-              <li>Inspection Result</li>
-              <li>Process Parameter</li>
-              <li>Quality Data</li>
-              <li>Traceability</li>
-              <li>Dashboard</li>
-              <li>Alert</li>
-              <li>Report</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Safety</h2>
-          <ul class="tech-keyword-list">
-              <li>Emergency Stop</li>
-              <li>Safety PLC</li>
-              <li>Safety Zone</li>
-              <li>Light Curtain</li>
-              <li>Area Scanner</li>
-              <li>Door Interlock</li>
-              <li>Torque Limit</li>
-              <li>Speed Limit</li>
-              <li>Workspace Limit</li>
-              <li>Collision Check</li>
-              <li>Fault Detection</li>
-              <li>Safe Stop</li>
-              <li>Protective Stop</li>
-              <li>Manual Mode</li>
-              <li>Auto Mode</li>
-              <li>Teach Mode</li>
-              <li>Recovery Mode</li>
-              <li>Restart Condition</li>
-              <li>Operator Confirmation</li>
-              <li>Audit Log</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Engineering System</h2>
-          <ul class="tech-keyword-list">
-              <li>Task Definition</li>
-              <li>Requirement Spec</li>
-              <li>Interface Spec</li>
-              <li>I/O Map</li>
-              <li>State Machine</li>
-              <li>Sequence Diagram</li>
-              <li>Failure Mode</li>
-              <li>Acceptance Criteria</li>
-              <li>Test Case</li>
-              <li>Simulation Test</li>
-              <li>Hardware Test</li>
-              <li>Regression Test</li>
-              <li>Version Control</li>
-              <li>Naming Rule</li>
-              <li>Component Registry</li>
-              <li>API Contract</li>
-              <li>RAG Rulebase</li>
-              <li>Agent Workflow</li>
-              <li>Review Protocol</li>
-              <li>Validation Report</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   </main>
 
 <main class="page-view" data-page="ip">
@@ -6144,56 +5833,31 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">登録</span>
           <h2>1. 独立制御式ティルト推進システム</h2>
-          <p>各推進器を同じ角度で一度に動かす方式ではなく、遷移区間で推力と揚力を分けて扱う構造です。</p>
-          <ul class="data-list">
-            <li><span>構成</span><strong>各推進ユニットの独立ティルトと分散推進制御</strong></li>
-            <li><span>変化</span><strong>ホバー飛行から固定翼巡航へ移る遷移区間を細分化</strong></li>
-            <li><span>効果</span><strong>VTOL遷移時の安定性、有人飛行への拡張性</strong></li>
-          </ul>
+          <p>遷移飛行の安定性を構造的に確保し、有人旅客輸送へ拡張できる基盤を構築します。</p>
         </article>
 
         <article class="message">
           <span class="label">出願</span>
-          <h2>2. 仮想操縦翼面（翼の可動部品をソフトウェアで代替）に基づく飛行制御</h2>
-          <p>物理操縦面（翼の可動部品）、ヒンジ、リンク、アクチュエータへの依存を減らし、推進器配置と推力差を飛行制御資源として使う構造です。</p>
-          <ul class="data-list">
-            <li><span>構成</span><strong>分散推進器の位置と位相差を制御資源として使用</strong></li>
-            <li><span>変化</span><strong>可動操縦面（翼の可動部品）と関連機械部品の縮小</strong></li>
-            <li><span>効果</span><strong>機体原価、整備項目、製造の複雑さの低減</strong></li>
-          </ul>
+          <h2>2. 仮想操縦翼面による飛行制御</h2>
+          <p>物理的な操縦翼面を使わずに飛行を制御し、製造の複雑さと整備項目を大幅に減らしました。</p>
         </article>
 
         <article class="message">
           <span class="label">出願</span>
-          <h2>3. 離散マトリクスベースの飛行管理システム</h2>
-          <p>飛行状態と故障状態を事前に分け、各状態に合う制御モードへ切り替える決定論的飛行管理構造です。</p>
-          <ul class="data-list">
-            <li><span>構成</span><strong>状態別制御マトリクスと故障対応モード</strong></li>
-            <li><span>変化</span><strong>ブラックボックス型判断を排除し、試験可能な制御単位に固定</strong></li>
-            <li><span>効果</span><strong>認証時の説明可能性、運航ログ、故障時対応構造</strong></li>
-          </ul>
+          <h2>3. 離散マトリクス型飛行管理システム</h2>
+          <p>飛行アルゴリズムのすべての応答を事前に検証し、認証スケジュールと予算の予測可能性を高めます。</p>
         </article>
 
         <article class="message">
           <span class="label">出願</span>
           <h2>4. 無動力高揚力制御</h2>
-          <p>動力喪失時や低速飛行時に、機体が持つ揚力と回転要素を活用し、着陸時の安全余裕と方向・姿勢の制御能力を確保する独立した発明です。</p>
-          <ul class="data-list">
-            <li><span>構成</span><strong>無動力状態の揚力、オートローテーション、差動抗力の活用</strong></li>
-            <li><span>変化</span><strong>非常時に追加の時間と空間を確保</strong></li>
-            <li><span>効果</span><strong>動力喪失シナリオ、非常着陸安全性</strong></li>
-          </ul>
+          <p>すべての動力を失った状況でも、機体の方向と飛行経路を最後まで制御しながら着陸します。</p>
         </article>
 
         <article class="message">
           <span class="label">出願</span>
-          <h2>5. SADSベースの仮想ピトー管</h2>
-          <p>単一の物理センサーだけに依存せず、複数の信号を融合して機体の大気中状態を推定する独立発明です。</p>
-          <ul class="data-list">
-            <li><span>構成</span><strong>GNSS、IMU、推進器データを融合した状態推定</strong></li>
-            <li><span>変化</span><strong>機体が現在どの空気状態にあるかを判断する補助チャネルを確保</strong></li>
-            <li><span>効果</span><strong>状態認識、モード遷移、制御安定性</strong></li>
-          </ul>
+          <h2>5. SADSによる仮想ピトー管</h2>
+          <p>単一の物理センサーが故障しても、機体が自ら飛行状態を判断します。</p>
         </article>
 
         <article class="message">
@@ -6231,7 +5895,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <span class="label">03</span>
               <h2>仮想操縦面である理由：製造・保守コストの低下</h2>
               <p>物理的な操縦面（翼の可動部品）と機械駆動装置をなくし、ソフトウェアによるローター制御で飛行を統制します。</p>
-              <p>機械的な接続構造をなくすことで、翼と胴体の完全自動生産が可能になり、機体価格を従来の10%水準まで引き下げます。</p>
+              <p>機械的な接続構造を減らして生産工程を簡素化し、機体価格を従来の10%水準まで引き下げます。</p>
               <p>可動部品数が100分の1に減ることで摩耗と故障要素が減り、運用保守費用と整備所要時間が短縮されます。</p>
             </article>
             <article class="message">
@@ -6747,315 +6411,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h2>収益は機体販売で終わりません。</h2>
           <p>SDAが目指すのは、単なるハードウェアメーカーではなく、航空物流のコスト構造と運航標準を担う事業者です。機体販売、リース、運航ルートの事業権、MRO、Flight OS、耐空性維持データ、地域JVが長期収益モデルを形成します。</p>
         </article>
-        <article class="message business-essay">
-          <details>
-            <summary>
-              <div>
-                <span class="essay-kicker">Strategic Essay</span>
-                <h2>Lambdaの本質的な競争力</h2>
-                <p class="essay-lead">複雑な機械装置を取り除き、航空機に必要な飛行能力をひとつの構造に収めました。</p>
-              </div>
-            </summary>
-            <div class="business-essay-body">
-              <p>工学的難度を取り除き、航空機の効用だけを残したソフトウェア定義航空機</p>
-              <p>Lambdaの強みは垂直離着陸や固定翼巡航そのものではない。ティルトローター、分散電気推進、タンデム翼も、それぞれ既存の技術である。</p>
-              <p>Lambdaの本質的な競争力は、従来の航空機を難しくする原因を構造的に取り除いた点にある。</p>
-              <p>一般的な航空機は性能と機能を増やすため、機械構造、操縦面、リンク、油圧、可変ピッチ装置、複雑な制御系を追加する。機能が増えるほど部品、製造・整備の難度、故障モード、認証項目も増える。</p>
-              <p>Lambdaは逆の方向に設計された。</p>
-              <p>必要な飛行機能を機械装置の追加ではなく、同一の固定ピッチ推進器の独立ティルティングとソフトウェア飛行モードで実現する。</p>
-              <p>その結果、工学的難度を大幅に下げながら、垂直離着陸、固定翼巡航、遷移飛行、姿勢制御、高揚力飛行、滑空、緊急飛行をひとつの単純な構造で実現できる。</p>
-              <hr>
-              <h3>1. 難問を解いたのではなく、難問そのものを削除した</h3>
-              <p>Lambdaは従来航空機の複雑さを改善した機体ではない。複雑さを生む構造を最初から使わない。</p>
-              <p>エルロン、エレベーター、ラダーなどの従来型操縦面がないため、次の項目が同時になくなる。</p>
-              <ul>
-                <li>操縦面の空力設計</li>
-                <li>ヒンジモーメント計算</li>
-                <li>操縦面フラッター検証</li>
-                <li>操縦面用サーボとアクチュエーター</li>
-                <li>リンクとケーブル</li>
-                <li>バックラッシュと遊びの管理</li>
-                <li>操縦面内部配線</li>
-                <li>操縦面固着・破損の故障モード</li>
-                <li>操縦翼面ごとの製造・組立工程</li>
-                <li>操縦翼面の変更に伴う再解析と再試験</li>
-              </ul>
-              <p>ヘリコプター式スワッシュプレートと可変ピッチ構造もない。</p>
-              <p>各推進器は固定ピッチプロペラとBLDCモーターを使い、プロペラ・モーター・ナセルからなる推進モジュール全体が単純なヒンジを中心に回転する。</p>
-              <p>複雑なローターハブ、ピッチリンク、スワッシュプレート、油圧系統、精密な機械式操縦装置は不要である。</p>
-              <p>Lambdaは航空機で最も高価で難しい部分を改善したのではなく、取り除いた。</p>
-              <hr>
-              <h3>2. 操縦面ではなく推進器の方向と推力で飛行を制御する</h3>
-              <p>Lambdaの8基の推進器は単なる動力源ではない。各推進器が推力の大きさと方向を変える独立した飛行制御装置である。</p>
-              <p>ロール、ピッチ、ヨー、上昇、降下、前進、減速は操縦面で間接的に作るのではなく、推進器の出力とティルト角の組合せで直接作る。</p>
-              <p>この構造では追加の操縦翼面を設けずに次の機能を実現できる。</p>
-              <ul>
-                <li>垂直離着陸</li>
-                <li>ホバリング</li>
-                <li>低速姿勢制御</li>
-                <li>巡航姿勢制御</li>
-                <li>遷移飛行</li>
-                <li>高揚力飛行</li>
-                <li>仮想フラップ</li>
-                <li>差動抗力による姿勢制御</li>
-                <li>ウインドミリングとオートローテーション型飛行</li>
-                <li>無動力滑空中の姿勢制御</li>
-              </ul>
-              <p>従来機では機能ごとに操縦面と機械装置が必要だが、Lambdaでは同じ推進器の角度と出力配分を変えて処理する。</p>
-              <p>飛行機能が増えてもハードウェアを追加し続ける必要はない。</p>
-              <hr>
-              <h3>3. 非同期ティルティングにより遷移飛行の難度を構造的に下げた</h3>
-              <p>従来のティルトローターで最も難しいのは、垂直飛行から巡航飛行へ移る遷移過程である。</p>
-              <p>全推進器が同時に傾くと、揚力源と制御方式が一度に変わる。ローター揚力、翼揚力、機体姿勢、推力方向、失速余裕を同時に計算・制御しなければならない。</p>
-              <p>Lambdaは全推進器を同時に遷移させない。</p>
-              <p>一部の推進器が垂直揚力と姿勢制御を維持し、別の推進器を先に傾けて前進推力を作る。速度と翼揚力を確保した後、残りを順次遷移させる。</p>
-              <p>遷移中も機体を支持・制御する推進器群が常に残る。</p>
-              <p>したがってLambdaの遷移は、複雑な連続制御ではなく、安定した状態間を段階的に移る問題となる。</p>
-              <ul>
-                <li>垂直飛行状態</li>
-                <li>一部推進器の遷移</li>
-                <li>前進推力の形成</li>
-                <li>前進速度の増加</li>
-                <li>翼揚力の形成</li>
-                <li>残りの推進器の遷移</li>
-                <li>巡航状態への移行</li>
-              </ul>
-              <p>各段階で、どの推進器が揚力、前進推力、姿勢制御を担うかが明確である。</p>
-              <p>すべての変数を同時に最適化しながら、不安定な遷移領域を通過する必要がない。</p>
-              <p>非同期ティルティングは、強力な制御器で難題を抑え込む方式ではなく、遷移構造そのものを単純化する方式である。</p>
-              <hr>
-              <h3>4. MMAはリアルタイム最適化の代わりに検証済み飛行構造を呼び出す</h3>
-              <p>Lambdaの制御は、各時点で多数のアクチュエーターの組合せを計算して最適解を探す方式とは異なる。</p>
-              <p>飛行状態、速度、姿勢、推進器状態、制約条件に応じて、事前定義・検証された制御マトリクスを選択する。</p>
-              <p>各MMAには次の内容が明確に定義される。</p>
-              <ul>
-                <li>どの推進器が揚力を担うか</li>
-                <li>どの推進器が前進推力を担うか</li>
-                <li>どの推進器がロールを制御するか</li>
-                <li>どの推進器がピッチを制御するか</li>
-                <li>どの推進器がヨーを制御するか</li>
-                <li>どの推進器がティルティングするか</li>
-                <li>各推進器の出力範囲</li>
-                <li>どの条件で次のMMAへ遷移するか</li>
-                <li>推進器故障時にどの代替MMAを使うか</li>
-              </ul>
-              <p>制御系は機体状態に応じて定められた制御構造を呼び出す。</p>
-              <p>この方式は複雑なリアルタイム最適化より計算量が少なく、結果が再現可能で、試験条件と結果を追跡しやすい。</p>
-              <p>同じ状態と入力では同じMMAと制御構造が使われる。</p>
-              <p>これがLambdaの決定論的飛行の中核である。</p>
-              <p>認証機関にも、各飛行状態での推進器の役割、次モードへの条件、故障時の代替構造を事前提示できる。</p>
-              <p>制御性能だけでなく、開発・認証日程の予測可能性も高まる。</p>
-              <hr>
-              <h3>5. 同一の前後翼と8基の共通推進モジュールを使用する</h3>
-              <p>Lambdaの前翼と後翼は別々の専用翼ではなく、同一部品を前後に共用する。</p>
-              <p>翼形状、スパン、コード、推進器間隔、取付構造を共通化すると次の費用が減る。</p>
-              <ul>
-                <li>翼設計費</li>
-                <li>金型費</li>
-                <li>治工具費</li>
-                <li>構造試験費</li>
-                <li>生産設備費</li>
-                <li>部品在庫</li>
-                <li>整備教育</li>
-                <li>交換部品の種類</li>
-                <li>品質管理項目</li>
-              </ul>
-              <p>8基のティルトナセルも同一のモーター、プロペラ、ヒンジ、マウント、制御インターフェースを使う。</p>
-              <p>複数種類の専用推進装置ではなく、検証済みのひとつの推進モジュールを8基共通で使用する。</p>
-              <p>推進器が多くても機械的複雑性は大きく増えない。異なる8装置ではなく、同一の単純モジュール8基だからである。</p>
-              <p>故障時も現場で複雑な部品を分解修理せず、モジュール単位で交換できる。</p>
-              <p>Lambdaの生産・整備は従来航空機より自動車部品や産業用モジュールに近い。</p>
-              <hr>
-              <h3>6. 固定ピッチBLDCと単純ティルト構造で推進系の難度を下げた</h3>
-              <p>Lambdaの推進系には特殊で複雑な航空用機械装置がほとんどない。</p>
-              <p>中核構成は次のとおりである。</p>
-              <ul>
-                <li>固定ピッチプロペラ</li>
-                <li>BLDCモーター</li>
-                <li>ESC</li>
-                <li>単純回転ヒンジ</li>
-                <li>ティルトアクチュエーター</li>
-                <li>外部取付式マウント</li>
-              </ul>
-              <p>可変ピッチ制御がないため、ピッチ機構のリンク、ベアリング、ハブ、アクチュエーター、整備項目がなくなる。</p>
-              <p>複雑な機械式精密制御ではなく、モーター回転数とナセル角で推力を調整する。</p>
-              <p>BLDCモーターとESCは自動車、産業ロボット、ドローンなどで大量使用される成熟技術である。</p>
-              <p>Lambdaは新しい動力機関を一から開発する機体ではない。成熟した電動部品を単純な推進モジュールにまとめ、同一モジュールを共通配置する。</p>
-              <hr>
-              <h3>7. マルチローターの単純性と固定翼の巡航効率を併用する</h3>
-              <p>マルチローターは垂直離着陸とホバリングが単純だが、巡航中もローターが機体重量を支え続ける。</p>
-              <p>速度と航続距離が伸びるほどエネルギー効率は急低下する。</p>
-              <p>Lambdaは離着陸で分散電気推進を使い、巡航では固定翼が機体重量を支える。</p>
-              <p>巡航中の推進器は機体を持ち上げ続けず、抗力に勝つ前進推力を提供する。</p>
-              <p>したがって飛行制御と推進系をマルチローター並みに単純に保ちながら、巡航では固定翼の揚抗比を使える。</p>
-              <p>Lambdaは電動ヘリコプターでも、既存機にVTOLモーターを追加した機体でもない。</p>
-              <p>垂直飛行ではマルチローター、巡航では固定翼の物理を使い、各飛行状態の役割を明確に分けた。</p>
-              <hr>
-              <h3>8. タンデム翼の段差を飛行制御に活用する</h3>
-              <p>Lambdaは同一の前翼と後翼を異なる高さに置くタンデム翼構造を使う。</p>
-              <p>前翼と後翼の段差は単なる外観上の特徴ではない。</p>
-              <p>ピッチ安定性、揚力中心配分、推進器配置、差動抗力制御に活用される。</p>
-              <p>水平・垂直尾翼、エレベーター、ラダーを追加せず、機体形状と推進器制御で必要な安定性と制御力を作る。</p>
-              <p>構造形状そのものが飛行制御システムの一部になる。</p>
-              <p>その結果、尾翼、操縦面、アクチュエーターの部品、工程、整備項目、認証対象を追加せず必要機能を確保できる。</p>
-              <hr>
-              <h3>9. 製造と整備を従来の航空機生産方式から変える</h3>
-              <p>従来航空機は複雑な曲面、多数の専用部品、手作業組立により生産単価が高い。</p>
-              <p>Lambdaは単純な胴体、同一の前後翼、8基の共通推進モジュール、外部取付式ハーネス、再現性の高い組立構造を使う。</p>
-              <p>この構造は次の生産方式に適する。</p>
-              <ul>
-                <li>複合材パネルの自動成形</li>
-                <li>表面実装式部品組立</li>
-                <li>同一モジュールの共通取付</li>
-                <li>外部ハーネス組立</li>
-                <li>工程別自動検査</li>
-                <li>モジュール単位交換</li>
-                <li>少数部品中心の在庫管理</li>
-              </ul>
-              <p>航空機は一般に生産量が少なく単価が高い。</p>
-              <p>Lambdaは少量生産でも同一部品を共用し、生産量が増えれば自動車や産業機械に近い規模の経済を適用できる。</p>
-              <p>整備方式も異なる。</p>
-              <p>故障時は複雑な操縦系を分解修理せず、モーター、ESC、ティルトユニット、センサー、制御モジュールを単位交換する。</p>
-              <p>整備時間と運航停止時間を減らし、整備員の熟練度依存も下げられる。</p>
-              <hr>
-              <h3>10. 機体の複雑性とともに認証難度も下がる</h3>
-              <p>航空機の認証費用は部品製作費を大きく上回る場合がある。</p>
-              <p>新しい操縦面、機械装置、アクチュエーター、制御方式を追加するたび、故障モード、構造試験、ソフトウェア検証、飛行試験、整備手順が増える。</p>
-              <p>Lambdaは当初から認証対象を減らす方向に設計された。</p>
-              <ul>
-                <li>操縦面の削除</li>
-                <li>可変ピッチ装置の削除</li>
-                <li>油圧系統の削除</li>
-                <li>複雑な機械式操縦系の削除</li>
-                <li>同一推進モジュールの共通化</li>
-                <li>飛行モード別制御構造の明確化</li>
-                <li>状態ベース離散マトリクスの使用</li>
-                <li>決定論的制御</li>
-                <li>故障時の代替MMAを事前定義</li>
-              </ul>
-              <p>認証で確認する構成と作動論理も単純になる。</p>
-              <p>Lambdaの認証は、複雑な機体全体を巨大な一体系として説明するより、限定された飛行モードと明確な遷移条件を一つずつ検証する方式に近い。</p>
-              <p>飛行状態別の推進器役割と制御権が事前に定まり、同じ状態では同じ制御構造を使う。</p>
-              <p>競合技術では、複雑な機構とリアルタイムのブラックボックス制御によってソフトウェア・システム認証が長期化する。Lambdaは、決定論的飛行と固定MMAの遷移構造により、より短く予測可能な日程を計画できる。</p>
-              <hr>
-              <h3>11. 残る開発課題は未知の物理ではなく、試験によって数値を確定する作業である</h3>
-              <p>Lambdaにも試験と検証は必要である。</p>
-              <p>ただし残る課題の性格は従来eVTOLと異なる。</p>
-              <p>主な検証項目は次のとおり。</p>
-              <ul>
-                <li>実機におけるローターと翼の干渉</li>
-                <li>前翼と後翼の揚力分担</li>
-                <li>飛行モード別推力値</li>
-                <li>遷移時点と速度条件</li>
-                <li>重心許容範囲</li>
-                <li>姿勢制御ゲイン</li>
-                <li>推進器故障時の代替MMA</li>
-                <li>実揚抗比</li>
-                <li>実航続距離と電力消費</li>
-                <li>継続運航時の整備周期</li>
-                <li>騒音と振動</li>
-                <li>構造荷重と疲労寿命</li>
-              </ul>
-              <p>これらは新しい物理法則や不確実な飛行概念を発見する問題ではない。</p>
-              <p>機体を製作・計測し、試験値を得てソフトウェアを補正する工学課題である。</p>
-              <p>飛行方法論、モード別の推進器の役割、遷移順序はすでに定義されている。</p>
-              <p>開発の中心は新原理の探索ではなく、定めた構造の数値と許容範囲を試験で確定する作業である。</p>
-              <hr>
-              <h3>12. 二つの機体クラスと三つのモデルで航空輸送のコスト構造を下げる</h3>
-              <p>Lambdaは599kg級と890kg級の二つで構成される。</p>
-              <p>599kg級は軽量無人貨物モデル、890kg級は無人貨物モデルと有人モデルに分かれる。</p>
-              <h4>599kg級 無人貨物型</h4>
-              <ul>
-                <li>最大離陸重量：599kg</li>
-                <li>ペイロード：300kg</li>
-                <li>基準機体価格：約4,000万ウォン</li>
-              </ul>
-              <p>599kg級は、低い機体価格と高い運航頻度を生かして継続輸送に投入する軽量モデルである。</p>
-              <p>島しょ、産業団地、港湾、医療検体、緊急部品など、一定量を短い間隔で継続輸送する路線に適している。</p>
-              <p>機体価格が低く初期路線の資本負担が小さい。同じ投資でより多く配備し、運航頻度と路線密度を高められる。</p>
-              <p>高価な一機が断続的に大量輸送するのではなく、低価格の複数機が短い間隔で継続運航する。</p>
-              <p>300kgのペイロードは小型配送ドローンの領域を超え、地域間ミドルマイル物流と産業向け継続輸送を担える。</p>
-              <h4>890kg級 無人貨物型</h4>
-              <ul>
-                <li>最大離陸重量：890kg</li>
-                <li>ペイロード：475kg</li>
-                <li>基準機体価格：約1億ウォン</li>
-              </ul>
-              <p>890kg級無人貨物型は一度に475kgを運ぶ主力物流モデルである。</p>
-              <p>475kgを搭載でき、小型ドローン配送ではなく、トラック、船舶、既存航空貨物の地域間輸送の一部を直接代替できる。</p>
-              <p>599kg級より高価だが、輸送量が大きく、管制、離着陸、充電、点検、路線運営費を多くの貨物に分散できる。</p>
-              <p>十分な物量がある路線では、1便あたりの売上と運航効率が高まり、航空輸送コストを陸上ミドルマイル物流と直接比較できる。</p>
-              <h4>890kg級 有人モデル</h4>
-              <ul>
-                <li>最大離陸重量：890kg級</li>
-                <li>座席数：4人</li>
-                <li>基準機体価格：約2億ウォン</li>
-              </ul>
-              <p>890kg級の有人モデルは、同じ上位プラットフォームを旅客輸送へ展開した機体である。</p>
-              <p>無人貨物モデルと、非同期ティルトローター、操縦翼面レス構造、同一モジュールの共通生産、ソフトウェア定義飛行システムを共有する。</p>
-              <p>貨物運航は、有人モデルと切り離された付随事業ではない。</p>
-              <p>継続的な貨物運航を通じて、飛行時間、部品寿命、故障率、整備周期、気象対応、エネルギー消費、路線運営データを先に蓄積し、有人モデルの設計確定、信頼性の立証、認証、事業化につなげる。</p>
-              <p>貨物モデルがキャッシュフローと飛行データを生み、同じプラットフォームの有人モデルが旅客市場へ展開する。</p>
-              <h4>機体クラス別の経済性</h4>
-              <p>599kg級と890kg級は単なるサイズ違いではない。路線物量と事業目的によりコスト低減方式が異なる。</p>
-              <ul>
-                <li>599kg級無人モデル：4,000万ウォンの低い資産価格と高い運航頻度</li>
-                <li>890kg級無人モデル：475kgの積載量と高い1便あたりの売上</li>
-                <li>890kg級有人モデル：貨物運航データに基づく旅客市場への展開</li>
-                <li>共通基盤：単純な製造、低い整備費、同一モジュールの共通化、無人運航、固定翼の巡航効率</li>
-              </ul>
-              <p>599kg級は少ない初期資本で路線を開き、高い回転率を作る。</p>
-              <p>890kg級無人モデルは、1便あたりの輸送量を高め、陸上ミドルマイル物流との本格的な価格競争に入る。</p>
-              <p>890kg級有人モデルは、貨物運航で得た技術、運航システム、飛行データを旅客市場へ展開する。</p>
-              <p>Lambdaの比較対象は高価なヘリコプターや特殊航空貨物機にとどまらない。</p>
-              <p>4,000万ウォンの機体が300kgを継続輸送し、1億ウォンの機体が475kgを運び、同じ890kg級が2億ウォンの有人モデルへ展開する。</p>
-              <p>二つの機体クラスと三つのモデルが、同じ技術、生産、整備、運航システムを共有する。</p>
-              <p>Lambdaは貨物輸送でキャッシュフローと運航データを作り、その基盤から有人航空市場へ進むプラットフォームである。</p>
-              <hr>
-              <h3>13. Lambda最大の強みは個別性能ではなく産業構造全体である</h3>
-              <p>Lambdaの競争力は最高速度、航続距離、最大ペイロードの一数値だけではない。</p>
-              <p>真の強みは次の要素が一つの構造につながる点にある。</p>
-              <ul>
-                <li>工学的難度が低い。</li>
-                <li>部品数が少ない。</li>
-                <li>同一部品を共用する。</li>
-                <li>製造自動化が容易である。</li>
-                <li>整備が単純である。</li>
-                <li>制御が決定論的である。</li>
-                <li>飛行モードと遷移条件が明確である。</li>
-                <li>認証範囲を限定できる。</li>
-                <li>機体価格を下げられる。</li>
-                <li>高い機体回転率で継続運航できる。</li>
-                <li>固定翼の巡航効率を使う。</li>
-                <li>ソフトウェアで機能を拡張できる。</li>
-                <li>貨物運航と有人拡張が一つのプラットフォームでつながる。</li>
-              </ul>
-              <p>一般的なeVTOLは高性能のため航空機の複雑性を受け入れる。</p>
-              <p>Lambdaは複雑性を除いても必要な飛行機能と航空機の効用が残るよう設計した。</p>
-              <p>難しい航空機を後から安くするのではない。最初から安く単純にできる飛行方法、機体構造、生産方式を選んだ。</p>
-              <hr>
-              <h3>結論</h3>
-              <p>Lambdaは従来ティルトローターより複雑な航空機ではない。</p>
-              <p>むしろ各方式の難題を取り除き、必要機能を同一の固定ピッチ推進器とソフトウェア飛行モードに統合した機体である。</p>
-              <p>操縦面、スワッシュプレート、可変ピッチ、複雑な機械式操縦系がない。</p>
-              <p>前翼と後翼は同一で、8基の推進器も同一である。</p>
-              <p>遷移は全推進器を同時に動かさず、支持・制御を担う推進器群を残して順次行う。</p>
-              <p>制御はブラックボックス型最適解を毎瞬探さず、機体状態に応じ検証済みMMAを呼ぶ。</p>
-              <p>製造は、航空機の手作業中心の工程よりも、同一モジュールの共通組立と自動生産に近い。</p>
-              <p>整備は複雑な機構の分解修理よりモジュール交換に近い。</p>
-              <p>認証も、多数の機構と不確実な制御を説明するのではなく、限定されたモードと決定論的な遷移条件を一つずつ検証する過程になる。</p>
-              <p>製品は二つの機体クラスと三つのモデルへ展開する。</p>
-              <p>599kg級無人モデルは300kgを運び、約4,000万ウォンの機体価格を目標とする。</p>
-              <p>890kg級無人モデルは475kgを運び、約1億ウォンの機体価格を目標とする。</p>
-              <p>同じ890kg級の4人乗り有人モデルは約2億ウォンの機体価格を目標とし、貨物運航で蓄積した技術とデータを基盤に旅客市場へ進む。</p>
-              <p>Lambdaの本質は高性能機を難しく作る技術ではない。</p>
-              <p>工学的難度をドローンや産業電動機械の水準まで下げ、効用を固定翼機と地域輸送インフラの水準へ広げた構造である。</p>
-              <p>Lambda最大の競争力は次の一文に集約される。</p>
-              <blockquote>Lambdaは航空機機能を複雑な機構から独立推進器とソフトウェア飛行モードへ移し、製造・整備・認証・運航の難度と費用を同時に下げたソフトウェア定義航空機である。</blockquote>
-              <p>この構造が継続運航で実証されれば、Lambdaは既存eVTOLとの競争にとどまらない。</p>
-              <p>航空機製造のコスト構造と航空輸送の運航単価構造そのものを変える機体になる。</p>
-            </div>
-          </details>
+        <article class="message business-essay-summary">
+          <span class="label">Lambda Architecture</span>
+          <h2>Lambdaの本質的な競争力</h2>
+          <p>一般的な航空機は、飛行機能を増やすために操縦翼面、リンク機構、油圧装置、可変ピッチ装置を追加し続けます。部品が増えるほど、製造・整備・認証のコストも上昇します。</p>
+          <p>Lambdaは逆の発想で設計しました。8基の同一推進モジュールだけで、垂直離着陸、巡航、遷移飛行、緊急着陸までをひとつの構造で実現します。操縦翼面も、可変ピッチ装置も、複雑な機械式操縦系統もありません。</p>
+          <p>その結果、部品点数が減り、生産方式は自動車や産業用電動機械に近づき、認証対象となる構成要素も大幅に減少します。</p>
+          <p>この構造が反復運航で実証されれば、Lambdaは単なるeVTOLではなく、航空機の製造原価と航空輸送のコスト構造そのものを変えるプラットフォームになります。</p>
         </article>
       </div>
     </section>
@@ -7349,6 +6711,47 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
+    const navItems = Array.from(document.querySelectorAll('.nav-item'));
+    const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const navCloseTimers = new WeakMap();
+
+    function setNavItemOpen(item, open) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+        navCloseTimers.delete(item);
+      }
+
+      item.classList.toggle('is-open', open);
+      const trigger = item.querySelector('.nav-link');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+    }
+
+    function closeNavItems(except = null) {
+      navItems.forEach((item) => {
+        if (item !== except) {
+          setNavItemOpen(item, false);
+        }
+      });
+    }
+
+    function openNavItem(item) {
+      closeNavItems(item);
+      setNavItemOpen(item, true);
+    }
+
+    function scheduleNavClose(item) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+
+      navCloseTimers.set(item, window.setTimeout(() => {
+        setNavItemOpen(item, false);
+      }, 220));
+    }
 
     function showBusinessPanel(panel) {
       if (!validBusinessPanels.includes(panel)) {
@@ -7414,7 +6817,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
-      document.querySelectorAll('.nav-item.is-open').forEach((el) => el.classList.remove('is-open'));
+      closeNavItems();
       if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
       }
@@ -7425,28 +6828,53 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       el.addEventListener('click', function (event) {
         const navItem = el.closest('.nav-item');
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
-        if (submenu && el.parentElement === navItem && !navItem.classList.contains('is-open')) {
+        if (submenu && el.parentElement === navItem) {
           event.preventDefault();
-          document.querySelectorAll('.nav-item.is-open').forEach((item) => item.classList.remove('is-open'));
-          navItem.classList.add('is-open');
+          const shouldOpen = !navItem.classList.contains('is-open');
+          closeNavItems(navItem);
+          setNavItemOpen(navItem, shouldOpen);
           return;
         }
         showPage(el.dataset.targetPage, true, el.dataset.businessTarget || null);
       });
     });
 
-
-    const navItems = Array.from(document.querySelectorAll('.nav-item'));
     navItems.forEach((item) => {
-      item.addEventListener('mouseenter', function () {
-        navItems.forEach((el) => el.classList.remove('is-open'));
-        item.classList.add('is-open');
+      if (hoverCapable.matches) {
+        item.addEventListener('mouseenter', function () {
+          openNavItem(item);
+        });
+
+        item.addEventListener('mouseleave', function () {
+          scheduleNavClose(item);
+        });
+      }
+
+      item.addEventListener('focusin', function (event) {
+        if (event.target.matches(':focus-visible')) {
+          openNavItem(item);
+        }
+      });
+
+      item.addEventListener('focusout', function (event) {
+        if (!item.contains(event.relatedTarget)) {
+          scheduleNavClose(item);
+        }
       });
     });
 
     document.addEventListener('click', function (event) {
       if (!event.target.closest('.nav-item')) {
-        navItems.forEach((el) => el.classList.remove('is-open'));
+        closeNavItems();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeNavItems();
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
       }
     });
     document.addEventListener('click', function (event) {

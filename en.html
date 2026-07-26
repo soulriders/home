@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <!--
@@ -1828,6 +1828,27 @@ body::after {
   font-weight: 800;
 }
 
+.nav-item > .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-item > .nav-link::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.nav-item.is-open > .nav-link::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
 .submenu {
   position: absolute;
   top: calc(100% + 14px);
@@ -1850,8 +1871,18 @@ body::after {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+
 .nav-item:hover .submenu,
-.nav-item:focus-within .submenu {
+.nav-item:focus-within .submenu,
+.nav-item.is-open .submenu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -3643,14 +3674,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transform: translateY(8px) !important;
+    transform: translateX(-50%) translateY(8px) !important;
   }
 
   .nav-item.is-open .submenu {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    transform: translateY(0) !important;
+    transform: translateX(-50%) translateY(0) !important;
   }
 }
 /* Mobile submenu close behavior end */
@@ -5009,8 +5040,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="company">Company</button>
-          <div class="submenu" aria-label="Company submenu">
+          <button type="button" class="nav-link" data-target-page="company" aria-haspopup="true" aria-expanded="false" aria-controls="company-submenu">Company</button>
+          <div class="submenu" id="company-submenu" aria-label="Company submenu">
             <button type="button" class="submenu-link" data-target-page="company">Company</button>
             <button type="button" class="submenu-link" data-target-page="ir">IR</button>
             <button type="button" class="submenu-link" data-target-page="news">News</button>
@@ -5021,8 +5052,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
         </div>
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="business" data-business-target="models">Business</button>
-          <div class="submenu" aria-label="Business submenu">
+          <button type="button" class="nav-link" data-target-page="business" data-business-target="models" aria-haspopup="true" aria-expanded="false" aria-controls="business-submenu">Business</button>
+          <div class="submenu" id="business-submenu" aria-label="Business submenu">
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="models">Partnership Structure</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="kr-local">Local Governments (Korea)</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="jp-local">Local Governments (Japan)</button>
@@ -5049,7 +5080,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <span class="typo-line">The World's First Asynchronous Tiltrotor</span>
         <span class="typo-line">Architecture.</span>
       </h1>
-      <p class="hero-p">Deterministic flight control reduces aircraft certification complexity, manufacturing cost, and time to commercialization.</p>
+      <p class="hero-p">1,000 km range. KRW 100 million class. Four-seat VTOL. Lambda.<br>Flight testing of the 25 kg-class aircraft begins in October 2026.</p>
       <div class="home-v2-actions">
         <a class="button primary" href="?page=technology" data-route="technology">Technology</a>
         <a class="button secondary" href="?page=product" data-route="product">Products</a>
@@ -5072,10 +5103,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
   <section class="home-v2-section" id="HOME_WHY">
     <div class="container home-v2-problem">
-      <blockquote>Why Do We Need a New Aircraft?</blockquote>
+      <blockquote>It will make everyone wonder: Why wasn't this done sooner?</blockquote>
       <div class="home-v2-problem-copy">
         <p>Conventional eVTOL aircraft are becoming increasingly complex. More actuators mean more software, longer certification schedules, and higher manufacturing costs.</p>
-        <p><strong>Receivepower takes a different approach. We simplify flight itself.</strong></p>
+        <p><strong>The world's simplest tiltrotor aircraft.</strong></p>
       </div>
     </div>
   </section>
@@ -5591,16 +5622,16 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <li>Deterministic control: DO-178C</li>
             <li>Power-off emergency landing: PL.2105(g) under FAA AC 21.17-4</li>
           </ul>
-          <p>We designed the aircraft to satisfy both requirements from the design stage.</p>
+          <p>We incorporated the two most demanding certification requirements into the aircraft design from the outset.</p>
           <h3>1. It responds only in predefined ways (DO-178C)</h3>
-          <p>Conventional aircraft respond to each gust through real-time computation, so the result cannot be predicted 100% in advance. Our aircraft precomputes the answer for each condition and only switches immediately, making the result provable to certification authorities in advance.</p>
+          <p>Conventional systems keep calculating answers in flight. Lambda switches immediately to answers validated in advance.</p>
           <h3>2. It lands under control even when the engine is off (PL.2105(g))</h3>
           <p>Even when the engine is off, control does not stop. In the extreme case of losing all power, the eight rotors create differences in air resistance — differential drag — forming virtual control surfaces. We designed a fail-safe that controls direction and trajectory to the end and performs a glide landing without power. SDA is an aircraft designed directly for PL.2105(g).</p>
           <h3>3. Certification-target components are reduced to about 1/100</h3>
           <p>Conventional aircraft have hundreds of failure points because of control surfaces and actuators, and each must be proven. We removed mechanical control surfaces themselves, dramatically reducing the components subject to certification.</p>
           <h3>4. We build trust with cargo before people</h3>
-          <p>Instead of spending capital first on crewed-aircraft certification, we accumulate large volumes of real flight data through cargo transport. An accident-free operating record carries more weight than paperwork and accelerates later crewed certification.</p>
-          <p>In conclusion, we simplified computation, reduced parts, and resolved emergency response through design. Certification is no longer unpredictable R&amp;D, but a procedure executed in a defined sequence.</p>
+          <p>Instead of spending capital first on crewed-aircraft certification, we accumulate large volumes of real flight data through cargo transport. We fly cargo aircraft first and often, building the real-world flight record required for crewed-aircraft certification.</p>
+          <p>In conclusion, we simplified computation, reduced parts, and resolved emergency response through design. We address the technologies required for certification at the design stage, making the remaining process predictable.</p>
           <a class="back-link" href="#home-visitor-sequences" data-route="home">↑ Back to Contents</a>
         </article>
 
@@ -5762,354 +5793,6 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
       </div>
     </section>
-    <section class="message-section robotics-technology-taxonomy">
-      <div class="container message-list">
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Robot Middleware</h2>
-          <ul class="tech-keyword-list">
-              <li>ROS</li>
-              <li>ROS 2</li>
-              <li>DDS</li>
-              <li>Node Graph</li>
-              <li>Topic</li>
-              <li>Service</li>
-              <li>Action</li>
-              <li>TF Tree</li>
-              <li>URDF</li>
-              <li>SRDF</li>
-              <li>MoveIt</li>
-              <li>Nav2</li>
-              <li>Gazebo</li>
-              <li>Isaac Sim</li>
-              <li>MAVROS</li>
-              <li>Robot State Publisher</li>
-              <li>Joint State Publisher</li>
-              <li>Controller Manager</li>
-              <li>Hardware Interface</li>
-              <li>Real-Time Control Loop</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Industrial Control</h2>
-          <ul class="tech-keyword-list">
-              <li>PLC</li>
-              <li>Ladder Logic</li>
-              <li>Structured Text</li>
-              <li>Modbus TCP</li>
-              <li>Modbus RTU</li>
-              <li>EtherCAT</li>
-              <li>Ethernet/IP</li>
-              <li>PROFINET</li>
-              <li>CAN</li>
-              <li>CANopen</li>
-              <li>Digital I/O</li>
-              <li>Analog I/O</li>
-              <li>Relay Output</li>
-              <li>Safety Relay</li>
-              <li>Emergency Stop</li>
-              <li>Interlock</li>
-              <li>Watchdog</li>
-              <li>Heartbeat Signal</li>
-              <li>Machine State</li>
-              <li>Fault Code</li>
-              <li>Reset Sequence</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Coordinate System</h2>
-          <ul class="tech-keyword-list">
-              <li>World Frame</li>
-              <li>Map Frame</li>
-              <li>Base Frame</li>
-              <li>Tool Frame</li>
-              <li>Camera Frame</li>
-              <li>Gripper Frame</li>
-              <li>Workpiece Frame</li>
-              <li>Fixture Frame</li>
-              <li>Conveyor Frame</li>
-              <li>Calibration Frame</li>
-              <li>Homogeneous Transform</li>
-              <li>Rotation Matrix</li>
-              <li>Quaternion</li>
-              <li>Euler Angle</li>
-              <li>Pose Estimation</li>
-              <li>Hand-Eye Calibration</li>
-              <li>Extrinsic Calibration</li>
-              <li>Intrinsic Calibration</li>
-              <li>Coordinate Registration</li>
-              <li>Frame Alignment</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Sensor Fusion</h2>
-          <ul class="tech-keyword-list">
-              <li>Camera</li>
-              <li>Depth Camera</li>
-              <li>Stereo Camera</li>
-              <li>IMU</li>
-              <li>Encoder</li>
-              <li>Load Cell</li>
-              <li>Force Torque Sensor</li>
-              <li>Proximity Sensor</li>
-              <li>Limit Switch</li>
-              <li>Motor Current</li>
-              <li>Torque Estimate</li>
-              <li>PLC State</li>
-              <li>Time Synchronization</li>
-              <li>Signal Filtering</li>
-              <li>Kalman Filter</li>
-              <li>Extended Kalman Filter</li>
-              <li>Particle Filter</li>
-              <li>Complementary Filter</li>
-              <li>State Estimation</li>
-              <li>Outlier Rejection</li>
-              <li>Sensor Confidence</li>
-              <li>Multi-Rate Sampling</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Virtual Space</h2>
-          <ul class="tech-keyword-list">
-              <li>Digital Twin</li>
-              <li>Simulation Scene</li>
-              <li>OpenUSD</li>
-              <li>Physics Engine</li>
-              <li>Renderer</li>
-              <li>Robot Model</li>
-              <li>Factory Layout</li>
-              <li>Workcell Layout</li>
-              <li>Collision Mesh</li>
-              <li>Kinematic Model</li>
-              <li>Dynamic Model</li>
-              <li>Sensor Model</li>
-              <li>Synthetic Data</li>
-              <li>Domain Randomization</li>
-              <li>Scenario Generation</li>
-              <li>Motion Replay</li>
-              <li>Failure Replay</li>
-              <li>Real-to-Sim</li>
-              <li>Sim-to-Real</li>
-              <li>Virtual Commissioning</li>
-              <li>Process Simulation</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Vision</h2>
-          <ul class="tech-keyword-list">
-              <li>Object Detection</li>
-              <li>Instance Segmentation</li>
-              <li>Semantic Segmentation</li>
-              <li>SAM2</li>
-              <li>YOLO</li>
-              <li>Mask R-CNN</li>
-              <li>Keypoint Detection</li>
-              <li>Edge Detection</li>
-              <li>Pose Estimation</li>
-              <li>Depth Estimation</li>
-              <li>Visual Servoing</li>
-              <li>Marker Tracking</li>
-              <li>AprilTag</li>
-              <li>ArUco</li>
-              <li>OCR</li>
-              <li>Defect Detection</li>
-              <li>Surface Inspection</li>
-              <li>Part Presence</li>
-              <li>Position Verification</li>
-              <li>Orientation Verification</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Manipulation</h2>
-          <ul class="tech-keyword-list">
-              <li>Grasp Planning</li>
-              <li>Grasp Pose</li>
-              <li>Approach Vector</li>
-              <li>Tool Center Point</li>
-              <li>Inverse Kinematics</li>
-              <li>Motion Planning</li>
-              <li>Trajectory Generation</li>
-              <li>Path Constraint</li>
-              <li>Collision Avoidance</li>
-              <li>Pick and Place</li>
-              <li>Insertion</li>
-              <li>Alignment</li>
-              <li>Sorting</li>
-              <li>Stacking</li>
-              <li>Palletizing</li>
-              <li>Bin Picking</li>
-              <li>Tool Changing</li>
-              <li>Gripper Control</li>
-              <li>End-Effector Design</li>
-              <li>Affordance Map</li>
-              <li>Task Primitive</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Force / Contact</h2>
-          <ul class="tech-keyword-list">
-              <li>Force Control</li>
-              <li>Impedance Control</li>
-              <li>Admittance Control</li>
-              <li>Compliance Control</li>
-              <li>Contact Detection</li>
-              <li>Slip Detection</li>
-              <li>Pressing Force</li>
-              <li>Insertion Force</li>
-              <li>Load Threshold</li>
-              <li>Overload Detection</li>
-              <li>Current Limit</li>
-              <li>Torque Limit</li>
-              <li>Soft Stop</li>
-              <li>Hard Stop</li>
-              <li>Retraction Motion</li>
-              <li>Recovery Motion</li>
-              <li>Force Feedback</li>
-              <li>Contact State</li>
-              <li>Pressure Profile</li>
-              <li>Z-Axis Control</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>AI Model</h2>
-          <ul class="tech-keyword-list">
-              <li>Vision Model</li>
-              <li>Segmentation Model</li>
-              <li>Detection Model</li>
-              <li>Pose Model</li>
-              <li>Anomaly Detection</li>
-              <li>VAE</li>
-              <li>Diffusion Policy</li>
-              <li>Behavior Cloning</li>
-              <li>Reinforcement Learning</li>
-              <li>Imitation Learning</li>
-              <li>Policy Learning</li>
-              <li>Trajectory Model</li>
-              <li>Latent Space</li>
-              <li>Feature Embedding</li>
-              <li>Few-Shot Adaptation</li>
-              <li>Human-in-the-Loop</li>
-              <li>Active Learning</li>
-              <li>Dataset Curation</li>
-              <li>Annotation Pipeline</li>
-              <li>Model Evaluation</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Workcell</h2>
-          <ul class="tech-keyword-list">
-              <li>Robot Arm</li>
-              <li>Mobile Robot</li>
-              <li>AMR</li>
-              <li>AGV</li>
-              <li>Humanoid</li>
-              <li>Gripper</li>
-              <li>End-Effector</li>
-              <li>Camera Mount</li>
-              <li>Lighting</li>
-              <li>Fixture</li>
-              <li>Jig</li>
-              <li>Conveyor</li>
-              <li>Feeder</li>
-              <li>Tray</li>
-              <li>Pallet</li>
-              <li>Inspection Station</li>
-              <li>Reject Station</li>
-              <li>HMI</li>
-              <li>Operator Panel</li>
-              <li>Safety Zone</li>
-              <li>Work Envelope</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Factory Data</h2>
-          <ul class="tech-keyword-list">
-              <li>MQTT</li>
-              <li>OPC UA</li>
-              <li>REST API</li>
-              <li>WebSocket</li>
-              <li>Message Broker</li>
-              <li>Event Log</li>
-              <li>Telemetry</li>
-              <li>Time-Series Data</li>
-              <li>Production Count</li>
-              <li>Cycle Time</li>
-              <li>Takt Time</li>
-              <li>Downtime</li>
-              <li>Fault History</li>
-              <li>Inspection Result</li>
-              <li>Process Parameter</li>
-              <li>Quality Data</li>
-              <li>Traceability</li>
-              <li>Dashboard</li>
-              <li>Alert</li>
-              <li>Report</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Safety</h2>
-          <ul class="tech-keyword-list">
-              <li>Emergency Stop</li>
-              <li>Safety PLC</li>
-              <li>Safety Zone</li>
-              <li>Light Curtain</li>
-              <li>Area Scanner</li>
-              <li>Door Interlock</li>
-              <li>Torque Limit</li>
-              <li>Speed Limit</li>
-              <li>Workspace Limit</li>
-              <li>Collision Check</li>
-              <li>Fault Detection</li>
-              <li>Safe Stop</li>
-              <li>Protective Stop</li>
-              <li>Manual Mode</li>
-              <li>Auto Mode</li>
-              <li>Teach Mode</li>
-              <li>Recovery Mode</li>
-              <li>Restart Condition</li>
-              <li>Operator Confirmation</li>
-              <li>Audit Log</li>
-          </ul>
-        </article>
-        <article class="message tech-taxonomy-card">
-          <span class="label">Robotics Technology</span>
-          <h2>Engineering System</h2>
-          <ul class="tech-keyword-list">
-              <li>Task Definition</li>
-              <li>Requirement Spec</li>
-              <li>Interface Spec</li>
-              <li>I/O Map</li>
-              <li>State Machine</li>
-              <li>Sequence Diagram</li>
-              <li>Failure Mode</li>
-              <li>Acceptance Criteria</li>
-              <li>Test Case</li>
-              <li>Simulation Test</li>
-              <li>Hardware Test</li>
-              <li>Regression Test</li>
-              <li>Version Control</li>
-              <li>Naming Rule</li>
-              <li>Component Registry</li>
-              <li>API Contract</li>
-              <li>RAG Rulebase</li>
-              <li>Agent Workflow</li>
-              <li>Review Protocol</li>
-              <li>Validation Report</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   </main>
 
 <main class="page-view" data-page="ip">
@@ -6144,56 +5827,31 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <article class="message">
           <span class="label">Registered</span>
           <h2>1. Independently Controlled Tilting Thrust Units</h2>
-          <p>A structure that moves away from tilting all thrust units at the same angle at once, and instead separates thrust and lift during the transition segment.</p>
-          <ul class="data-list">
-            <li><span>Configuration</span><strong>Independent tilting by thrust unit and distributed propulsion control</strong></li>
-            <li><span>Change</span><strong>Segmenting the transition from hover flight to fixed-wing cruise</strong></li>
-            <li><span>Effect</span><strong>VTOL transition stability and crewed-flight scalability</strong></li>
-          </ul>
+          <p>They structurally stabilize transition flight and provide a foundation that can scale to crewed passenger transport.</p>
         </article>
 
         <article class="message">
           <span class="label">Filed</span>
           <h2>2. Flight Control Based on Virtual Control Surfaces</h2>
-          <p>A structure that reduces dependence on physical control surfaces, hinges, links, and actuators, using propulsor placement and thrust differences as flight-control resources.</p>
-          <ul class="data-list">
-            <li><span>Configuration</span><strong>Using distributed propulsor positions and phase differences as control resources</strong></li>
-            <li><span>Change</span><strong>Reducing moving control surfaces and related mechanical parts</strong></li>
-            <li><span>Effect</span><strong>Lower aircraft cost, fewer maintenance items, and reduced production complexity</strong></li>
-          </ul>
+          <p>Flight is controlled without physical control surfaces, significantly reducing production complexity and maintenance requirements.</p>
         </article>
 
         <article class="message">
           <span class="label">Filed</span>
           <h2>3. Discrete-Matrix-Based Flight Management System</h2>
-          <p>A deterministic flight-management structure that predefines flight and failure states, then switches to the control mode matched to each state.</p>
-          <ul class="data-list">
-            <li><span>Configuration</span><strong>State-specific control matrices and failure-response modes</strong></li>
-            <li><span>Change</span><strong>Removes black-box decisions and locks control into testable units</strong></li>
-            <li><span>Effect</span><strong>Certification explainability, operation logs, and failure-response structure</strong></li>
-          </ul>
+          <p>Every response of the flight algorithm is verified in advance, improving the predictability of certification schedules and budgets.</p>
         </article>
 
         <article class="message">
           <span class="label">Filed</span>
           <h2>4. Power-Off High-Lift Control</h2>
-          <p>An independent invention that uses the aircraft’s own lift and rotating elements during power loss or low-speed segments to secure landing margin and directional control.</p>
-          <ul class="data-list">
-            <li><span>Configuration</span><strong>Use of lift, autorotation, and differential drag in a power-off state</strong></li>
-            <li><span>Change</span><strong>Securing additional time and space in emergency situations</strong></li>
-            <li><span>Effect</span><strong>Power-loss scenarios and emergency landing safety</strong></li>
-          </ul>
+          <p>Even after a total loss of power, the aircraft retains control of its direction and trajectory through landing.</p>
         </article>
 
         <article class="message">
           <span class="label">Filed</span>
           <h2>5. SADS-Based Virtual Pitot Tube</h2>
-          <p>An independent invention that estimates the aircraft’s state in the air by fusing multiple signals rather than relying on a single physical sensor.</p>
-          <ul class="data-list">
-            <li><span>Configuration</span><strong>State estimation based on GNSS, IMU, propulsor data, and sensor fusion</strong></li>
-            <li><span>Change</span><strong>Securing an auxiliary channel to determine the aircraft’s current air-state condition</strong></li>
-            <li><span>Effect</span><strong>State recognition, mode transition, and control stability</strong></li>
-          </ul>
+          <p>The aircraft can determine its flight state even if a single physical sensor fails.</p>
         </article>
 
         <article class="message">
@@ -6231,7 +5889,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
               <span class="label">03</span>
               <h2>Why Virtual Control Surfaces: Lower Manufacturing and Maintenance Cost</h2>
               <p>Physical control surfaces and mechanical actuators are removed, and flight is controlled through software-based rotor control.</p>
-              <p>With mechanical linkages removed, fully automated production of wings and fuselage becomes possible, bringing aircraft price down toward 10% of conventional levels.</p>
+              <p>Reducing mechanical linkages simplifies production and brings aircraft price down toward 10% of conventional levels.</p>
               <p>As moving parts fall to one-hundredth, wear and failure factors decrease, reducing operating maintenance cost and maintenance time.</p>
             </article>
             <article class="message">
@@ -6748,315 +6406,13 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h2>Revenue does not end with aircraft sales.</h2>
           <p>SDA's objective is not merely hardware manufacturing, but the cost structure and operating standard of air logistics. Aircraft sales, leasing, corridor rights, MRO, Flight OS, continuing-airworthiness data, and regional JVs create long-term revenue.</p>
         </article>
-        <article class="message business-essay">
-          <details>
-            <summary>
-              <div>
-                <span class="essay-kicker">Strategic Essay</span>
-                <h2>Lambda's Essential Competitive Advantage</h2>
-                <p class="essay-lead">We removed complex machinery and placed the flight capabilities an aircraft needs into one structure.</p>
-              </div>
-            </summary>
-            <div class="business-essay-body">
-              <p>A software-defined aircraft that removes engineering complexity while preserving aircraft utility</p>
-              <p>Lambda's advantage does not lie in vertical takeoff and landing alone, nor in fixed-wing cruise alone. Tiltrotors, distributed electric propulsion, and tandem wings already exist individually.</p>
-              <p>Lambda's essential advantage is the structural removal of what makes conventional aircraft difficult.</p>
-              <p>Conventional aircraft add mechanisms, control surfaces, links, hydraulics, variable-pitch devices, and complex controls to gain performance and functions. More functions mean more parts, harder manufacturing and maintenance, and more failure modes and certification items.</p>
-              <p>Lambda was designed in the opposite direction.</p>
-              <p>Instead of adding more machinery, it delivers the required flight functions through independent tilting of identical fixed-pitch propulsors and software flight modes.</p>
-              <p>This sharply lowers engineering difficulty while retaining VTOL, fixed-wing cruise, transition, attitude control, high-lift flight, glide, and emergency-flight capability in one simple structure.</p>
-              <hr>
-              <h3>1. It did not solve the hard problem; it removed the problem itself</h3>
-              <p>Lambda does not improve conventional aircraft complexity; it avoids the structures that create it.</p>
-              <p>Without traditional control surfaces such as ailerons, elevators, and rudders, the following disappear together:</p>
-              <ul>
-                <li>Control-surface aerodynamic design</li>
-                <li>Hinge-moment calculations</li>
-                <li>Control-surface flutter verification</li>
-                <li>Control-surface servos and actuators</li>
-                <li>Links and cables</li>
-                <li>Backlash and clearance management</li>
-                <li>Control-surface internal wiring</li>
-                <li>Control-surface jamming and breakage modes</li>
-                <li>Control-surface manufacturing and assembly</li>
-                <li>Repeated analysis and retesting after control-surface changes</li>
-              </ul>
-              <p>There is no helicopter-style swashplate or variable-pitch mechanism.</p>
-              <p>Each propulsor uses a fixed-pitch propeller and BLDC motor; the complete propeller, motor, and nacelle module rotates around a simple hinge.</p>
-              <p>Complex rotor hubs, pitch links, swashplates, hydraulics, and precision mechanical controls are unnecessary.</p>
-              <p>Lambda did not improve the most expensive and difficult parts of an aircraft. It removed them.</p>
-              <hr>
-              <h3>2. It controls flight with propulsor direction and thrust instead of control surfaces</h3>
-              <p>Lambda's eight propulsors are not merely power sources. Each is an independent flight-control device that changes thrust magnitude and direction.</p>
-              <p>Roll, pitch, yaw, climb, descent, acceleration, and deceleration are produced directly by combining propulsor output and tilt angle, not indirectly through control surfaces.</p>
-              <p>This structure provides the following without separate control surfaces:</p>
-              <ul>
-                <li>Vertical takeoff and landing</li>
-                <li>Hover</li>
-                <li>Low-speed attitude control</li>
-                <li>Cruise attitude control</li>
-                <li>Transition flight</li>
-                <li>High-lift flight</li>
-                <li>Virtual flaps</li>
-                <li>Attitude control using differential drag</li>
-                <li>Windmilling and autorotative flight</li>
-                <li>Attitude control during power-off glide</li>
-              </ul>
-              <p>Conventional aircraft require separate surfaces and mechanisms for each function. Lambda changes the angle and power allocation of the same propulsors.</p>
-              <p>Adding flight functions does not require continuously adding hardware.</p>
-              <hr>
-              <h3>3. Asynchronous tilting structurally lowers transition-flight difficulty</h3>
-              <p>The hardest phase of a conventional tiltrotor is the transition from vertical flight to cruise.</p>
-              <p>When all propulsors tilt together, lift sources and control methods change at once. Rotor lift, wing lift, attitude, thrust direction, and stall margin must all be managed simultaneously.</p>
-              <p>Lambda does not transition every propulsor at once.</p>
-              <p>Some propulsors retain vertical lift and attitude control while others tilt first to create forward thrust. Once speed and wing lift are established, the remaining propulsors transition sequentially.</p>
-              <p>A propulsor group always remains to support and control the aircraft during transition.</p>
-              <p>Lambda turns one complex continuous transition into stepwise movement between stable states.</p>
-              <ul>
-                <li>Vertical-flight state</li>
-                <li>Transition of selected propulsors</li>
-                <li>Forward-thrust formation</li>
-                <li>Airspeed increase</li>
-                <li>Wing-lift formation</li>
-                <li>Transition of remaining propulsors</li>
-                <li>Entry into cruise</li>
-              </ul>
-              <p>At each step, the propulsors responsible for lift, forward thrust, and attitude control are explicit.</p>
-              <p>There is no need to optimize every variable simultaneously through an unstable transition region.</p>
-              <p>Asynchronous tilting does not suppress the tiltrotor transition problem with a stronger controller. It simplifies the transition structure itself.</p>
-              <hr>
-              <h3>4. MMA calls validated flight structures instead of optimizing in real time</h3>
-              <p>Lambda does not calculate countless actuator combinations every moment to find an optimum.</p>
-              <p>It selects predefined, validated control matrices according to flight state, speed, attitude, propulsor status, and constraints.</p>
-              <p>Each MMA explicitly defines:</p>
-              <ul>
-                <li>Which propulsors provide lift</li>
-                <li>Which propulsors provide forward thrust</li>
-                <li>Which propulsors control roll</li>
-                <li>Which propulsors control pitch</li>
-                <li>Which propulsors control yaw</li>
-                <li>Which propulsors tilt</li>
-                <li>The output range of each propulsor</li>
-                <li>Conditions for switching to the next MMA</li>
-                <li>The alternate MMA used after a propulsor failure</li>
-              </ul>
-              <p>The control system calls a defined control structure according to aircraft state.</p>
-              <p>This uses less computation than complex real-time optimization, produces repeatable results, and makes test conditions and outcomes traceable.</p>
-              <p>The same state and input use the same MMA and control structure.</p>
-              <p>This is the core of Lambda's deterministic flight.</p>
-              <p>Certification authorities can be shown in advance each propulsor's role, mode-transition conditions, and alternate structures after failures.</p>
-              <p>This improves the predictability of development and certification schedules as well as control performance.</p>
-              <hr>
-              <h3>5. It repeats identical fore and aft wings and eight identical propulsion modules</h3>
-              <p>Lambda's fore and aft wings are not separate dedicated designs. The same wing component is repeated front and rear.</p>
-              <p>Common wing geometry, span, chord, propulsor spacing, and mounting structure reduce:</p>
-              <ul>
-                <li>Wing design cost</li>
-                <li>Mold cost</li>
-                <li>Tooling cost</li>
-                <li>Structural-test cost</li>
-                <li>Production-equipment cost</li>
-                <li>Parts inventory</li>
-                <li>Maintenance training</li>
-                <li>Replacement-part varieties</li>
-                <li>Quality-control items</li>
-              </ul>
-              <p>The eight tilt nacelles use identical motors, propellers, hinges, mounts, and control interfaces.</p>
-              <p>Instead of multiple dedicated propulsion devices, one validated propulsion module is repeated eight times.</p>
-              <p>More propulsors don't add much mechanical complexity, because they are eight identical simple modules rather than eight different devices.</p>
-              <p>After a failure, modules can be replaced instead of disassembling complex components in the field.</p>
-              <p>Lambda production and maintenance resemble automotive parts or industrial modules more than conventional aircraft.</p>
-              <hr>
-              <h3>6. Fixed-pitch BLDC propulsion and a simple tilt structure lower propulsion-system difficulty</h3>
-              <p>Lambda's propulsion system contains little specialized, complex aviation machinery.</p>
-              <p>Its core components are:</p>
-              <ul>
-                <li>Fixed-pitch propeller</li>
-                <li>BLDC motor</li>
-                <li>ESC</li>
-                <li>Simple rotary hinge</li>
-                <li>Tilt actuator</li>
-                <li>Externally mounted support</li>
-              </ul>
-              <p>Without variable pitch, pitch links, bearings, hubs, actuators, and related maintenance items disappear.</p>
-              <p>Thrust is adjusted through motor RPM and nacelle angle instead of precision mechanical control.</p>
-              <p>BLDC motors and ESCs are mature technologies used at scale in vehicles, industrial robots, drones, and electric machinery.</p>
-              <p>Lambda does not develop a new powerplant from scratch. It packages mature electric components into a simple propulsion module and repeats it.</p>
-              <hr>
-              <h3>7. It combines multirotor simplicity with fixed-wing cruise efficiency</h3>
-              <p>Multirotors make VTOL and hover simple, but their rotors must support aircraft weight even in cruise.</p>
-              <p>Energy efficiency falls sharply as speed and range increase.</p>
-              <p>Lambda uses distributed electric propulsion for takeoff and landing, and fixed wings support its weight in cruise.</p>
-              <p>In cruise, propulsors provide forward thrust to overcome drag rather than continuously lifting the aircraft.</p>
-              <p>Flight control and propulsion remain as simple as a multirotor while cruise benefits from fixed-wing lift-to-drag ratio.</p>
-              <p>Lambda is neither an electrified helicopter nor a conventional airplane with VTOL motors added.</p>
-              <p>It uses multirotor physics in vertical flight and fixed-wing physics in cruise, clearly separating the roles of each state.</p>
-              <hr>
-              <h3>8. Tandem-wing stagger makes the structure part of flight control</h3>
-              <p>Lambda places identical fore and aft wings at different heights in a tandem-wing structure.</p>
-              <p>The stagger between them is not merely visual.</p>
-              <p>It supports pitch stability, lift-center distribution, propulsor placement, and differential-drag control.</p>
-              <p>Aircraft geometry and propulsor control create the required stability and authority without adding horizontal and vertical tails, elevators, or rudders.</p>
-              <p>The structure itself becomes part of the flight-control system.</p>
-              <p>Required functions are obtained without adding tail structures, control surfaces, actuators, associated production, maintenance, or certification items.</p>
-              <hr>
-              <h3>9. Manufacturing and maintenance move beyond conventional aircraft production</h3>
-              <p>Conventional aircraft are expensive to produce because of complex surfaces, dedicated parts, and manual assembly.</p>
-              <p>Lambda uses a simple fuselage, identical fore and aft wings, eight identical propulsion modules, external harnesses, and repeatable assembly.</p>
-              <p>This structure supports:</p>
-              <ul>
-                <li>Automated composite-panel forming</li>
-                <li>Surface-mounted component assembly</li>
-                <li>Repeated installation of identical modules</li>
-                <li>External harness assembly</li>
-                <li>Automated inspection by process</li>
-                <li>Module-level replacement</li>
-                <li>Inventory centered on fewer parts</li>
-              </ul>
-              <p>Aircraft are generally expensive because production volumes are low.</p>
-              <p>Lambda repeats common parts even at low volume and can approach automotive and industrial economies of scale as volume grows.</p>
-              <p>Maintenance is different as well.</p>
-              <p>After a failure, motors, ESCs, tilt units, sensors, and control modules are replaced rather than complex control systems being disassembled in the field.</p>
-              <p>This reduces maintenance and downtime and lowers dependence on highly specialized labor.</p>
-              <hr>
-              <h3>10. Lower aircraft complexity also lowers certification difficulty</h3>
-              <p>Aircraft certification can cost far more than manufacturing the parts.</p>
-              <p>Every new control surface, mechanism, actuator, or control method adds failure modes, structural tests, software verification, flight tests, and maintenance procedures.</p>
-              <p>Lambda was designed from the outset to reduce certification scope.</p>
-              <ul>
-                <li>No control surfaces</li>
-                <li>No variable-pitch mechanism</li>
-                <li>No hydraulic system</li>
-                <li>No complex mechanical control system</li>
-                <li>Repeated identical propulsion modules</li>
-                <li>Explicit control structure by flight mode</li>
-                <li>State-based discrete matrices</li>
-                <li>Deterministic control</li>
-                <li>Predefined alternate MMAs for failures</li>
-              </ul>
-              <p>The configurations and operating logic to be certified become simpler.</p>
-              <p>Lambda certification is closer to validating limited flight modes and explicit transition conditions one by one than explaining an entire complex aircraft as one giant system.</p>
-              <p>Propulsor roles and control authority are predefined by flight state, and the same state uses the same control structure.</p>
-              <p>While competing systems face lengthy software and systems certification due to complex mechanisms and real-time black-box control, Lambda can plan a shorter, more predictable schedule through deterministic flight and fixed MMA transitions.</p>
-              <hr>
-              <h3>11. The remaining development work involves filling in test values, not discovering unknown physics</h3>
-              <p>Lambda still requires testing and validation.</p>
-              <p>The nature of the remaining work differs from conventional eVTOL.</p>
-              <p>Key validation items include:</p>
-              <ul>
-                <li>Actual rotor-wing interference</li>
-                <li>Lift sharing between fore and aft wings</li>
-                <li>Thrust by flight mode</li>
-                <li>Transition timing and speed</li>
-                <li>Center-of-gravity envelope</li>
-                <li>Attitude-control gains</li>
-                <li>Alternate MMA after propulsor failure</li>
-                <li>Actual lift-to-drag ratio</li>
-                <li>Actual range and power consumption</li>
-                <li>Maintenance intervals under recurring operation</li>
-                <li>Noise and vibration</li>
-                <li>Structural loads and fatigue life</li>
-              </ul>
-              <p>These do not require discovering new physical laws or uncertain flight concepts.</p>
-              <p>They are engineering tasks: build and instrument the aircraft, obtain test values, and calibrate the software.</p>
-              <p>The flight methodology, propulsor roles by mode, and transition sequence are already defined.</p>
-              <p>Development centers on confirming values and tolerances for a defined structure, not searching for a new principle.</p>
-              <hr>
-              <h3>12. Two weight classes and three models lower the cost structure of air transport</h3>
-              <p>Lambda comprises 599 kg and 890 kg classes.</p>
-              <p>The 599 kg class is a light uncrewed cargo aircraft; the 890 kg class includes uncrewed cargo and crewed variants.</p>
-              <h4>599 kg Uncrewed Cargo</h4>
-              <ul>
-                <li>Maximum takeoff weight: 599 kg</li>
-                <li>Payload: 300 kg</li>
-                <li>Reference aircraft price: approx. KRW 40 million</li>
-              </ul>
-              <p>The 599 kg class is a lightweight aircraft for recurring transport, built around low asset cost and high frequency.</p>
-              <p>It suits recurring short-cycle routes for islands, industrial parks, ports, medical samples, and urgent parts.</p>
-              <p>Its low aircraft price reduces the capital burden of opening a route and allows more aircraft, higher frequency, and denser networks for the same investment.</p>
-              <p>Instead of one expensive aircraft moving large loads intermittently, multiple affordable aircraft operate repeatedly at short intervals.</p>
-              <p>A 300 kg payload moves beyond parcel drones into regional mid-mile and industrial recurring transport.</p>
-              <h4>890 kg Uncrewed Cargo</h4>
-              <ul>
-                <li>Maximum takeoff weight: 890 kg</li>
-                <li>Payload: 475 kg</li>
-                <li>Reference aircraft price: approx. KRW 100 million</li>
-              </ul>
-              <p>The 890 kg uncrewed cargo aircraft is the primary logistics model, moving 475 kg per flight.</p>
-              <p>With a 475 kg payload, it can directly replace parts of regional transport served by trucks, ships, and conventional air freight.</p>
-              <p>Although costlier than the 599 kg class, its larger load spreads control, takeoff, charging, inspection, and route costs over more cargo.</p>
-              <p>On sufficiently dense routes, revenue per flight and operating efficiency rise enough to compare air-transport cost directly with ground mid-mile logistics.</p>
-              <h4>890 kg Crewed Variant</h4>
-              <ul>
-                <li>Maximum takeoff weight: 890 kg class</li>
-                <li>Seats: 4</li>
-                <li>Reference aircraft price: approx. KRW 200 million</li>
-              </ul>
-              <p>The 890 kg crewed variant extends the same upper platform into passenger transport.</p>
-              <p>It shares asynchronous tiltrotor architecture, no-control-surface structure, repeated-module production, and the software-defined flight system with the cargo variant.</p>
-              <p>Cargo operation is not a side business separate from the crewed aircraft.</p>
-              <p>Recurring cargo flights first establish flight hours, component life, failure rates, maintenance intervals, weather response, energy use, and route data. That evidence supports crewed design, reliability, certification, and commercialization.</p>
-              <p>Cargo creates cash flow and flight data; the crewed variant of the same platform expands into passenger markets.</p>
-              <h4>Economics by Weight Class</h4>
-              <p>The 599 kg and 890 kg classes are not merely different sizes. Each lowers cost differently according to route volume and business purpose.</p>
-              <ul>
-                <li>599 kg uncrewed: KRW 40 million asset price and high operating frequency</li>
-                <li>890 kg uncrewed: 475 kg payload and higher revenue per flight</li>
-                <li>890 kg crewed: passenger-market expansion built on cargo data</li>
-                <li>Shared base: simple production, low maintenance, repeated modules, uncrewed operation, fixed-wing cruise efficiency</li>
-              </ul>
-              <p>The 599 kg class opens routes with less capital and creates high utilization.</p>
-              <p>The 890 kg uncrewed model raises cargo per flight to compete directly with ground mid-mile logistics.</p>
-              <p>The 890 kg crewed model extends cargo-proven technology, operations, and flight data into passenger markets.</p>
-              <p>Lambda's comparison set extends beyond expensive helicopters and specialized air freighters.</p>
-              <p>A KRW 40 million aircraft repeatedly carries 300 kg; a KRW 100 million aircraft carries 475 kg; the same 890 kg platform extends into a KRW 200 million crewed variant.</p>
-              <p>Two weight classes and three models share one technology, production, maintenance, and operating system.</p>
-              <p>Lambda creates cash flow and operating data through cargo, then enters crewed aviation on that foundation.</p>
-              <hr>
-              <h3>13. Lambda's greatest advantage is the complete industrial structure, not one performance metric</h3>
-              <p>Lambda's advantage is not a single number for speed, range, or payload.</p>
-              <p>Its real advantage is that the following connect in one structure:</p>
-              <ul>
-                <li>Low engineering difficulty.</li>
-                <li>Fewer parts.</li>
-                <li>Repeated common parts.</li>
-                <li>Easier manufacturing automation.</li>
-                <li>Simpler maintenance.</li>
-                <li>Deterministic control.</li>
-                <li>Explicit flight modes and transition conditions.</li>
-                <li>A bounded certification scope.</li>
-                <li>Lower aircraft cost.</li>
-                <li>High-utilization recurring operation.</li>
-                <li>Fixed-wing cruise efficiency.</li>
-                <li>Software-expandable functions.</li>
-                <li>Cargo operations and crewed expansion on one platform.</li>
-              </ul>
-              <p>Conventional eVTOL accepts aircraft complexity to gain performance.</p>
-              <p>Lambda removes complexity while retaining required flight functions and aircraft utility.</p>
-              <p>It does not make a difficult aircraft cheaper after the fact. It selects a flight method, airframe, and production system that can be simple and affordable from the start.</p>
-              <hr>
-              <h3>Conclusion</h3>
-              <p>Lambda is not more complex than a conventional tiltrotor.</p>
-              <p>It removes difficult problems from tiltrotors, helicopters, multirotors, and fixed wings, integrating the required functions into identical fixed-pitch propulsors and software flight modes.</p>
-              <p>It has no control surfaces, swashplate, variable pitch, or complex mechanical control system.</p>
-              <p>The fore and aft wings are identical, as are the eight propulsors.</p>
-              <p>Transition occurs sequentially while a propulsor group continues supporting and controlling the aircraft.</p>
-              <p>Control calls validated MMAs according to aircraft state instead of seeking a black-box optimum every moment.</p>
-              <p>Production resembles repeated module assembly and automation more than traditional hand-built aircraft manufacturing.</p>
-              <p>Maintenance resembles module replacement more than disassembly of complex mechanisms.</p>
-              <p>Certification becomes the validation of limited modes and deterministic transition conditions one by one, rather than explaining numerous mechanisms and uncertain control logic.</p>
-              <p>The product expands into two weight classes and three models.</p>
-              <p>The 599 kg uncrewed model carries 300 kg and targets an aircraft price of about KRW 40 million.</p>
-              <p>The 890 kg uncrewed model carries 475 kg and targets about KRW 100 million.</p>
-              <p>The four-seat crewed 890 kg variant targets about KRW 200 million and enters passenger markets with technology and flight data accumulated in cargo operation.</p>
-              <p>Lambda's essence is not technology that makes high-performance aircraft difficult.</p>
-              <p>It lowers engineering difficulty toward drones and industrial electric machinery while extending utility toward fixed-wing aircraft and regional transport infrastructure.</p>
-              <p>Lambda's strongest advantage can be stated in one sentence.</p>
-              <blockquote>Lambda is a software-defined aircraft that transfers aircraft functions from complex machinery to independent propulsors and software flight modes, lowering the difficulty and cost of manufacturing, maintenance, certification, and operation together.</blockquote>
-              <p>Once validated in recurring operation, Lambda goes beyond competing with conventional eVTOL.</p>
-              <p>It changes the cost structure of building aircraft and operating air transport itself.</p>
-            </div>
-          </details>
+        <article class="message business-essay-summary">
+          <span class="label">Lambda Architecture</span>
+          <h2>Lambda's Essential Competitive Advantage</h2>
+          <p>Conventional aircraft keep adding control surfaces, linkages, hydraulics, and variable-pitch mechanisms to gain more flight capabilities. As the parts count rises, so do manufacturing, maintenance, and certification costs.</p>
+          <p>Lambda takes the opposite approach. Eight identical propulsion modules provide vertical takeoff and landing, cruise, transition flight, and emergency landing within a single architecture. There are no control surfaces, variable-pitch mechanisms, or complex mechanical flight-control systems.</p>
+          <p>The result is fewer parts, production closer to automotive and industrial electric machinery, and a dramatically smaller set of components to certify.</p>
+          <p>Once proven through repeated operations, Lambda will be more than another eVTOL. It will be a platform that changes the cost structure of both aircraft manufacturing and air transport.</p>
         </article>
       </div>
     </section>
@@ -7350,6 +6706,47 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     const validPages = ['home', 'company', 'ir', 'news', 'technology', 'ip', 'product', 'market', 'business'];
     const businessPanels = Array.from(document.querySelectorAll('[data-business-panel]'));
     const validBusinessPanels = ['models', 'kr-local', 'jp-local', 'tech-partner', 'logistics', 'revenue'];
+    const navItems = Array.from(document.querySelectorAll('.nav-item'));
+    const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const navCloseTimers = new WeakMap();
+
+    function setNavItemOpen(item, open) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+        navCloseTimers.delete(item);
+      }
+
+      item.classList.toggle('is-open', open);
+      const trigger = item.querySelector('.nav-link');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+    }
+
+    function closeNavItems(except = null) {
+      navItems.forEach((item) => {
+        if (item !== except) {
+          setNavItemOpen(item, false);
+        }
+      });
+    }
+
+    function openNavItem(item) {
+      closeNavItems(item);
+      setNavItemOpen(item, true);
+    }
+
+    function scheduleNavClose(item) {
+      const timer = navCloseTimers.get(item);
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+
+      navCloseTimers.set(item, window.setTimeout(() => {
+        setNavItemOpen(item, false);
+      }, 220));
+    }
 
     function showBusinessPanel(panel) {
       if (!validBusinessPanels.includes(panel)) {
@@ -7415,7 +6812,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
-      document.querySelectorAll('.nav-item.is-open').forEach((el) => el.classList.remove('is-open'));
+      closeNavItems();
       if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
       }
@@ -7426,28 +6823,53 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       el.addEventListener('click', function (event) {
         const navItem = el.closest('.nav-item');
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
-        if (submenu && el.parentElement === navItem && !navItem.classList.contains('is-open')) {
+        if (submenu && el.parentElement === navItem) {
           event.preventDefault();
-          document.querySelectorAll('.nav-item.is-open').forEach((item) => item.classList.remove('is-open'));
-          navItem.classList.add('is-open');
+          const shouldOpen = !navItem.classList.contains('is-open');
+          closeNavItems(navItem);
+          setNavItemOpen(navItem, shouldOpen);
           return;
         }
         showPage(el.dataset.targetPage, true, el.dataset.businessTarget || null);
       });
     });
 
-
-    const navItems = Array.from(document.querySelectorAll('.nav-item'));
     navItems.forEach((item) => {
-      item.addEventListener('mouseenter', function () {
-        navItems.forEach((el) => el.classList.remove('is-open'));
-        item.classList.add('is-open');
+      if (hoverCapable.matches) {
+        item.addEventListener('mouseenter', function () {
+          openNavItem(item);
+        });
+
+        item.addEventListener('mouseleave', function () {
+          scheduleNavClose(item);
+        });
+      }
+
+      item.addEventListener('focusin', function (event) {
+        if (event.target.matches(':focus-visible')) {
+          openNavItem(item);
+        }
+      });
+
+      item.addEventListener('focusout', function (event) {
+        if (!item.contains(event.relatedTarget)) {
+          scheduleNavClose(item);
+        }
       });
     });
 
     document.addEventListener('click', function (event) {
       if (!event.target.closest('.nav-item')) {
-        navItems.forEach((el) => el.classList.remove('is-open'));
+        closeNavItems();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeNavItems();
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
       }
     });
     document.addEventListener('click', function (event) {
