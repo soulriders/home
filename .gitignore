@@ -16,3 +16,9 @@
 *.sldasm
 *.3mf
 *.gcode
+
+# Local site snapshots are intentionally kept out of Git.
+backups/
+
+# Private patent and technical reference files must never be published.
+private-references/
