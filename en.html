@@ -4790,6 +4790,25 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   line-height: 1.4;
 }
 
+.home-v2-milestone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home-v2-milestone span {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
 .home-v2-problem {
   display: grid;
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
@@ -5086,12 +5105,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <video src="assets/videos/final360.mp4" poster="assets/images/sda/sda-async-render.png" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="container">
-      <span class="hero-label">Software-Defined Aircraft</span>
+      <span class="hero-label">Software-Defined Aircraft · Patented</span>
       <h1 class="hero-h1">
-        <span class="typo-line">The World's First Asynchronous Tiltrotor</span>
-        <span class="typo-line">Architecture.</span>
+        <span class="typo-line">1,000 km Range. Around KRW 100 Million.</span>
+        <span class="typo-line">Four-Seat VTOL. Lambda.</span>
       </h1>
-      <p class="hero-p">1,000 km range. KRW 100 million class. Four-seat VTOL. Lambda.<br>Flight testing of the 25 kg-class aircraft begins in October 2026.</p>
+      <p class="hero-p"><strong>The World's First Asynchronous Tiltrotor<br>Architecture.</strong></p>
       <div class="home-v2-actions">
         <a class="button primary" href="?page=technology" data-route="technology">Technology</a>
         <a class="button secondary" href="?page=product" data-route="product">Products</a>
@@ -5105,10 +5124,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="home-v2-stats" aria-label="Lambda key metrics">
         <div class="home-v2-stat"><strong>8</strong><span>Independent Tilting Propulsors</span></div>
         <div class="home-v2-stat"><strong>4</strong><span>Aircraft Classes</span></div>
-        <div class="home-v2-stat"><strong>475 kg</strong><span>Maximum Cargo Payload</span></div>
+        <div class="home-v2-stat"><strong>475 kg / 5 Seats</strong><span>Cargo / Crewed</span></div>
         <div class="home-v2-stat"><strong>All Flight Modes</strong><span>Deterministic Control</span></div>
       </div>
       <p class="home-v2-refrain">Deterministic Flight. Faster Certification. Lower Cost.</p>
+      <p class="home-v2-milestone"><span>2026.10</span>25 kg-Class Aircraft Flight Test</p>
     </div>
   </section>
 
