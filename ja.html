@@ -11,6 +11,14 @@
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCXN0GH75X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZCXN0GH75X');
+  </script>
   <title>リシーブパワー</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6635,7 +6643,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <div>
               <strong>KakaoTalkで問い合わせ</strong>
               <span>QRコードを読み取るか、下のボタンからKakaoTalkオープンチャットで直接お問い合わせいただけます。</span>
-              <a class="kakao-contact-open" href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer">KakaoTalkで問い合わせる</a>
+              <span>KakaoTalkオープンチャットは初回接続時にエラーが出る場合があります。エラーが発生した場合は、もう一度お試しください。</span>
+              <a class="kakao-contact-open" href="https://open.kakao.com/o/paNonIDi" target="_blank" rel="noopener noreferrer">KakaoTalkで問い合わせを開く</a>
             </div>
           </div>
         </div>
@@ -6653,9 +6662,24 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
   </footer>
 
   <script>
+  function trackAnalyticsEvent(name, parameters = {}) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, {
+      site_language: document.documentElement.lang,
+      ...parameters
+    });
+  }
+
+  function trackAnalyticsSection(page) {
+    trackAnalyticsEvent('section_view', {
+      page_section: page
+    });
+  }
+
   function initContactCopy() {
     document.querySelectorAll('[data-copy-email]').forEach((button) => {
       button.addEventListener('click', async () => {
+        trackAnalyticsEvent('contact_email_copy');
         const email = button.dataset.copyEmail || 'contact@rcvpower.com';
         const status = button.closest('.contact-form-card')?.querySelector('.contact-copy-status');
         try {
@@ -6834,6 +6858,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
+      trackAnalyticsSection(page);
+
       closeNavItems();
       if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
@@ -6895,6 +6921,23 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       }
     });
     document.addEventListener('click', function (event) {
+      const languageLink = event.target.closest('.language-switch a');
+      if (languageLink) {
+        trackAnalyticsEvent('language_switch', {
+          destination_language: languageLink.textContent.trim().toLowerCase()
+        });
+      }
+
+      const kakaoLink = event.target.closest('.kakao-contact-open, .kakao-contact-qr > a');
+      if (kakaoLink) {
+        trackAnalyticsEvent('contact_kakao_click');
+      }
+
+      const emailLink = event.target.closest('a[href^="mailto:"]');
+      if (emailLink) {
+        trackAnalyticsEvent('contact_email_click');
+      }
+
       const routeLink = event.target.closest('a[data-route]');
       if (!routeLink) return;
       const page = routeLink.dataset.route;
