@@ -5616,7 +5616,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="company">
 <section class="hero company-hero">
       <div class="company-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Company</span>
@@ -5672,7 +5672,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="news">
     <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Company News</span>
@@ -5701,7 +5701,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="ir">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Investor Relations</span>
@@ -5817,7 +5817,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="technology">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Technology</span>
@@ -5905,7 +5905,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="ip">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Patent Portfolio</span>
@@ -6121,7 +6121,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="product">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Product Direction</span>
@@ -6290,7 +6290,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="market">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Market Entry</span>
@@ -6463,7 +6463,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 <main class="page-view" data-page="business">
 <section class="hero business-hero">
       <div class="business-hero-video" aria-hidden="true">
-        <video src="assets/videos/business-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/business-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">Business</span>
@@ -6958,6 +6958,18 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const active = el.dataset.page === page;
         el.classList.toggle('is-active', active);
         el.setAttribute('aria-hidden', active ? 'false' : 'true');
+        el.querySelectorAll('video').forEach((video) => {
+          if (active) {
+            video.preload = 'metadata';
+            const playback = video.play();
+            if (playback && typeof playback.catch === 'function') {
+              playback.catch(() => {});
+            }
+          } else {
+            video.pause();
+            video.preload = 'none';
+          }
+        });
         if (active) {
           requestAnimationFrame(() => {
             el.querySelectorAll('.reveal-target').forEach((target) => target.classList.add('is-visible'));

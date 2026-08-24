@@ -5617,7 +5617,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="company">
 <section class="hero company-hero">
       <div class="company-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">会社紹介</span>
@@ -5673,7 +5673,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="news">
     <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">ニュース</span>
@@ -5702,7 +5702,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="ir">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">投資家向け情報</span>
@@ -5818,7 +5818,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="technology">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">技術</span>
@@ -5906,7 +5906,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="ip">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">特許ポートフォリオ</span>
@@ -6122,7 +6122,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="product">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">製品方針</span>
@@ -6291,7 +6291,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="market">
 <section class="hero video-hero">
       <div class="subpage-hero-video" aria-hidden="true">
-        <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/company-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">市場参入</span>
@@ -6463,7 +6463,7 @@ html[lang="ja"] .section-title {
 <main class="page-view" data-page="business">
 <section class="hero business-hero">
       <div class="business-hero-video" aria-hidden="true">
-        <video src="assets/videos/business-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/videos/business-gemini-hero.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="container">
         <span class="eyebrow">ビジネス</span>
@@ -6958,6 +6958,18 @@ html[lang="ja"] .section-title {
         const active = el.dataset.page === page;
         el.classList.toggle('is-active', active);
         el.setAttribute('aria-hidden', active ? 'false' : 'true');
+        el.querySelectorAll('video').forEach((video) => {
+          if (active) {
+            video.preload = 'metadata';
+            const playback = video.play();
+            if (playback && typeof playback.catch === 'function') {
+              playback.catch(() => {});
+            }
+          } else {
+            video.pause();
+            video.preload = 'none';
+          }
+        });
         if (active) {
           requestAnimationFrame(() => {
             el.querySelectorAll('.reveal-target').forEach((target) => target.classList.add('is-visible'));
