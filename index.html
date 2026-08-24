@@ -11,6 +11,62 @@
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>리시브파워 | Lambda 소프트웨어 정의 비행체</title>
+  <meta name="description" content="리시브파워는 화물 운송부터 사업화하는 수직이착륙기 Lambda를 개발합니다. 비동기 틸트로터와 결정론적 제어로 지역 항공 물류의 새로운 기준을 만듭니다.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#071521">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.rcvpower.com/">
+  <link rel="alternate" hreflang="ko" href="https://www.rcvpower.com/">
+  <link rel="alternate" hreflang="en" href="https://www.rcvpower.com/en.html">
+  <link rel="alternate" hreflang="ja" href="https://www.rcvpower.com/ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.rcvpower.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Receivepower">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="리시브파워 | Lambda 소프트웨어 정의 비행체">
+  <meta property="og:description" content="화물 운송부터 사업화하는 수직이착륙기 Lambda와 지역 항공 물류 전략을 소개합니다.">
+  <meta property="og:url" content="https://www.rcvpower.com/">
+  <meta property="og:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="리시브파워 Lambda 비동기 틸트로터 비행체">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="리시브파워 | Lambda 소프트웨어 정의 비행체">
+  <meta name="twitter:description" content="화물 운송부터 사업화하는 수직이착륙기 Lambda와 지역 항공 물류 전략을 소개합니다.">
+  <meta name="twitter:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.rcvpower.com/#organization",
+        "name": "리시브파워",
+        "alternateName": "Receivepower",
+        "url": "https://www.rcvpower.com/",
+        "email": "contact@rcvpower.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "동교로 157 4층",
+          "addressLocality": "마포구",
+          "addressRegion": "서울특별시",
+          "addressCountry": "KR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.rcvpower.com/#website",
+        "url": "https://www.rcvpower.com/",
+        "name": "리시브파워",
+        "alternateName": "Receivepower",
+        "publisher": { "@id": "https://www.rcvpower.com/#organization" },
+        "inLanguage": ["ko", "en", "ja"]
+      }
+    ]
+  }
+  </script>
+  <script defer src="seo.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCXN0GH75X"></script>
   <script>
@@ -19,7 +75,6 @@
     gtag('js', new Date());
     gtag('config', 'G-ZCXN0GH75X');
   </script>
-  <title>리시브파워</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -237,7 +292,7 @@ h1 {
 }
 
 .municipal-process-results::before {
-  content: "결과물";
+  content: "협력 분야";
   display: block;
   margin: 0 0 8px -20px;
   color: var(--text-main);
@@ -5057,6 +5112,72 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     min-height: 300px;
   }
 }
+
+/* Keep dropdown visibility in one explicit state so the trigger can close it. */
+.submenu::before {
+  pointer-events: none;
+}
+
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.nav-item.is-open .submenu,
+.nav-item.is-open:hover .submenu,
+.nav-item.is-open:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 761px) {
+  .global-nav > .nav-item:last-child .submenu {
+    left: auto;
+    right: 0;
+    transform: translateY(6px);
+  }
+
+  .global-nav > .nav-item:last-child:hover .submenu,
+  .global-nav > .nav-item:last-child:focus-within .submenu {
+    transform: translateY(-8px);
+  }
+
+  .global-nav > .nav-item:last-child.is-open .submenu,
+  .global-nav > .nav-item:last-child.is-open:hover .submenu,
+  .global-nav > .nav-item:last-child.is-open:focus-within .submenu {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #S01_HERO .home-v2-actions {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #S01_HERO .home-v2-actions .button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    text-decoration: none;
+  }
+
+  #S01_HERO .home-v2-actions .button.secondary {
+    min-height: 44px;
+    padding: 0 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.72) !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #0066cc !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -5121,7 +5242,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="home-v2-stats" aria-label="Lambda 핵심 지표">
         <div class="home-v2-stat"><strong>8</strong><span>독립 틸팅 추진기관</span></div>
         <div class="home-v2-stat"><strong>4</strong><span>기체 체급</span></div>
-        <div class="home-v2-stat"><strong>475kg / 5인승</strong><span>화물 / 유인</span></div>
+        <div class="home-v2-stat"><strong>475kg / 4인승</strong><span>화물 / 유인</span></div>
         <div class="home-v2-stat"><strong>전 비행모드</strong><span>결정론적 제어</span></div>
       </div>
       <p class="home-v2-refrain">결정론적 비행. 더 빠른 인증. 더 낮은 비용.</p>
@@ -5182,7 +5303,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="home-v2-roadmap-step">
           <strong>890 kg급</strong>
-          <h3>475kg / 5인승</h3>
+          <h3>475kg / 4인승</h3>
           <p>주력 화물 플랫폼에서 지역 승객 운송으로 확장합니다.</p>
         </article>
       </div>
@@ -5532,7 +5653,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="company">IR 보기</a>
+        <a class="button primary" href="?page=ir" data-route="ir">IR 보기</a>
         <a class="button secondary" href="#" data-route="product">제품 보기</a>
       </div>
     </section>
@@ -5552,7 +5673,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="company">Company로 돌아가기</a>
+        <a class="back-link" href="?page=company" data-route="company">회사 소개로 돌아가기</a>
       </div>
     </section>
 
@@ -5580,7 +5701,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="company">Company로 돌아가기</a>
+        <a class="back-link" href="?page=company" data-route="company">회사 소개로 돌아가기</a>
       </div>
     </section>
 
@@ -6128,11 +6249,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             </figure>
             <span class="label product-model-label">07 · CREWED</span>
             <h2>Eureka</h2>
-            <p class="product-model-description">890kg급 플랫폼의 5인승 승객 운송 확장형입니다. §21.17(b) 특수등급 powered-lift로서 AC 21.17-4 기준의 형식·생산·감항 인증을 진행합니다.</p>
+            <p class="product-model-description">890kg급 플랫폼의 4인승 승객 운송 확장형입니다. §21.17(b) 특수등급 powered-lift로서 AC 21.17-4 기준의 형식·생산·감항 인증을 진행합니다.</p>
             <ul class="data-list product-model-facts">
               <li><span>체급</span><strong>890kg급</strong></li>
               <li><span>운용</span><strong>유인형</strong></li>
-              <li><span>좌석 / MTOW</span><strong>5인승 / 890kg</strong></li>
+              <li><span>좌석 / MTOW</span><strong>4인승 / 890kg</strong></li>
               <li><span>규제 트랙</span><strong>FAA AC 21.17-4 · Powered-lift</strong></li>
             </ul>
           </article>
@@ -6148,7 +6269,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="technology">IP 보기</a>
+        <a class="button primary" href="?page=ip" data-route="ip">IP 보기</a>
         <a class="button secondary" href="#" data-route="market">시장 보기</a>
       </div>
     </section>
@@ -6613,7 +6734,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="cta-band">
       <div class="container cta-row">
         <a class="button primary" href="#" data-route="market">시장 보기</a>
-        <a class="button secondary" href="#" data-route="company">Company 보기</a>
+        <a class="button secondary" href="?page=company" data-route="company">회사 소개 보기</a>
       </div>
     </section>
   </main>
@@ -6771,6 +6892,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       }
 
       item.classList.toggle('is-open', open);
+      if (!open) {
+        delete item.dataset.openedByHover;
+      }
       const trigger = item.querySelector('.nav-link');
       if (trigger) {
         trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -6865,6 +6989,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
+      if (window.ReceivepowerSEO) {
+        window.ReceivepowerSEO.update(page, page === 'business' ? businessPanel : null);
+      }
+
       trackAnalyticsSection(page);
 
       closeNavItems();
@@ -6880,6 +7008,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
         if (submenu && el.parentElement === navItem) {
           event.preventDefault();
+          if (navItem.dataset.openedByHover === 'true') {
+            delete navItem.dataset.openedByHover;
+            setNavItemOpen(navItem, true);
+            return;
+          }
           const shouldOpen = !navItem.classList.contains('is-open');
           closeNavItems(navItem);
           setNavItemOpen(navItem, shouldOpen);
@@ -6893,6 +7026,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       if (hoverCapable.matches) {
         item.addEventListener('mouseenter', function () {
           openNavItem(item);
+          item.dataset.openedByHover = 'true';
         });
 
         item.addEventListener('mouseleave', function () {

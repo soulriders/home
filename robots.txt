@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Disallow: /homepage_static_draft.html
+Disallow: /backups/
+Disallow: /docs/
+Disallow: /outputs/
+Disallow: /private-references/
+Disallow: /tmp/
+Disallow: /.tmp/
+Disallow: /.cache/
+Disallow: /.playwright-mcp/
+Disallow: /.codex-remote-attachments/
+
+Sitemap: https://www.rcvpower.com/sitemap.xml

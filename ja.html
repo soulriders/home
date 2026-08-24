@@ -11,6 +11,62 @@
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>リシーブパワー | Lambdaソフトウェア定義航空機</title>
+  <meta name="description" content="リシーブパワーは、貨物輸送から事業化するVTOL機Lambdaを開発しています。非同期ティルトローターと決定論的制御により、地域航空物流の実用化を目指します。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#071521">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.rcvpower.com/ja.html">
+  <link rel="alternate" hreflang="ko" href="https://www.rcvpower.com/">
+  <link rel="alternate" hreflang="en" href="https://www.rcvpower.com/en.html">
+  <link rel="alternate" hreflang="ja" href="https://www.rcvpower.com/ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.rcvpower.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Receivepower">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="リシーブパワー | Lambdaソフトウェア定義航空機">
+  <meta property="og:description" content="貨物輸送から事業化するVTOL機Lambdaと、地域航空物流への展開戦略をご紹介します。">
+  <meta property="og:url" content="https://www.rcvpower.com/ja.html">
+  <meta property="og:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="リシーブパワーLambda非同期ティルトローター航空機">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="リシーブパワー | Lambdaソフトウェア定義航空機">
+  <meta name="twitter:description" content="貨物輸送から事業化するVTOL機Lambdaと、地域航空物流への展開戦略をご紹介します。">
+  <meta name="twitter:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.rcvpower.com/#organization",
+        "name": "リシーブパワー",
+        "alternateName": "Receivepower",
+        "url": "https://www.rcvpower.com/",
+        "email": "contact@rcvpower.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "東橋路157 4階",
+          "addressLocality": "麻浦区",
+          "addressRegion": "ソウル特別市",
+          "addressCountry": "KR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.rcvpower.com/#website",
+        "url": "https://www.rcvpower.com/",
+        "name": "リシーブパワー",
+        "alternateName": "Receivepower",
+        "publisher": { "@id": "https://www.rcvpower.com/#organization" },
+        "inLanguage": ["ko", "en", "ja"]
+      }
+    ]
+  }
+  </script>
+  <script defer src="seo.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCXN0GH75X"></script>
   <script>
@@ -19,7 +75,6 @@
     gtag('js', new Date());
     gtag('config', 'G-ZCXN0GH75X');
   </script>
-  <title>リシーブパワー</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -237,7 +292,7 @@ h1 {
 }
 
 .municipal-process-results::before {
-  content: "成果物";
+  content: "対応領域";
   display: block;
   margin: 0 0 8px -20px;
   color: var(--text-main);
@@ -5063,6 +5118,77 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     min-height: 300px;
   }
 }
+
+/* Keep dropdown visibility in one explicit state so the trigger can close it. */
+.submenu::before {
+  pointer-events: none;
+}
+
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.nav-item.is-open .submenu,
+.nav-item.is-open:hover .submenu,
+.nav-item.is-open:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+html[lang="ja"] .section-title {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 761px) {
+  .global-nav > .nav-item:last-child .submenu {
+    left: auto;
+    right: 0;
+    transform: translateY(6px);
+  }
+
+  .global-nav > .nav-item:last-child:hover .submenu,
+  .global-nav > .nav-item:last-child:focus-within .submenu {
+    transform: translateY(-8px);
+  }
+
+  .global-nav > .nav-item:last-child.is-open .submenu,
+  .global-nav > .nav-item:last-child.is-open:hover .submenu,
+  .global-nav > .nav-item:last-child.is-open:focus-within .submenu {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #S01_HERO .home-v2-actions {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #S01_HERO .home-v2-actions .button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    text-decoration: none;
+  }
+
+  #S01_HERO .home-v2-actions .button.secondary {
+    min-height: 44px;
+    padding: 0 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.72) !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #0066cc !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -5073,11 +5199,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <div class="language-switch"><a href="index.html">KR</a><a href="en.html">EN</a><a href="ja.html">JP</a></div>
       <nav class="global-nav" aria-label="Primary navigation">
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="company" aria-haspopup="true" aria-expanded="false" aria-controls="company-submenu">Company</button>
-          <div class="submenu" id="company-submenu" aria-label="Company submenu">
-            <button type="button" class="submenu-link" data-target-page="company">Company</button>
-            <button type="button" class="submenu-link" data-target-page="ir">IR</button>
-            <button type="button" class="submenu-link" data-target-page="news">News</button>
+      <button type="button" class="nav-link" data-target-page="company" aria-haspopup="true" aria-expanded="false" aria-controls="company-submenu">会社情報</button>
+          <div class="submenu" id="company-submenu" aria-label="会社情報メニュー">
+          <button type="button" class="submenu-link" data-target-page="company">会社情報</button>
+          <button type="button" class="submenu-link" data-target-page="ir">投資家情報</button>
+          <button type="button" class="submenu-link" data-target-page="news">ニュース</button>
             <button type="button" class="submenu-link" data-target-page="technology">技術</button>
             <button type="button" class="submenu-link" data-target-page="ip">IP</button>
             <button type="button" class="submenu-link" data-target-page="product">製品</button>
@@ -5085,8 +5211,8 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </div>
         </div>
         <div class="nav-item">
-          <button type="button" class="nav-link" data-target-page="business" data-business-target="models" aria-haspopup="true" aria-expanded="false" aria-controls="business-submenu">Business</button>
-          <div class="submenu" id="business-submenu" aria-label="Business submenu">
+      <button type="button" class="nav-link" data-target-page="business" data-business-target="models" aria-haspopup="true" aria-expanded="false" aria-controls="business-submenu">事業</button>
+          <div class="submenu" id="business-submenu" aria-label="事業メニュー">
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="models">協力構造</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="kr-local">自治体（韓国）</button>
             <button type="button" class="submenu-link" data-target-page="business" data-business-target="jp-local">自治体（日本）</button>
@@ -5127,7 +5253,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="home-v2-stats" aria-label="Lambdaの主要指標">
         <div class="home-v2-stat"><strong>8</strong><span>独立ティルト推進ユニット</span></div>
         <div class="home-v2-stat"><strong>4</strong><span>機体クラス</span></div>
-        <div class="home-v2-stat"><strong>475kg / 5人乗り</strong><span>貨物 / 有人</span></div>
+        <div class="home-v2-stat"><strong>475kg / 4人乗り</strong><span>貨物 / 有人</span></div>
         <div class="home-v2-stat"><strong>全飛行モード</strong><span>決定論的制御</span></div>
       </div>
       <p class="home-v2-refrain">決定論的飛行。より迅速な認証。より低いコスト。</p>
@@ -5290,7 +5416,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="motion-frame">
         <img class="motion-image" src="assets/images/sda/sda-async-render.png" alt="SDA非同期ティルトローター飛行画像">
         <div class="motion-caption">
-          <span>Flight Visual</span>
+          <span>飛行イメージ</span>
           <h2>非同期ティルトローターの遷移飛行</h2>
           <p>離着陸、遷移、巡航、緊急降下。この4つの飛行状態をひとつの機体で実現します。</p>
         </div>
@@ -5470,7 +5596,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
             <span>路線協力</span>
             <p>UAM都市シミュレーション、機体実証、路線実証</p>
           </div>
-          <strong>Businessを見る →</strong>
+          <strong>事業を見る →</strong>
         </a>
         <a class="visitor-card" href="#" data-route="ip">
           <div>
@@ -5503,12 +5629,12 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="message-section">
       <div class="container message-list">
         <article class="message">
-          <span class="label">Mission</span>
+          <span class="label">ミッション</span>
           <h2>空飛ぶクルマを現実の航空機として設計します。</h2>
           <p>Lambda SDAは、自動車並みのコスト構造とソフトウェア定義飛行を組み合わせたVTOL航空プラットフォームです。</p><a class="back-link" href="#company-flying-car-narrative">開発ストーリーを見る</a>
         </article>
         <article class="message">
-          <span class="label">Patent Foundation</span>
+          <span class="label">特許技術基盤</span>
           <h2>非同期ティルトローターの特許を起点に事業を始めました。</h2>
           <p>2020年、非同期ティルトローター構造を特許出願し、登録を完了しました。ホバー離着陸の安全性と、従来航空機の10分の1の運航コストを狙って設計した構造です。</p>
         </article>
@@ -5519,7 +5645,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="message-section" id="company-flying-car-narrative">
       <div class="container message-list">
         <article class="message narrative-single">
-          <span class="label">Development Narrative</span>
+          <span class="label">開発ストーリー</span>
           <h2>空飛ぶクルマ：夢から現実へ</h2>
           <p>誰もが一度は空飛ぶクルマを夢見ます。私たちもそうでした。ティルトローターがその夢をかなえる航空機だと信じていました。しかし1992年、オスプレイ（V-22）の墜落を見て、ひとつの問いが生まれました。人が暮らす都市の上を飛ぶなら、今よりはるかに安全なティルトローターが必要なのではないか。</p>
           <h3>古い夢、三つの壁</h3>
@@ -5538,7 +5664,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="company">IRを見る</a>
+        <a class="button primary" href="?page=ir" data-route="ir">IRを見る</a>
         <a class="button secondary" href="#" data-route="product">製品を見る</a>
       </div>
     </section>
@@ -5550,7 +5676,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         <video src="assets/videos/company-gemini-hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
       </div>
       <div class="container">
-        <span class="eyebrow">Company News</span>
+        <span class="eyebrow">ニュース</span>
         <h1>リシーブパワーの最新情報。</h1>
         <p class="lead">技術、特許、製品開発、事業展開に関するニュースと報道をまとめています。</p>
       </div>
@@ -5558,14 +5684,14 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
     <section class="subnav-section">
       <div class="container">
-        <a class="back-link" href="#" data-route="company">Companyに戻る</a>
+        <a class="back-link" href="?page=company" data-route="company">会社情報へ戻る</a>
       </div>
     </section>
 
     <section class="message-section">
       <div class="container">
         <div class="section-title">
-          <span class="label">Press Archive</span>
+          <span class="label">報道アーカイブ</span>
           <h2>ニュース・報道</h2>
         </div>
         <div class="news-list" data-news-list="all"></div>
@@ -5608,7 +5734,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <h3>1. あらかじめ定義された通りに応答します（DO-178C）</h3>
           <p>従来方式は飛行中も答えを計算し続けます。Lambdaは、事前に検証した答えへ即座に切り替えます。</p>
           <h3>2. エンジンが止まっても操縦しながら着陸します（PL.2105(g)）</h3>
-          <p>エンジンが止まっても、操縦は止まりません。すべての動力を失った極限状況でも、8つのローターが空気抵抗の差、すなわち差動抗力を生み、仮想操縦翼面を形成します。動力がなくても機体の方向と飛行経路を最後まで制御し、滑空着陸へ導くフェイルセーフを設計しました。SDAは、PL.2105(g)の要件を設計段階から満たす航空機です。</p>
+          <p>エンジンが止まっても、操縦は止まりません。すべての動力を失った極限状況でも、8つのローターが空気抵抗の差、すなわち差動抗力を生み、仮想操縦翼面を形成します。動力がなくても機体の方向と飛行経路を最後まで制御し、滑空着陸へ導くフェイルセーフを設計しました。SDAは、PL.2105(g)の要件を正面から見据えて設計した航空機です。</p>
           <h3>3. 認証対象となる部品を約100分の1まで削減します</h3>
           <p>一般的な航空機は操縦面（翼の可動部品）と駆動装置のため故障点が数百個あり、それを一つずつ証明しなければなりません。私たちは機械式操縦面そのものをなくし、認証対象部品を劇的に減らしました。</p>
           <h3>4. 有人輸送に先立ち、貨物運航で信頼を積み上げます</h3>
@@ -5673,7 +5799,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     <section class="message-section" id="ir-news">
       <div class="container">
         <div class="section-title">
-          <span class="label">Recent News</span>
+          <span class="label">最新ニュース</span>
           <h2>投資家向けの最新報道</h2>
           <p>特許、認証、投資、事業展開に関する主なニュースです。</p>
         </div>
@@ -5696,7 +5822,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       </div>
       <div class="container">
         <span class="eyebrow">技術</span>
-        <h1>Robotics Technology</h1>
+        <h1>ロボティクス技術</h1>
         <p class="lead">Lambdaを飛ばすのは空気力学だけではありません。リシーブパワーは、実際の機械を動かすPhysical AI技術をひとつの実行体系に統合し、その基盤の上にソフトウェア定義航空機を構築します。非同期ティルトローターや仮想操縦翼面など、航空機固有の技術はIPページで紹介します。</p>
       </div>
     </section>
@@ -6155,7 +6281,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="technology">IPを見る</a>
+        <a class="button primary" href="?page=ip" data-route="ip">IPを見る</a>
         <a class="button secondary" href="#" data-route="market">市場を見る</a>
       </div>
     </section>
@@ -6363,32 +6489,32 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           </ul>
         </article>
         <article class="message">
-          <span class="label">Patent Licensing</span>
+          <span class="label">特許ライセンス</span>
           <h2>特許ライセンス</h2>
           <p>非同期ティルティング、仮想操縦翼面、離散制御マトリクス、無動力高揚力・差動抗力制御、SADSベースの仮想ピトー管がSDAの中核知財です。完成機だけでなく、Flight OS、技術ホワイトペーパー、IPライセンス、ランニングロイヤルティから継続収益を生み出します。</p>
         </article>
         <article class="message">
-          <span class="label">Development JV</span>
+          <span class="label">開発JV</span>
           <h2>開発ジョイントベンチャー</h2>
           <p>リシーブパワーは設計・制御・ソフトウェア・特許を標準アーキテクチャとして提供し、パートナーの資本・供給網と組み合わせて事業を拡大します。</p>
         </article>
         <article class="message">
-          <span class="label">Manufacturing JV</span>
+          <span class="label">製造JV</span>
           <h2>製造合弁会社</h2>
           <p>工場、設備、現地許認可、組立人員は地域別の製造JVが担います。リシーブパワーは操縦翼面レス構造とCOTS供給網を活用し、製造パートナーが迅速に組み立て、モジュール交換できる生産体制を設計します。</p>
         </article>
         <article class="message">
-          <span class="label">Operation JV</span>
+          <span class="label">運航JV</span>
           <h2>運航ジョイントベンチャー</h2>
-          <p>物流企業とは、回廊ごとの共同フリート運営、路線への共同投資、運航データの蓄積、MRO、Flight OS運用を組み合わせたOperation JVを構成できます。パートナーは物流需要と拠点運営を提供し、リシーブパワーは機体、運航ソフトウェア、耐空性維持データを統合して継続運航モデルを構築します。</p>
+          <p>物流企業とは、回廊ごとの共同フリート運営、路線への共同投資、運航データの蓄積、MRO、Flight OSを組み合わせた運航JVを構成できます。パートナーは物流需要と拠点運営を担い、リシーブパワーは機体、運航ソフトウェア、耐空性維持データを統合して、継続的に運航できる事業モデルを構築します。</p>
         </article>
         <article class="message">
-          <span class="label">Revenue Stack</span>
+          <span class="label">収益構成</span>
           <h2>収益は機体販売で終わりません。</h2>
           <p>SDAが目指すのは、単なるハードウェアメーカーではなく、航空物流のコスト構造と運航標準を担う事業者です。機体販売、リース、運航ルートの事業権、MRO、Flight OS、耐空性維持データ、地域JVが長期収益モデルを形成します。</p>
         </article>
         <article class="message business-essay-summary">
-          <span class="label">Lambda Architecture</span>
+          <span class="label">Lambdaアーキテクチャ</span>
           <h2>Lambdaの本質的な競争力</h2>
           <p>一般的な航空機は、飛行機能を増やすために操縦翼面、リンク機構、油圧装置、可変ピッチ装置を追加し続けます。部品が増えるほど、製造・整備・認証のコストも上昇します。</p>
           <p>Lambdaは逆の発想で設計しました。8基の同一推進モジュールだけで、垂直離着陸、巡航、遷移飛行、緊急着陸までをひとつの構造で実現します。操縦翼面も、可変ピッチ装置も、複雑な機械式操縦系統もありません。</p>
@@ -6629,7 +6755,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
 
       <div class="contact-form-card">
         <div class="contact-direct-card">
-          <p class="contact-direct-kicker">Direct Contact</p>
+          <p class="contact-direct-kicker">お問い合わせ</p>
           <h4>contact@rcvpower.com</h4>
           <p>協力、投資資料、技術議論、地域実証のお問い合わせはメールでお送りください。</p>
           <div class="contact-actions">
@@ -6764,6 +6890,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       }
 
       item.classList.toggle('is-open', open);
+      if (!open) {
+        delete item.dataset.openedByHover;
+      }
       const trigger = item.querySelector('.nav-link');
       if (trigger) {
         trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -6858,6 +6987,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
+      if (window.ReceivepowerSEO) {
+        window.ReceivepowerSEO.update(page, page === 'business' ? businessPanel : null);
+      }
+
       trackAnalyticsSection(page);
 
       closeNavItems();
@@ -6873,6 +7006,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
         if (submenu && el.parentElement === navItem) {
           event.preventDefault();
+          if (navItem.dataset.openedByHover === 'true') {
+            delete navItem.dataset.openedByHover;
+            setNavItemOpen(navItem, true);
+            return;
+          }
           const shouldOpen = !navItem.classList.contains('is-open');
           closeNavItems(navItem);
           setNavItemOpen(navItem, shouldOpen);
@@ -6886,6 +7024,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       if (hoverCapable.matches) {
         item.addEventListener('mouseenter', function () {
           openNavItem(item);
+          item.dataset.openedByHover = 'true';
         });
 
         item.addEventListener('mouseleave', function () {

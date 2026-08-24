@@ -11,6 +11,61 @@
   -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receivepower | Lambda Software-Defined Aircraft</title>
+  <meta name="description" content="Receivepower is developing Lambda, a cargo-first VTOL aircraft for regional air logistics. Its asynchronous tiltrotor architecture is designed for simpler manufacturing and predictable control.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#071521">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.rcvpower.com/en.html">
+  <link rel="alternate" hreflang="ko" href="https://www.rcvpower.com/">
+  <link rel="alternate" hreflang="en" href="https://www.rcvpower.com/en.html">
+  <link rel="alternate" hreflang="ja" href="https://www.rcvpower.com/ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.rcvpower.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Receivepower">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Receivepower | Lambda Software-Defined Aircraft">
+  <meta property="og:description" content="Meet Lambda, a cargo-first VTOL aircraft designed for regional air logistics, simpler manufacturing, and predictable control.">
+  <meta property="og:url" content="https://www.rcvpower.com/en.html">
+  <meta property="og:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt" content="Receivepower Lambda asynchronous tiltrotor aircraft">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Receivepower | Lambda Software-Defined Aircraft">
+  <meta name="twitter:description" content="Meet Lambda, a cargo-first VTOL aircraft designed for regional air logistics, simpler manufacturing, and predictable control.">
+  <meta name="twitter:image" content="https://www.rcvpower.com/assets/images/sda/sda-async-render.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.rcvpower.com/#organization",
+        "name": "Receivepower",
+        "alternateName": "리시브파워",
+        "url": "https://www.rcvpower.com/",
+        "email": "contact@rcvpower.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4F, 157 Donggyo-ro",
+          "addressLocality": "Mapo-gu",
+          "addressRegion": "Seoul",
+          "addressCountry": "KR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.rcvpower.com/#website",
+        "url": "https://www.rcvpower.com/",
+        "name": "Receivepower",
+        "publisher": { "@id": "https://www.rcvpower.com/#organization" },
+        "inLanguage": ["ko", "en", "ja"]
+      }
+    ]
+  }
+  </script>
+  <script defer src="seo.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCXN0GH75X"></script>
   <script>
@@ -19,7 +74,6 @@
     gtag('js', new Date());
     gtag('config', 'G-ZCXN0GH75X');
   </script>
-  <title>Receivepower</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -237,7 +291,7 @@ h1 {
 }
 
 .municipal-process-results::before {
-  content: "Deliverables";
+  content: "Capabilities";
   display: block;
   margin: 0 0 8px -20px;
   color: var(--text-main);
@@ -5068,6 +5122,72 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     min-height: 300px;
   }
 }
+
+/* Keep dropdown visibility in one explicit state so the trigger can close it. */
+.submenu::before {
+  pointer-events: none;
+}
+
+.nav-item:hover .submenu,
+.nav-item:focus-within .submenu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.nav-item.is-open .submenu,
+.nav-item.is-open:hover .submenu,
+.nav-item.is-open:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 761px) {
+  .global-nav > .nav-item:last-child .submenu {
+    left: auto;
+    right: 0;
+    transform: translateY(6px);
+  }
+
+  .global-nav > .nav-item:last-child:hover .submenu,
+  .global-nav > .nav-item:last-child:focus-within .submenu {
+    transform: translateY(-8px);
+  }
+
+  .global-nav > .nav-item:last-child.is-open .submenu,
+  .global-nav > .nav-item:last-child.is-open:hover .submenu,
+  .global-nav > .nav-item:last-child.is-open:focus-within .submenu {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #S01_HERO .home-v2-actions {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #S01_HERO .home-v2-actions .button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    text-decoration: none;
+  }
+
+  #S01_HERO .home-v2-actions .button.secondary {
+    min-height: 44px;
+    padding: 0 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.72) !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #0066cc !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -5132,7 +5252,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       <div class="home-v2-stats" aria-label="Lambda key metrics">
         <div class="home-v2-stat"><strong>8</strong><span>Independent Tilting Propulsors</span></div>
         <div class="home-v2-stat"><strong>4</strong><span>Aircraft Classes</span></div>
-        <div class="home-v2-stat"><strong>475 kg / 5 Seats</strong><span>Cargo / Crewed</span></div>
+        <div class="home-v2-stat"><strong>475 kg / 4 Seats</strong><span>Cargo / Crewed</span></div>
         <div class="home-v2-stat"><strong>All Flight Modes</strong><span>Deterministic Control</span></div>
       </div>
       <p class="home-v2-refrain">Deterministic Flight. Faster Certification. Lower Cost.</p>
@@ -5543,7 +5663,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     </section>
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="company">View IR</a>
+        <a class="button primary" href="?page=ir" data-route="ir">View IR</a>
         <a class="button secondary" href="#" data-route="product">View Product</a>
       </div>
     </section>
@@ -5644,7 +5764,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         </article>
         <article class="message">
           <span class="metric">50%</span>
-          <p>For investment decisions, utilization and margin durability matter more than manufacturing cost. The low-maintenance structure and Flight OS defend fleet profitability.</p>
+          <p>For investment decisions, utilization and durable margins matter more than manufacturing cost alone. The low-maintenance structure and Flight OS help protect fleet profitability.</p>
         </article>
         <article class="message">
           <h2>Initial Entry Market</h2>
@@ -6160,7 +6280,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
     
     <section class="cta-band">
       <div class="container cta-row">
-        <a class="button primary" href="#" data-route="technology">View IP</a>
+        <a class="button primary" href="?page=ip" data-route="ip">View IP</a>
         <a class="button secondary" href="#" data-route="market">View Market</a>
       </div>
     </section>
@@ -6362,10 +6482,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <span class="label">Partnership Structure</span>
           <h2>Opening the AAM market with diverse partners.</h2>
           <ul class="data-list">
-            <li><span>Patent Licensing</span><strong>IP, technical white papers, Flight OS / own productization</strong></li>
+            <li><span>Patent Licensing</span><strong>IP, technical white papers, Flight OS / independent product development</strong></li>
             <li><span>Development JV</span><strong>Design, control, patent architecture / joint product equity</strong></li>
             <li><span>Manufacturing JV</span><strong>Simple airframe, COTS supply chain / assembly and MRO revenue</strong></li>
-            <li><span>Operation JV</span><strong>Aircraft, Flight OS, airworthiness data / route operating revenue</strong></li>
+            <li><span>Operations JV</span><strong>Aircraft, Flight OS, airworthiness data / route operating revenue</strong></li>
           </ul>
         </article>
         <article class="message">
@@ -6384,9 +6504,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
           <p>Regional manufacturing JVs handle plants, equipment, local permits, and assembly labor. Receivepower designs a no-control-surface, COTS-based structure that manufacturing partners can assemble and replace quickly.</p>
         </article>
         <article class="message">
-          <span class="label">Operation JV</span>
-          <h2>Operation Joint Venture</h2>
-          <p>With logistics companies, we can form Operation JVs combining shared fleet operations by corridor, route co-investment, flight-data accumulation, MRO, and Flight OS operations. Partners provide logistics demand and hub operations, while Receivepower combines aircraft, operating software, and continuing-airworthiness data into a repeatable operating model.</p>
+          <span class="label">Operations JV</span>
+          <h2>Operations Joint Venture</h2>
+          <p>With logistics companies, we can form operations JVs that combine shared fleets by corridor, route co-investment, flight-data accumulation, MRO, and Flight OS. Partners provide logistics demand and hub operations, while Receivepower integrates the aircraft, flight-operations software, and continuing-airworthiness data into a repeatable service model.</p>
         </article>
         <article class="message">
           <span class="label">Revenue Stack</span>
@@ -6770,6 +6890,9 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       }
 
       item.classList.toggle('is-open', open);
+      if (!open) {
+        delete item.dataset.openedByHover;
+      }
       const trigger = item.querySelector('.nav-link');
       if (trigger) {
         trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -6864,6 +6987,10 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         window.history.pushState({ page }, '', url);
       }
 
+      if (window.ReceivepowerSEO) {
+        window.ReceivepowerSEO.update(page, page === 'business' ? businessPanel : null);
+      }
+
       trackAnalyticsSection(page);
 
       closeNavItems();
@@ -6879,6 +7006,11 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
         const submenu = navItem ? navItem.querySelector('.submenu') : null;
         if (submenu && el.parentElement === navItem) {
           event.preventDefault();
+          if (navItem.dataset.openedByHover === 'true') {
+            delete navItem.dataset.openedByHover;
+            setNavItemOpen(navItem, true);
+            return;
+          }
           const shouldOpen = !navItem.classList.contains('is-open');
           closeNavItems(navItem);
           setNavItemOpen(navItem, shouldOpen);
@@ -6892,6 +7024,7 @@ body.motion-ready .reveal-target[data-reveal-order="6"] { transition-delay: 480m
       if (hoverCapable.matches) {
         item.addEventListener('mouseenter', function () {
           openNavItem(item);
+          item.dataset.openedByHover = 'true';
         });
 
         item.addEventListener('mouseleave', function () {
