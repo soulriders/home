@@ -5,6 +5,31 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/homepage_static_draft.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ir.html",
+      "destination": "/?page=ir",
+      "permanent": true
+    },
+    {
+      "source": "/visitor_vc.html",
+      "destination": "/?page=ir",
+      "permanent": true
+    },
+    {
+      "source": "/visitor_individual.html",
+      "destination": "/?page=ir",
+      "permanent": true
+    },
+    {
+      "source": "/ip.html",
+      "destination": "/?page=ip",
+      "permanent": true
     }
   ],
   "headers": [
